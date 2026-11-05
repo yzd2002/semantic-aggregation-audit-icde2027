@@ -1,0 +1,82 @@
+{
+  "status": "CPU_PREFLIGHT_CONDITIONS_MET_FOR_ROOT_GPU_GO",
+  "reviewed_subject": "/home/gpu/IntentSat2S_revision_20261106/new_glm_context",
+  "reviewed_freeze_sha256": "936635a4b3a0ee8c118c1c7472a58b46780305e2d217c4ef488358bbed71b943",
+  "reviewed_frozen_file_count": 269,
+  "independent_review_directory": "/home/gpu/IntentSat2S_revision_20261106/independent_context_preflight_review",
+  "evidence_manifest_sha256": "5db05e2c9272c0f9d73ea99a63d57ec72ca5b1b360b7cb671c6ec404bb85c310",
+  "key_evidence_sha256": {
+    "freeze_verification.json": "ec4a4de2d0f4c55b35dff1a94a53496aafb0786e3abf15f89e827f1bce968707",
+    "freeze_v2_verification.json": "20e174af27367a6b58ed3d4192f258ca5ff70e55f0aaed8b0d6d4a6639346898",
+    "final_freeze_verification.json": "817b449094f234076198a22e593ebb1792fa531ebecdbb96bd4b626d5dbc356c",
+    "model_hash_results.json": "0544ebadb051604c1220ca8e31b36f84cb02152bd39a00fdf5ceba510108b1a6",
+    "independent_input_results.json": "3df560664d091eff1cff5fc85603d15f7978eb22e5a338791ce80dc0d55459ea",
+    "static_runtime_identity_results.json": "70deac19338052c182b05c455e7e754a9fc0e98cc874c83f755fbd65c0605274",
+    "runtime_guard_results.json": "6aea082ef89a39090cadf76597f6370a66b2e47d4184a14baf36ad0d020f5c46",
+    "runner_negative_results.json": "ecd07f32e32889e33b2fb55738a2c5d4dc9fa34f25528b1b3b177404f50b3e26",
+    "runner_v3_candidate_checks/runner_v3_negative_results.json": "02892173a7873e1a1ba610eb85fa2f8f7ad671a1105d861a8661698c71cd8deb",
+    "analysis_v3_candidate_checks/independent_analysis_v3_results.json": "1b85a3032a97859851044eb95ac5f911ed31fe9764294d9bda5b4fe38210788e",
+    "primary_family_results.json": "78f50b54d2709e935c1e18abb5c39edfbe2cdc9f23136400c1f26c5d16e12fdd",
+    "global_wrapper_candidate_checks/global_wrapper_results.json": "77998e87909922b59295d4bf02d18b086bd1828503b3c0c1d267ca201d4867e8",
+    "certificate_resource_snapshot.json": "7dae14c237206338a468f649ae9e2982d14ad5637381a9f83895e1d977acafbc",
+    "REVIEW_NOTES.txt": "48a65eda254f78ccb81276034403a9062598c9e13ab1667e250bafea764c2922"
+  },
+  "open_CPU_blockers": [],
+  "resolved_blockers": [
+    {
+      "id": "RETURN_RETENTION_V2",
+      "failure": "Count mismatch discarded all returned raw; middle input-token mismatch discarded that and later raw returns. Independently reproduced in actual runner with fake engine.",
+      "resolution": "v3 persists all actual request/completion payloads with fsync before validation, verifies actual engine bindings, separately preserves unknown cost, and checks canonical-to-durable evidence in reanalysis.",
+      "independent_regression_cases": 10
+    }
+  ],
+  "verified_scope": {
+    "full_freeze_and_v1_v2_v3_differences": true,
+    "all_frozen_inputs_and_model_manifests_unchanged_v2_to_v3": true,
+    "all_source_fields_and_gold_rejoined": true,
+    "all_256_fixed_targets_and_nears_preserved": true,
+    "34_random_redraws_222_preserved": true,
+    "all_three_model_input_bytes_native_tokens_IDs_grammars_sources_and_budgets_rebuilt": true,
+    "three_tokenizer_finite_44_proposals_and_gold_inversion_replay": true,
+    "fresh_history_unique_call_membership_and_no_double_counting": true,
+    "all_49_local_model_files_hashed_against_fixed_manifests": true,
+    "strict_parser_COUNT_fixed_denominators_abstention_and_independent_bootstrap": true,
+    "full_budget_CPU_durable_receipt_validation_chain": true,
+    "root_GO_bound_to_exact_freeze_model_device": true,
+    "single_assigned_GPU_foreign_process_guard_no_kill": true,
+    "per_model_cache_isolation_and_allowlisted_environment_logging": true,
+    "native_CPU_config_and_greedy_EOS_normalization": true,
+    "global_nine_primary_math_seed_NA_and_six_context_case_binding": true,
+    "legacy_statistics_files_unchanged_and_98_75_flags_non_authoritative": true
+  },
+  "planned_costs": {
+    "per_model_scientific": 4750,
+    "per_model_controls": 20,
+    "total_scientific": 14250,
+    "total_controls": 60,
+    "total_input_tokens": 8428291,
+    "scientific_item_labels": 38910,
+    "historical_logical_references_per_model": 4480,
+    "historical_references_add_inference_calls": false
+  },
+  "explicitly_unverified_at_CPU_review": [
+    "Actual GPU worker class/dtype, engine-processed controls and xgrammar operation; must pass existing fail-closed native gates after GO.",
+    "Actual GPU allocation/kernel/NCCL compatibility and elapsed time, including added durable I/O.",
+    "Any real model judgment, downstream scientific effect, quality metric, or acceptance recommendation.",
+    "Three real SNLI primary cases and final merged nine-case observed suite; only shared module math and six context integration are certified here.",
+    "Independent network reacquisition of official GLM metadata: supplied root-acquired frozen official response was used as the reference."
+  ],
+  "statistical_limits": [
+    "New follow-up and analysis amendments were specified with old results known; not a historical external preregistration.",
+    "Nine two-sided 179/180 percentile intervals allocate nominal .05/9 per case, tails1/360 and359/360. 4000 finite draws give approximate selected-target intervals, not exact population/FWER guarantees.",
+    "Shared targets, historical lookup references and deterministic case seeds do not create independent relations.",
+    "Complete COUNT remains a fixed128-target relation or32-target serial relation and abstains if any required target is invalid/missing."
+  ],
+  "GPU_authorization_issued_by_reviewer": false,
+  "GPU_execution_or_model_load_by_reviewer": false,
+  "reviewer_modified_scientific_files": false,
+  "writing_scope": "/home/gpu/IntentSat2S_revision_20261106/independent_context_preflight_review",
+  "next_authorized_owner": "root",
+  "root_execution_contract": "Recheck assigned GPU idle state; issue separate root GO bound to this exact SHA for glm/GPU0, qwen/GPU1, smol/GPU2; retain native/guidance gates and all failure/raw ledgers; no automatic retry or fallback.",
+  "created_unix": 1793918235.5529535
+}

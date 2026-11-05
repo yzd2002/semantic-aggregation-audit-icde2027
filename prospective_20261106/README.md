@@ -1,0 +1,3 @@
+# Prospective follow-up protocol anchor
+
+This directory publicly records the nine-case primary analysis and the reviewed three-family context freeze before its new root GPU authorization. No new scientific inference has started. Historical outcomes are already known and this is a prospective follow-up, not an external preregistration of the historical study. The separately versioned recovered release is unchanged. SNLI runtime and transfer gates will be documented separately before their inference. File hashes bind the exact plans; successful GPU execution and scientific outcomes are not implied.

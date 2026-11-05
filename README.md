@@ -11,6 +11,8 @@ matched against their exact SHA-256 digests and byte counts. The public asset
 API was used for this check; [verification receipts](verification/PUBLIC_DOWNLOADS.json)
 record each route and result.
 
+The [prospective follow-up analysis plan](prospective_20261106/README.md) records the new nine-case primary family before new GPU authorization. It does not imply observed effects or completed experiments.
+
 The recovered context/decision extensions and new model replications are being
 prepared as separately versioned additions. They are not yet claimed by this
 snapshot. See [coverage and limits](docs/COVERAGE.md).
