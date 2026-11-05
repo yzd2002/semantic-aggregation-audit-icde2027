@@ -2,7 +2,7 @@
 
 One main archive and all seven scientific supplements are required. The manuscript PDF/source identify the historical revision.
 
-Release locations are recorded from the created repository and release. Anonymous download verification is documented separately.
+All ten public attachments were downloaded anonymously and matched against the recorded SHA-256 and sizes. See verification/PUBLIC_DOWNLOADS.json for the actual routes and receipts.
 
 | Asset | Bytes | SHA-256 | Purpose |
 | --- | ---: | --- | --- |

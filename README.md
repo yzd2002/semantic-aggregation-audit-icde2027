@@ -6,10 +6,10 @@ over Fixed Candidate Pools`. The execution harness retains the name IntentSat-2S
 
 **Published snapshot:** [v2026.11.06-recovered](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-recovered).
 It matches the historical review manuscript retained by 2026-11-02, with renewed
-archive checks and CPU replay. All ten selected files have been uploaded with
-matching GitHub SHA-256 digests. Anonymous download verification is recorded in
-`asset_index.json`; inspect its `publication_status` rather than assuming an
-uploaded location has already been verified.
+archive checks and CPU replay. All ten selected files have been downloaded without credentials or cookies and
+matched against their exact SHA-256 digests and byte counts. The public asset
+API was used for this check; [verification receipts](verification/PUBLIC_DOWNLOADS.json)
+record each route and result.
 
 The recovered context/decision extensions and new model replications are being
 prepared as separately versioned additions. They are not yet claimed by this
