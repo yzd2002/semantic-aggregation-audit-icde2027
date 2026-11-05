@@ -1,0 +1,31 @@
+Auditing LLM-Based Semantic Aggregation over Fixed Candidate Pools
+Historical artifact publication staging, 2026-11-06
+
+This repository packages scientific source, reproduction instructions and asset
+checksums. It does not assert a project-wide license grant for newly authored
+research content. See LICENSES/PROJECT_LICENSE_STATUS.md.
+
+The original artifacts contain sampled and transformed third-party data.
+Retain all source notices and licenses when using or redistributing them.
+
+Amazon ESCI: the exact upstream NOTICE is retained in LICENSES/ESCI-NOTICE.txt.
+Its Apache-2.0 license is retained in LICENSES/ESCI-Apache-2.0.txt.
+Wayfair WANDS: the upstream MIT license is retained in LICENSES/WANDS-MIT.txt.
+ACORD repository code: the upstream MIT license is retained in
+LICENSES/ACORD-repository-MIT.txt. The pinned upstream README separately states
+CC BY 4.0 for the dataset. No ACORD contract/query text is intentionally included
+in the reconstruction supplements. Pseudonyms remain linkable.
+Qwen and SmolLM model weights are not redistributed. Model-license context and
+fixed revisions are recorded in the historical artifacts and docs/DATA.md.
+TREC/CORD-19 article content may have heterogeneous rights. The selected main
+archive omits two sampled article-text input files and provides reconstruction.
+IEEEtran.cls, included in the historical paper-source archive, retains its own
+copyright and LaTeX Project Public License notice.
+
+Historical output recording: some early product-study strings were saved after
+leading/trailing whitespace was stripped. They cannot be recovered as original
+untrimmed strings. See the response-provenance supplement.
+
+No statement in this notice establishes source-data permission beyond the
+applicable upstream terms, scientific correctness, new inference replication,
+deployment performance, acceptance, or completeness of unavailable later work.

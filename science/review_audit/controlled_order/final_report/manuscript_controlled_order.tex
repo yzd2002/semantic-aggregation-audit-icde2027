@@ -1,0 +1,15 @@
+Under a fixed direct keyed prompt, unchanged chunk membership, and stable pool-occurrence identifiers, row reversal changed the estimated ratio beyond same-condition replay under both output grammars. Qwen's mean excess absolute ratio changes were 8.58/8.81 percentage points on the 128 newly selected ESCI pools and 4.57/5.29 on the 52 exposed WANDS pools for ascending/descending keys; Smol yielded 1.93/0.55 and 5.77/4.03, respectively. All 23,788 requests parsed strictly, and every pool had all eight batch and two singleton vectors. Qwen's paired descending-minus-ascending excess intervals included zero; Smol's contrasts were negative. Reference-quality effects varied across conditions. In particular, Smol's small ESCI changes accompanied nearly constant negative predictions, with ratio MAE 0.7895--0.8059 and balanced accuracy 0.5006--0.5027. These are unadjusted, paired query-bootstrap descriptions of the frozen samples and execution stack; lower drift does not establish higher reference quality.
+
+% Suggested table caption:
+% Fixed-template row-order audit. Entries are mean excess change in percentage
+% points, with 95% unadjusted query-bootstrap intervals (4,000 shared query draws).
+% Excess is the mean distance between canonical/reversed rows across two repeats
+% minus the mean within-condition replay distance; negative values are retained.
+% Candidate and absolute-ratio changes share the all-eight-complete set: ESCI
+% n=128 and exposed WANDS n=52 for each model. A/D denote numerically ascending/
+% descending output keys. Repeats and models are not additional independent pools.
+
+% Full primary rows: co_primary_rows.tex. Full raw/replay/excess values and CIs:
+% co_primary.tsv. Reference quality and actual tokens: quality_and_tokens.tsv.
+% Direct output-key secondary: key_order_secondary.tsv; the corresponding
+% reference-quality changes and singleton comparisons are in RESULTS_summary.txt.

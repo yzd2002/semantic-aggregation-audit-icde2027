@@ -1,0 +1,7 @@
+# ACORD prefix-length search, before model inference
+
+After sampling and inspecting source lengths, a pre-inference amendment tested a 1,200-code-point clause prefix; all prompts fit, but 529/1,824 uniform and 609/1,824 case-control occurrences still exceed it. To reduce missing source context, before any ACORD model outputs we now also test fixed 1,800- and 2,400-code-point prefixes on precisely the same 114 selected pools, candidate positions and reference labels.
+
+Decision rule fixed before these two new preflights: choose the largest cap in {1,200, 1,800, 2,400} for which every original-order, stable-ID-reverse and pointwise prompt, including its retry suffix and maximum output-token cap, remains at most 4,096 tokens. If neither longer cap qualifies, retain 1,200. This explicitly replaces the earlier rule that would have stopped at 1,200. Choosing based on source length and tokenizer context is not a semantic quality evaluation and does not certify complete information. Some clauses may still be truncated, which must be reported.
+
+This is a second local design amendment after the data and 1,200-tokenizer statistics were seen, but before model inference; it is not a public preregistration or an independent test. All other frozen task, sampling, primary analysis, reference-label and limitations remain as recorded in the original protocol. Record all candidate-length preflight results, not only the chosen one. No ACORD model result is implied.

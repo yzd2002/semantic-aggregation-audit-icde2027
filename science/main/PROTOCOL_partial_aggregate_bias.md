@@ -1,0 +1,17 @@
+# Post-hoc diagnostic for aggregates over incomplete model outputs
+
+This analysis is specified after the original results, labels, model outputs and failure-bound diagnostics were observed. It adds no inference or new data, is not a blind test, and is descriptive rather than a causal experiment. Its aim is to make the paper's denominator problem measurable on the already saved Qwen compact-fallback runs: the 250 original ESCI pools and 160 WANDS pools. These samples, models, output caps, failures, human-label mappings and earlier conclusions remain unchanged. Apply the same analysis to both datasets, including unfavorable or inconclusive findings.
+
+For each pool that the original contract marked incomplete, reconstruct accepted labels from the **final** response of every chunk using the original strict compact rule: after the already recorded output processing, a chunk is valid only if its length is exactly its candidate count and every character is Y or N. An invalid chunk contributes no accepted labels; do not recover partial substrings from it, impute its labels, or modify the original prediction. The compact-fallback plan sends a direct prompt after an invalid specification, so analyze whichever final candidate chunks were actually recorded. Verify chunk positions, disjointness, full coverage of the attempted pool and agreement with the previously archived failure-bound details.
+
+Let the fixed pool have `n` candidates, `m` accepted labels and `p` accepted Y labels. Using the saved relevance-reference labels solely for this diagnostic, let `g_a` be the number of reference positives among accepted positions and `g_m` the number among unresolved positions. The full reference ratio is `(g_a + g_m) / n`. When `m > 0`, the available-only model ratio `p / m` decomposes exactly into:
+
+- signed total error: `p/m - (g_a+g_m)/n`;
+- the observed-subset composition term: `g_a/m - (g_a+g_m)/n`;
+- the accepted-label discrepancy term: `(p-g_a)/m`.
+
+These are arithmetic terms for the actually observed subset, not causal effects of a hypothetical perfect model; changing a model could also change which chunks pass. For every failed pool, also calculate the counterfactual zero-fill ratio `p/n` and its signed difference from the full reference. When `m=0`, available-only is undefined and excluded from its summaries, while the zero-fill counterfactual remains 0. These are alternative summaries of saved partial responses, not executed service plans or a demonstration that abstention improves accuracy.
+
+For each dataset, report attempted and failed pools, pools with `m>0`, query-macro mean coverage `m/n`, pooled accepted and unresolved counts, full-reference positives, and query-macro mean signed error and mean absolute error of each defined counterfactual. Also report the means of the two signed decomposition terms. Retain per-query counts and reconstruction details; do not bootstrap tiny selected failure subsets or compare their summaries as population estimates. Relevance labels are task-specific proxies, not observed purchase satisfaction, and model failures select the subset being summarized.
+
+Freeze this protocol, analysis script, independent verifier, and input, output and earlier failure-detail hashes before inspecting this new diagnostic. Independently reconstruct all row and chunk associations and all aggregates from saved responses, including the undefined `m=0` case. No mutation of the original runs is permitted.

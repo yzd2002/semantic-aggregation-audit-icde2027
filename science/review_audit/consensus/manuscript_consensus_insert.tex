@@ -1,0 +1,46 @@
+% Post-hoc supplementary audit, independently recomputed from saved traces.
+% Suggested placement: immediately after the matched-label-budget paragraph.
+\textbf{Consensus-preserving references.}
+Post hoc, we retain the same two keyed outputs and compare AND (N on disagreement)
+and OR (Y on disagreement), reporting both policies on every sample
+(Table~\ref{tab:consensus}). On new ESCI, Qwen's OR has MAE 0.338 and F1 0.704,
+versus 0.373 and 0.677 for selective checking. The selective-minus-OR MAE
+difference is 0.0354, with an unadjusted 95\% paired query-bootstrap interval
+$[0.0273,0.0438]$. OR uses 1,394 rather than 2,133 trace-derived calls and
+1.345M rather than 1.517M logical input tokens; its balanced accuracy is
+slightly lower, 0.641 versus 0.649. On WANDS, AND has lower MAE, but the
+selective-minus-AND interval $[-0.0174,0.0294]$ includes zero and selective
+has higher balanced accuracy. SmolLM2's selective vectors equal AND on both
+samples because all disagreement checks return N. These virtual comparisons
+show that an advantage over uniform checking need not justify extra judgments;
+they do not measure latency or identify a universally best tie-breaker.
+
+\begin{table}[t]
+\caption{Post-hoc consensus references on the same complete saved traces.
+Entries are query-macro ratio MAE. AND and OR use the same two keyed passes
+and specification as selective checking; the final column counts pointwise
+calls they avoid. Both policies are reported without test-label selection.}
+\label{tab:consensus}
+\centering\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Sample / model & AND & OR & Selective & Calls avoided \\
+\midrule
+WANDS / Qwen & 0.115 & 0.173 & 0.120 & 195 \\
+WANDS / SmolLM2 & 0.195 & 0.194 & 0.195 & 192 \\
+ESCI / Qwen & 0.477 & 0.338 & 0.373 & 739 \\
+ESCI / SmolLM2 & 0.813 & 0.770 & 0.813 & 190 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Optional compact addition to the matched-budget interpretation.
+\textbf{Composition of the budget contrast.}
+Post hoc, Qwen's cached routed-minus-expected-uniform MAE on mixed-label pools
+is $+0.0005$ on WANDS ($n=32$, unadjusted 95\% query interval
+$[-0.0122,0.0131]$) and $-0.0043$ on ESCI ($n=154$,
+$[-0.0135,0.0045]$). The 20 all-negative WANDS pools contribute $-0.0120$
+to the overall $-0.0117$ contrast; the 96 all-positive ESCI pools contribute
+$-0.0087$ to $-0.0114$. These reference-defined subgroups describe the exposed
+sample; they neither supply an online routing rule nor establish no effect
+or a significant interaction on mixed pools.

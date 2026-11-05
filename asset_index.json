@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "snapshot": "historical_recoverable_2026-11-02",
+  "publication_status": "public_anonymous_downloads_verified",
+  "repository": "yzd2002/semantic-aggregation-audit-icde2027",
+  "release_tag": "v2026.11.06-recovered",
+  "coverage": "One main variant plus seven supplements cover the saved historical review manuscript. Later missing transfer/GLM volumes are not included.",
+  "assets": [
+    {
+      "name": "reproducibility_without_trec_article_text.zip",
+      "role": "main",
+      "bytes": 69826878,
+      "sha256": "dd5585a9b936d1c3605d8107cda9ff2e21c2eaed684440da1bc79484c2895258",
+      "description": "Main saved traces, analyses and fixed-source TREC reconstruction",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/reproducibility_without_trec_article_text.zip",
+      "original_name": "reproducibility_without_trec_article_text.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714859287"
+    },
+    {
+      "name": "midpoint_ratio_supplement.zip",
+      "role": "midpoint",
+      "bytes": 76254,
+      "sha256": "9ead9f9354e3011982cf4dadb537fc367507894f464b26cb1e5c70a3db9793e0",
+      "description": "Midpoint, lexical rule, cancellation and matched-budget routing",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/midpoint_ratio_supplement.zip",
+      "original_name": "midpoint_ratio_supplement.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860413"
+    },
+    {
+      "name": "response_provenance_supplement.zip",
+      "role": "provenance",
+      "bytes": 3701,
+      "sha256": "3de91c4241ed871bcb34723db2702692b08d14ef382d8c777831640f0ac95dc6",
+      "description": "Historical response-recording correction",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/response_provenance_supplement.zip",
+      "original_name": "response_provenance_supplement.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860511"
+    },
+    {
+      "name": "figure_style_supplement.zip",
+      "role": "figures",
+      "bytes": 1738836,
+      "sha256": "7fe9599f4bf7d7466ba28eef66968b247aae9de549445c452d500675f496d870",
+      "description": "Current figures, generators and provenance",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/figure_style_supplement.zip",
+      "original_name": "figure_style_supplement.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860592"
+    },
+    {
+      "name": "acord_qwen_textfree.zip",
+      "role": "acord_qwen",
+      "bytes": 596037,
+      "sha256": "7fae86f77ddc13ab1f1a665f46326e718b58f74e375840e2fc96b8bfc2585610",
+      "description": "ACORD Qwen reconstruction without source contract/query text",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/acord_qwen_textfree.zip",
+      "original_name": "ACORD_无原文可重建复现候选.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860772"
+    },
+    {
+      "name": "acord_smollm2_textfree.zip",
+      "role": "acord_smol",
+      "bytes": 538056,
+      "sha256": "55027b16059553001297e6345737fdba0cc6fcb5a805920fb3689852981c27f9",
+      "description": "ACORD SmolLM2 saved follow-up; requires Qwen reconstruction",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/acord_smollm2_textfree.zip",
+      "original_name": "ACORD_SmolLM2_无原文复现候选.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860905"
+    },
+    {
+      "name": "acord_batch_textfree.zip",
+      "role": "acord_batch",
+      "bytes": 240427,
+      "sha256": "f3d4909850c81bbf978c3a866f5822c8f11652d34688f8b6328a77b65add5b2e",
+      "description": "ACORD replacement chunk-size comparison and disclosed history",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/acord_batch_textfree.zip",
+      "original_name": "ACORD_批次敏感性_无原文复现候选.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714860993"
+    },
+    {
+      "name": "review_audit_supplement.zip",
+      "role": "review_audit",
+      "bytes": 13628650,
+      "sha256": "2bc08d5513b5692fd05c43d1342670f00c4129a1b22451a868ca236df48b7ae9",
+      "description": "Controlled order, consensus and count-envelope evidence",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/review_audit_supplement.zip",
+      "original_name": "review_audit_supplement.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714861067"
+    },
+    {
+      "name": "IntentSat2S_LaTeX_source.zip",
+      "role": "manuscript_source",
+      "bytes": 1932537,
+      "sha256": "42c1abbe16c803531b6f9c819c2bd8d4a03ca9461ac1f5575f4d740e45e4c004",
+      "description": "Historical rendered manuscript and standalone editable source",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/IntentSat2S_LaTeX_source.zip",
+      "original_name": "IntentSat2S_LaTeX_source.zip",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714861387"
+    },
+    {
+      "name": "IntentSat2S_IEEE_review_draft.pdf",
+      "role": "manuscript_pdf",
+      "bytes": 373445,
+      "sha256": "28cb9ec2e06d04b838cd1eda561b264b8c679b3cc91f76702b89d97ba85f2d23",
+      "description": "Historical review PDF with pending author metadata",
+      "download_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-recovered/IntentSat2S_IEEE_review_draft.pdf",
+      "original_name": "IntentSat2S_IEEE_review_draft.pdf",
+      "api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/714861566"
+    }
+  ]
+}

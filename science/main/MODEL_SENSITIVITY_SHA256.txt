@@ -1,0 +1,9 @@
+Model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+Revision: 31b70e2e869a7173562077fd711b654946d38674
+Official source: https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct/tree/31b70e2e869a7173562077fd711b654946d38674
+Expected official model.safetensors SHA-256: f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8
+Full weight file is not included in this artifact; download it from the pinned model revision. The model card declares Apache-2.0.
+The downloaded local weights were verified against that official SHA-256 before inference.
+994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea  /home/gpu/intent2s_models/SmolLM2-1.7B-Instruct/config.json
+9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c  /home/gpu/intent2s_models/SmolLM2-1.7B-Instruct/tokenizer.json
+4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df  /home/gpu/intent2s_models/SmolLM2-1.7B-Instruct/tokenizer_config.json

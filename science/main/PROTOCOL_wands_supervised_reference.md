@@ -1,0 +1,20 @@
+# Post-hoc supervised reference on held-out WANDS pools
+
+This analysis is fixed after all earlier WANDS model and lexical results were observed and before the new classifier is fitted. It is a retrospective reference, not a new blinded or confirmatory test and not a zero-shot comparison. The classifier receives relevance labels for training, which the evaluated zero-shot LLM plans do not receive. Both use the same truncated product text at evaluation, and Exact is positive while Partial/Irrelevant are negative.
+
+## Training and isolation
+
+Train on all 160 query pools and 5,120 judged candidates saved in `run_wands_160/inputs.jsonl`, in stored order. Use the already documented ESCI post-hoc lexical features (`run_supervised_baseline.features`): case-folded word sets for query, product, shared and missing terms, with query/product coverage, Jaccard and log term-count features. Feature hashing uses 2^18 buckets, `alternate_sign=False`, float32 inputs; logistic regression uses L2, C=1, lbfgs, default tolerance 1e-4, intercept, no class weighting, maximum 1,000 iterations and random state 20271211. Apply a 0.5 threshold. Use `PYTHONHASHSEED=0` and CPU threadpool limit 2. Use no test-set tuning, validation split, feature selection or early stopping. Save iteration count, any convergence warning, predicted probabilities and labels, and package versions. If the model fails to converge or fitting fails, retain and report that outcome; do not silently retune on test results.
+
+Evaluate on the existing 160-query WANDS holdout, 96-query fallback and 52-query selective-execution sample. All are from the same WANDS source; both the test sets and their model outputs have been observed in earlier work. Before fitting, check that normalized query strings and sampled product IDs used for training do not occur in any evaluation pool and report counts. This disjointness applies only to the selected query strings and sampled product IDs, not whole domains or model pretraining. Product IDs repeat across queries within sets. Each evaluation pool has 32 labeled candidates and does not represent an exhaustive live search result. Records and labels are existing artifacts; no new human judgments are collected.
+
+## Fixed comparators and analysis
+
+For each sample, use the existing common-complete pools and compare the supervised predictions with:
+
+1. all-query-words lexical predictions, without supervision;
+2. Qwen output: original keyed JSON for the 160-query exposed holdout audit; trace-derived pointwise disagreement fallback for 96 queries; actual selective fallback for 52 queries. These are different plans on different samples and must not be read as direct across-row comparisons.
+
+Reconstruct each Qwen decision from saved records, verify candidate alignment, and use common completed queries only. For each method report pooled candidate F1 and balanced accuracy and query-macro absolute ratio error. Report supervised minus Qwen F1 and ratio-MAE differences with descriptive, paired query-bootstrap 95% percentile intervals, 4,000 draws and NumPy `default_rng` seeds 20271211, 20271212 and 20271213 for the 160, 96 and 52 query samples respectively. No success threshold or multiple-comparison adjustment is claimed. The intervals condition on the selected samples and do not control for possible product, query or annotator dependencies. Retain adverse or null results. The 96-query fallback is trace-derived and its calls are virtual; the 52-query fallback issued selective calls in the actual offline batch. Do not compare offline computation costs as online service performance.
+
+Freeze hashes of this protocol, code, the training/test inputs, and the existing Qwen records before fitting. Record outputs in a new directory and independently repeat fitting, reconstruction and statistical calculations. This feature-limited classifier is a reference, not a state-of-the-art search ranker, an independent data source, evidence of real purchase satisfaction, or a controlled architecture comparison.

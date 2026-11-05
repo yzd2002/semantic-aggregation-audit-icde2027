@@ -1,0 +1,25 @@
+All 23,788 requests validate; every selected pool is complete under all eight batch and both singleton conditions. Figure~\ref{fig:controlled_order} reports both pre-specified distances. On the 128-pool ESCI controlled audit, Qwen's ratio-change excess is 8.58/8.81 percentage points (pp) for ascending/descending keys, with intervals $[7.29,9.93]$/$[7.26,10.45]$; SmolLM2's corresponding excesses are 1.93/0.55 pp. Both models also have positive excess on exposed WANDS. Qwen's four paired $D-A$ interaction intervals span zero. SmolLM2's ratio interactions are -1.38 pp ($[-1.98,-0.83]$) on ESCI and -1.74 pp ($[-3.43,-0.06]$) on WANDS; its candidate interactions are also negative. These unadjusted contrasts do not establish an internal mechanism.
+
+The secondary key-order analysis holds row order fixed; all 16 candidate/ratio excess intervals lie above zero across both models, datasets, and row orders (unadjusted). Table~\ref{tab:controlled_quality} separates stability from reference accuracy. Qwen's ESCI singleton is nonconstant (mean F1 0.838; balanced accuracy 0.652), yet its mean MAE 0.196 exceeds the 0.190 all-Y baseline. SmolLM2's near-all-N ESCI batches have balanced accuracy near 0.5: low drift need not indicate quality. An order-induced ratio change is not a reference-error increase or evidence of a uniformly more accurate ordering.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.98\textwidth]{figures/controlled_order.pdf}
+\caption{Controlled row-order variation minus same-condition replay, at each output-key order. Points and unadjusted 95\% query-bootstrap intervals average pools equally; fractions are shown in percentage points. Counts are all-eight-complete/attempted pools. Negative excess means replay variation is larger. These are stability distances, not accuracy gains.}
+\label{fig:controlled_order}
+\end{figure*}
+
+\begin{table}[t]
+\caption{Controlled-audit ratio MAE. Batch ranges span four condition means; singleton values average two repeats. All attempted pools complete. Both constant references are reported.}
+\label{tab:controlled_quality}
+\centering\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Sample / model & Batch range & Singleton & All-Y & All-N \\
+\midrule
+ESCI / Qwen & 0.367--0.381 & 0.196 & 0.190 & 0.810 \\
+ESCI / SmolLM2 & 0.790--0.806 & 0.782 & 0.190 & 0.810 \\
+WANDS / Qwen & 0.170--0.197 & 0.157 & 0.804 & 0.196 \\
+WANDS / SmolLM2 & 0.186--0.194 & 0.211 & 0.804 & 0.196 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+.env
+.env.*
+verification_workspace/
+release_assets/
+*.zip
+*.tar.gz
+*.tgz
+*.safetensors
+*.bin
+*.pt
+*.pth

@@ -1,0 +1,469 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,graphicx,url}
+\usepackage{booktabs}
+\newcommand{\indicator}{\mathbf{1}}
+\begin{document}
+\title{IntentSat-2S: Execution Contracts for Query-Intent Satisfaction Estimation over Product Catalogs}
+\author{\IEEEauthorblockN{Author information to be completed before submission}\IEEEauthorblockA{Names, affiliations, email addresses, and ORCIDs pending}}
+\maketitle
+\begin{abstract}
+A semantic predicate evaluated by a language model can silently change an aggregate's denominator when a batched response omits candidate judgments. We define an execution contract for the fraction of a fixed product pool that satisfies a query: validate each judgment, retry invalid responses, and abstain if any remain unresolved. We derive sharp ratio bounds conditional on an accepted-label error budget and exact finite-pool candidate- and ratio-error floors for two aligned outputs under a fixed binary reference. We evaluate pointwise, batched, and two-stage plans on two product-relevance datasets and an adapted biomedical-relevance workload, reporting completion, candidate quality, ratio error, offline costs, and local-service timing alongside lexical, supervised, embedding, and LOTUS filter and cascade references. On a WANDS holdout excluding prior query strings and previously sampled WANDS product IDs, stable-ID reversal changes 33.8\% of Qwen's compact labels and 12.7\% with keyed JSON; three post-hoc random orders change 34.6--35.1\% under the compact prompt, without isolating causes. On 52 further queries, actual Qwen selective fallback has ratio MAE 0.120 versus 0.136 for keyed output; a crossed query--product sensitivity includes zero, and a lexical rule yields 0.117. On 250 new ESCI pools, Qwen selective MAE is 0.373 versus 0.407 keyed and 0.185 for all-Y; SmolLM2 rises from 0.802 to 0.813. On 50 biomedical topics, Qwen's selective-minus-keyed MAE interval spans zero; SmolLM2's selective MAE exceeds its keyed MAE. These results concern relevance proxies, not real purchase satisfaction, and do not establish deployment-scale superiority.
+\end{abstract}
+\begin{IEEEkeywords}
+semantic query processing, intent satisfaction, product search, structured output, data quality, large language models
+\end{IEEEkeywords}
+
+\section{Introduction}
+An accessory can match query words without satisfying a request for the device. The fraction of satisfying candidates can support pool diagnostics and monitoring if the judgments are reliable.
+
+Large language models (LLMs) enable natural-language predicates over product descriptions, and semantic data systems expose these through declarative operators \cite{lotus,docetl,palimpzest}. Batching shares context and reduces request count, but an incomplete response can silently change an aggregate's denominator. Even complete outputs can contain incorrect judgments; these two failures require separate accounting.
+
+We study \emph{IntentSat-2S}, which derives a query-level specification and judges candidates against it. Structural validation permits at most one retry; unresolved judgments are failures. If a specification remains invalid, an alternative plan falls back to direct batch judgment. The contract does not certify that inferred intent or judgments are correct.
+
+We make three contributions. First, we specify a pool-level semantic aggregate, derive sharp ratio bounds conditional on an accepted-label error budget, and give deterministic candidate- and ratio-error floors. Second, we implement and compare pointwise, indexed-batch, and compact-code plans with validation, bounded retries, and fallback, including a selectively executed disagreement policy. Third, we conduct traceable studies on ESCI and an independently sourced Wayfair workload, with post-hoc LOTUS references and a biomedical transfer check. We report accuracy and pool-ratio error together with completion and inference cost, including cases in which the two-stage plan performs worse. The artifact records the sample, prompts, raw responses, model hashes, and analysis scripts. This is an initial empirical study, not a claim that the proposed plan dominates established semantic-query engines.
+
+\section{Background and Related Work}
+\textbf{Semantic data processing.} LOTUS formalizes semantic operators and optimizations relative to a reference algorithm, including accuracy guarantees under stated assumptions \cite{lotus}. Palimpzest searches for cost-quality trade-offs in AI-powered plans \cite{palimpzest}; DocETL studies logical rewrites and evaluation for document processing \cite{docetl}. SemBench evaluates multiple semantic-query engines across scenarios, operators, and modalities \cite{sembench}. Our focus is narrower: the denominator and observable failure behavior of a candidate-pool aggregate. We compare selected LOTUS filter and cascade configurations, not its complete optimizer; our structural checks do not provide LOTUS-style semantic accuracy guarantees.
+
+\textbf{Aggregates and oracle references.} Evergreen verifies quantified claims, including proportions, with provenance; SemCEB benchmarks model-dependent cardinality estimates \cite{evergreen,semceb}. SemViews and SemReuse certify filters against recorded or fixed oracle labels \cite{semviews,semreuse}; SemViews reports nondeterminism. Our order audit highlights reference definition but does not test their guarantees. We study a relevance-labeled fixed-pool ratio, not a general claim verifier or selectivity optimizer.
+
+\textbf{Incomplete aggregates.} Prior work reasons about query completeness over incomplete base tables \cite{query_completeness} and bounds aggregates under constraints on missing tuples \cite{contingency}. Our simpler setting fixes the candidate pool and denominator while allowing missing or erroneous generated labels; it is not a general incomplete-database framework.
+
+\textbf{Contracts and model behavior.} Semantic integrity constraints generalize database constraints to AI-generated results, including grounding and soundness \cite{constraints}. Our implementation checks a concrete output shape and completeness, not those broader semantic properties. Prior work documents context and order sensitivity \cite{lostmiddle}, uses permutation aggregation to improve listwise ranking \cite{permcons}, and observes reordering or omission in generated topic lists \cite{outputorder}. Order sensitivity is not a new claim here: we examine its effect on an explicitly parsed candidate aggregate. Efficient serving systems, including vLLM and SGLang, optimize multi-request execution \cite{vllm,sglang}; request count alone is consequently an incomplete cost measure.
+
+\textbf{Product relevance.} The Shopping Queries dataset provides human-assigned Exact, Substitute, Complement, and Irrelevant (E/S/C/I) relevance categories \cite{esci}. We use a documented derived encoding \cite{derived} and map E and S to positive, C and I to negative. This is a proxy for a task-specific satisfaction predicate. A substitute label does not establish that a particular shopper would purchase the item.
+
+\section{Problem and Output Contract}
+For query $q$, let $C_q=(c_1,\ldots,c_n)$ be a finite, ordered candidate pool, $n>0$. Each $c_i$ is an indexed occurrence; repeated products remain separate positions. Let $s(q,c_i)\in\{0,1\}$ denote the task's reference predicate. The target for this \emph{particular pool} is
+\begin{equation}
+r_q=\frac{1}{n}\sum_{i=1}^{n}s(q,c_i).
+\end{equation}
+A model-based plan emits $\hat{r}_q=n^{-1}\sum_i\hat{s}_i$ only when every occurrence has a valid label $\hat{s}_i$. The pool, mapping of source labels to $s$, and any text truncation must be fixed before the estimate is interpreted. A ratio over the fixed list is not, by itself, a prevalence estimate for a catalog, a user population, or another retrieval policy.
+
+\textbf{Structural completeness.} For a chunk of $b$ candidates, array-form indexed JSON must contain exactly $b$ objects, with distinct local IDs in $\{1,\ldots,b\}$ and Y/N labels. Missing, duplicate or out-of-range IDs, duplicate JSON keys and extra fields are rejected. The parser orders labels by local ID; the orchestrator maps them back to pool positions. IDs restart in each chunk, and every position must be covered. Compact output instead contains exactly $b$ consecutive Y/N characters in input order; its checks cannot detect positional swaps. Pointwise responses contain one Y or N after whitespace trimming. An unresolved judgment leaves the pool non-estimable; specification failures have plan-specific handling.
+
+\textbf{Sharp conditional bounds.} Suppose $m$ accepted binary labels contain $p$ positives, with $0\leq p\leq m\leq n$, and at most $k$ of them disagree with the reference, where $k\in\{0,\ldots,m\}$. With no assumptions about the $n-m$ missing labels, the reference ratio lies in
+\begin{equation}
+\left[\frac{\max(0,p-k)}{n},\;\frac{n-m+\min(m,p+k)}{n}\right].
+\label{eq:bounds}
+\end{equation}
+Both endpoints are attainable over unrestricted occurrence labels: flip up to $k$ accepted Y labels to N and assign missing labels N for the lower bound, or flip accepted N labels to Y and assign missing labels Y for the upper. For duplicates sharing a reference, group $g$ has $t_g$ occurrences, $a_g$ accepted Y and $b_g$ accepted N labels. Reference 0 or 1 contributes (errors, positives) $(a_g,0)$ or $(b_g,t_g)$. A dynamic program over $G$ groups returns exact endpoints in $O(G(k+1))$ time or reports infeasibility. Interior values can be infeasible; validation uses synthetic pools. The $k=0$ case bounds completions consistent with the model labels; if no smaller error budget is justified, setting $k=m$ yields $[0,1]$. A structural parser alone does not certify a useful interval. Our operator abstains on incomplete pools; the artifact's error budget must be justified independently. Equation~\eqref{eq:bounds} is not a statistical confidence interval.
+
+\textbf{Stability-based error floor.} For complete label vectors $a,b$ aligned to the same candidates and a fixed binary reference $s$, let $e(a,s)=n^{-1}\sum_i\indicator[a_i\ne s_i]$ and $D=\sum_i\indicator[a_i\ne b_i]$. Each disagreement forces at least one candidate error, so
+\begin{equation}
+\begin{aligned}
+e(a,s)+e(b,s)&\ge D/n,\\
+\max\{e(a,s),e(b,s)\}&\ge \lceil D/2\rceil/n.
+\end{aligned}
+\label{eq:stability}
+\end{equation}
+Both bounds are sharp over unrestricted binary references: $s=a$ attains the sum bound; distributing the $D$ disagreements evenly attains the maximum bound. Coupled duplicate labels can make the floors unattainable, though the inequalities remain valid. Agreement does not imply correctness, and candidate errors can cancel in a ratio.
+
+For predicted positive counts $p_a,p_b$, the worse absolute ratio error is at least $\lceil|p_a-p_b|/2\rceil/n$. For $Q$ pools of equal size $n$, let $\mathrm{MAE}_a,\mathrm{MAE}_b$ be their query-macro mean absolute ratio errors. Then
+\begin{equation}
+\max(\mathrm{MAE}_a,\mathrm{MAE}_b)\geq
+\frac{\lceil\frac{1}{2}\sum_{q=1}^{Q}|p_{a,q}-p_{b,q}|\rceil}{Qn}.
+\label{eq:ratio-floor}
+\end{equation}
+Both floors follow from the triangle inequality and integer counts. They are sharp over unrestricted reference counts: choose a midpoint for one pool or distribute integer errors across pools. The worse output can differ by pool; neither floor identifies it or supplies a confidence interval.
+
+\textbf{Statistical interpretation.} Conditional on the model output, $\hat{r}_q$ is a deterministic aggregate of that output. A binomial interval is not justified merely because its elements are binary: the candidate list is fixed, model decisions can be dependent, and the sampling mechanism may not represent a target population. We instead use a query-cluster bootstrap to describe variation across the sampled, constructed pools when comparing plans.
+
+\section{Execution Plans}
+Figure~\ref{fig:operator} shows the contract. The first stage maps only the query to JSON with \texttt{product\_type}, \texttt{required}, and \texttt{preferred}. The type must be a nonempty string; the other fields are string arrays. The prompt requests only query-supported constraints, but the stage can invent requirements or omit a type. The validator checks shape, not truth.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.98\textwidth]{figures/operator.pdf}
+\caption{The evaluated contract. The direct plan bypasses specification generation. The compact two-stage plan falls back to direct judgment when specification validation fails; all plans expose unresolved label failures.}
+\label{fig:operator}
+\end{figure*}
+
+The second stage receives the query, products, and any specification. Indexed JSON links judgments to IDs; compact codes follow input order. Invalid batches are reissued at most once. For an invalid specification, the original two-stage plan abstains; its fallback variant uses the direct compact prompt. Batch plans partition larger pools into chunks of at most eight; every chunk must validate before a pool ratio is emitted.
+
+For a further validation we combine two \emph{cached}, ID-aligned keyed outputs $a,b$: if $a_i=b_i$, retain that label; otherwise use a separately obtained pointwise label $h_i$. Exchanging the fixed vectors $a,b$ leaves this combination unchanged; an unresolved required label causes abstention. As a simpler comparator, sorting an unchanged chunk by stable IDs also makes its serialized prompt independent of presentation order. Neither property establishes semantic correctness, stability under changed chunks or IDs, nor deterministic results when model calls are recomputed.
+
+For a pool of $n$ candidates, pointwise execution makes at least $n$ model calls, direct batch at least one, and two-stage batch at least two. Retries can add calls, and a fallback may replace a failed stage. These counts are not a performance proof: a batch prompt is longer, JSON generation emits more tokens, and the inference scheduler can serve many pointwise calls concurrently. We record generated tokens, offline generation time, and a local-service timing rather than inferring speed from request counts.
+
+\section{Experimental Method}
+\subsection{Data Provenance and Pool Construction}
+The public \texttt{nixiesearch/amazon-esci} conversion \cite{derived} builds US-English records from the small version of Shopping Queries. Its published conversion code maps E/S/C/I to $1/0.1/0.01/0$ and emits one row per E product, together with the query's non-E products and scores. The local test file's SHA-256 matches the published file at the recorded revision. The conversion does not retain original query or product identifiers and does not include the other E products of the query in each row.
+
+We retain the first eligible row for each exact query string, then reservoir-sample strings without replacement. A row is eligible if query and positive text are nonempty, negative texts and scores are aligned, and score codes are recognized. Each selected row contributes its single E product and at most seven randomly selected non-E products; order is shuffled with a query-specific seed. Products are truncated to 600 characters. The constructed pool therefore has an artificial composition and can omit evidence available to the original annotator. Exact-string grouping can also merge distinct original query identifiers. The derived-sample errors concern these constructed pools, not complete retrieved pages.
+
+We use 160 query strings for an exploratory pilot. Its results motivated a compact output format and a specification-failure fallback. Before the second run we froze a new protocol and selected 500 strings from the remaining eligible test strings, excluding every pilot string. Both studies use the same source and model; the second is a disjoint query-text validation, not an independent dataset or model replication. The 500 pools contain 3582 candidates, with source-grade counts E=500, S=1,965, C=268, and I=849. Ground truth maps E/S to Y and C/I to N; these are inherited relevance judgments, not newly collected purchase-satisfaction labels.
+
+\subsection{Original Labeled Candidate Pools}
+To test the effect of the derived representation, we additionally use the original Amazon Science example and product tables at a recorded revision and verify both Git LFS hashes. We exclude the exact query strings used in both previous studies and uniformly sample 250 remaining US-English test query IDs from the small version. For each sampled ID, we retain every labeled example in that version and join its product record. The resulting pools contain 5,160 labeled candidates (mean 20.64, range 8--79), with 2,293 E, 1,745 S, 242 C, and 880 I judgments. Every selected product join succeeded. These are complete \emph{labeled lists in the filtered dataset}; unjudged or live-search results may be absent. This is another sample from the same underlying dataset, not an independent data source.
+
+\subsection{Independent Wayfair Evaluation}
+After observing the ESCI results, we add the independently sourced Wayfair WANDS dataset \cite{wands}. Its annotation guidelines define Exact as a full query match, Partial as matching the entity but missing a modifier, and Irrelevant as unrelated. Unlike the ESCI E/S mapping, we use Exact as Y and both Partial and Irrelevant as N. From the source tables we collapse repeated identical labels for the same query--product pair and exclude 14 pairs with conflicting labels. We exclude query strings appearing in the three ESCI samples, then uniformly select 160 of the remaining query IDs having at least 32 nonconflicting judgments. For each selected query, we uniformly sample 32 judged products without stratifying by grade, yielding 5,120 candidates: 781 Exact, 3,282 Partial, and 1,057 Irrelevant. These are sampled labeled pools, not full retrieved pages.
+
+We adapt the system instruction to ask for a full match to the query's stated requirements and retain the same execution contracts and output limits. Product input is a fixed, truncated concatenation of name, class, features, and description; WANDS annotators could consult product images and pages not available to the model. We repeat the four plans with both Qwen and SmolLM2 on the same 160 pools. This follow-up uses a separate data source but was designed after observing ESCI results; the new label mapping and task instruction also change, so differences cannot be attributed to the dataset alone.
+
+\subsection{Disjoint WANDS Holdout}
+After inspecting the earlier order results, we freeze a new protocol and sample 160 WANDS queries from 308 eligible IDs after excluding prior normalized query strings and the 4,823 product IDs sampled previously in WANDS. We uniformly sample 32 nonconflicting judgments per query without grade stratification: 1,076 Exact, 3,150 Partial, and 894 Irrelevant. The 5,120 judgments involve 4,836 distinct products; products can recur across holdout queries. This is a disjoint sample from the same public dataset, not a new source or proof of pretraining exclusion.
+
+For each model we generate a fresh specification or fallback and run original order, an identical replay, and stable-ID reversal on the same pools using V1. The earlier WANDS specifications used V0, so between-sample differences may reflect both sample and specification generation. The single primary contrast is Qwen replay versus stable-ID reversal: before sampling or inference, we set a 10\% practical threshold for the lower endpoint of a 95\% query-bootstrap interval. SmolLM2 is secondary. After sampling but before inspecting outcomes, we also fixed a secondary crossed query--product resampling sensitivity \cite{pigeonhole}; neither interval guarantees population coverage under this sampling design.
+
+\subsection{Disagreement-Fallback Validation}
+After the preceding analyses, but before selecting or inferring this sample, we fixed a further Qwen evaluation on 96 of 148 eligible WANDS queries. We exclude prior query strings and 9,659 products sampled across either earlier WANDS study, then sample 32 judged products per query without grade stratification. The 3,072 judgments contain 427 Exact, 2,092 Partial and 553 Irrelevant labels. This is another sample from the same source, not an independent dataset; products can recur across its queries and pretraining exposure is unknown.
+
+Each query receives one fresh specification or direct fallback; we run keyed original, identical replay, stable-ID reversal, and pointwise judgment for all candidates. We compute the agreement-fallback and lexical-fallback plans from these saved outputs. The pre-specified primary contrast is pointwise-fallback minus canonical-keyed query-macro ratio MAE, with a paired query-bootstrap interval; its upper endpoint below zero is a sample-specific criterion. The crossed query--product resampling sensitivity was fixed after selection and inference began but before inspecting outcomes, and reweights within-query candidate pools \cite{pigeonhole}. Both analyses retain the relevance-proxy limitations.
+
+After the 96-query outcome, we fixed a follow-up on all 52 remaining eligible WANDS queries, excluding prior query strings and 12,646 sampled product IDs. The 32 judged candidates per query contain 326 Exact, 1,036 Partial and 302 Irrelevant labels. The scheduler requests pointwise judgments only for valid keyed disagreements; keyed replay and full pointwise calls are diagnostics. We specified the paired query-macro MAE contrast before product selection and inference. A crossed query--product sensitivity, fixed after selection and inference began but before outcome inspection, reweights within-query candidates. After the Qwen outcome, a secondary SmolLM2 run uses the same queries with fresh specifications; it is not a new sample or online benchmark.
+
+\textbf{New ESCI pools.} After earlier outcomes, we fixed a follow-up before sampling or inference and selected 250 ESCI test queries from 3,963 eligible IDs, excluding prior ESCI and training query strings and product IDs in the original pools or supervised training. The 4,428 judged candidates have 8--63 per pool. A post-hoc audit finds 20 serialized product texts shared with prior samples or training, across 18 queries. We pre-specified Qwen's selective-minus-keyed query-macro MAE contrast, with SmolLM2 and the 50,000-label supervised reference secondary.
+
+\subsection{Post-hoc Local Service Test}
+After earlier outcomes, we test pointwise, keyed and selective pipelines on the same 52 WANDS pools via a one-GPU vLLM HTTP server, with 16 sequences and no prefix caching. Plans use fresh specifications and one or four active queries, repeated in reverse order. Active-query time includes local HTTP, queueing, generation and parsing but excludes startup, warmup and admission wait. Three read errors caused abstentions in the first condition; after preserving its records, we resumed the schedule with a new client pool. This amendment was post hoc; errors were not retried or imputed.
+
+\subsection{Plans and Measurements}
+We compare (P) pointwise Y/N; (J) direct indexed JSON; (TJ) two-stage indexed JSON; (C) direct compact codes; and (TC) two-stage compact codes with a direct fallback. Every plan sees the same shuffled pools. J and TJ permit one full-batch retry, P one retry per invalid pointwise answer, and C and TC one compact retry. TJ abstains after repeated invalid specification output; TC falls back. Decode temperature is zero. Maximum generated tokens are four for P, 192 for indexed JSON, 160 for specification, and 32 for compact codes. On original pools we evaluate P, J, TJ, and TC, splitting batch plans into chunks of at most eight candidates. Before this run we specify all-Y, all-N, and a simple lexical baseline that marks a candidate Y only when every query word occurs in its truncated text.
+
+Candidate precision, recall, F1, and balanced accuracy use the study-specific binary mapping---E/S positive for ESCI and Exact positive for WANDS---and are computed from pooled candidate-level confusion counts; hence larger pools contribute more candidate decisions. For the derived validation, we added all-Y and all-N constant predictors as post-hoc sanity baselines after observing the results; balanced accuracy averages sensitivity and specificity. Pool-ratio mean absolute error (MAE) averages $|\hat r_q-r_q|$ over completed pools, weighting each query equally. This is a different weighting from candidate-level F1. We report completion over all attempted pools in each study (500 derived ESCI, 250 original ESCI, or 160 WANDS); the main paired quality comparisons use pools completed by every model plan in that study. We also label a post-hoc comparison of the two JSON plans on their common pools. For paired comparisons we construct 95\% query-cluster bootstrap intervals using 4,000 resamples; the intervals are descriptive for this sampling procedure, not guarantees of population-level satisfaction. Failure-conditioned selection can still affect the common subsets.
+
+The primary inference uses Qwen3-4B-Instruct-2507 \cite{qwen} on one NVIDIA RTX 5090 (32 GB), bfloat16, vLLM 0.10.2, PyTorch 2.8.0 with CUDA 12.8, a 4,096-token context, eager execution, and at most 16 concurrently scheduled sequences. Offline times cover chat-template rendering and batched generation calls, including retries and fallbacks; they exclude model loading and most other Python-side assembly and parsing. Prompt-token counts reflect logical request lengths, not the number of tokens actually recomputed under prefix caching. The recorded timing is not online latency or a hardware-independent comparison. After observing the primary results, we repeat the original-pool protocol with SmolLM2-1.7B-Instruct \cite{smollm} on the same 250 inputs, using the same prompts, chunk size, output limits, and GPU settings. This follow-up changes both model family and size; chat templates and tokenizers also differ. Scripts, raw outputs, model hashes, and input snapshots are retained in the artifact.
+
+We also add a \emph{post-hoc supervised lexical baseline}: logistic regression on hashed query, product, shared-word and coverage features, trained on 50,000 original ESCI train-split examples from 18,490 distinct query strings. We exclude all case-folded, trimmed query strings in the three evaluation samples before sampling training examples, but 357 distinct product IDs appear in both its training set and the 250-pool test sample. It uses E/S versus C/I labels for training, unlike the zero-shot LLM plans, and the same truncated product text at evaluation. We fixed the features and threshold before its first run; after that run reached the optimization-iteration limit, we increased the limit to address the warning and retained both outputs. This is a useful comparator, not a model trained on an independent dataset.
+
+After observing WANDS outcomes, we train the feature-limited classifier on 5,120 labeled candidates from 160 earlier queries. The test samples share no normalized query strings, sampled product IDs or exact product text with training. After the 0.5-threshold results, we also select a decision threshold by pooled out-of-fold F1 in five query folds, excluding overlapping product IDs and exact texts from each fold's training set. We transfer this threshold to the classifier fit on all training data. The selected out-of-fold F1 is not an independent estimate; this is not probability calibration or a blind test.
+
+After those results, Qwen3-Embedding-0.6B \cite{qwen_embed} encodes each query and truncated product text. We select one cosine-similarity threshold to maximize F1 on the same 5,120 labeled training candidates; no model fine-tuning or test-label tuning is performed. Training and test have disjoint normalized queries, sampled product IDs and exact serialized product text. This supervised-calibrated bi-encoder is a post-hoc reference, not a new dataset or a state-of-the-art ranker.
+
+For a further post-hoc reference, LOTUS 1.2.4 executes its actual \texttt{sem\_filter} on each candidate with the same Qwen model and data over a local vLLM API. Its predicate uses the same relevance proxy, but its prompt, parsing, output limit, and online execution differ from our offline pointwise plan. We retain raw answers and LOTUS decisions. The operator's configured default is True for an unparseable answer; we count such defaults separately and do not interpret this single filter as the optimized LOTUS system.
+
+On the already exposed 52 WANDS pools, we additionally compare a Qwen-only LOTUS filter with its built-in SmolLM2-helper cascade, using the same shuffled 1,664 candidates and predicate. The cascade samples 10\% of candidates with replacement for Qwen-based threshold learning; its nominal 0.8 precision and recall targets concern the reference-model procedure, not human labels. Both models share one GPU; prompts, parsing and execution differ from our plans. We retain calibration, routes, helper log probabilities and both models' outputs.
+
+After observing compact-format failures, we remove the four-item example and inspect strict and delimiter-tolerant parsing. We also compare the example-removed prompt with and without vLLM guided decoding, constraining each chunk to its actual number of Y/N characters. Both use each model's saved specification or fallback, candidates and order, and the same V1 engine. The artifact records an initial V0 attempt in which the constraint was not observed to take effect. As a further post-hoc audit, we reverse candidates within each fixed chunk, reassign local identifiers by position, and map the resulting labels back to the original candidates. To probe that confound, we subsequently replay the identical original prompts and reverse each chunk while retaining the identifier attached to each candidate. These runs occur in a fixed sequence and share the same pools.
+
+After inspecting the holdout outputs, we also reuse each model's saved specification and candidate pools in an exploratory keyed-JSON audit. Each response maps every local product ID to a Y/N value, with the keys fixed in ascending ID order by guided decoding. We compare original order, identical replay and stable-ID reversal, parsing every response by ID. This changes the prompt, output grammar and token cap relative to compact output; it is not a second confirmatory holdout experiment.
+
+\section{Results}
+\subsection{Pilot and Disjoint Validation}
+\textbf{Pilot.}
+On the 160-query pilot, pointwise and direct JSON each completed all pools, while two-stage JSON completed 153; seven specifications lacked a valid product type after retry. Their F1 scores were 0.747, 0.585 and 0.533 on their respective completed pools, not a paired comparison. These failures motivated compact output and fallback; ESCI prompts stayed fixed across subsequent validation and original-pool studies.
+
+\textbf{Validation.}
+All five plans completed 424 of 500 pools; Table~\ref{tab:main} reports quality on this common subset. The 95\% paired query-bootstrap interval for two-stage JSON minus pointwise F1 is $[-0.250,-0.195]$. These conditional results do not describe the excluded failures.
+
+\begin{table*}[t]
+\caption{Qwen validation on 500 constructed pools. Quality is computed on the 424 pools completed by every LLM plan; completion, calls, token counts, and time use all 500 attempts. The constant predictors were added post hoc. Tokens are totals (thousands). Time is offline generation time on one GPU, not online latency.}
+\label{tab:main}
+\centering\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Plan & Complete & F1 & Bal. acc. & Ratio MAE & Calls & Input tok. & Output tok. & Time (s) \\
+\midrule
+Pointwise (P) & 500/500 & 0.747 & 0.621 & 0.284 & 3,582 & 740.1k & 7.2k & 27.25 \\
+Batch JSON (J) & 500/500 & 0.590 & 0.598 & 0.367 & 501 & 546.8k & 39.3k & 57.23 \\
+Two-stage JSON (TJ) & 467/500 & 0.525 & 0.584 & 0.417 & 1,010 & 614.2k & 51.5k & 68.81 \\
+Batch compact (C) & 473/500 & 0.599 & 0.526 & 0.335 & 558 & 602.3k & 2.8k & 27.36 \\
+Two-stage compact + fallback (TC) & 470/500 & 0.580 & 0.527 & 0.341 & 1,093 & 685.6k & 19.4k & 42.79 \\
+Always Y (post hoc) & 500/500 & 0.821 & 0.500 & 0.301 & -- & -- & -- & -- \\
+Always N (post hoc) & 500/500 & 0.000 & 0.500 & 0.699 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+
+On the same common subset, the post-hoc all-Y predictor attains F1 0.821 but balanced accuracy 0.500 and ratio MAE 0.301. Pointwise has lower F1, higher balanced accuracy (0.621), and MAE 0.284. The paired bootstrap interval for the all-Y minus pointwise MAE difference is $[-0.017,0.051]$, so this sample does not clearly distinguish their ratio error. The constant baseline emphasizes that F1 and overall accuracy depend on the artificially positive-heavy pool.
+
+The gap is not confined to formatting success. Among the common pools, pointwise labels 1,169 of 1,668 S examples positive, compared with 548 of 1,668 for two-stage JSON; conversely, the latter correctly rejects 160 of 236 C examples versus 79 for pointwise. These patterns expose a precision--recall trade-off under the inherited E/S mapping, rather than evidence that either plan measures real customer satisfaction. Our design does not isolate whether the difference arises from the specification, listwise context, the prompt, or their interaction.
+
+\textbf{Efficiency and completeness.}
+On all 500 attempted pools, pointwise makes 3,582 calls in 27.25 seconds; direct indexed JSON makes 501 calls in 57.23 seconds (Table~\ref{tab:main}). These single-run, fixed-order GPU batch timings are not online latency; concurrency and prefix caching limit interpretation. The indexed two-stage plan has 31 invalid specifications and two other failed pools. Compact fallback issues direct judgments for those specifications but still fails 30 pools; the formats differ, so this does not isolate the fallback effect. Failed raw responses are retained.
+
+The output-format comparison should not be interpreted as a pure formatting treatment: prompts and generated text differ, so changes in the model's semantic decisions are possible. In particular, compact output enforces only the number and alphabet of decisions. Indexed output validates the presence of each identifier, but a model can still attach a wrong label to an existing identifier. The fallback improves availability only to the extent that the direct response itself validates and should not be conflated with semantic improvement.
+
+\subsection{Original Labeled Candidate Pools and Comparators}
+All four plans complete 207 of 250 original pools; Table~\ref{tab:full} and Fig.~\ref{fig:quality} report quality on this intersection, excluding 43 attempted pools. The paired query-bootstrap interval for two-stage JSON minus pointwise F1 is $[-0.221,-0.164]$. On the 237 pools completed by both JSON plans, their F1 scores are 0.682 without and 0.631 with specification, with a difference interval of $[-0.070,-0.033]$. The prompts and call counts differ, so this contrast does not isolate the mechanism.
+
+\begin{table*}[t]
+\caption{Original labeled query pools. Quality is computed on the 207 pools completed by every Qwen plan; completion, calls, token counts, and time cover all 250 attempted pools. The constant and exact lexical baselines are pre-specified; LOTUS and the trained classifier were added post hoc. LOTUS time is excluded because it uses an online API.}
+\label{tab:full}
+\centering\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Plan & Complete & F1 & Bal. acc. & Ratio MAE & Calls & Input tok. & Output tok. & Time (s) \\
+\midrule
+Pointwise (P) & 250/250 & 0.815 & 0.666 & 0.205 & 5,160 & 1058.1k & 10.3k & 39.13 \\
+Batch JSON (J) & 250/250 & 0.679 & 0.678 & 0.339 & 662 & 771.4k & 59.8k & 83.14 \\
+Two-stage JSON (TJ) & 237/250 & 0.623 & 0.661 & 0.390 & 902 & 809.3k & 62.1k & 87.44 \\
+Two-stage compact + fallback (TC) & 220/250 & 0.611 & 0.536 & 0.337 & 1,006 & 911.5k & 12.0k & 48.24 \\
+Always Y & 250/250 & 0.875 & 0.500 & 0.212 & -- & -- & -- & -- \\
+Always N & 250/250 & 0.000 & 0.500 & 0.788 & -- & -- & -- & -- \\
+All query words & 250/250 & 0.267 & 0.531 & 0.651 & -- & -- & -- & -- \\
+LOTUS filter (post hoc) & 250/250 & 0.556 & 0.604 & 0.440 & 5,160 & -- & -- & -- \\
+Supervised lexical (post hoc) & 250/250 & 0.836 & 0.557 & 0.182 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+On the common subset, all-Y has higher F1 but lower balanced accuracy than pointwise (Table~\ref{tab:full}); their MAE difference interval $[-0.031,0.045]$ includes zero. The high E/S share inflates all-Y F1. Direct JSON precision and recall are 0.911 and 0.541 versus 0.860 and 0.774 for pointwise, illustrating different operating points.
+
+Two-stage JSON has 11 invalid specifications and two other failed pools; compact fallback runs for those 11 but completes only 220 pools. Post hoc, fallback completes 174/192 pools with 8--16 candidates and 42/54 with at least 25; these groups do not establish a causal size effect. Offline times do not establish online performance.
+
+\textbf{Truncation sensitivity.} Post hoc, on 250 exposed pools we run guided pointwise Qwen in fixed 600-, 1,200-, 600-character replay order. The longer prefix changes 3,138/5,160 inputs; 1,924 source texts still exceed 1,200 characters. Ratio MAE is 0.202 and 0.195 (long minus short -0.0078; paired 95\% query-bootstrap $[-0.0140,-0.0016]$); balanced accuracy falls from 0.668 to 0.663. Replay changes 12/5,160 labels. A query--product reweighting sensitivity range $[-0.0161,0.0025]$ changes the estimand. Fixed order, replay variation and the exposed sample limit attribution and generalization.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.98\textwidth]{figures/quality.pdf}
+\caption{Quality on the original labeled pools completed by all four Qwen plans. Dots show pooled candidate F1 and mean per-pool ratio MAE, including post-hoc LOTUS filter and supervised lexical comparators; bars are 95\% query-ID-cluster bootstrap intervals. Vertical lines show pre-specified deterministic baselines. The selected pools do not measure user-level satisfaction.}
+\label{fig:quality}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{LOTUS filter.}
+LOTUS returns decisions for all 250 pools; all 5,160 raw answers contain an expected decision token and the parser defaults on 0 candidates. On the 207-pool intersection, its F1, balanced accuracy and ratio MAE are 0.556, 0.604 and 0.440 (Table~\ref{tab:full}). Paired intervals for LOTUS minus pointwise are $[-0.301,-0.217]$ for F1 and $[0.192,0.276]$ for MAE. Different prompts and contracts prevent attribution to the engine alone; this single filter excludes cascades and optimization, and its online time is not comparable to offline timings.
+
+\textbf{Supervised lexical reference.}
+On the 207 pools completed by every Qwen plan, the supervised lexical classifier has candidate F1 0.836, balanced accuracy 0.557, and pool-ratio MAE 0.182; pointwise Qwen obtains 0.815, 0.666, and 0.205. The paired query-bootstrap intervals for supervised minus pointwise are $[-0.006,0.048]$ for F1 and $[-0.057,0.012]$ for ratio MAE; neither interval clearly distinguishes the plans on this selected sample. On all 250 pools, the classifier obtains F1 0.840 and MAE 0.187. Its label access and the repeated product IDs limit direct interpretation against zero-shot plans. The second fit converged in 275 iterations; its 200-iteration predecessor did not converge and is retained in the artifact.
+
+\textbf{Model sensitivity.}
+For SmolLM2, pointwise, direct JSON, two-stage JSON, and compact two-stage with fallback complete 250, 196, 150, and 0 of 250 pools, respectively. Every compact-plan pool has at least one unresolved chunk after retry, so the pre-specified intersection across all four plans and both models is empty. A four-plan paired quality comparison is therefore unavailable. On all 250 pools, the pointwise plan returns N for all 5,160 candidates, yielding F1 0.000, balanced accuracy 0.500, and pool-ratio MAE 0.785. Structural completeness alone does not prevent such a degenerate prediction pattern.
+
+As a post-hoc narrower contrast, the direct and two-stage JSON plans both complete 145 pools, where their candidate F1 scores are 0.628 and 0.618, respectively; the query-bootstrap interval for two-stage minus direct F1 is $[-0.022,0.001]$. This selected subset excludes failures and does not isolate the effect of the specification. The follow-up used the same prompt and token limits rather than model-specific tuning; model family, size, tokenizer, and chat template changed together, so the results do not establish a causal architecture effect.
+
+\subsection{Wayfair Results and Format Audits}
+On WANDS, the four Qwen plans jointly complete 141 of 160 sampled pools. On these selected pools, pointwise candidate F1 is 0.488 with ratio MAE 0.165; two-stage JSON obtains F1 0.512 and MAE 0.132 (Table~\ref{tab:wands}, Fig.~\ref{fig:wands_quality}). The 95\% query-bootstrap interval for two-stage minus pointwise F1 is $[-0.027,0.072]$; the corresponding ratio-MAE interval is $[-0.061,-0.004]$. These are unadjusted descriptive contrasts after the ESCI analysis, and cannot isolate the specification or data-source effect. The simple all-query-words comparator attains F1 0.523 and MAE 0.096; all-N has MAE 0.162. Exact positives comprise 732/4512 decisions in this subset. Thus neither candidate F1 nor ratio accuracy can be interpreted without the pool's label mix.
+
+\begin{table*}[t]
+\caption{Qwen on sampled WANDS pools using Exact as the positive label. Quality is conditional on the 141 pools completed by all four model plans; completion, calls, token counts, and offline time cover all 160 attempted pools. Constant and lexical comparators are deterministic.}
+\label{tab:wands}
+\centering\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Plan & Complete & F1 & Bal. acc. & Ratio MAE & Calls & Input tok. & Output tok. & Time (s) \\
+\midrule
+Pointwise (P) & 160/160 & 0.488 & 0.726 & 0.165 & 5,120 & 935.9k & 10.2k & 36.32 \\
+Batch JSON (J) & 156/160 & 0.467 & 0.710 & 0.176 & 647 & 706.0k & 60.7k & 78.92 \\
+Two-stage JSON (TJ) & 152/160 & 0.512 & 0.726 & 0.132 & 812 & 747.3k & 58.9k & 80.42 \\
+Two-stage compact + fallback (TC) & 151/160 & 0.287 & 0.560 & 0.268 & 824 & 740.8k & 8.6k & 38.37 \\
+Always Y & 160/160 & 0.279 & 0.500 & 0.838 & -- & -- & -- & -- \\
+Always N & 160/160 & 0.000 & 0.500 & 0.162 & -- & -- & -- & -- \\
+All query words & 160/160 & 0.523 & 0.682 & 0.096 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+For SmolLM2, pointwise, direct JSON, two-stage JSON, and compact fallback complete 160, 148, 130, and 0 of 160 WANDS pools. Pointwise labels all 5,120 candidates N, giving F1 0.000 and ratio MAE 0.153 on all pools. No pool is completed by all four SmolLM2 plans, so model-specific four-plan paired quality is unavailable. The pre-specified intersection across both models and all four plans is empty. Different model family, size, tokenizer, and template change together, and the prompts were not separately tuned; these observations are not an isolated architecture comparison.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.98\textwidth]{figures/wands_quality.pdf}
+\caption{Qwen candidate F1 and query-macro ratio MAE on the WANDS pools jointly completed by all four plans. Bars are 95\% query-cluster bootstrap intervals; vertical lines show pre-specified deterministic comparators. WANDS uses an exact-only relevance proxy and sampled judged pools.}
+\label{fig:wands_quality}
+\end{figure*}
+
+\textbf{Compact prompt and parser.}
+The original compact prompt requests no punctuation but contains the example ``YNNY.'' for four products even when a chunk has eight. After observing SmolLM2 failures, we remove this example and reuse the saved specifications and candidate order. Under the original strict parser, the revised prompt still completes 0/250 ESCI and 0/160 WANDS pools; final ESCI chunks consisting only of YNNY, with or without a period, fall from 391 to 0. As a separate post-hoc analysis, a delimiter-tolerant parser accepts whitespace, commas, and one terminal period only when exactly the requested number of Y/N labels remains. Applied to revised responses, it completes 22/250 ESCI pools and 0/160 WANDS pools. On those selected ESCI pools, F1 is 0.015, balanced accuracy 0.499, and ratio MAE 0.690. No pool is jointly complete under the original and revised delimiter-tolerant outputs. This targeted audit changes the prompt and parser and remains conditional on success; it neither certifies the recovered labels nor characterizes other prompts or models.
+
+In a further post-hoc comparison using the example-removed prompt, regex-guided decoding changes Qwen's ESCI completion from 244/250 to 250/250 and WANDS completion from 156/160 to 160/160. On their respective common subsets of 244 ESCI and 156 WANDS pools, unconstrained versus guided F1 is 0.636 versus 0.634 and 0.322 versus 0.324; ratio MAE is 0.324 versus 0.327 and 0.174 versus 0.175. The query-bootstrap intervals for guided-minus-unconstrained F1 are $[-0.006,0.002]$ and $[-0.005,0.009]$, respectively. For SmolLM2, unconstrained versus guided completion is 0/250 versus 250/250 on ESCI and 0/160 versus 160/160 on WANDS. On the guided plan's own completed pools, F1 is 0.253, balanced accuracy 0.514, and ratio MAE 0.643 on ESCI; corresponding WANDS values are 0.092, 0.501, and 0.149. On these full samples, all-Y has ESCI ratio MAE 0.215, and all-N has WANDS ratio MAE 0.153. There are no common completed SmolLM2 pools for a paired quality comparison. The negative control confirms that the V1 constraint is active, but syntactic completion does not validate the predicted labels. These exploratory comparisons do not isolate model architecture or establish performance on new pools.
+
+\subsection{Order, Identifiers, and Output Formats}
+\textbf{Within-chunk reversal.}
+Both models complete all 250 ESCI and 160 WANDS pools under both orders. Qwen changes 2159/5160 ESCI and 1763/5120 WANDS labels; SmolLM2 changes 1341/5160 and 639/5120 (Fig.~\ref{fig:order_stability}). Despite label changes, 69 ESCI and 28 WANDS Qwen pools retain their ratio. Qwen F1 changes from 0.634 to 0.633 on ESCI and 0.322 to 0.325 on WANDS; aggregate quality can conceal candidate instability.
+
+Post hoc, retaining only labels where both orders agree leaves 1320/3001 ESCI and 550/3357 WANDS Qwen labels inconsistent with the reference. The $k=0$ completion interval contains the reference ratio in 94/250 and 93/160 pools; agreement does not justify zero label error, and inclusion may reflect cancellation. The initial reversal changes positions and IDs together.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=0.98\textwidth]{figures/order_stability.pdf}
+\caption{Post-hoc order audit of the guided compact plan: candidate-label changes and mean absolute pool-ratio changes after reversing each chunk and reassigning local IDs. Dots use common completed pools; bars are 95\% query-cluster bootstrap intervals. ESCI and WANDS use different reference mappings.}
+\label{fig:order_stability}
+\end{figure*}
+
+Post hoc, identical-prompt replay changes no labels for either model or dataset. Stable-ID reversal changes 42.5\% and 34.0\% for Qwen, and 24.7\% and 13.9\% for SmolLM2 on ESCI and WANDS (Table~\ref{tab:order_controls}). For a fixed reference, Eq.~\eqref{eq:stability} puts the worse Qwen pooled candidate error at least 0.212 on ESCI and 0.170 on WANDS; this does not bound ratio error. Fixed sequence and one replay cannot exclude numerical execution or prompt-context effects.
+
+\begin{table*}[t]
+\caption{Post-hoc order controls: percentage of candidate labels that change, with 95\% query-cluster bootstrap intervals, on the common completed pools. Replay compares identical prompts; stable-ID reversal compares replay with reversal preserving each product's ID; ID reassignment compares the two reversed prompts; prior reversal compares the original with reversal and reassignment.}
+\label{tab:order_controls}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Model / dataset (pools) & Replay & Stable-ID reversal & ID reassignment & Prior reversal \\
+\midrule
+Qwen / ESCI (250/250) & 0.0 [0.0,0.0] & 42.5 [40.8,44.2] & 18.4 [16.7,20.1] & 41.8 [40.2,43.4] \\
+Qwen / WANDS (160/160) & 0.0 [0.0,0.0] & 34.0 [32.0,36.0] & 14.7 [13.3,16.2] & 34.4 [32.6,36.2] \\
+SmolLM2 / ESCI (250/250) & 0.0 [0.0,0.0] & 24.7 [21.8,27.9] & 5.6 [4.4,7.0] & 26.0 [22.9,29.1] \\
+SmolLM2 / WANDS (160/160) & 0.0 [0.0,0.0] & 13.9 [12.5,15.5] & 4.5 [3.6,5.5] & 12.5 [11.3,13.6] \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Disjoint holdout.}
+Qwen completes all 160 pools in each condition, with 3 specification fallbacks (Table~\ref{tab:holdout}). Identical replay changes 0/5120 labels; stable-ID reversal changes 1733/5120 (33.8\%, 95\% query-bootstrap [31.8\%,35.9\%]). Its lower endpoint exceeds the pre-specified 10\% threshold. The crossed query--product sensitivity interval [31.1\%,36.6\%] is not exact coverage. For a fixed reference, Eq.~\eqref{eq:stability} gives the worse candidate-error rate a floor of 0.169. On these equal-sized pools, the positive-count gaps sum to 247; Eq.~\eqref{eq:ratio-floor} gives a worse macro-MAE floor of 0.0242.
+
+Three further post-hoc seeded permutations on these exposed pools change 34.6--35.1\% of Qwen and 8.2--8.7\% of SmolLM2 parsed labels; two identical-prompt replays per model change none. Fixed sequence and prompt context limit attribution.
+
+Qwen's original-order F1 and ratio MAE are 0.388 and 0.177; all-query-words obtains 0.595 and 0.115, and all-N has MAE 0.210. SmolLM2 completes all 160 pools in each condition, with 1 specification fallback; replay changes 0/5120 labels and stable-ID reversal changes 643/5120 (12.6\%). Its crossed sensitivity interval is [10.6\%,14.7\%]. These are sampled relevance judgments, not purchase outcomes; differences in prompts, models, executions and pools limit generalization.
+
+Post hoc, on 16 exposed pools with saved specifications, a same-GPU local-copy isolated run changes 24/512 original-order labels from the earlier run; its identical replay changes 13/512. Runtime and batch size differ.
+
+\begin{table*}[t]
+\caption{Pre-specified WANDS holdout order test on each model's common-complete pools. Change fractions are pooled over candidates; the stable-ID reversal interval is a 95\% query-cluster bootstrap. $|\Delta r|$ is the query-macro mean absolute ratio change; F1, balanced accuracy and ratio MAE evaluate the original-order judgments against the Exact-only proxy.}
+\label{tab:holdout}
+\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Model (pools) & Replay (\%) & Stable reverse (\%, 95\% CI) & $|\Delta r|$ & F1 & Bal. acc. & Ratio MAE \\
+\midrule
+Qwen (160/160) & 0.0 & 33.8 [31.8,35.9] & 0.048 & 0.388 & 0.610 & 0.177 \\
+SmolLM2 (160/160) & 0.0 & 12.6 [10.9,14.2] & 0.041 & 0.078 & 0.497 & 0.204 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{Keyed-output audit.}
+Both models use the same 160 previously exposed pools for all compact and keyed conditions (Table~\ref{tab:keyed}). Keyed Qwen's identical replay changes 0/5120 labels; stable-ID reversal changes 652/5120 (12.7\%). The corresponding SmolLM2 counts are 0/5120 and 596/5120 (11.6\%). Original-order keyed F1 and ratio MAE are 0.574 and 0.148 for Qwen, and 0.037 and 0.204 for SmolLM2.
+
+The original compact prompt required labels in listed order. If its reversed strings were instead decoded in numeric-ID order, the apparent Qwen and SmolLM2 disagreement rates would be 28.8\% and 5.3\%, respectively. This counterfactual contradicts the prompt and does not reveal the model's intended association. Keyed decoding fixes parser associations, not semantic correctness; the changed prompt and grammar prevent attributing the contrast to format or ordering alone. All results concern parsed system outputs, not the model's latent decisions.
+
+\begin{table*}[t]
+\caption{Exploratory keyed-JSON audit on the exposed WANDS holdout. Entries use pools complete under all compact and keyed conditions. Change rates are pooled candidate percentages with 95\% query-cluster bootstrap intervals; compact intervals repeat Table~\ref{tab:holdout}, while keyed intervals use a separate fixed seed. F1 and ratio MAE use keyed original-order output. Compact and keyed prompts, output grammar and token caps differ.}
+\label{tab:keyed}
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Model (pools) & Compact reverse (\%, 95\% CI) & Keyed replay (\%) & Keyed reverse (\%, 95\% CI) & F1 & Ratio MAE \\
+\midrule
+Qwen (160/160) & 33.8 [31.8,35.9] & 0.0 & 12.7 [11.3,14.3] & 0.574 & 0.148 \\
+SmolLM2 (160/160) & 12.6 [10.9,14.2] & 0.0 & 11.6 [11.0,12.3] & 0.037 & 0.204 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Disagreement-Fallback Validation}
+All four model conditions complete 96/96 pools; 2 queries use direct fallback after invalid specifications. On these pools, canonical keyed ratio MAE is 0.124 and pointwise-fallback MAE is 0.106 (Table~\ref{tab:fallback}). The pre-specified paired difference is -0.0179, with query-bootstrap 95\% interval $[-0.0335,-0.0029]$; its upper endpoint is below zero. The secondary query--product interval is $[-0.0393,-0.0004]$ for reweighted pools, not an exact interval for the fixed-pool estimand. Lexical fallback attains ratio MAE 0.094 as a secondary comparison.
+
+The keyed orders disagree on 382/3,072 candidates; the identical keyed replay changes 0 labels. Among 382 valid pointwise replays on disagreements, 3 labels change. Thus the cached-vector symmetry does not imply repeated inference is deterministic. The fallback uses 1,248 trace-derived logical calls and 930,935 logical input tokens; all pointwise calls were actually executed, so neither count measures selective-scheduler latency. These results are conditional on the sampled labeled pools, one model and the chosen prompts.
+
+On all 52 common-complete queries, selective fallback has ratio MAE 0.120 versus 0.136 for keyed output (Table~\ref{tab:fallback}). The pre-specified difference is -0.0168, with 95\% query-bootstrap interval $[-0.0325,-0.0018]$. The crossed interval $[-0.0395,0.0064]$ reweights pools and includes zero; neither interval guarantees population coverage.
+
+The scheduler sends 195 pointwise requests and 663 calls overall; its 32.24-second offline batch is not online latency. Keyed replay changes 5 labels; selective and later pointwise outputs differ on 4/195 matched requests. Full-pointwise versus selective F1 is 0.659 versus 0.639.
+
+SmolLM2 completes all 52 queries; selective and keyed MAEs are 0.195 and 0.190, with difference +0.0054 and query interval $[-0.0012,0.0120]$. Fallback F1 is 0.000; full pointwise predicts N for all 1,664 candidates. Model and prompt changes confound comparison.
+
+\textbf{New ESCI results.} Both models complete all 250 pools. Qwen's keyed, selective and full-pointwise ratio MAEs are 0.407, 0.373 and 0.299; selective minus keyed is -0.034, with 95\% query-bootstrap interval $[-0.045,-0.023]$. All-Y and the supervised reference achieve 0.185 and 0.183; the latter uses training labels. Qwen's selective plan makes 2,133 calls versus 4,690 for full pointwise, but uses 1.52M versus 1.05M logical input tokens. SmolLM2's keyed and selective MAEs are 0.802 and 0.813 (difference +0.011, interval $[0.007,0.014]$). Post hoc, excluding the 18 text-overlap queries yields differences -0.034 and +0.011. These selected, mostly positive relevance pools do not establish population coverage or a speedup.
+
+The LOTUS cascade has F1 0.350 versus 0.557 for its separately run full filter (Table~\ref{tab:fallback}); the paired query-bootstrap interval for the difference is $[-0.300,-0.108]$. Ratio MAE is 0.175 versus 0.171, with difference interval $[-0.041,0.052]$. The cascade uses 166 calibration and 626 routed Qwen calls plus 1,664 helper calls. Its empirical precision and recall against the separate full-filter run are 0.986 and 0.480; fresh Qwen calls and the exposed sample preclude a guarantee test. In all 1,664 helper outputs, LOTUS first finds both label tokens in top log probabilities at the initial generated token, which is ``Answer''; these scores are not necessarily conditioned on the answer position. Replaying proxy scores is NumPy-version-sensitive at quantile ties. The result is configuration-specific and neither establishes a causal mechanism nor generalizes to the complete optimizer.
+
+\begin{table*}[t]
+\caption{Disagreement-fallback and references on two disjoint WANDS samples. Quality uses common-complete pools; samples are not directly comparable. Reference training and embedding inference are excluded from generation calls and tokens. CV selects a supervised threshold using training folds. The 96-query fallbacks are trace-derived; the 52-query scheduler sends actual requests. LOTUS cascade totals include helper, calibration and routed main calls. Tokens are logical lengths across different models, not latency.}
+\label{tab:fallback}
+\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Plan & Complete & F1 & Bal. acc. & Ratio MAE & Gen. calls & Input tokens \\
+\midrule
+96: Canonical keyed & 96/96 & 0.505 & 0.738 & 0.124 & 482 & 432,031 \\
+96: Pointwise fallback (virtual) & 96/96 & 0.560 & 0.765 & 0.106 & 1,248 & 930,935 \\
+96: Lexical fallback (virtual) & 96/96 & 0.560 & 0.747 & 0.094 & 866 & 851,954 \\
+96: All pointwise & 96/96 & 0.516 & 0.739 & 0.118 & 3,170 & 649,409 \\
+96: All query words & 96/96 & 0.450 & 0.649 & 0.099 & 0 & 0 \\
+96: Supervised, threshold 0.5 & 96/96 & 0.243 & 0.567 & 0.125 & 0 & 0 \\
+96: Supervised, CV threshold & 96/96 & 0.292 & 0.600 & 0.431 & 0 & 0 \\
+96: Calibrated embedding & 96/96 & 0.435 & 0.681 & 0.153 & 0 & 0 \\
+52: Canonical keyed & 52/52 & 0.613 & 0.770 & 0.136 & 260 & 230,499 \\
+52: Actual selective fallback & 52/52 & 0.639 & 0.784 & 0.120 & 663 & 494,190 \\
+52: All pointwise & 52/52 & 0.659 & 0.812 & 0.124 & 1,716 & 347,216 \\
+52: All query words & 52/52 & 0.574 & 0.703 & 0.117 & 0 & 0 \\
+52: Supervised, threshold 0.5 & 52/52 & 0.275 & 0.569 & 0.189 & 0 & 0 \\
+52: Supervised, CV threshold & 52/52 & 0.378 & 0.605 & 0.415 & 0 & 0 \\
+52: Calibrated embedding & 52/52 & 0.366 & 0.607 & 0.211 & 0 & 0 \\
+52: LOTUS filter & 52/52 & 0.557 & 0.743 & 0.171 & 1,664 & 375,665 \\
+52: LOTUS cascade & 52/52 & 0.350 & 0.600 & 0.175 & 2,456 & 575,741 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Local Service Results}
+The local workload completes 620/624 pipelines with 4 HTTP or transport failures (Table~\ref{tab:local_service}); percentiles exclude failures. This warm local server omits admission wait, Internet latency and production traffic. Fresh specifications confound timing and quality contrasts.
+
+\begin{table}[t]
+\caption{Local HTTP workload on the existing 52 WANDS queries. Each range spans two repetitions; completion lists both counts out of 52. Latency uses only complete queries and excludes client admission, startup and warmup.}
+\label{tab:local_service}
+\centering\footnotesize
+\begin{tabular}{lrrr}
+\toprule
+Plan (active queries) & p50 (s) & p95 (s) & Complete \\
+\midrule
+Pointwise (1) & 0.72--0.74 & 0.85--0.86 & 52,52 \\
+Pointwise (4) & 2.11--2.18 & 2.64--3.43 & 49,51 \\
+Keyed (1) & 0.90--0.96 & 1.15--1.17 & 52,52 \\
+Keyed (4) & 1.45--1.63 & 1.68--1.76 & 52,52 \\
+Selective (1) & 1.26--1.30 & 1.43--1.47 & 52,52 \\
+Selective (4) & 2.76--2.81 & 3.31--3.33 & 52,52 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Post-hoc WANDS References}
+On the exposed 160-query holdout, the supervised reference at threshold 0.5 has F1/MAE 0.365/0.166, versus 0.574/0.148 for keyed Qwen and 0.595/0.115 for all-terms. The training-only F1 threshold 0.0212 yields 0.421/0.377 and similarly raises F1 and MAE on the 96- and 52-query samples (Table~\ref{tab:fallback}). These post-hoc references use additional labeled data.
+
+On the 160-query holdout, the embedding reference has F1/MAE 0.391/0.224. For 96 and 52 queries, Table~\ref{tab:fallback} shows the same calibrated reference. On 52 queries, embedding-minus-Qwen F1 has an unadjusted query-bootstrap 95\% interval $[-0.418,-0.130]$, and ratio-MAE difference +0.091 has interval $[0.028,0.159]$. These post-hoc comparisons remain conditional on the sampled judged pools.
+
+\subsection{Conditional Bounds on Failed Pools}
+Among failed compact pools, the $k=0$ bounds in Eq.~\eqref{eq:bounds} contain the reference ratio for 6/30 ESCI and 2/9 WANDS pools; 251/520 and 77/216 accepted labels disagree. All have $m>0$. Post hoc, $p/m$ has MAE 0.347/0.238; filling unresolved labels as N yields 0.517/0.191. Composition and label errors can cancel; these hypothetical ratios are not guarantees.
+
+Across all Qwen attempts, a post-hoc simulation replacing failed pools with lexical labels has ESCI/WANDS MAE 0.374/0.261; retaining valid chunks and lexically filling the rest gives 0.348/0.266. Full pointwise gives 0.201/0.157. These trace-derived policies have no measured online latency.
+
+\subsection{Cross-Domain Transfer Check}
+After the product results, we fixed a TREC-COVID Complete transfer check \cite{treccovid} before sampling or inference: 50 topics each receive 32 judged documents; 372/1,600 are fully relevant. Only fully relevant maps to Y; titles and abstracts are truncated to 200 and 800 characters. Two nonstandard $-1$ judgments are excluded. The official narrative replaces the generated specification.
+
+All Qwen conditions complete 50/50 pools. Stable-ID reversal changes 133/1600 labels and identical replay changes 8. Keyed and selective MAEs are 0.0688 and 0.0681; their pre-specified difference is -0.0006, with query-bootstrap interval $[-0.0112,0.0100]$. A query--document sensitivity $[-0.0171,0.0176]$ reweights pools.
+
+After observing Qwen, we repeat on the same sample with SmolLM2. All conditions complete 50/50 pools; keyed and selective MAEs are 0.2131 and 0.2288, with query interval $[0.0094,0.0225]$. Models and untuned prompts differ; truncated abstracts may omit needed information. These public samples do not establish generalization or clinical utility.
+
+\section{Limitations and Research Implications}
+\textbf{Biased candidate pools.} Each derived ESCI row contains one E product plus non-E products, so prevalence and errors depend on that construction. The two original-pool evaluations each sample 250 query IDs and include only labeled candidates; the later sample retains some exact product-text overlap. WANDS uses 32 randomly sampled judged products per query rather than full search pages; the holdout excludes only products sampled in the earlier WANDS study. Its exact-only label mapping differs from ESCI's E/S proxy. Neither benchmark establishes the distribution of unjudged live candidates.
+
+\textbf{Semantic and data limitations.} Truncation, missing attributes, ambiguous queries, and the E/S and Exact/Partial boundaries can alter judgments. Relevance labels do not record purchase decisions; disagreements may reflect annotation, input, or model errors. Pretraining exposure to these public benchmarks is unknown. The query-cluster bootstrap does not repair selection bias.
+
+\textbf{Scope of the systems comparison.} Experiments use two product datasets, one biomedical dataset, two generative models and one GPU; biomedical prompts are adapted, not separately tuned. Reversals, seeded permutations and limited replays do not isolate order effects or guarantee candidate association. WANDS follow-ups reuse a source and products; the 96-query fallback uses one model. Local-service tests omit admission and production traffic. Only one LOTUS cascade is tested, not its full optimizer, Palimpzest or production search. The host had dependency conflicts; a local-copy isolated environment passes dependency and synthetic format checks, but fresh-machine installation remains unverified. We claim no general speedup or calibrated deployment-scale performance. Future work should test unjudged candidates, more domains and models, varied pool sizes and concurrency, broader systems, and independent adjudication.
+
+\textbf{Engineering lesson.} Complete, parseable responses need not be semantically correct. Compact representations and fallbacks expose cost and error trade-offs that must be measured.
+
+\section{Conclusion}
+We defined a query-intent ratio over a declared pool and implemented observable failures for several LLM plans. Completeness, semantic quality, and execution cost must be assessed separately: fewer requests do not by themselves establish a better plan. Further data and evaluation are required before deployment.
+
+\section*{Acknowledgments and AI-Generated Content Disclosure}
+OpenAI Codex (GPT-6) substantially drafted and revised Sections I--VIII, wrote evaluation and analysis scripts and the code for Figures 1--4, and assisted literature review and interpretation. Qwen3-4B-Instruct-2507 and SmolLM2-1.7B-Instruct generated Section VI judgments; Qwen3-4B also generated Section VII's synthetic format checks. Qwen3-Embedding-0.6B generated vectors under Section V's protocol. The authors are responsible for the correctness and originality of the text, code, figures, sources and results.
+
+\IEEEtriggeratref{16}
+\begin{thebibliography}{99}
+\bibitem{lotus} L. Patel, S. Jha, M. Pan, H. Gupta, P. Asawa, C. Guestrin, and M. Zaharia, ``Semantic operators and their optimization: Enabling LLM-based data processing with accuracy guarantees in LOTUS,'' \emph{Proc. VLDB Endow.}, vol. 18, no. 11, pp. 4171--4184, 2025, doi: 10.14778/3749646.3749685.
+\bibitem{docetl} S. Shankar, T. Chambers, T. Shah, A. G. Parameswaran, and E. Wu, ``DocETL: Agentic query rewriting and evaluation for complex document processing,'' \emph{Proc. VLDB Endow.}, vol. 18, no. 9, pp. 3035--3048, 2025, doi: 10.14778/3746405.3746426.
+\bibitem{palimpzest} C. Liu \emph{et al.}, ``Palimpzest: Optimizing AI-powered analytics with declarative query processing,'' in \emph{Proc. CIDR}, 2025.
+\bibitem{sembench} J. Lao \emph{et al.}, ``SemBench: A benchmark for semantic query processing engines,'' \emph{Proc. VLDB Endow.}, vol. 19, no. 8, pp. 1754--1767, 2026, doi: 10.14778/3811243.3811249.
+\bibitem{evergreen} A. W. Lee, B. Han, S. Sen, S. Yeom, U. Cetintemel, and A. Datta, ``Evergreen: Efficient claim verification for semantic aggregates,'' arXiv:2604.26180, 2026.
+\bibitem{semceb} A. Zimmerer, C. K\"uhn, Y. Li, M. Stoian, R. Borovica-Gajic, and A. Kipf, ``SemCEB: A cardinality estimation benchmark for semantic operators,'' arXiv:2606.23081, 2026.
+\bibitem{semviews} O. Hassanzadeh and D. Subramanian, ``Semantic views: Certified reuse of LLM labels across semantic queries,'' arXiv:2610.12768, 2026.
+\bibitem{semreuse} P. T. Tran-Truong, T. Kieu, X.-B. Le, S. X. Ha, D. Kieu, B. Yang, and C. S. Jensen, ``SemReuse: Certified reuse of cached natural-language views for semantic operators,'' arXiv:2610.16035, 2026.
+\bibitem{query_completeness} S. Razniewski and W. Nutt, ``Completeness of queries over incomplete databases,'' \emph{Proc. VLDB Endow.}, vol. 4, no. 11, pp. 749--760, 2011, doi: 10.14778/3402707.3402715.
+\bibitem{contingency} X. Liang, Z. Shang, S. Krishnan, A. J. Elmore, and M. J. Franklin, ``Fast and reliable missing data contingency analysis with predicate-constraints,'' in \emph{Proc. SIGMOD}, 2020, pp. 285--295, doi: 10.1145/3318464.3389785.
+\bibitem{constraints} A. W. Lee \emph{et al.}, ``Semantic integrity constraints: Declarative guardrails for AI-augmented data processing systems,'' \emph{Proc. VLDB Endow.}, vol. 18, no. 11, pp. 4073--4080, 2025, doi: 10.14778/3749646.3749677.
+\bibitem{lostmiddle} N. F. Liu \emph{et al.}, ``Lost in the middle: How language models use long contexts,'' \emph{Trans. Assoc. Comput. Linguistics}, vol. 12, pp. 157--173, 2024, doi: 10.1162/tacl\_a\_00638.
+\bibitem{permcons} R. Tang, C. Zhang, X. Ma, J. Lin, and F. Ture, ``Found in the middle: Permutation self-consistency improves listwise ranking in large language models,'' in \emph{Proc. NAACL}, 2024, pp. 2327--2340, doi: 10.18653/v1/2024.naacl-long.129.
+\bibitem{outputorder} P. Schilcher \emph{et al.}, ``Characterizing positional bias in large language models: A multi-model evaluation of prompt order effects,'' in \emph{Findings of EMNLP}, 2025, pp. 20643--20664, doi: 10.18653/v1/2025.findings-emnlp.1124.
+\bibitem{vllm} W. Kwon \emph{et al.}, ``Efficient memory management for large language model serving with PagedAttention,'' in \emph{Proc. SOSP}, 2023, pp. 611--626, doi: 10.1145/3600006.3613165.
+\bibitem{sglang} L. Zheng \emph{et al.}, ``SGLang: Efficient execution of structured language model programs,'' \emph{Adv. Neural Inf. Process. Syst.}, vol. 37, pp. 62557--62583, 2024, doi: 10.52202/079017-2000.
+\bibitem{esci} C. K. Reddy \emph{et al.}, ``Shopping Queries Dataset: A large-scale ESCI benchmark for improving product search,'' arXiv:2206.06588, 2022.
+\bibitem{derived} Nixiesearch, ``Amazon ESCI dataset in nixietune format,'' revision c092c898, 2024. [Online]. Available: \url{https://huggingface.co/datasets/nixiesearch/amazon-esci}
+\bibitem{wands} Y. Chen, S. Liu, Z. Liu, W. Sun, L. Baltrunas, and B. Schroeder, ``WANDS: Dataset for product search relevance assessment,'' in \emph{Proc. ECIR}, 2022, pp. 128--141, doi: 10.1007/978-3-030-99736-6\_9.
+\bibitem{pigeonhole} A. B. Owen, ``The pigeonhole bootstrap,'' \emph{Ann. Appl. Stat.}, vol. 1, no. 2, pp. 386--411, 2007, doi: 10.1214/07-AOAS122.
+\bibitem{qwen} Qwen, ``Qwen3-4B-Instruct-2507,'' model card, 2025. [Online]. Available: \url{https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507}
+\bibitem{smollm} Hugging Face, ``SmolLM2-1.7B-Instruct,'' model card, 2024. [Online]. Available: \url{https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct}
+\bibitem{qwen_embed} Qwen, ``Qwen3-Embedding-0.6B,'' model card, 2025. [Online]. Available: \url{https://huggingface.co/Qwen/Qwen3-Embedding-0.6B}
+\bibitem{treccovid} K. Roberts \emph{et al.}, ``Searching for scientific evidence in a pandemic: An overview of TREC-COVID,'' \emph{J. Biomed. Inform.}, vol. 121, p. 103865, 2021, doi: 10.1016/j.jbi.2021.103865.
+\end{thebibliography}
+\end{document}
