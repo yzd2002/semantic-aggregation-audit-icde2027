@@ -1,0 +1,7 @@
+family,model,planned_candidates,observed_candidates,unreached_candidates,passed_candidates,rejected_candidates,issued_probe_trials,native_boolean_mismatch,strict_only_reference_format_rejection,batch_contract_failure,strict_invalid_reference_trials,native_mismatches_alone_make_pass_impossible,strict_only_decisive_after_removing_format_gate
+Original80-S,qwen,54,54,0,0,54,1040,143,31,0,84,54,0
+Original80-S,glm,54,52,2,1,51,1264,101,0,0,2,51,0
+Followup80-N,qwen,12,12,0,0,12,256,26,0,0,0,12,0
+Followup80-N,glm,12,12,0,0,12,304,32,0,0,0,12,0
+Followup320-N,qwen,12,12,0,0,12,1088,108,0,0,2,12,0
+Followup320-N,glm,12,12,0,0,12,1264,104,0,0,0,12,0

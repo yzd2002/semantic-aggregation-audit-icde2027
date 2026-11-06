@@ -1,0 +1,14 @@
+\subsection{Complete Policy Bills and Reporting Rules}
+\label{sec:resources}
+A standalone policy bill includes CPU grouping, fresh calibration references, every issued probe chunk, deployment and fallback. Separate S1/S2 and independent validation are evaluation costs in the research ledger. Each policy starts with an empty prefix cache and can reuse only its own calibration-to-execution cache. Cache OFF is an actual separate runtime configuration. Operator and response memoization are disabled.
+
+Prefix caching reuses computation for a previously processed prompt prefix. It can therefore make repeated singleton prompts cheap even when their logical input-token total is large. For API request $a$, native counters report input tokens $P_a$, output tokens $O_a$ and cached input tokens $K_a$. Let $P=\sum_a P_a$, $O=\sum_a O_a$ and $K=\sum_a K_a$. We distinguish
+\begin{equation}
+\text{raw tokens}=P+O,\qquad U=P-K.
+\label{eq:costs}
+\end{equation}
+$U$ is \emph{API uncached input}: an observed proxy for fresh input processing (prefill), not exact FLOPs or dollars. Each counter has its own S1 ratio. Output generation is separate; automatic prefix caching reduces prefill rather than decoding~\cite{apc}. Missing $K_a$ remains unknown with bounds and is never set to zero.
+
+Elapsed time starts after a verified cache reset and includes client isolation, durable tracing, live transport, CPU grouping, calibration and execution. Input preparation, model loading and the reset itself are outside the timer. Shared-server elapsed times are descriptive and support no inferential speed ranking.
+
+For each primary configuration we report delivery, strict validity/defaults, selected size, native and strict S1/S2 losses, source row/COUNT errors and complete costs. The \emph{joint benefit criterion} is descriptive: complete native delivery, $k>1$, both $d_1,d_2\le.05$, fewer requests and fewer raw tokens than S1. Source COUNT, uncached input and elapsed time remain separate outcomes. The strict-vector sensitivity evaluates the same deployment and bill using complete strict plan/reference vectors; it does not rerun selection. Cases are satisfied, evaluated-negative or unavailable, all retained in the 12-case denominator. Secondary and follow-up executions retain their full readouts.

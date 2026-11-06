@@ -1,0 +1,58 @@
+{
+  "budget_full_bill": {
+    "pages": 1,
+    "all_text_equal": true,
+    "all_render_pixels_equal": true,
+    "pages_checked": [
+      {
+        "page": 1,
+        "text_equal": true,
+        "render_pixels_equal": true,
+        "reference_render_sha256": "a37ffae22cdea3216e9821e51340bfcea59843b8bb0168602a81345dac1f847f",
+        "rebuilt_render_sha256": "a37ffae22cdea3216e9821e51340bfcea59843b8bb0168602a81345dac1f847f"
+      }
+    ]
+  },
+  "cache_input_cost_objects": {
+    "pages": 1,
+    "all_text_equal": true,
+    "all_render_pixels_equal": true,
+    "pages_checked": [
+      {
+        "page": 1,
+        "text_equal": true,
+        "render_pixels_equal": true,
+        "reference_render_sha256": "e29bef5497327980095787d04d91d4f45e0cd7ee1f8d30378f8ac23ffca0cc0e",
+        "rebuilt_render_sha256": "e29bef5497327980095787d04d91d4f45e0cd7ee1f8d30378f8ac23ffca0cc0e"
+      }
+    ]
+  },
+  "contract_execution_overview": {
+    "pages": 1,
+    "all_text_equal": true,
+    "all_render_pixels_equal": true,
+    "pages_checked": [
+      {
+        "page": 1,
+        "text_equal": true,
+        "render_pixels_equal": true,
+        "reference_render_sha256": "5bf192defff2629cad3dd79520f94983cd32e81c7579f2944c7fe0ae5c73e1fa",
+        "rebuilt_render_sha256": "5bf192defff2629cad3dd79520f94983cd32e81c7579f2944c7fe0ae5c73e1fa"
+      }
+    ]
+  },
+  "primary_execution_readouts": {
+    "pages": 1,
+    "all_text_equal": true,
+    "all_render_pixels_equal": true,
+    "pages_checked": [
+      {
+        "page": 1,
+        "text_equal": true,
+        "render_pixels_equal": true,
+        "reference_render_sha256": "1c75d6a8fbe54e9abfb704cca68724edff8e62f326ad453a1b4de4f24f28e233",
+        "rebuilt_render_sha256": "1c75d6a8fbe54e9abfb704cca68724edff8e62f326ad453a1b4de4f24f28e233"
+      }
+    ]
+  }
+}

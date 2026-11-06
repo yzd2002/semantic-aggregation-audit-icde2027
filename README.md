@@ -1,32 +1,38 @@
-# Auditing Reference Fidelity and Checking Costs in Semantic COUNT
+# [Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost
 
-Verified public artifacts for **[Experiment, Analysis, and Benchmark] Auditing Reference Fidelity and Checking Costs in Semantic COUNT** (ICDE 2027 EAB).
+This artifact connects sampled batch-fidelity checks to complete semantic COUNT results and full policy costs, including calibration, fallback, and native cache counters. It provides actual execution evidence for 36 main configurations and 16 separately frozen budget-follow-up policies, together with CPU reconstruction of the reported decisions and bills.
 
-Current version: [v2026.11.06-final](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final). All eight scientific/manuscript assets were downloaded without authentication or cookies and matched their SHA-256 digests; all315 files from the public scientific tag also matched. Complete CPU replay using the actual public downloads passed. See [download receipts](verification/PUBLIC_DOWNLOAD_VERIFICATION.json), [CPU replay](verification/PUBLIC_SOURCE_CPU_REPLAY.json), and [asset manifest](asset_index.json).
+[Current paper PDF](paper/current/ICDE2027_Semantic_COUNT.pdf) · [Editable source ZIP](paper/current/paper_source.zip) · [Active TeX](paper/current/source/draft/main.tex) · [Vector figures](paper/current/figures/) · [中文入口](START_HERE_zh.md) · [Asset map](ASSETS.md)
 
-The manuscript is the final scientific v2 with author placeholders. This is an authors-pending submission draft, not an acceptance announcement or completed CMT submission. The historical recovered release remains separate. 请先读 [中文 START_HERE](START_HERE_zh.md)。
+## Reproduce the results
 
-The final-paper artifacts are modular: fresh DBLP–ACM/BoolQ context experiments in three model families; fresh SNLI in the same families; new real transfer checking-cost runs; the original DEV-only 36-policy/calibration dependency; separate mathematical/agent audits of the nine fresh context cases; and the real-transfer independent mathematical audit. Complete selected frozen files, actual durable returns, analyses, controls, failed attempts and notices accompany each applicable module. Model weights, caches, credentials and unused historical pilots are excluded.
-
-Use Python 3.12.11 with [the recorded CPU versions](requirements-cpu.txt). CPU outcome replay requires NumPy 2.2.6 and PyArrow 22.0.0; deterministic decision prompt reconstruction additionally uses the listed SciPy/Transformers/tokenizer packages. Do not change a working environment merely to run the replay; a separate environment is suitable when installation is needed.
-
-The immutable `v2026.11.06-final` tag binds the scientific source snapshot. Its source tree may contain only `asset_index.template.json`: the verified `asset_index.json` is generated after actual publication and anonymous verification, then attached to that same GitHub release. **First download `asset_index.json` from the matching release's attachments into this tool directory**, then run:
+Download and extract the repository archive for the exact published commit. This obtains all 177 parts in one request. Use Python 3.12, NumPy 2.2.6 and SciPy 1.16.2, then run from the repository root:
 
 ```bash
-python3 -B artifact_cli.py download --index asset_index.json --archives-dir downloaded
-python3 -B artifact_cli.py verify --index asset_index.json --archives-dir downloaded
-python3 -B artifact_cli.py extract --index asset_index.json --archives-dir downloaded --out expanded
-python3 -B cpu_replay.py --bundle-root expanded --out replay_results
+python3 -B repro/real_engine_20261106/public/replay_artifact.py --index repro/real_engine_20261106/public/artifact_index.json --parts-dir repro/real_engine_20261106/public/parts --out fresh_core
+python3 -B repro/real_engine_20261106/public/replay_native_sensitivity.py --bundle fresh_core/expanded --supplement repro/real_engine_20261106/posthoc/supplement --out fresh_native_HG
+python3 -B repro/real_engine_20261106/stopping_audit/analyze_observed_rejections.py --root fresh_core/expanded --main-summary fresh_core/cpu_replay/engine/summary.json --budget-summary fresh_core/cpu_replay/separate_author_budget_analysis/summary.json --output fresh_stopping --tex-output fresh_stopping/tex
+python3 -B repro/real_engine_20261106/readability_evidence/recompute_frozen_evidence.py --root fresh_core/expanded --out fresh_readability_evidence
 ```
 
-Both `expanded` and `replay_results` must be new directories. Extraction verifies archive hashes/sizes, rejects absolute paths, traversal, symbolic/hard links, special files and duplicate members, then verifies every expanded scientific file. Replay rechecks those inventories, hides GPU devices, uses offline inputs and writes only a new output tree. Frozen sources are never silently edited. The SNLI independent-audit adapter explicitly maps the original certificate's recorded absolute context path to the expanded context module.
+The first command validates all part, compressed-stream and member hashes, safely expands eight modules, and recomputes the main and follow-up mathematics. The next commands reproduce the post-hoc native-vector HG readout, the 154 observed candidate prefixes (106 original + 48 follow-up), and the explanatory stopped-chunk/cost pair. Each pair of stopping/readability CSVs must equal its supplied CSV bytes. These replays use the recorded responses and labels on CPU.
 
-For a local candidate, the same `verify`/`extract` commands accept `asset_index.template.json` and locally supplied archives. The `download` command deliberately refuses an unpublished template.
+The [current scientific index](repro/real_engine_20261106/public/artifact_index.json) gives actual content-addressed Git blob URLs and SHA-256 values. The [readability evidence](repro/real_engine_20261106/readability_evidence/) explains how complete returned chunks are scored and billed. [Producer-side verification](verification/) and [paper source rebuild evidence](verification/readability_paper_source/) preserve their measured scopes; final anonymous acquisition is verified separately against the completed immutable commit.
 
-The main branch may additionally provide a convenience copy of the actual verified index and receipts. That convenience update does not rewrite the immutable scientific tag. A missing local `asset_index.json` means the release attachment must be obtained first; it does not justify treating the unpublished template as verified public metadata.
+## Rebuild the paper
 
-On this server, add `--direct` to the download command if its inherited proxy prevents anonymous access. This creates a process-local proxy-free opener and retains TLS certificate verification; it does not change system proxy settings. If the browser asset URL returns HTTP 403 or disconnects, a publisher-provided `public_asset_api_url` permits an anonymous GitHub asset-API fallback with `Accept: application/octet-stream`. No token or cookie is used. Every failed partial download is retained under a unique attempt name; signed redirect queries are never logged.
+`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The nine-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
-Raw outcomes are the original preserved actual model returns. CPU replay recomputes the paper's statistics and costs; it does not generate new model judgments. It is not a clean-machine GPU replication, outside human review, population-coverage certificate, SOTA claim or acceptance guarantee. Finite selected-target bootstrap intervals remain approximate; legacy 98.75% flags do not replace the final nine-case primary criterion.
+Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied aggregate CSVs. Generated table exports go to `regenerated/`, preserving the frozen editorial TeX. Plotting dependencies and source hashes are included in the clean source.
 
-Read [RIGHTS_AND_NOTICES.md](RIGHTS_AND_NOTICES.md) before reuse. Dataset licenses differ: DBLP benchmark CC BY 4.0 provenance; BoolQ CC BY-SA 3.0; SNLI CC BY-SA 4.0. Upstream model terms are retained separately. This repository makes no blanket MIT grant for project or third-party material.
+## Evidence scope and rights
+
+Six workloads cover two text domains and two models. The follow-up contains four model/workload configurations and 16 physical policy executions; it was frozen after an initial main case had been observed. Native delivery, strict output format, named-reference fidelity, supplied-label COUNT, and complete calibration-plus-execution cost have separate readouts. The post-hoc HG analysis conditions on existing immutable vectors. Stopped prefixes describe issued comparisons and retain unreached candidates as unobserved.
+
+The compact modules retain raw model completions, canonical responses, effective settings, partitions, labels, probes and token-length/hash receipts. Pinned acquisition recipes support separate exact source reconstruction. Full source news/review text, token arrays and model weights are omitted. AG News has unknown license as declared by its publisher; movie CC0 is recorded as the host declaration. See [rights/notices](repro/real_engine_20261106/public/RIGHTS_AND_NOTICES.md) and [model provenance](repro/real_engine_20261106/model_sources/MODEL_ACQUISITION.md). Built with glm-4.
+
+## Current and historical indexes
+
+Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repository edition and `repro/real_engine_20261106/public/artifact_index.json` for its eight scientific modules. The historical root `asset_index.json` and older SHA/checksum lists describe v2 files. They remain historical provenance; their hashes do not validate the new README or current paper.
+
+The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.

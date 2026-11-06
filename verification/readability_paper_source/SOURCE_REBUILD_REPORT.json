@@ -1,0 +1,52 @@
+{
+  "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
+  "created_utc": "2026-11-06T18:35:49.762317+00:00",
+  "freeze_sha256": "93ad40f5a9a5d74ec0ed67d0a7116e5b50bffbe19bb9bd29e30bc69ea21e26f2",
+  "frozen_pdf": "/home/gpu/IntentSat2S_readability_20261107/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "e7f1728c17c01bd04241f98696719066172a9cf52239c74cebd7bd8b65dec253",
+  "source_zip": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/paper_source.zip",
+  "source_zip_sha256": "8233b996e8e982e5bb072e19f21e4b4fa18cd32bdb4fc942a209d972c2a3eabc",
+  "clean_source": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "a07a0f494bf24cb4c3c4ab2d8603b7358678fa751698ec679decdc5a660d2e1e",
+  "author_count": 9,
+  "authors": [
+    "Zida Yang",
+    "Kangzheng Peng",
+    "Guquan You",
+    "Yongjun Dai",
+    "Chenhang He",
+    "Zijian Wang",
+    "Jiexin Zheng",
+    "Zhangxuan Shi",
+    "Xiaolong Shi"
+  ],
+  "title": "[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost",
+  "abstract": "Putting several rows in one language-model prompt can reduce requests for a semantic filter and COUNT, but checking the batch plan also costs work. We empirically audit an existing current-input fidelity checker by connecting its sampled comparisons to the complete query result and policy bill. The study uses native LOTUS filtering and a declared custom batch operator in 36 configurations over six workloads, two text domains and two models, with 16 additional policies comparing checking budgets. Our joint benefit criterion requires a delivered batch result, at most 5% row disagreement with each of two separate singleton executions, fewer requests and fewer raw input-plus-output tokens. Unchecked random and similarity batches meet it in one and two of the 12 primary configurations, respectively; the checked policy meets it in none. Source COUNT accuracy is a separate outcome. The sole accepted deployment meets observed fidelity tolerance, but calibration turns its token saving into a 3.01% increase, despite 79.69% fewer requests. Raising the budget from 80 to 320 probes leaves every follow-up policy in singleton fallback with a higher bill. All 48 cache-enabled fixed-plan executions use less raw input but more uncached input than their singleton baselines; all 24 cache-disabled executions use less of both. These cache rankings apply to the declared repeated-predicate representation. Distinguishing delivered labels, output format, reference fidelity, source COUNT and complete costs makes the bounded plan decisions reproducible.",
+  "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
+  "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} OpenAI Codex substantially assisted research design, literature verification, experiment implementation, data processing, analysis, drafting and revision of all sections, and code for the original figures and reproducibility checks. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat produced the new experimental judgments; the retained earlier experiments additionally used SmolLM2-1.7B-Instruct. Their inference roles, prompts and native configurations are recorded in the artifact. The human authors remain responsible for the correctness, originality, attribution and interpretation of the work. AI systems are not authors.\n",
+  "pages": 14,
+  "actual_rebuilt_body_end_page": 12,
+  "page_roles": {
+    "total_pages": 14,
+    "main_body_pages": 12,
+    "references": [
+      13
+    ],
+    "ai_disclosure": [
+      14
+    ]
+  },
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/PAGE_TEXT_RENDER_COMPARISON.json",
+  "all_page_text_and_render_content_equal": true,
+  "active_source_or_scientific_data_edited": false,
+  "new_GPU_or_experiment": false,
+  "source_default_ordinary_pdflatex": true,
+  "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
+  "logs": [
+    "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_readability_20261107/packaging/source_rebuild_attempt01/logs/02_TEX_BUILD.log"
+  ]
+}

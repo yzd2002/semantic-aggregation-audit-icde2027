@@ -1,0 +1,578 @@
+{
+  "scope": "Explanatory extraction of existing frozen artifacts only; no new trials or statistical conclusion.",
+  "root": "/home/gpu/IntentSat2S_upgrade_20261106",
+  "DB10": {
+    "predicate_template": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is World (international affairs, politics, or world events). News item: {text}",
+    "model": "/root/models/Qwen/Qwen3-4B-Instruct-2507",
+    "source": "run_qwen_cache1/agnews_count_world__n2048__cache1/S1/native_result.json",
+    "reply_examples_no_news_text": [
+      {
+        "record_id": "agnews_test_469",
+        "raw_output": "Answer: Sports",
+        "native_label": true,
+        "strict_label": null,
+        "strict_valid": false
+      },
+      {
+        "record_id": "agnews_test_4585",
+        "raw_output": "Answer: Sci/Tech",
+        "native_label": true,
+        "strict_label": null,
+        "strict_valid": false
+      }
+    ],
+    "parser": "Pinned LOTUS substring/default=True; separate strict audit accepts only one True/False label."
+  },
+  "DB15": {
+    "candidate_sizes": [
+      8,
+      4,
+      2
+    ],
+    "batch_output_budget": 128,
+    "native_output_budget": 32,
+    "context": 8192,
+    "feasibility": {
+      "qwen": {
+        "native_maxima_range": [
+          189,
+          362
+        ],
+        "longest_eight_batch_range": [
+          1030,
+          2260
+        ],
+        "per_workload": [
+          {
+            "workload_id": "agnews_count_world",
+            "native_max_tokens": 362,
+            "longest_eight_batch_tokens": 2260,
+            "longest_eight_indices": [
+              5666,
+              2879,
+              3324,
+              1160,
+              4647,
+              5002,
+              5766,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_sports",
+            "native_max_tokens": 358,
+            "longest_eight_batch_tokens": 2228,
+            "longest_eight_indices": [
+              5666,
+              2879,
+              3324,
+              1160,
+              4647,
+              5002,
+              5766,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_business",
+            "native_max_tokens": 361,
+            "longest_eight_batch_tokens": 2252,
+            "longest_eight_indices": [
+              5666,
+              2879,
+              3324,
+              1160,
+              4647,
+              5002,
+              5766,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_science_technology",
+            "native_max_tokens": 359,
+            "longest_eight_batch_tokens": 2236,
+            "longest_eight_indices": [
+              5666,
+              2879,
+              3324,
+              1160,
+              4647,
+              5002,
+              5766,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "movie_count_positive_top_critics",
+            "native_max_tokens": 189,
+            "longest_eight_batch_tokens": 1030,
+            "longest_eight_indices": [
+              7101,
+              6855,
+              821,
+              2143,
+              3523,
+              4506,
+              7456,
+              1410
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "movie_count_positive_other_critics",
+            "native_max_tokens": 201,
+            "longest_eight_batch_tokens": 1120,
+            "longest_eight_indices": [
+              2746,
+              6359,
+              5056,
+              2730,
+              6209,
+              4683,
+              7170,
+              1502
+            ],
+            "complete_fields": true,
+            "truncation": false
+          }
+        ]
+      },
+      "glm": {
+        "native_maxima_range": [
+          172,
+          329
+        ],
+        "longest_eight_batch_range": [
+          963,
+          2173
+        ],
+        "per_workload": [
+          {
+            "workload_id": "agnews_count_world",
+            "native_max_tokens": 329,
+            "longest_eight_batch_tokens": 2173,
+            "longest_eight_indices": [
+              5666,
+              3324,
+              2879,
+              5002,
+              863,
+              5766,
+              2055,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_sports",
+            "native_max_tokens": 325,
+            "longest_eight_batch_tokens": 2141,
+            "longest_eight_indices": [
+              5666,
+              3324,
+              2879,
+              5002,
+              863,
+              5766,
+              2055,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_business",
+            "native_max_tokens": 328,
+            "longest_eight_batch_tokens": 2165,
+            "longest_eight_indices": [
+              5666,
+              3324,
+              2879,
+              5002,
+              863,
+              5766,
+              2055,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "agnews_count_science_technology",
+            "native_max_tokens": 326,
+            "longest_eight_batch_tokens": 2149,
+            "longest_eight_indices": [
+              5666,
+              3324,
+              2879,
+              5002,
+              863,
+              5766,
+              2055,
+              6371
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "movie_count_positive_top_critics",
+            "native_max_tokens": 172,
+            "longest_eight_batch_tokens": 963,
+            "longest_eight_indices": [
+              7101,
+              6855,
+              821,
+              3523,
+              2143,
+              7456,
+              2628,
+              4506
+            ],
+            "complete_fields": true,
+            "truncation": false
+          },
+          {
+            "workload_id": "movie_count_positive_other_critics",
+            "native_max_tokens": 182,
+            "longest_eight_batch_tokens": 1029,
+            "longest_eight_indices": [
+              2746,
+              6359,
+              7170,
+              5056,
+              2730,
+              6209,
+              4683,
+              1502
+            ],
+            "complete_fields": true,
+            "truncation": false
+          }
+        ]
+      }
+    },
+    "scope": "k=8 is the experiment-given tested feasible ceiling; no larger k was tested or proved infeasible/optimal.",
+    "precheck": "prepare_study.py:65-82; select eight longest native requests per workload/model and serialize their full batch.",
+    "runtime_guard": "native_runtime.py:123-126 and native_runtime_glm_v3.py:131-134 reject len(prompt_ids)+max_output>8192 without truncation."
+  },
+  "DB18": {
+    "trigger": "The first completed original Qwen Sci/Tech N7600 case fell back at CP80; all its calibration references were strict valid. No hidden error-rate estimate is inferred from the early-stopped prefix.",
+    "original_refs": 80,
+    "original_refs_strict_valid": 80,
+    "ag_anchor": "agnews_count_science_technology",
+    "movie_anchor": "movie_count_positive_other_critics",
+    "movie_hash_seed": "2026110621",
+    "movie_candidate_hashes": {
+      "movie_count_positive_top_critics": "d89365989130faf83c4eb71647016f2ea480ac2fcb41f6181ae5fceffccccf82",
+      "movie_count_positive_other_critics": "174c973ab9df0e68b854f9f5a4ed2f53dac05a4f57ea9dd51da30f76e7bc241f"
+    },
+    "budget_multiple": "320 = 4 * 80",
+    "allowed_disagreements": {
+      "80": 0,
+      "320": 7
+    },
+    "registration_status": "PROSPECTIVE_FOR_THIS_FOLLOWUP_NOT_RETROACTIVE_REGISTRATION",
+    "freeze_created_unix": 1793962107.024757,
+    "qwen_followup_start_unix": 1793963681.5704708,
+    "freeze_before_own_calls": true
+  },
+  "MT14_MT24": [
+    {
+      "budget": 80,
+      "selected_k": 1,
+      "native_ref_rows": 80,
+      "native_ref_strict_valid_rows": 80,
+      "reference_bill": {
+        "requests": 80,
+        "P_input": 13596,
+        "O_output": 320,
+        "K_cached": 5056,
+        "U_uncached": 8540
+      },
+      "all_probe_bill": {
+        "requests": 80,
+        "P_input": 38918,
+        "O_output": 1388,
+        "K_cached": 6656,
+        "U_uncached": 32262
+      },
+      "calibration_bill": {
+        "requests": 160,
+        "P_input": 52514,
+        "O_output": 1708,
+        "K_cached": 11712,
+        "U_uncached": 40802
+      },
+      "execution_bill": {
+        "requests": 7600,
+        "P_input": 1284127,
+        "O_output": 30400,
+        "K_cached": 487104,
+        "U_uncached": 797023
+      },
+      "full_policy_bill": {
+        "requests": 7760,
+        "P_input": 1336641,
+        "O_output": 32108,
+        "K_cached": 498816,
+        "U_uncached": 837825
+      },
+      "POLICY_RESULT_usage_exact_match": true,
+      "native_complete": true,
+      "native_count": 1730,
+      "strict_complete": false,
+      "execution_strict_valid_rows": 7530
+    },
+    {
+      "budget": 320,
+      "selected_k": 1,
+      "native_ref_rows": 320,
+      "native_ref_strict_valid_rows": 318,
+      "reference_bill": {
+        "requests": 320,
+        "P_input": 54013,
+        "O_output": 1280,
+        "K_cached": 20848,
+        "U_uncached": 33165
+      },
+      "all_probe_bill": {
+        "requests": 288,
+        "P_input": 145690,
+        "O_output": 5162,
+        "K_cached": 26192,
+        "U_uncached": 119498
+      },
+      "calibration_bill": {
+        "requests": 608,
+        "P_input": 199703,
+        "O_output": 6442,
+        "K_cached": 47040,
+        "U_uncached": 152663
+      },
+      "execution_bill": {
+        "requests": 7600,
+        "P_input": 1284127,
+        "O_output": 30400,
+        "K_cached": 486400,
+        "U_uncached": 797727
+      },
+      "full_policy_bill": {
+        "requests": 8208,
+        "P_input": 1483830,
+        "O_output": 36842,
+        "K_cached": 533440,
+        "U_uncached": 950390
+      },
+      "POLICY_RESULT_usage_exact_match": true,
+      "native_complete": true,
+      "native_count": 1739,
+      "strict_complete": false,
+      "execution_strict_valid_rows": 7523
+    }
+  ],
+  "interpretation_constraints": [
+    "The ledger has calibration/execution stages for these jobs; reference/candidate rows are exact derived accounting categories, not invented logged stages.",
+    "A chunk is 16 batch requests. The complete returned chunk is scored before rejection; all issued requests are billed.",
+    "First-decisive positions are reconstructed in frozen trial order, not an online stopping point or an estimate of q.",
+    "All CP80/CP320 calls are physically independent; pairing is of predeclared inputs and seeds, not response reuse.",
+    "No inference about a general LOTUS bug or token-cap causation follows from the example.",
+    "No need to guess historical names or procedures moved out of the active manuscript (MT26/MT27)."
+  ],
+  "source_fingerprints": {
+    "prepared/STUDY.json": {
+      "bytes": 13831,
+      "sha256": "e00de15d812749ccdd7eb8680811a6b2a9c6157f45174122f68b853dba954f5e"
+    },
+    "prepared/TOKENIZER_FEASIBILITY.json": {
+      "bytes": 4201,
+      "sha256": "2e8e347a781e81fd8a85059477d6ef4ba2961cdffcc927415e0cd91897a40458"
+    },
+    "BUDGET_FOLLOWUP_STUDY.json": {
+      "bytes": 7982,
+      "sha256": "0d98a66c492ed30c9f5990836c34cad24e24ba7bbfa7b2b5fe7d785124c43013"
+    },
+    "BUDGET_FOLLOWUP_FREEZE.json": {
+      "bytes": 19766,
+      "sha256": "9e812e3203c2d2cc6b967bde74ba5d3d3a0f7fbe38079f43702259b8f6da8023"
+    },
+    "budget_run_qwen/START.json": {
+      "bytes": 686,
+      "sha256": "f956091a57a675d92d43776a0f83f1b1788dff87befcb9a830a9cfc6b5cddbce"
+    },
+    "prepare_study.py": {
+      "bytes": 5382,
+      "sha256": "9d2742c38238b0cc9e9bed5162303774fe2e4acbb4b8a1661ae0f82b8e2e731c"
+    },
+    "prepare_budget_followup.py": {
+      "bytes": 4066,
+      "sha256": "758ed17bff23b9cf83eed20bf25587c1b146e17c9f1ede404f26891e29b62a1f"
+    },
+    "experiment_common.py": {
+      "bytes": 5389,
+      "sha256": "a8ea8f43ba874bf11ff583548d8aeffbf25af8404f35a9adfe3ffdcbf3de9c07"
+    },
+    "native_runtime.py": {
+      "bytes": 11328,
+      "sha256": "6024d8d2143ee9aeb3e1890e8ffa07fce21bdff30ba4ff62841de760a81f6385"
+    },
+    "native_runtime_glm_v3.py": {
+      "bytes": 11995,
+      "sha256": "90a95709a032e325f67e027d908542cebbe573033d46436b505892c4a309d2c4"
+    },
+    "run_budget_followup.py": {
+      "bytes": 8298,
+      "sha256": "5bd3ab09a5d5ed68311c91ccdcba0d398aa6bd385ce7e42863f4aa8bef054a39"
+    },
+    "run_study.py": {
+      "bytes": 20239,
+      "sha256": "83737023c6b90be266171a006fddcbf6a8ea66d00d09a02065099217cfa86c82"
+    },
+    "real_engine/adapters/lotus_native.py": {
+      "bytes": 8907,
+      "sha256": "8b4acbfc81800fd96ff30e01abaced27eb8d57b710f80bb0bef94bc5ab61133e"
+    },
+    "novelty_theory/followup_design/REPORT.md": {
+      "bytes": 10054,
+      "sha256": "65dd2d075d3c99299486290d060ce38e883e48419666ecaf0a05362736211e1d"
+    },
+    "real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/postprocessors.py": {
+      "bytes": 7205,
+      "sha256": "8f5c33600c849ad9806fcec752ee3d14646cebd5ec441637ff0b271ae6a98956"
+    },
+    "run_qwen_cache1/agnews_count_world__n2048__cache1/S1/native_result.json": {
+      "bytes": 2274316,
+      "sha256": "5a6c5cdc726518a80740cfc7a0c949dd38f1d57a699bf2118e138ed345875246"
+    },
+    "run_qwen_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP_RESULT.json": {
+      "bytes": 184984,
+      "sha256": "e4aeae35934fe5b027e41a2c796acd1a66418a1735d5f8f8e9f28e4884166f14"
+    },
+    "run_qwen_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json": {
+      "bytes": 87975,
+      "sha256": "dcadc7d8d343ea785ffd9f8e8298b9138798d9110611505d15f3d874a933bd4b"
+    },
+    "budget_run_qwen/responses.jsonl": {
+      "bytes": 31224527,
+      "sha256": "57d4249a8ef628c4620bec105843a99ccd723b1ca12353f72457bb3d969a9714"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/POLICY_RESULT.json": {
+      "bytes": 110482,
+      "sha256": "4ed935d0f0c7ab3f169656e6efa5ab3c5af7db2fb0955f1c9d23ab9764f978c9"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/candidate_8_chunk_0/batch_calls.jsonl": {
+      "bytes": 11997,
+      "sha256": "6c953ab71a60213eb726145865e710aaafb4bc6bed7ddf59b6ae839c0a0d24a3"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/candidate_4_chunk_0/batch_calls.jsonl": {
+      "bytes": 10327,
+      "sha256": "75fc33d94e7c0819a69eb188b1595bb844560bae029e47366cfad34e87850f02"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/candidate_2_chunk_0/batch_calls.jsonl": {
+      "bytes": 9496,
+      "sha256": "5b49f4803403e5b7578e5efc94e97e2371d562e622305f8cb161e032928a1d59"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/candidate_2_chunk_16/batch_calls.jsonl": {
+      "bytes": 9499,
+      "sha256": "6044f89b2f85100fd39effe3c7b25a80da14aafebcea195cf199354a5aae5daa"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/candidate_2_chunk_32/batch_calls.jsonl": {
+      "bytes": 9489,
+      "sha256": "b4845e8817cb86827266da0ec009b6cbc1ea368652dd295d81dff905630dc5aa"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/calibration_singletons/native_result.json": {
+      "bytes": 87514,
+      "sha256": "48d60457819841e433a8276237a35642397550b9a3b002d619cf5eed2121521d"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/POLICY_RESULT.json": {
+      "bytes": 179558,
+      "sha256": "7d6d8b2dcdf7f8b3be23eeeef88f0b21331b98388d4b6fd8760c50b43d415062"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_8_chunk_0/batch_calls.jsonl": {
+      "bytes": 12013,
+      "sha256": "5b855b387e5e1cbd2c678dd99df5cb9e0324fd9eb9cf556cae30c870b4ab8d38"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_8_chunk_16/batch_calls.jsonl": {
+      "bytes": 12022,
+      "sha256": "272d2a17a845a0383a83e107d6a47819a63696ead83596808d7e8f99fc6e4f77"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_8_chunk_32/batch_calls.jsonl": {
+      "bytes": 12017,
+      "sha256": "536dacff03a49167cbc97472b7fc56e865f1e875917058fa759773c43da126e4"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_0/batch_calls.jsonl": {
+      "bytes": 10344,
+      "sha256": "c885b36cee3f847baa88098f33e97d96983586d9651edbd4d35397e8723853ff"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_16/batch_calls.jsonl": {
+      "bytes": 10346,
+      "sha256": "9cc57583d30e21fc314f65808ab49742a03d828b4dce0897cc8139d9773d9031"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_32/batch_calls.jsonl": {
+      "bytes": 10336,
+      "sha256": "5c3c69e4fc1f8d6efeb737e100b73b10b729916d3f3b32f8e5c640b8c3b1bdd7"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_48/batch_calls.jsonl": {
+      "bytes": 10350,
+      "sha256": "8822339fd05132284f7efbb635b316745ea0e0804b75145e59b5bbaaf3aa0e6e"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_64/batch_calls.jsonl": {
+      "bytes": 10341,
+      "sha256": "33faf213579c0b85d16e8b13fbf7199faf8f3d155168547da021d47cb4ecf52d"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_80/batch_calls.jsonl": {
+      "bytes": 10344,
+      "sha256": "b466dc2984207655c2bead1b3c50aa64cc45abf1ff49eca6434a0976312f9438"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_4_chunk_96/batch_calls.jsonl": {
+      "bytes": 10345,
+      "sha256": "20042f5b5fc2c0f7c41aa8deeb03b9f94626f76d22126846a06e6ffe98c12c28"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_0/batch_calls.jsonl": {
+      "bytes": 9513,
+      "sha256": "0cb57a51d23695c515ebfc34dc54ce2b6da0b7fb315635b87b174e8bcd25b57c"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_16/batch_calls.jsonl": {
+      "bytes": 9516,
+      "sha256": "e4f330644ef64f6ed682f735d44acc45501f2a67b8b6167ba2f6f8fb555f87cf"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_32/batch_calls.jsonl": {
+      "bytes": 9509,
+      "sha256": "f29b09ff9bc5251c629bdb34392a61a4cf5dfb08438cdb3ce350bfba65f36430"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_48/batch_calls.jsonl": {
+      "bytes": 9512,
+      "sha256": "53757c9e708117c30d37ef864a45673db194a6f7ca32366a055866e40a274079"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_64/batch_calls.jsonl": {
+      "bytes": 9509,
+      "sha256": "2b5551dab68d69f8763874e3e0f3c176d199af28c3aaa0a23805dcc63d2b1c8b"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_80/batch_calls.jsonl": {
+      "bytes": 9505,
+      "sha256": "5c35092e49f4ce99581d8ec3e52d65132646fa1c93e8e0fcee4db966697f9cb6"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_96/batch_calls.jsonl": {
+      "bytes": 9504,
+      "sha256": "1d1833b34b054dbd5d9ee64dcd20fe40c01677805982d8577600064c09557788"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/candidate_2_chunk_112/batch_calls.jsonl": {
+      "bytes": 9509,
+      "sha256": "0b131c210af886554c359660429735cd58f29b92b855d49b8feded43cc5f7a11"
+    },
+    "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/calibration_singletons/native_result.json": {
+      "bytes": 347708,
+      "sha256": "226b2a6f65e380c3d503137472776c194322c98874692632f24ba9ac170477aa"
+    }
+  }
+}

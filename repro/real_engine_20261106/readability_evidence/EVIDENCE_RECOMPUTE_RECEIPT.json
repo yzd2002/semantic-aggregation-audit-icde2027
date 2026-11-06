@@ -1,0 +1,34 @@
+{
+  "scope": "Only existing frozen evidence was read; no inference or new trial.",
+  "scientific_root": "/home/gpu/IntentSat2S_upgrade_20261106",
+  "compact_expanded_root": "/home/gpu/IntentSat2S_upgrade_20261106/portable_artifact/actual_final/one_command/expanded",
+  "source_files_bound_by_followup_freeze_and_matching": {
+    "prepared/STUDY.json": true,
+    "prepared/TOKENIZER_FEASIBILITY.json": true,
+    "BUDGET_FOLLOWUP_STUDY.json": true,
+    "prepare_study.py": true,
+    "prepare_budget_followup.py": true,
+    "experiment_common.py": true,
+    "native_runtime.py": true,
+    "native_runtime_glm_v3.py": true,
+    "run_budget_followup.py": true,
+    "run_study.py": true,
+    "real_engine/adapters/lotus_native.py": true,
+    "real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/postprocessors.py": true
+  },
+  "csv_checks": {
+    "candidate_stop_trace.csv": {
+      "byte_identical_between_roots": true,
+      "sha256": "adb5c6866020e2ec9a644178ee3660ddd63c25ec3a68f1e852e1f0a86076e9d7"
+    },
+    "phase_exact_cost.csv": {
+      "byte_identical_between_roots": true,
+      "sha256": "b2c88c9b84e4fdba3cbb41742e325090ee74dadf72a851cd8d48121398279980"
+    }
+  },
+  "output_sha256": {
+    "recompute_frozen_evidence.py": "28ea19aea677f73b2e5f924591f67673fcfe8823cf16c473d57ba57fe8772882",
+    "FROZEN_EVIDENCE.json": "582af1e61a5eb96608eb49e7dfe5d0acf235a465330f38e9987f2cdb9675f3b9",
+    "EDITOR_INSERTS.txt": "2ec5b3f3f292a0940f65d1d5bc5ebcdf6e0521307c16f9490cf95d8a174c8872"
+  }
+}

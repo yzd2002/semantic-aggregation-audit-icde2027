@@ -1,0 +1,13 @@
+model,policy,contract_role,declared_configurations,eligible_complete_vectors,unavailable_vectors,raw_count_accepted,stratified_row_accepted,direct_row_accepted,count_accepted_direct_row_rejected,direct_row_accepted_count_rejected,actual_count_outside_tolerance_among_accepted,actual_rows_outside_tolerance_among_stratified_accepted,actual_rows_outside_tolerance_among_direct_row_accepted,signed_count_interval_misses,oracle_queries_min,oracle_queries_max
+qwen,RANDOM8,canonical_strict,18,18,0,0,0,0,0,0,0,0,0,0,512,1024
+qwen,RANDOM8,post_hoc_native,18,18,0,0,0,0,0,0,0,0,0,0,512,1024
+qwen,SIMILAR8,canonical_strict,18,18,0,0,0,0,0,0,0,0,0,0,512,1024
+qwen,SIMILAR8,post_hoc_native,18,18,0,0,0,0,0,0,0,0,0,0,512,1024
+qwen,CURRENT_CP,canonical_strict,18,10,8,0,0,0,0,0,0,0,0,0,512,1024
+qwen,CURRENT_CP,post_hoc_native,18,18,0,3,0,0,3,0,0,0,0,0,512,1024
+glm,RANDOM8,canonical_strict,18,18,0,10,1,1,9,0,0,0,0,0,512,1024
+glm,RANDOM8,post_hoc_native,18,18,0,10,1,1,9,0,0,0,0,0,512,1024
+glm,SIMILAR8,canonical_strict,18,18,0,8,1,1,7,0,0,0,0,0,512,1024
+glm,SIMILAR8,post_hoc_native,18,18,0,8,1,1,7,0,0,0,0,0,512,1024
+glm,CURRENT_CP,canonical_strict,18,16,2,6,1,1,5,0,0,0,0,0,512,1024
+glm,CURRENT_CP,post_hoc_native,18,18,0,6,1,1,5,0,0,0,0,0,512,1024

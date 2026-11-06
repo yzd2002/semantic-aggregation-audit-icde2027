@@ -1,0 +1,56 @@
+{
+  "scope": "Historical immutable-v2 baseline only; does not certify the new engine extension or GLM sidecar",
+  "release_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final",
+  "verified_actual_index_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/asset_index.json",
+  "actual_local_index_sha256": "689beaaace68f911c25324bb06eb6b704c150bbc6de26fc1407475a438b3aaac",
+  "old_science_archives_reused_without_duplicating_bytes": [
+    {
+      "module": "context",
+      "filename": "context.tar.xz",
+      "sha256": "87181001bcbf33742c8234708f63bce91476e9ba9e795f88f2770812697aa920",
+      "bytes": 25802952,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/context.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715362123"
+    },
+    {
+      "module": "snli",
+      "filename": "snli.tar.xz",
+      "sha256": "4a22b2e380905208a515cd99517e8c9a53ae2e4c9e9ec99e451ce2467dd2dade",
+      "bytes": 58921080,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/snli.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715362432"
+    },
+    {
+      "module": "transfer",
+      "filename": "transfer.tar.xz",
+      "sha256": "d3edfdda7a6bd0f8cf678e7660c230d8b970900ab4ad073821c8e7039e689a58",
+      "bytes": 27412376,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/transfer.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715362976"
+    },
+    {
+      "module": "decision_dependency",
+      "filename": "decision_dependency.tar.xz",
+      "sha256": "8169a02e6f9ad855e36c097bb955e88de4d525238a733a01b90d81449181e77c",
+      "bytes": 9106624,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/decision_dependency.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715363353"
+    },
+    {
+      "module": "independent_audit",
+      "filename": "independent_audit.tar.xz",
+      "sha256": "ca9ca018af4ba91a42490f3f981835189346829f88b8ac2be6c9972a3b11a531",
+      "bytes": 810720,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/independent_audit.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715363499"
+    },
+    {
+      "module": "independent_transfer_audit",
+      "filename": "independent_transfer_audit.tar.xz",
+      "sha256": "82ed7d6b41d5b431b9012ca1ffc9fe0071c81136c636264d6f4ea7b1defc9ade",
+      "bytes": 263796,
+      "url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/independent_transfer_audit.tar.xz",
+      "public_asset_api_url": "https://api.github.com/repos/yzd2002/semantic-aggregation-audit-icde2027/releases/assets/715363571"
+    }
+  ]
+}

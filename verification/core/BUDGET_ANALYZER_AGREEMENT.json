@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "compared_fields": 2544,
+  "policy_jobs": 16,
+  "scope": "Own independent raw/CP/cost replay equals the separately authored analyzer on all shared selection, completion, quality, fidelity, per-phase cost and candidate-bound fields. Author paired/aggregate/theory tables are additionally reproduced unchanged from compact input.",
+  "new_model_inference": false
+}

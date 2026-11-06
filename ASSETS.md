@@ -1,16 +1,40 @@
-# Verified release files
+# 当前材料定位 / Asset map
 
-Six scientific modules are required for outcome replay. The manuscript PDF and matching v2 source are supplied separately. All eight files were anonymously downloaded and SHA-256 verified.
+## 当前论文与源文件
 
-| File | Bytes | SHA-256 |
-|---|---:|---|
-| [context.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/context.tar.xz) | 25802952 | `87181001bcbf33742c8234708f63bce91476e9ba9e795f88f2770812697aa920` |
-| [snli.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/snli.tar.xz) | 58921080 | `4a22b2e380905208a515cd99517e8c9a53ae2e4c9e9ec99e451ce2467dd2dade` |
-| [transfer.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/transfer.tar.xz) | 27412376 | `d3edfdda7a6bd0f8cf678e7660c230d8b970900ab4ad073821c8e7039e689a58` |
-| [decision_dependency.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/decision_dependency.tar.xz) | 9106624 | `8169a02e6f9ad855e36c097bb955e88de4d525238a733a01b90d81449181e77c` |
-| [independent_audit.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/independent_audit.tar.xz) | 810720 | `ca9ca018af4ba91a42490f3f981835189346829f88b8ac2be6c9972a3b11a531` |
-| [independent_transfer_audit.tar.xz](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/independent_transfer_audit.tar.xz) | 263796 | `82ed7d6b41d5b431b9012ca1ffc9fe0071c81136c636264d6f4ea7b1defc9ade` |
-| [ICDE2027_Semantic_COUNT_authors_pending.pdf](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/ICDE2027_Semantic_COUNT_authors_pending.pdf) | 347247 | `aa0f37c38bb164e612e130b2976961996f0547ef0b3ca6382be923bf5dcf6d5f` |
-| [paper_source_v2.zip](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/download/v2026.11.06-final/paper_source_v2.zip) | 741846 | `6989cf34f1c3dd1143a30ff0212fa60c530d417237a8c9e39efeabb79fdf8207` |
+| 内容 | 路径 / 校验 |
+|---|---|
+| 九作者当前PDF | [paper/current/ICDE2027_Semantic_COUNT.pdf](paper/current/ICDE2027_Semantic_COUNT.pdf)，SHA-256 `e7f1728c17c01bd04241f98696719066172a9cf52239c74cebd7bd8b65dec253` |
+| 实测重建的clean source ZIP | [paper/current/paper_source.zip](paper/current/paper_source.zip)，SHA-256 `8233b996e8e982e5bb072e19f21e4b4fa18cd32bdb4fc942a209d972c2a3eabc` |
+| 活跃TeX与四图输入/源码 | [paper/current/source/](paper/current/source/) |
+| 矢量PDF/SVG | [paper/current/figures/](paper/current/figures/) |
+| 本版文件SHA清单 | [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) |
 
-The actual public-source end-to-end CPU replay is recorded in verification/PUBLIC_SOURCE_CPU_REPLAY.json. This is saved-trace replay, not a new GPU inference run. The scientific tag is immutable; main adds verified publication metadata.
+## 当前8模块科学负载
+
+索引：[repro/real_engine_20261106/public/artifact_index.json](repro/real_engine_20261106/public/artifact_index.json)。分块目录：[repro/real_engine_20261106/public/parts/](repro/real_engine_20261106/public/parts/)。共177个分块、90,066,144字节；每个分块至多512KiB。索引列出每个part、合并压缩流和展开成员的实际字节数与SHA，part URL使用实际Git blob内容地址。8个模块合并重播36个main配置与16次独立budget policy执行。
+
+| 模块 | 分块数 | 压缩流字节 | 内容 |
+|---|---:|---:|---|
+| foundation | 12 | 6,040,612 | 冻结源码、协议、输入身份/标签、数学接口与来源通知 |
+| budget_run_glm | 17 | 8,537,352 | GLM独立预算扩展策略 |
+| budget_run_qwen | 17 | 8,435,432 | Qwen独立预算扩展策略 |
+| failed_attempts | 1 | 4,232 | 保留的失败尝试与实际返回账 |
+| run_glm_cache0 | 30 | 15,375,080 | GLM缓存关闭配置 |
+| run_glm_cache1 | 36 | 18,360,232 | GLM缓存开启配置 |
+| run_qwen_cache0 | 29 | 15,192,852 | Qwen缓存关闭配置 |
+| run_qwen_cache1 | 35 | 18,120,352 | Qwen缓存开启配置 |
+
+额外公开计算入口：
+
+- [post-hoc native-vector HG](repro/real_engine_20261106/posthoc/)：原作者脚本、bound结果/来源receipt及CPU重算。
+- [stopping audit](repro/real_engine_20261106/stopping_audit/)：106+48个观察前缀，两份CSV与便携CLI。
+- [readability evidence](repro/real_engine_20261106/readability_evidence/)：冻结Qwen/SciTech配对的真实停止轨迹、分阶段完整账单、两份CSV与重算脚本。
+- [model sources](repro/real_engine_20261106/model_sources/)与[rights/notices](repro/real_engine_20261106/public/RIGHTS_AND_NOTICES.md)：模型/数据来源和权利界限，权重与源文本不在压缩包内。
+- [verification/](verification/)：已完成的producer-side科学检查及本轮source重建证据；最终公开提交另作实际匿名取回与CPU验证。
+
+## 六个legacy科学档案
+
+[不可变v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final)和[BASELINE_V2_REFERENCES.json](repro/real_engine_20261106/public/BASELINE_V2_REFERENCES.json)保留六档的精确名称、URL、字节与SHA。它们承载历史实验与离线复现，本版不重复打包其字节。
+
+历史根`asset_index.json`、旧SHA/checksum清单及v2论文记录继续保留为历史来源；当前稿使用`paper/current/`与新`PUBLICATION_FILES_SHA256.json`。请据各自版本的索引核对，保持当前8模块与legacy六档的范围分别清楚。

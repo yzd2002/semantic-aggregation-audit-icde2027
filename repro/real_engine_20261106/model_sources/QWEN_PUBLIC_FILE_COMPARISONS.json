@@ -1,0 +1,101 @@
+{
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "files": [
+    {
+      "file": "LICENSE",
+      "public_git_blob_sha": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+      "local_git_blob_sha": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "file": "README.md",
+      "public_git_blob_sha": "b85879f8e465b5b02bd7ea13dd7ffaf22816bf59",
+      "local_git_blob_sha": "b85879f8e465b5b02bd7ea13dd7ffaf22816bf59",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "8e3dd0c3b5b11897cc71092ccfe517bb7a9783479baa3665aad73c8d1a2041cd"
+    },
+    {
+      "file": "config.json",
+      "public_git_blob_sha": "6988f134db143052042f2bd6e0c897bc6a605189",
+      "local_git_blob_sha": "6988f134db143052042f2bd6e0c897bc6a605189",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba"
+    },
+    {
+      "file": "generation_config.json",
+      "public_git_blob_sha": "432531a002c181a19de338313d2375e9d7494d7e",
+      "local_git_blob_sha": "432531a002c181a19de338313d2375e9d7494d7e",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "835fffe355c9438e7a25be099b3fccaa98350b83451f9fd2d99512e74f1ade48"
+    },
+    {
+      "file": "merges.txt",
+      "public_git_blob_sha": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "local_git_blob_sha": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    {
+      "file": "model-00001-of-00003.safetensors",
+      "public_git_blob_sha": "764efb4175828b8bd28f879958c49b1ac23ad1f9",
+      "local_git_blob_sha": null,
+      "git_match": null,
+      "public_lfs_sha256": "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6",
+      "frozen_sha256": "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6"
+    },
+    {
+      "file": "model-00002-of-00003.safetensors",
+      "public_git_blob_sha": "3a3ba0f35dfed0f3500d80564496a11a1d19de18",
+      "local_git_blob_sha": null,
+      "git_match": null,
+      "public_lfs_sha256": "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1",
+      "frozen_sha256": "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1"
+    },
+    {
+      "file": "model-00003-of-00003.safetensors",
+      "public_git_blob_sha": "a1d2a67eb5cb179e09df3e9cd5d0690e57434fc3",
+      "local_git_blob_sha": null,
+      "git_match": null,
+      "public_lfs_sha256": "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d",
+      "frozen_sha256": "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "public_git_blob_sha": "4747b0297d3109f14db49886972e3369c9a00b2a",
+      "local_git_blob_sha": "4747b0297d3109f14db49886972e3369c9a00b2a",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c"
+    },
+    {
+      "file": "tokenizer.json",
+      "public_git_blob_sha": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "local_git_blob_sha": null,
+      "git_match": null,
+      "public_lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "frozen_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "public_git_blob_sha": "51c1be0d9192e7f6e6596de71d0f07d58fbc32ac",
+      "local_git_blob_sha": "51c1be0d9192e7f6e6596de71d0f07d58fbc32ac",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+    },
+    {
+      "file": "vocab.json",
+      "public_git_blob_sha": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "local_git_blob_sha": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "git_match": true,
+      "public_lfs_sha256": null,
+      "frozen_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ]
+}

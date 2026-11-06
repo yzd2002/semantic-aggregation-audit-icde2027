@@ -1,0 +1,15 @@
+{
+  "status": "ACTUAL_REARCHIVE_AND_ONE_COMMAND_CPU_PASS",
+  "observed_failure": "Safe extraction rejected root-level run_study.py as an unsafe module name. The archiver had classified root Python source files by the run_ prefix.",
+  "fix": "Only real top-level run directories form separate modules; root source files remain in foundation. Safe extraction validation is unchanged.",
+  "science_bundle_and_model_runs_unchanged": true,
+  "full_private_and_compact_CPU_relocation_already_passed": true,
+  "failed_attempts_preserved": [
+    "actual_final/packed_attempt01_root_file_classification",
+    "actual_final/one_command_attempt01_unsafe_module_rejected"
+  ],
+  "source_sha256": "eb0a43073a45cb367d5d0022a2640d398120b0a119ceff8c7070931f13192ffe",
+  "next_required_check": "Rearchive the same hash-bound actual bundle and execute the actual one-command safe expansion/CPU replay in a new empty directory.",
+  "GPU_or_inference_retry": false,
+  "verified_one_command_sha256": "3dc3b8d8a08806b0501c53f86e3a7b711bd433d17920424240c5b7c81ea6cd31"
+}

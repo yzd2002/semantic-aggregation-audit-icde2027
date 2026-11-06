@@ -1,0 +1,13 @@
+partition_key,workload_id,n,source_gold_count,oracle_labels,sample_positives,interval_low,interval_high,midpoint,interval_width,width_sufficient_for_epsilon_05,realized_interval_covers_source_count,midpoint_error_over_N,midpoint_error_over_G
+agnews_count_world__n2048,agnews_count_world,2048,514,1024,252,466,544,505.0,78,True,True,0.00439453125,0.017509727626459144
+agnews_count_sports__n2048,agnews_count_sports,2048,517,1024,247,457,533,495.0,76,True,True,0.0107421875,0.0425531914893617
+agnews_count_business__n2048,agnews_count_business,2048,498,1024,252,466,544,505.0,78,True,True,0.00341796875,0.014056224899598393
+agnews_count_science_technology__n2048,agnews_count_science_technology,2048,519,1024,261,484,562,523.0,78,True,True,0.001953125,0.007707129094412331
+agnews_count_science_technology__n512,agnews_count_science_technology,512,123,512,123,123,123,123.0,0,True,True,0.0,0.0
+agnews_count_science_technology__n7600,agnews_count_science_technology,7600,1900,1024,265,1779,2164,1971.5,385,True,True,0.009407894736842105,0.03763157894736842
+movie_count_positive_top_critics__n2048,movie_count_positive_top_critics,2048,1251,1024,627,1210,1297,1253.5,87,True,True,0.001220703125,0.0019984012789768186
+movie_count_positive_top_critics__n512,movie_count_positive_top_critics,512,309,512,309,309,309,309.0,0,True,True,0.0,0.0
+movie_count_positive_top_critics__n7600,movie_count_positive_top_critics,7600,4778,1024,660,4685,5106,4895.5,421,True,True,0.015460526315789473,0.02459187944746756
+movie_count_positive_other_critics__n2048,movie_count_positive_other_critics,2048,1418,1024,732,1423,1504,1463.5,81,True,False,0.022216796875,0.032087447108603666
+movie_count_positive_other_critics__n512,movie_count_positive_other_critics,512,359,512,359,359,359,359.0,0,True,True,0.0,0.0
+movie_count_positive_other_critics__n7600,movie_count_positive_other_critics,7600,5197,1024,716,5109,5512,5310.5,403,True,True,0.01493421052631579,0.02183952280161632

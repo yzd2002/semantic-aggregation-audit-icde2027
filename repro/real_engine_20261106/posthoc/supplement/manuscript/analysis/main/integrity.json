@@ -1,0 +1,2089 @@
+{
+  "successful_checks": 13219995,
+  "error_count": 0,
+  "warning_count": 0,
+  "issues": [],
+  "fingerprints": [
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/STUDY.json",
+      "bytes": 13831,
+      "sha256": "e00de15d812749ccdd7eb8680811a6b2a9c6157f45174122f68b853dba954f5e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/PREINFERENCE_FREEZE.json",
+      "bytes": 19028,
+      "sha256": "b3f3c6098f5069fd8b14f97b67bae15fd1869e961aa3796c577613fea09f026a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/PROTOCOL.txt",
+      "bytes": 9140,
+      "sha256": "e5e68e7f00bdd067e05950a4a98e81234107935e77a8cfebb95524c56775eb8f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/analyze_finite_audits.py",
+      "bytes": 6188,
+      "sha256": "7d8197c117477888ed4a15a9c8aa7941d827591120b5a82e847852943b4b57a7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/experiment_common.py",
+      "bytes": 5389,
+      "sha256": "a8ea8f43ba874bf11ff583548d8aeffbf25af8404f35a9adfe3ffdcbf3de9c07"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/launch_study.py",
+      "bytes": 1974,
+      "sha256": "6446f85f25682b47d8441e94ba0c4ed6bf9adf580d660ff7fbc60cef9313229d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/native_runtime.py",
+      "bytes": 11328,
+      "sha256": "6024d8d2143ee9aeb3e1890e8ffa07fce21bdff30ba4ff62841de760a81f6385"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/novelty_theory/finite_audit.py",
+      "bytes": 11578,
+      "sha256": "5b31484ff39eb0ef4b831e67e1ba0deb03ce992313d12f49b711c411266f0fa5"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepare_agnews.py",
+      "bytes": 3972,
+      "sha256": "82344f2526849be8536d8144634bf384d14da374e02364b74bc117e96be4e29f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepare_study.py",
+      "bytes": 5382,
+      "sha256": "9d2742c38238b0cc9e9bed5162303774fe2e4acbb4b8a1661ae0f82b8e2e731c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/HOST_VERSIONS.json",
+      "bytes": 299,
+      "sha256": "d6ae06e83281933b3ed0c836784b075d21269bea03e1f1a81df1327ae81b5dc4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/MODEL_PROVENANCE.json",
+      "bytes": 4492,
+      "sha256": "33896e6cd79e2290f5f5ad70778135b37ab5ccce1803a3beef70a7141e86299c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/TOKENIZER_FEASIBILITY.json",
+      "bytes": 4201,
+      "sha256": "2e8e347a781e81fd8a85059477d6ef4ba2961cdffcc927415e0cd91897a40458"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "bytes": 378890,
+      "sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/manifest.json",
+      "bytes": 3455,
+      "sha256": "740dc65eb8bf8685bf856101b19fdcbaa49b9fb14fd126e06a93e307da54debe"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "bytes": 2199987,
+      "sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_business.native_requests.jsonl",
+      "bytes": 9397187,
+      "sha256": "09c4bac38415f612c2b5bca7127fea1bb4218d9804828730b041c647e0073788"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_science_technology.native_requests.jsonl",
+      "bytes": 9214787,
+      "sha256": "6b0c2ccfd11bf240932dee99e2f375e6ce6cf1f62ff640bdfc22c460fbf5b6c2"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_sports.native_requests.jsonl",
+      "bytes": 9321187,
+      "sha256": "dc4aa97ba19d1cff7f1a3142bce54cc878693f06e61d75f3d000ea4cb1e3dc49"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_world.native_requests.jsonl",
+      "bytes": 9579587,
+      "sha256": "90a98f10aa525f99df9ce08736dc262dcf858a000799509814fddf4a76ddbf81"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/movie_count_positive_other_critics.native_requests.jsonl",
+      "bytes": 7963033,
+      "sha256": "ce73f80381871423df2d80a5160e1fdad350bb01ae439c3f27860b6c6acc8a17"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/movie_count_positive_top_critics.native_requests.jsonl",
+      "bytes": 7957004,
+      "sha256": "79852f2a92a842ba08eb6cef5444801ba66d7bed975852e618569b4413cc868f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/fetch_movie_v4.py",
+      "bytes": 2917,
+      "sha256": "79b3b6bde5152f22e4cc9fdc96cd5d5a0098f995ea358d7d4f66bae1951bec7f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/lotus_native.py",
+      "bytes": 8907,
+      "sha256": "8b4acbfc81800fd96ff30e01abaced27eb8d57b710f80bb0bef94bc5ab61133e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/prepare_movie.py",
+      "bytes": 7291,
+      "sha256": "0aa72bfe93f9abe9d595478a62b6df68061e033691aacbca27fa24858d6d4fc9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/smoke_sembench_q3.py",
+      "bytes": 4175,
+      "sha256": "f395ef7cf2cefdb8169fd8910f50a541087d791f3334ef578fd5686b2a7f1404"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/smoke_stdio.py",
+      "bytes": 2950,
+      "sha256": "f56747123e406c8fd44a505bf283b75dfb0b7662e630fcdab896510a0dca7557"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/stdio_native_driver.py",
+      "bytes": 3372,
+      "sha256": "43cfe767cd0da88482d4cfcfbebbf11d18cd5f855ce7bd02996caa719c4f7b11"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/adapters/stdio_sembench_q3.py",
+      "bytes": 6024,
+      "sha256": "14637e2caf8fec22dfdb0dc0cd33395b5ecf53be0646e7f9471494ce938bc5f7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/manifest.json",
+      "bytes": 4637,
+      "sha256": "ae99fb1d2212811b62c5578b5b3e748095c2c0b60f3769c38ff3dbf757e24e7e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.gold.jsonl",
+      "bytes": 1015840,
+      "sha256": "116e2362dc923ed5b73a1a879f6370bb3bfe5499d315cae34953605c1410dbcd"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.metadata.jsonl",
+      "bytes": 5830536,
+      "sha256": "8cd2ec2ff5767433b15df0337a251638bb64f3fa8c876554a500ab6aa8a06995"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.native_requests.jsonl",
+      "bytes": 7963033,
+      "sha256": "ce73f80381871423df2d80a5160e1fdad350bb01ae439c3f27860b6c6acc8a17"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.records.jsonl",
+      "bytes": 2007449,
+      "sha256": "dffe6f8184717a0ad38f43b001cff29e126ce9c71a9966cc4d81d69ca5403b37"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.gold.jsonl",
+      "bytes": 1015041,
+      "sha256": "66dbfbf3236d5ce567cc41a11e9ef456253b63774e1f8f4dd9b8e8abb2aeb7e9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.metadata.jsonl",
+      "bytes": 5835689,
+      "sha256": "f4b0eea500ea1ac39e96dc814777fa23b5f46f9538bbbd6bb8f7d567a037f95e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.native_requests.jsonl",
+      "bytes": 7957004,
+      "sha256": "79852f2a92a842ba08eb6cef5444801ba66d7bed975852e618569b4413cc868f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.records.jsonl",
+      "bytes": 2001420,
+      "sha256": "e17273f364febd60d48ea57464c1bd5d9100150d65c286a8b3593e7790073d17"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/SemBench-c4b2bcff3a5907148f504cfb6faea4c6d3f90e8f/files/movie/data/sf_2000/Reviews.csv",
+      "bytes": 654791,
+      "sha256": "df231cfb189c9e169aa6afe415e4fa24533b04499179bbd61416c4c6af28ca21"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/SemBench-c4b2bcff3a5907148f504cfb6faea4c6d3f90e8f/src/scenario/movie/runner/lotus_runner/lotus_runner.py",
+      "bytes": 22438,
+      "sha256": "943e29556b94ad5ef5e81c8c8bc43146d07b7144834868f3ab526e19392d3de5"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/__init__.py",
+      "bytes": 1357,
+      "sha256": "71c70ed99b440ae695bbd9bd09e841dc087bf3320e15e24bfab4b64dc0c49e77"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/agentic/__init__.py",
+      "bytes": 655,
+      "sha256": "d965f859c274ba25596594d55cdd68739e9e2ba82f7bb19b6aa612843ea244ee"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/agentic/loop.py",
+      "bytes": 5940,
+      "sha256": "023560f012b9b4903386125f88d4939091d2cb32dc0b328c38d30d7fce5ab84c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/agentic/ops.py",
+      "bytes": 2544,
+      "sha256": "3c01d0c72748e73344b70f40ebadbdb0e6f0346273d89fd7a1bcb8fbb37ea553"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/agentic/pipeline.py",
+      "bytes": 16138,
+      "sha256": "f20750f4ac80770dbc3d045d081971a0fa25eadb0753515a14a0c627e89f0710"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/agentic/planner.py",
+      "bytes": 7578,
+      "sha256": "2a69e7783780fdfa236e5bfc7675818ed376968015e21efd1a914d8083acf307"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/__init__.py",
+      "bytes": 1138,
+      "sha256": "0057e1faaa9b4ba58fd366ff60da25d92f5ba27c7276f30566dcc32b601665a9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/cache.py",
+      "bytes": 3582,
+      "sha256": "ca2227b431f51d19a518feeb8dfc60e8e476ed8b36eb75d51ab67302632add30"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/lazyframe.py",
+      "bytes": 35026,
+      "sha256": "a342d56903655434f4274b8cd3284cd0d666b13c0cd700a9d8c94a6aaa4dff25"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/nodes.py",
+      "bytes": 45375,
+      "sha256": "a4b5da9f2b38fd087dd5135cbade34adc84d08255764146e091df73fef09295d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/optimizer/__init__.py",
+      "bytes": 432,
+      "sha256": "2fe7612a0052153a9061387af4ee4cf73830017417f864ceccecd9802bdd17a8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/optimizer/base.py",
+      "bytes": 1077,
+      "sha256": "0dcca2f459947288c9767eff895ec38109c1b447d0d9a0ecf10a0b5cf7f2319b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/optimizer/cascade.py",
+      "bytes": 2566,
+      "sha256": "87265c60dc28ae1c6ba70501db35dd4388a8d18ac8bd32f3a304b79d826d6f90"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/optimizer/gepa_optimizer.py",
+      "bytes": 31002,
+      "sha256": "ec093cafd05c5202ab47fa3a63e9faabab1dc1e322dd6a9beb1ea11851e15e26"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/optimizer/predicate_pushdown.py",
+      "bytes": 2879,
+      "sha256": "3b4bf108273a8a311ee7d9f46f36f75ad8456714816b4a1d5c8db0c403152868"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/ast/run.py",
+      "bytes": 6704,
+      "sha256": "a0d95b4312548f4f72fb6d2af5513ed0b6830ab4e0e5b83590a891f43bc300ec"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/cache.py",
+      "bytes": 11868,
+      "sha256": "6341c5e3fc42fdde1359ec9b0a2dcbc3e2902fad53be228c289d8cb2920a477d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/corpus/__init__.py",
+      "bytes": 4067,
+      "sha256": "a4e9d0fda17cbfb4eeba448a4b17cc00db9f4a680b1e95edfec76103197b8783"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/data_connectors/__init__.py",
+      "bytes": 88,
+      "sha256": "6b2c003b4105a7cc362c5673354bd9d6b92cc7bda8d23a0deb00b780070f0c27"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/data_connectors/connectors.py",
+      "bytes": 3205,
+      "sha256": "66a684f24a48020951e1a91e12447d92846bad3a905ae3ea68a082c3aacff2ef"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/dtype_extensions/__init__.py",
+      "bytes": 649,
+      "sha256": "757c8a2f23cebad55f16ccc9675849f3e942461d104dba13694fe9e530b7ffcc"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/dtype_extensions/image.py",
+      "bytes": 11006,
+      "sha256": "f17e136923f4d2d24dd2dc64a80a919b4503a8649276545a65fec22357c5b743"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/evals/__init__.py",
+      "bytes": 56,
+      "sha256": "777f887360805bfc8b70d3e560a82b25d02936f62aff78748403155e78152e7d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/evals/llm_as_judge.py",
+      "bytes": 12459,
+      "sha256": "bd63743e52a96d32d2c969e85690f90da02d0e172bbe68e08e48a42bd11ee952"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/evals/pairwise_judge.py",
+      "bytes": 11431,
+      "sha256": "d3d861fb330f6c82b69e7d5dec326dc30b85c2ac37b504030eb9ca255d245f7d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/file_extractors/__init__.py",
+      "bytes": 77,
+      "sha256": "7858e584a8e9b762a16bfb09d84a96a1f2d16e9bdf3938ef0d20a9769693a969"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/file_extractors/directory_reader.py",
+      "bytes": 23336,
+      "sha256": "0dac37d10e46a7b62e9f6219d9a7fbb362c14785f3ea71ce7ff081332665a225"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/file_extractors/pptx.py",
+      "bytes": 5608,
+      "sha256": "d6016cd75c9bcf8cd17027241569be0be9cdd8251941f88f542809a38893cb97"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/long_context_strategy.py",
+      "bytes": 9176,
+      "sha256": "e7acc5c6dfed25b4d28073543aec98441cc7af3f1e2576a79fe47597152e4e5e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/__init__.py",
+      "bytes": 488,
+      "sha256": "7811426b9d3a73999d84fdbeab71e8cb99370f952b55cdf921ea3f348e1f406f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/colbertv2_rm.py",
+      "bytes": 6178,
+      "sha256": "fdcb2bedf635f5cb281dc745851ee7492b3dbd787a5057955f840fdf35d3f4db"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/cross_encoder_reranker.py",
+      "bytes": 2289,
+      "sha256": "04762ade58514f688fef20422ee51a64d2086667a598116239d40956dbcf1cc6"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/litellm_rm.py",
+      "bytes": 2704,
+      "sha256": "033a6677abb6f4853a4f70e00eb6014a3459d0f269a8f05ed77a154989174821"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/lm.py",
+      "bytes": 30667,
+      "sha256": "83e843ee8b381757525130ff09b0134fa77d3688a4321a9170e88ce79030e0e3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/reranker.py",
+      "bytes": 637,
+      "sha256": "fb231385a48722c0c06a1376cb26b02c2bba8a6a54571d44b3b8c4e72af3f325"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/rm.py",
+      "bytes": 2742,
+      "sha256": "b80e484e38183ba4e9c2738b1239407842902820186f41408ea55394f48e368a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/models/sentence_transformers_rm.py",
+      "bytes": 3086,
+      "sha256": "9c5687c5647b11e98e81a0da2d2328648806944d26ff92c070bb1ff313b23742"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/nl_expression.py",
+      "bytes": 897,
+      "sha256": "c8864fd77fb0c1afa20453c8227c3ebbd6e124ebe84e083ce393cea9bcc0499e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/pricing.py",
+      "bytes": 1172,
+      "sha256": "bd983188db2c81db95519f68668ac62891fc5970e7b41458be08c29e5279585e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/__init__.py",
+      "bytes": 253,
+      "sha256": "35e26a1624b345913014bff2a5f64644c88774a4c09d433ad8fdee52505ce81f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/cascade_utils.py",
+      "bytes": 6769,
+      "sha256": "14fc1140939567559abde71976c1f3d21906864d720aa324f983f9dc8cf3b594"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/load_sem_index.py",
+      "bytes": 2168,
+      "sha256": "01f30d66d2308c58013bfc0f2e29d4e72e8e6182e83f409bbeea7d2dae67ac3b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/postprocessors.py",
+      "bytes": 7205,
+      "sha256": "8f5c33600c849ad9806fcec752ee3d14646cebd5ec441637ff0b271ae6a98956"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_agg.py",
+      "bytes": 21617,
+      "sha256": "3291e22cd6f19507da953f882ce7313ab3a43b4c57bef4440c578a4556bf7a1c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_cluster_by.py",
+      "bytes": 3136,
+      "sha256": "84871967302f40aad20a33b2c1a8dcb1210fe3e49f3910aa74a912dd64e12535"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_dedup.py",
+      "bytes": 3136,
+      "sha256": "989b729a7d28e83a95b634859813a19c5330821a7e688c198636f07f44d00165"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_extract.py",
+      "bytes": 11083,
+      "sha256": "0f58eda86d645b85b8659591d61366a86809a4d189dbec6c491fe5b4628c163a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_filter.py",
+      "bytes": 31553,
+      "sha256": "ae20bcb11b8750a9283a988ad2233d2f9a8b755f57a65c47b37029b1e70be7c7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_index.py",
+      "bytes": 3674,
+      "sha256": "0f37ac28e5a313c3d61d9a45a1b4fe11b1d618836e4d64dc9c5f034e22a05820"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_join.py",
+      "bytes": 34536,
+      "sha256": "9d1c1cc9af03ef4446c31cf607ed26dacef572c89d72746b0a351d8421edbd01"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_map.py",
+      "bytes": 12639,
+      "sha256": "bfa7465c0cb2c0440e9c0cfb9ea3f394afa60b93c593472c2cab55994a456b16"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_partition_by.py",
+      "bytes": 2813,
+      "sha256": "ba4e8a6224182185da60f4436a04cbd110cfaa085e42cd95c56dbd0b5900bdce"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_search.py",
+      "bytes": 6536,
+      "sha256": "6c2900f9cdd1c811ec7e6487c5bb4053e056a6996a28a57abd715ea4ba6925de"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_sim_join.py",
+      "bytes": 6597,
+      "sha256": "e2f7bf9885311ad5839c67dc235937fb54ed319dfdfc60b91acd1ab2c3d3d520"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/sem_ops/sem_topk.py",
+      "bytes": 35577,
+      "sha256": "69099f0ca8b959e1c545ce09168e9cf75284d280ce6a28dc1bf1ea6f364b331e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/settings.py",
+      "bytes": 2626,
+      "sha256": "1724d0820190e6585fa3504946734eb5964b7b1d8ea727540ac49815f186bf6e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/templates/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/templates/task_instructions.py",
+      "bytes": 16626,
+      "sha256": "059909938902f3fa44ae1fc9666ce91452266f1e4e8d57c5c81134c24e51a8a3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/tools/__init__.py",
+      "bytes": 295,
+      "sha256": "ee4dcd4b959d037d724cb8d4351ed448a0a73a9756e268f74d925ab08918b14c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/tools/base.py",
+      "bytes": 4014,
+      "sha256": "8f4291e06e97e88d85e63115f613047aacf7cf37de9cf07e75909e125fe08b0a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/tools/repl.py",
+      "bytes": 5577,
+      "sha256": "6618777434844c1cb963664bbfd8e062c43cdb3bdb19ff7d74f144a99f4fa24e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/types.py",
+      "bytes": 9493,
+      "sha256": "73b0ebb4a8a9606cdec6df27353d57fb28ce6e2f5800c539caee892eb4f2cc6b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/utils.py",
+      "bytes": 4916,
+      "sha256": "2d8d38af8230f447a354f460e25a8f523f1dc1aa5edebf977a8297ed04458ebe"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/vector_store/__init__.py",
+      "bytes": 244,
+      "sha256": "dcc125bad528d66ad3995ff33bf009e5d03dfdb7b3678950ed482889be9ac91c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/vector_store/faiss_vs.py",
+      "bytes": 3362,
+      "sha256": "694322929f9535ff0ee86ad41adf50d8a3b44eb3da61f2afbb24dc6243074181"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/vector_store/qdrant_vs.py",
+      "bytes": 6039,
+      "sha256": "2b2743933308027e49a69e4c5e1a37273b43384060b4ec38b0dbe18f885271b4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/vector_store/vs.py",
+      "bytes": 1678,
+      "sha256": "c09872dc784037a810dd71061ee82251e37ef4f559c876c04ef7b6bd97df6025"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/vector_store/weaviate_vs.py",
+      "bytes": 4671,
+      "sha256": "270e9fa5bc9e6ba00b93954f99e45f8030a43827930b457fab701752d8dbf863"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/repos/lotus-136ae4f4a344a2f75d89f811e516dfcb0de30e46/lotus/web_search.py",
+      "bytes": 26177,
+      "sha256": "a89ac9fc2272d05b34eb276742bd4f79f69cdfb63fe93e0e8c7129f17bcda5af"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/sources/sembench_q3_smoke/gold.jsonl",
+      "bytes": 11904,
+      "sha256": "c5653b82c82fc803c29aee8b42394710394977781108eb32a2d7d545c30ea4ce"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/sources/sembench_q3_smoke/native_requests.jsonl",
+      "bytes": 113020,
+      "sha256": "923b8dcba8c5d3b9aade01c57511a703d7c11134eb412ad1d0baa3c5f2b2736d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/sources/sembench_q3_smoke/records.jsonl",
+      "bytes": 25780,
+      "sha256": "3673a13175adf1b62bac09e548bc0df754932f49b9410d92ec3244e3e1ba9085"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_study.py",
+      "bytes": 20239,
+      "sha256": "83737023c6b90be266171a006fddcbf6a8ea66d00d09a02065099217cfa86c82"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/runtime_override/single_rank_nccl_compat.py",
+      "bytes": 3140,
+      "sha256": "c2921cab561466fb59d8a4fe8fec64ea32a72d2355ef7f666c4bea8ea62bfc6f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/runtime_override/sitecustomize.py",
+      "bytes": 269,
+      "sha256": "9f529852af64e17e7b4d5b3a0199ec8c4dcf7b5c794c38c92bea5fbb2d67b54c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/similarity_groups.py",
+      "bytes": 1032,
+      "sha256": "fb05bd6770cd05d787ecb85700fb5753ada5e2c45f86587508efa1d138848c92"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/cache_reset_observer.py",
+      "bytes": 1552,
+      "sha256": "9ab2768c4259817d4021b63bb2ce066ce473ed6d3d39307eb0a3341703448d7a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/RUNTIME_TECHNICAL_AMENDMENT_V2.json",
+      "bytes": 4358,
+      "sha256": "3663c4a446256ad8cfe5db48d9faa66f13abb82dedf9526b975984e0809a9216"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/responses.jsonl",
+      "bytes": 46321700,
+      "sha256": "50b4c4bfef2eb2a92f193f8ea87c6781a8b120ddccbea8a9e832e04c8c855d38"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/raw_returns.jsonl",
+      "bytes": 104982669,
+      "sha256": "46004987cf4afe41252dab857bbc064df60c6d01695a550db10a5787788410c5"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/effective_requests.jsonl",
+      "bytes": 55696062,
+      "sha256": "379d9b64516c9b2d42a1c8f0e61ec36e6a90ee547e16645db89871a308ada808"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/responses.jsonl",
+      "bytes": 58765801,
+      "sha256": "4ca846da30a04b7529d547052a31f73ff0d4dc7e5e18624240bef12cf7e9f084"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/raw_returns.jsonl",
+      "bytes": 138982657,
+      "sha256": "a68cd4a4eb0f79f2f067d8585c83686b6a55b5d848f471a1984a806d4295647f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/effective_requests.jsonl",
+      "bytes": 70620023,
+      "sha256": "1fd4c93ee42ebcefae0fe77f4c8475ea4f6fc077212be0fd1af8251fed91d3f1"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/responses.jsonl",
+      "bytes": 46579894,
+      "sha256": "540b57638d14663188ed72fa42e71eb043a70f8f6b6ddd449602a0b6e9ab3925"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/raw_returns.jsonl",
+      "bytes": 102835046,
+      "sha256": "76470de65ba1c325be6b5ff5a20270b445eb7b4b6bf87e9127f39de8df6c980c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/effective_requests.jsonl",
+      "bytes": 56297750,
+      "sha256": "d31d331eb14ad08828a69960330e856fcdd8f76748d0e24134e28a72bea918f8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/responses.jsonl",
+      "bytes": 58382741,
+      "sha256": "e1413472e35c9d151c4b447a1e5edc895920f97158ecd1510fb76ba2957ec0ff"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/raw_returns.jsonl",
+      "bytes": 136487787,
+      "sha256": "62d3f9eb6530968bded1ac7638588fa7facc4eb79b8ea93c826554d3d7ee549a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/effective_requests.jsonl",
+      "bytes": 70522883,
+      "sha256": "13cd7e21526315f01c9acea24a1edd4bfcd8aee05ddd6a35cdf3e406761f8bb2"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/S1_RESULT.json",
+      "bytes": 41483,
+      "sha256": "80a0c288c1cfa369818feac8c618c5fb0b601db7e4d7a7dc1cb9b188726f12e7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/S2_RESULT.json",
+      "bytes": 41483,
+      "sha256": "7c410b7fc184bc70dacae6d737e662b859f1bb0a4282714bec76a95a1fd05063"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48610,
+      "sha256": "89a18cbe7e2e1a3dd821ef7c792c5a9b98b7cb92d095e0a5dcaeb935f1c2ab97"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48712,
+      "sha256": "70efa13b4254aad1ae48d4624c173e5a085164efe7db6459f3f749ca35364e47"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 54550,
+      "sha256": "9693d901ccd145ce81cbdda7c9b1442d96b50cc35d61cffd67b31e3b1abde585"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_world__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/S1_RESULT.json",
+      "bytes": 41999,
+      "sha256": "79d32adfc51244c677550fda01ce4b6a7c6c56282531b832b1c07a78496ddec4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/S2_RESULT.json",
+      "bytes": 41988,
+      "sha256": "da19ce8a909e2ad13225f1ae457ca08315aef2bcdb831cd8338dcafcf4f5228c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48688,
+      "sha256": "b8222f581fa77bc5a0d6e8febc1ee89967cec074006e146efaaaac23b36d8c75"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48745,
+      "sha256": "28ef8a0b5789369723408281c7cf19053eca010dd1663f8a63ada67d12545607"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 55013,
+      "sha256": "1239347e05084887f9ef71e5c162c730de575777eb01a4757673e3a9777f046f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_sports__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/S1_RESULT.json",
+      "bytes": 44255,
+      "sha256": "f31ea6eca8946cb7b013ca87f750c127a2fd8c1a23c61e51fedc21683c7e5dc5"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/S2_RESULT.json",
+      "bytes": 44256,
+      "sha256": "c487bb8270d80cd488ff64969ec6e711e0edfea0f849b0a11aba0b9f968cb690"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48798,
+      "sha256": "ccf27077432a65578fc362becb1a43e4d1a8441011819623d2ea02a60b5f15a5"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48827,
+      "sha256": "362c483f6bc54154d8ce7033839d3786d485f727f97ef2b64656c8189172ced7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 65165,
+      "sha256": "904c09bd61ae3d84fa054129d1f9423f846ec8aa3b12ad66048d9f24d82fb2a3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_business__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/S1_RESULT.json",
+      "bytes": 44520,
+      "sha256": "23d901025891688f03e0056648f80b8768e3aa9e572f70f0c2f9ba50ac193c28"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/S2_RESULT.json",
+      "bytes": 44525,
+      "sha256": "6060893822a949378d58c3f80933ec9dcca47e2422c8a72437b8296906bacb64"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48835,
+      "sha256": "c1cbd6b1db7ea9e80a286bdc170ae4cad67487adb7c7adb76240599b8c694b0e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48885,
+      "sha256": "c423a84dad736053d16de918da98552a5d88ccb689f2f37e8a3877a438686601"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 57534,
+      "sha256": "dbb70276f7654d4ce31a05015af6026249f920d07578b892a41b4f91da60663c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/S1_RESULT.json",
+      "bytes": 44508,
+      "sha256": "e1c7ea2dde65d6d72c1cc75c3f304f57c36d1486401f14a19ec9b5222b6a58d2"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/S2_RESULT.json",
+      "bytes": 44512,
+      "sha256": "6ce7255f7f8b22f0e2505ad2a73fa6a1b46370596ac16893629ac59527ab9d3c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 48824,
+      "sha256": "9663e2753ed62aee12d635ef4a432d1206c3b8f9891fa4a4c55e13e950e27735"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 48869,
+      "sha256": "1aa6c3ff240d5e462a636a9edbb72a1dd1d841a9a119c2c9105346c631431cae"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 57423,
+      "sha256": "4b8bce4b1272f460a648b9082372e3fbb893e8eb7d135b56e00c36c06c00c89d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/S1_RESULT.json",
+      "bytes": 11454,
+      "sha256": "c94f324abb54296b7b0482e9626ea905a1bbbdb462b28a2571932f24bd5b4820"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/S2_RESULT.json",
+      "bytes": 11455,
+      "sha256": "98b5d053a324033bb3a65b01261dc207e8a1308ff59afe79f399ab6af0ed560c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12151,
+      "sha256": "3d61dd05563470b33104c30cf26214cb534e5f2a30d9fc741d5112b4c52491b6"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12203,
+      "sha256": "b4e0078d941abbcaf960d6149c404d1b43f76073e8dfe6ba8c4be922c9dc432b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 24441,
+      "sha256": "2d55ffc7c42714367c48086d21b457433c6feede3f078cc2f1d204e57377205f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/S1_RESULT.json",
+      "bytes": 164156,
+      "sha256": "114e8623b1f398c4d437c437801afe100e67049c9b950811bc59dd245230b70c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/S2_RESULT.json",
+      "bytes": 164146,
+      "sha256": "aa16fbb662cf264882f1ef1b1b64c51d85864ba959bb7d20c95b88de3b109787"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 183070,
+      "sha256": "a174de7bb3e6f548521e18570784fc44b52de93ef29c52ce669abc124aa9d52f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 183285,
+      "sha256": "c03ebd6dddccdc0bb64e46da92240c6b938b7b4e557d05a0eda061420a28ec19"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 184984,
+      "sha256": "e4aeae35934fe5b027e41a2c796acd1a66418a1735d5f8f8e9f28e4884166f14"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/agnews_count_science_technology__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/S1_RESULT.json",
+      "bytes": 164158,
+      "sha256": "1ebd373e1eccbf172dcd363adbbcc1bfa635beac792d81f58d16f66bc5182104"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/S2_RESULT.json",
+      "bytes": 164151,
+      "sha256": "5b9820aa3b8554f9754607821ff0e534eb3fd95765a57c017778450e68fbce6a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 183067,
+      "sha256": "64799561bf152a3c7c24953e30628df7ed8bd3c69702db347b038db11558a282"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 183284,
+      "sha256": "be51c28cafc4f482f6336a7f6b7e64dfdaeaac758a9260efe1ba7c7631d2a0ed"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 189089,
+      "sha256": "76c47c8e1cb61bd9def16cbbe7dccdd69970b19c627fe6b232152c891aa62935"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/agnews_count_science_technology__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/S1_RESULT.json",
+      "bytes": 43685,
+      "sha256": "91b8a6f936e8f37604b3617705e1e8e9f0e6c6db1b5fe2efc8d863b74155da32"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/S2_RESULT.json",
+      "bytes": 43686,
+      "sha256": "ff99fbdcb630bc01bafef3d06241aa47897ac3bcd2cbec20279c25f84f755880"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48457,
+      "sha256": "5cd342703a66e3195de5c361acdf36e8ff99c2d55b8149c1fd7db5a4501622f1"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48494,
+      "sha256": "dcebd3f96cd5fd0ab0e41bf1b55122ca9a224fdbf60cb02fb98b92384b6487ee"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 56697,
+      "sha256": "1f02ea5b1216e42366941ad1c46d95dad5df024951fe97532f6bc1007a272e9f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/S1_RESULT.json",
+      "bytes": 43684,
+      "sha256": "51c44bf62eb12457dbec30369b2ad03154d95844c7516d3e632725a4df3d13d3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/S2_RESULT.json",
+      "bytes": 43678,
+      "sha256": "ffa1b7000da92ff6882602c1e6af9cd7f6046e064b219841f8b52fabf14aa118"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 48448,
+      "sha256": "2119fbf446dc5b345bd28ea8d291a052300ef29499c792a7c605a352aa8b1a73"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 48485,
+      "sha256": "8864edbe7e7c4669b4e0068298f071a836d953834fbdb3916db160944bcb110f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 56672,
+      "sha256": "7587f9e594431b2e51507ee25541429c32cfdab19aad120a25bfad97aaabf6a8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/S1_RESULT.json",
+      "bytes": 11226,
+      "sha256": "0fc687918f0fd44ce193041323f4b32d148eb69e5490c5bbebfdddd0c1edc10c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/S2_RESULT.json",
+      "bytes": 11226,
+      "sha256": "8539fb25f724bd5aea1db2c7f12251f4373eda0bec54b98328169376b309c493"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12075,
+      "sha256": "1af6fdc93cb07d03c90b5873027c278f2c8042e76670b602e4e41f447d8f9b35"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12095,
+      "sha256": "9192cfccd4ed02ef52f0134d3f5e0e875a575a40f82449df3c3959c8a009141b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 28184,
+      "sha256": "92833ff34ae05f3216ca73fb2a3ba54ed52d127f41123c89612547e1bfde8e52"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/S1_RESULT.json",
+      "bytes": 160926,
+      "sha256": "d1b5d515fb5cf282fbe0fb5c66c0be1484cae6fa5a9f27fcb014a65f83218034"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/S2_RESULT.json",
+      "bytes": 160940,
+      "sha256": "200f45ac562309981c55392eed15994932f8cc8d8621ccd187bae1b18e553869"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 181605,
+      "sha256": "54d5668bf47c8fe0302acbe28c2726ecba98c87c45d58d63a3be16f21992db28"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 181610,
+      "sha256": "1d8f71f9122490d7675556685a5d819ca4cb99c3a1b017323f2bc39568737703"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 173973,
+      "sha256": "281c4d6082c44467de4bc5949e244aeac45c6f9ec4ad1426e2759c652a1b2cb0"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/S1_RESULT.json",
+      "bytes": 160931,
+      "sha256": "4964f70b6e82f35abc7bd692fdee8636aa3e7029f47c6b54b2b3eaf453581ad0"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/S2_RESULT.json",
+      "bytes": 160942,
+      "sha256": "0f80d770edbb29f2e51fafe30dc3c7ca467de966007208ab990969f9a007b40e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 181597,
+      "sha256": "e9b4e33511e36f1da896f32be77af5c49cd85875e9033584cf810017bbe02c9c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 181596,
+      "sha256": "f0513d6354b4c69ace0a4e04d4a3af24f5915059453f5f58d4ad056ea93706eb"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 173956,
+      "sha256": "41ff4e4fab62c83c258f2fe1fa04e1c8aaa23c3ea42507f75b67211b189e588e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/S1_RESULT.json",
+      "bytes": 43508,
+      "sha256": "534fa7ba756f345f7503c63861933a4f7e64b2b7dcd88339243db8712f7578ae"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/S2_RESULT.json",
+      "bytes": 43505,
+      "sha256": "075495083d02e553137b73a27560aec0d2f3713897cf243afdd5c86558ca3507"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48366,
+      "sha256": "44dde79c546b98d7d06d37c8ec5f9a63df2501d6a5e904ffd8dcb3d98f5ab888"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48370,
+      "sha256": "bebcc8f08c59bbc9abc5ec1575357036844a6d370b3531528a20555ae08bf0c7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 56495,
+      "sha256": "72c0a34e3c9be644de922620b2748ee9e6d2f990c153dda2932cbb63565d4832"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/S1_RESULT.json",
+      "bytes": 43495,
+      "sha256": "02a5a7cecf2fc5b36dabbbf75ed5264935f5547d6a3bcdc1579e43c02fef397a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/S2_RESULT.json",
+      "bytes": 43500,
+      "sha256": "f5f18489df1f3d55cc58bb36e2ff3f2cd34528f79424e9c7eb96406f2e2cde5e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 48359,
+      "sha256": "99753a783d2f3eee333580d8236b0c1e4b94109b246507a1cfe17465da1b9adc"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 48364,
+      "sha256": "8a54c0f48ceaafce71e9d31df9b911021717fd0b65e6701c14bb0476d89f00a7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 56467,
+      "sha256": "ab7a1779645bdd985907c7664931732f7cde881a5e589a38e8ac13e4f771c737"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/S1_RESULT.json",
+      "bytes": 11164,
+      "sha256": "5ab696d053cfc4f30d59b34910da3201c98705ef7ebd07c9664df34da7846465"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/S2_RESULT.json",
+      "bytes": 11163,
+      "sha256": "bdaf86038555bc9c26a1d8c0a2a98c368c9f8945900a0e609b2ccb04b64fd9b9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12054,
+      "sha256": "2758fb1fd109ee2dac055310662dec043311e23529873ffab5b9d2481ecc3ca4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12065,
+      "sha256": "1191b5d93535ab3b8f3583003aeca7e2e350be93163e6855e1b1a519d3acf3f2"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 35932,
+      "sha256": "43a1cf853bc13d66e578e4b20ac15c0cb3125f896fb1279a1681b434231dd817"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/S1_RESULT.json",
+      "bytes": 160406,
+      "sha256": "40676e28630d670fcefad694c8d95192ef19b10eb66913b5c28b8148cd5fc381"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/S2_RESULT.json",
+      "bytes": 160412,
+      "sha256": "5e92248764cfdb1ac02da00a4da134a5f60c5b363191e256134763cc3b0e4c0d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 181394,
+      "sha256": "389050e4a3517164864fd1bb069332522f6610cd32623934f2cb6ef33938b9ae"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 181394,
+      "sha256": "bd6bdcf903c6862d4924b39126e0f956aaea5e9733e64711cdee219e32bcf6c0"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 173484,
+      "sha256": "a60f2844c3951f486b0c8e90b779b0912c8801446cfe4ab7c844aad23cc508ca"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/S1_RESULT.json",
+      "bytes": 160402,
+      "sha256": "da00507a5da198c64f4333eebe2556a2b423cd99a9efc1ae882f67027d69665c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/S2_RESULT.json",
+      "bytes": 160398,
+      "sha256": "4a27d394e88ca884d115096b6e87ad2b80459d942a9cb02b44b00bb4999d1d99"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 181395,
+      "sha256": "e6d5b4c9c051d1f8915f67d2fae2df55c0a2135131c33c12034bb7c9dae52e4d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 181404,
+      "sha256": "7ee523d240ff75c0f9fd516fd9c4e16dc792f7f103159b97798e2bcd0f9e6ee0"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 173408,
+      "sha256": "b20e349b41bd84b76a31dc56a6290c720ca6e91a3aea535e6f42f5785abc26de"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/S1_RESULT.json",
+      "bytes": 44237,
+      "sha256": "1a8924f9271db9774069bc0f6961b07a78d3e17193bec311126f4060f6d39fcc"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/S2_RESULT.json",
+      "bytes": 44235,
+      "sha256": "1ee88cc17f858bf5b639f27f2b2302b6a16fb16ee00053b758f2be5c443631b7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48910,
+      "sha256": "8127ce08e954afa9b7fde08b8e55c048a028ead1afe52af361c078772a473935"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48901,
+      "sha256": "9bb339b212044369f2341d6b8e965aa36ad3e86f026e0fe211b274cd099a57c4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 69118,
+      "sha256": "b9848131975fd44dfa6b28f616be303a944b727e7db3bfbc279cf42ad971065e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_world__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/S1_RESULT.json",
+      "bytes": 44419,
+      "sha256": "75347f715864ea43b3a01c54786badebcdabc12c194738e446e5e41e9dbf121b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/S2_RESULT.json",
+      "bytes": 44419,
+      "sha256": "0cabf384f52a41a8b909a673e7e21f6591eb44ea35646b3ad8229e2c05ad7612"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48978,
+      "sha256": "07fb40983fe8c3e16ac53c107e4ce362267204591c398b50183c7d3fa98dbc8a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48988,
+      "sha256": "4122dbe27233318fac0c2652301da2863307025a000633db0502250ef296bc20"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 69400,
+      "sha256": "bcc183738fd5783f25a74e69208baef3606b0afc95d1957fa9e5f1e07da6aa75"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_sports__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 26855,
+      "sha256": "d7cef5a9687833132c85130d3c6ef7d8a1869fe11438b9e15e974d92b1c81c25"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/S1_RESULT.json",
+      "bytes": 43787,
+      "sha256": "4680d9ea421dd31065704844c764363b1a6108926e8569d43579e19d0637144e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/S2_RESULT.json",
+      "bytes": 43788,
+      "sha256": "f3f4df34456df44ca311d324190c3afb7fc3ea227948c6f918b6df5a50121868"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48683,
+      "sha256": "5cebebcf5e75365d58b93fcac9f063a30d1820e5609a2d1b554ef44c17c9e2e7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48679,
+      "sha256": "2404de85038cb2f76914a7f28858b8b411531a8f64d44d47d06a17b9c7b961dd"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 76372,
+      "sha256": "cb182c991ea4965648f30797d488383abaa78ccd8f2b85e6206db84fa2203366"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_business__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/S1_RESULT.json",
+      "bytes": 44487,
+      "sha256": "f696c923adfcfef93e2b29250f3ed403049fcf1aaff68dce58e7afb3eb7843ab"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/S2_RESULT.json",
+      "bytes": 44483,
+      "sha256": "8c04d61de413b9f3ad702c4b7c7742014b2725cde114f772da9eb024031b6460"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 49023,
+      "sha256": "266cecae0b2b34cdc2d20c1840090a4f1ca1144784a85383225d9c04ce488fd7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 49041,
+      "sha256": "d841d6a9e11b7a369d8dbe3e163599b14a61434786f7be66dff502065fdaef71"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 57463,
+      "sha256": "7cf19a45ecb730b7e632674b1458907acbc37153396a2d5d6966933f023bf4fb"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/S1_RESULT.json",
+      "bytes": 44472,
+      "sha256": "ad9ac690a64f79caa5f169bba3eac9ab9ff279aa89b99b7bbab887e54f31d27d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/S2_RESULT.json",
+      "bytes": 44473,
+      "sha256": "cf26b5613807b3a2f37ac23e4208de56f4e5510b1981d5885d3535294986b97b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 49013,
+      "sha256": "9590198f6295bb73092ad778bd16b04433efdb48a98ec972a3ed18e63d89b3ce"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 49032,
+      "sha256": "0731ee067b330fcab9e270b23fe3f5508769033b3e093073f5980031689b74c3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 57341,
+      "sha256": "b63eb32573233aa349ee243cf7a4edbdb1ee3f06c3c78623b4823f3f135e8668"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/S1_RESULT.json",
+      "bytes": 11434,
+      "sha256": "a900ed96e53cd94e248850d0489c3c7ff163358e03c5d513dc8fbd16719b12e4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/S2_RESULT.json",
+      "bytes": 11434,
+      "sha256": "ce53a096fb36e99967fdc12bce79e837e0824d88310fbe1e484fce5ee3c33290"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12225,
+      "sha256": "410f2b13c75d3253e9d6c583739f05fc2cec256ff25bf7c61a16c83b696dae75"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12245,
+      "sha256": "6a56bce238f7eafd92ec1868d4dc203707ba9bbb3d41afa991340cf746649357"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 28298,
+      "sha256": "1ab0b55ea653277a3b5a427153edf16798105e935568cc6590f824b47ad33267"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/S1_RESULT.json",
+      "bytes": 164031,
+      "sha256": "7b1be680c6755826bb6b90ee5ad522d04ce9b75bdac28a1fbfaed6acd6ab3f6a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/S2_RESULT.json",
+      "bytes": 164033,
+      "sha256": "5cb47fe9b8383f2e2b02be762f63bf2615cf4a2bb5d46ef37c86c8da699b66e3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 183825,
+      "sha256": "cde32656238c189a061e39bc659573c9337b747a4dea7ef351cf1c33b6846abc"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 183817,
+      "sha256": "49c4fd842164965d4447339c5b94cd1402a4b29e9fde9610dc3e860d2cd8c5f7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 200437,
+      "sha256": "38d582ddb38ca588611d703a8fb707b2416009d60f574819fc13234d10f5f481"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/agnews_count_science_technology__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/S1_RESULT.json",
+      "bytes": 164034,
+      "sha256": "a561d695cfd7ce9066a05b8ac049266d5128deb3edf75d64c2841bad3035e219"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/S2_RESULT.json",
+      "bytes": 164024,
+      "sha256": "a887cf14d76b385b9b61e0efae273ed878c3674a967397fd25de942e475be7c8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 183809,
+      "sha256": "070cc89fc9deadb5846ff773793c093ff348d1697d616e7d2be9ed68c29c2c44"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 183809,
+      "sha256": "22cb6664df861e026f59b7dc74df9dd4e0a10ef6c87180f91fb6c8ae78699e1a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 200692,
+      "sha256": "c3d6cdb3299f96dc6183a10a2b4308d2ad5bb874186a465b858922488dfb9793"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/agnews_count_science_technology__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/S1_RESULT.json",
+      "bytes": 43425,
+      "sha256": "247e513f9591a08e8f638c1fc7a45a22ff6cbf8ae9d514c7a6af117f65f00fc8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/S2_RESULT.json",
+      "bytes": 43430,
+      "sha256": "57ff7dd776fa29acbda7330c1edd59451de6f356a55ed2fe8c629233bd94ef2e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48272,
+      "sha256": "7c901a9b439635f5161c83b6ff5d8f7daceacfe2498816b1654cc8f628e52246"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48301,
+      "sha256": "798f1c5567885b0f403936f514c9339da1d52a93dc7592554cf139f4470f544c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 56395,
+      "sha256": "fd85810d2875ea4c457983be62f417b98619c1d6d158e86920f27b94c45e6513"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/S1_RESULT.json",
+      "bytes": 43419,
+      "sha256": "79847015820538008c5c31567534abddb606e8375c0ec3afa72dd1b4a2d12650"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/S2_RESULT.json",
+      "bytes": 43423,
+      "sha256": "b3a111952d14049802c77e809f2c9d3de7f41258fab38be7531e3d4ccb134ef8"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 48266,
+      "sha256": "bb7a668576c8dfdb43b05328167ef4a22a662f5d565e934cc93f66ca5cd906c4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 48287,
+      "sha256": "beb01c63a4557824358b78922ad2ee72dafa00f66652a111c6543eff287a2761"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 56375,
+      "sha256": "f45c8bdec00b8ecbc814bdf898f19ca06ebe2c44f8b4d677e0d5bb53aa7e5fc6"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/S1_RESULT.json",
+      "bytes": 11172,
+      "sha256": "40436909b4eb14a463227a7713902f82ffced2b12ff69984f30c1c52428eabd1"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/S2_RESULT.json",
+      "bytes": 11173,
+      "sha256": "5bed067399146bc60414db34f94447d0c21a483c9986bfa9d6029686e6cd6d25"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12043,
+      "sha256": "43c4cdf4f6581e8a90846f1981dc65072abc412ffd19d05022d4cb3f597904f3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12051,
+      "sha256": "d5223443e669172090131563970a6e2d3710efae0b8ca86784ebeea4b69fafa7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 24124,
+      "sha256": "e6bba716184c1e62c432c2ea217a7aad3cbf72c76c7ab71a4d10f303e7185d23"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/S1_RESULT.json",
+      "bytes": 159806,
+      "sha256": "813eb3c504f221a0ced388f19ce17870441f5da3d836078168ff9e1acf9e1b6d"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/S2_RESULT.json",
+      "bytes": 159800,
+      "sha256": "96f2862947fb5138c717f7d03e62e92dd7737fb2458830eb52748020f015a0de"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 180895,
+      "sha256": "f87781cd418ecad3de5a04273d719ff663a62314752f095dc666ba6ea1d2f617"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 180930,
+      "sha256": "730a1420e9db3e761cd54a405ac144c0564131a4fe218c83e486ad000813c5f9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 172774,
+      "sha256": "30810b3f62d84784168d2199c94bb1cb4f79a1f9e06829596ee04354c2e17987"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/S1_RESULT.json",
+      "bytes": 159801,
+      "sha256": "c7fa488c96c1bbaa0a0b896e20849c7324f86e01b167206f6449358c672cecd4"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/S2_RESULT.json",
+      "bytes": 159806,
+      "sha256": "525bad030ead78a6b46f685a7d961ff3c04e3733b9419acc565cb5936f6bd595"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 180886,
+      "sha256": "20a379b69a5166ecfaf65e10a0ce919e6c810e758af92ecab64fce2596d7b362"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 180916,
+      "sha256": "ad1f9e836357e07a9bf028a86fccd81ce9cb3cc683b8fed5ef62bdb812616ec9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 172769,
+      "sha256": "0c3ebc0fe8b1c926f23569e86ef84ea064cdbd18f525963c9d44181505b5781e"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/S1_RESULT.json",
+      "bytes": 43194,
+      "sha256": "f40d0bb8e7a368f981ec145d9ce3e824e66790cd478ae3ee2a9516e25ccb91f6"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/S2_RESULT.json",
+      "bytes": 43200,
+      "sha256": "84f1eaa4da4d2df89ece9016774c3b04a8ebcdbee8ec9bbeaab50452536e9810"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/RANDOM8_RESULT.json",
+      "bytes": 48159,
+      "sha256": "0ddf81c7a126d4d1f097c059d1e46c1bd0c7b592408769a6692d865d0f233828"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/SIMILAR8_RESULT.json",
+      "bytes": 48182,
+      "sha256": "c13073ac0b40beb8effcf2fe68474cf184c599aefdc44c3753b2645315cb3444"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 56130,
+      "sha256": "7359880c87cacd38653603d483a2d435c4ea802afdddec53523f9271061c51d9"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/S1_RESULT.json",
+      "bytes": 43184,
+      "sha256": "bbca391a81c3436eb99cfd57597d1c761bfc870e05e3b362afe1fa62aeac6ccb"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/S2_RESULT.json",
+      "bytes": 43182,
+      "sha256": "8c3ff165404679199295f4703e281f5bd67cd28ed2f6f05e0c16579934ac4573"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/RANDOM8_RESULT.json",
+      "bytes": 48149,
+      "sha256": "18bd3cb907d666ab36d9e439f80846661075b300c71af3c43131340e1e2b8690"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/SIMILAR8_RESULT.json",
+      "bytes": 48169,
+      "sha256": "edb83a941d7c39b329901bb26d661a39690bf13e57a6088dbe15fcafaa23ce0a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 56109,
+      "sha256": "fb7576f669068c44d6ec23199ef5e076bd54d94a86b296f80eef86e6de06dda0"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/S1_RESULT.json",
+      "bytes": 11078,
+      "sha256": "fdba978ac7158bf291bf32df58acf0ad5ea14c63f4b05e97916c7af494e81152"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/S2_RESULT.json",
+      "bytes": 11078,
+      "sha256": "5e8fde2ca61154dabc636c040411eb61645f98f7455186940c73cbcf6d06a292"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/RANDOM8_RESULT.json",
+      "bytes": 12002,
+      "sha256": "c661f122edba9a2d2504c05781d6f9f2b3bcd59d708bf7a4d2d5916e31025e0b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/SIMILAR8_RESULT.json",
+      "bytes": 12019,
+      "sha256": "57658abecf78bba412200348c73fbbad17d5112a13294ec4fc2af1ef2edffffb"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 31815,
+      "sha256": "8f147782172618987866e1b34c1870999f7ed42a9ecc7af688aa6d2e8ed4807c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n512__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/S1_RESULT.json",
+      "bytes": 159364,
+      "sha256": "c7aa0f016729c9c32a775d6c0dbd709ff7c2b2d1d22404836eafcb40c562253b"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/S2_RESULT.json",
+      "bytes": 159372,
+      "sha256": "607d2da871f55c7fb6d4d7a34132d1e088838c7d1000e4f73565d964a2435c24"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/RANDOM8_RESULT.json",
+      "bytes": 180662,
+      "sha256": "c6da6e82d947f83044e77e983657c7bd53a9dd9474d03106311312edaa613a7f"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/SIMILAR8_RESULT.json",
+      "bytes": 180695,
+      "sha256": "df40975cbc9bbacfe6284bfb196281e562a82ed011cfcdf9ab74b2b875e3014c"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "bytes": 172402,
+      "sha256": "c156e629a2ffe250eb9366aec7d0cea1878f99506b07d8ed5c7cb52709d749a7"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/S1_RESULT.json",
+      "bytes": 159367,
+      "sha256": "5f9bc58fa01a63db936dc4fd7a51874860e7fae3c31cccdcc3a64d5ee300c0f3"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/S2_RESULT.json",
+      "bytes": 159361,
+      "sha256": "e4fe4cd98fabc3e14b41b8468b9301d8178ef76d95d4928b9d853c6ab5e4b558"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/RANDOM8_RESULT.json",
+      "bytes": 180650,
+      "sha256": "91960c23c71a3954125b5d58dfb45a7da120c131e2dc81066fb5f47b4a10e15a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/SIMILAR8_RESULT.json",
+      "bytes": 180677,
+      "sha256": "5639ec04b37f484b903a0b90146bdab6ccf95744eaf3c4e88fbd03ae31c1934a"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "bytes": 172332,
+      "sha256": "17f842bbf1d0a0581524aea10cf5bc8eb004e18261f1d2415f6f0614d0e2dec2"
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/INDEPENDENT_VALIDATION.json",
+      "bytes": 71,
+      "sha256": "2623b498a76798748e13f04e11d3857b9563c2cddf0e735d41372ae0594d6f33"
+    }
+  ],
+  "runs": [
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache0",
+      "complete": true,
+      "failure": null,
+      "responses_observed": 95014,
+      "observed_research_union_usage": {
+        "requests": 95014,
+        "input_tokens": 17451233,
+        "output_tokens": 604413,
+        "total_tokens": 18055646,
+        "cached_tokens_unknown_requests": 0,
+        "cached_tokens_observed_lower_bound": 0,
+        "cached_tokens_upper_bound": 0,
+        "unknown_cache_input_tokens": 0,
+        "cached_tokens": 0,
+        "uncached_tokens": 17451233,
+        "uncached_tokens_lower_bound": 17451233,
+        "uncached_tokens_upper_bound": 17451233
+      },
+      "deep_integrity": {
+        "status": "checked_completed_run",
+        "submitted": 95014,
+        "effective": 95014,
+        "responses": 95014,
+        "raw_returns": 95014,
+        "raw_returns_without_validated_response": [],
+        "generation_seconds_by_stage": {
+          "controls": 69.30970459803939,
+          "OFFICIAL_SEMBENCH_Q3": 1.3341523203998804,
+          "agnews_count_science_technology__n2048__cache0/CURRENT_CP": 3.0052053201943636,
+          "agnews_count_science_technology__n2048__cache0/CURRENT_CP/execution": 23.03668926283717,
+          "agnews_count_science_technology__n2048__cache0/S1": 24.07089302316308,
+          "agnews_count_science_technology__n2048__cache0/SIMILAR8": 17.778889633715153,
+          "agnews_count_science_technology__n2048__cache0/RANDOM8": 15.751791877672076,
+          "agnews_count_science_technology__n2048__cache0/S2": 24.021664138883352,
+          "movie_count_positive_other_critics__n7600__cache0/S2": 83.2250952348113,
+          "movie_count_positive_other_critics__n7600__cache0/SIMILAR8": 37.038100538775325,
+          "movie_count_positive_other_critics__n7600__cache0/S1": 88.3564159348607,
+          "movie_count_positive_other_critics__n7600__cache0/CURRENT_CP": 2.7596073541790247,
+          "movie_count_positive_other_critics__n7600__cache0/CURRENT_CP/execution": 86.8171274214983,
+          "movie_count_positive_other_critics__n7600__cache0/RANDOM8": 37.04167432524264,
+          "movie_count_positive_top_critics__n2048__cache0/RANDOM8": 10.001271545886993,
+          "movie_count_positive_top_critics__n2048__cache0/S2": 22.68653297238052,
+          "movie_count_positive_top_critics__n2048__cache0/S1": 23.240810200572014,
+          "movie_count_positive_top_critics__n2048__cache0/SIMILAR8": 10.052987556904554,
+          "movie_count_positive_top_critics__n2048__cache0/CURRENT_CP": 3.2070652581751347,
+          "movie_count_positive_top_critics__n2048__cache0/CURRENT_CP/execution": 24.14580106921494,
+          "agnews_count_science_technology__n7600__cache0/CURRENT_CP": 5.910990558564663,
+          "agnews_count_science_technology__n7600__cache0/CURRENT_CP/execution": 88.58457514829934,
+          "agnews_count_science_technology__n7600__cache0/RANDOM8": 52.231239534914494,
+          "agnews_count_science_technology__n7600__cache0/S2": 85.56457493826747,
+          "agnews_count_science_technology__n7600__cache0/S1": 89.3370440788567,
+          "agnews_count_science_technology__n7600__cache0/SIMILAR8": 52.30529132112861,
+          "movie_count_positive_other_critics__n2048__cache0/S1": 23.822330443188548,
+          "movie_count_positive_other_critics__n2048__cache0/RANDOM8": 9.920322019606829,
+          "movie_count_positive_other_critics__n2048__cache0/S2": 22.22648386657238,
+          "movie_count_positive_other_critics__n2048__cache0/SIMILAR8": 9.852029051631689,
+          "movie_count_positive_other_critics__n2048__cache0/CURRENT_CP": 2.564442776143551,
+          "movie_count_positive_other_critics__n2048__cache0/CURRENT_CP/execution": 21.003053871914744,
+          "movie_count_positive_top_critics__n7600__cache0/CURRENT_CP": 2.7152025159448385,
+          "movie_count_positive_top_critics__n7600__cache0/CURRENT_CP/execution": 88.54096804745495,
+          "movie_count_positive_top_critics__n7600__cache0/SIMILAR8": 36.46724805049598,
+          "movie_count_positive_top_critics__n7600__cache0/S1": 87.73215624317527,
+          "movie_count_positive_top_critics__n7600__cache0/S2": 82.74151142127812,
+          "movie_count_positive_top_critics__n7600__cache0/RANDOM8": 36.800356371328235
+        },
+        "independent_tokenizer_reencoding": "not_performed; submitted/effective/native token sequences independently hash-checked"
+      }
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_qwen_cache1",
+      "complete": true,
+      "failure": null,
+      "responses_observed": 120822,
+      "observed_research_union_usage": {
+        "requests": 120822,
+        "input_tokens": 23320425,
+        "output_tokens": 777137,
+        "total_tokens": 24097562,
+        "cached_tokens_unknown_requests": 0,
+        "cached_tokens_observed_lower_bound": 7921760,
+        "cached_tokens_upper_bound": 7921760,
+        "unknown_cache_input_tokens": 0,
+        "cached_tokens": 7921760,
+        "uncached_tokens": 15398665,
+        "uncached_tokens_lower_bound": 15398665,
+        "uncached_tokens_upper_bound": 15398665
+      },
+      "deep_integrity": {
+        "status": "checked_completed_run",
+        "submitted": 120822,
+        "effective": 120822,
+        "responses": 120822,
+        "raw_returns": 120822,
+        "raw_returns_without_validated_response": [],
+        "generation_seconds_by_stage": {
+          "controls": 1.6720254588872194,
+          "OFFICIAL_SEMBENCH_Q3": 1.4328256379812956,
+          "agnews_count_science_technology__n7600__cache1/CURRENT_CP": 4.666410723701119,
+          "agnews_count_science_technology__n7600__cache1/CURRENT_CP/execution": 78.51142084598541,
+          "agnews_count_science_technology__n7600__cache1/RANDOM8": 50.49746274575591,
+          "agnews_count_science_technology__n7600__cache1/S2": 82.6673996783793,
+          "agnews_count_science_technology__n7600__cache1/S1": 77.83890181221068,
+          "agnews_count_science_technology__n7600__cache1/SIMILAR8": 50.328082628548145,
+          "agnews_count_science_technology__n512__cache1/RANDOM8": 3.2930048760026693,
+          "agnews_count_science_technology__n512__cache1/S1": 5.351795963943005,
+          "agnews_count_science_technology__n512__cache1/CURRENT_CP": 2.9483266789466143,
+          "agnews_count_science_technology__n512__cache1/CURRENT_CP/execution": 5.955000817775726,
+          "agnews_count_science_technology__n512__cache1/SIMILAR8": 3.5720460079610348,
+          "agnews_count_science_technology__n512__cache1/S2": 5.364746753126383,
+          "movie_count_positive_top_critics__n7600__cache1/CURRENT_CP": 2.547317197546363,
+          "movie_count_positive_top_critics__n7600__cache1/CURRENT_CP/execution": 80.63814623095095,
+          "movie_count_positive_top_critics__n7600__cache1/SIMILAR8": 34.23151186108589,
+          "movie_count_positive_top_critics__n7600__cache1/S1": 78.94546759687364,
+          "movie_count_positive_top_critics__n7600__cache1/S2": 78.15302861854434,
+          "movie_count_positive_top_critics__n7600__cache1/RANDOM8": 34.7536500133574,
+          "movie_count_positive_top_critics__n2048__cache1/RANDOM8": 9.328149780631065,
+          "movie_count_positive_top_critics__n2048__cache1/S2": 22.34615445509553,
+          "movie_count_positive_top_critics__n2048__cache1/S1": 21.71404792740941,
+          "movie_count_positive_top_critics__n2048__cache1/SIMILAR8": 9.393424931913614,
+          "movie_count_positive_top_critics__n2048__cache1/CURRENT_CP": 2.4426563270390034,
+          "movie_count_positive_top_critics__n2048__cache1/CURRENT_CP/execution": 19.906552089378238,
+          "movie_count_positive_other_critics__n512__cache1/SIMILAR8": 2.2683567069470882,
+          "movie_count_positive_other_critics__n512__cache1/S1": 5.233703019097447,
+          "movie_count_positive_other_critics__n512__cache1/RANDOM8": 2.3359158989042044,
+          "movie_count_positive_other_critics__n512__cache1/S2": 4.929159339517355,
+          "movie_count_positive_other_critics__n512__cache1/CURRENT_CP": 4.014542933553457,
+          "movie_count_positive_other_critics__n512__cache1/CURRENT_CP/execution": 4.966179272159934,
+          "agnews_count_business__n2048__cache1/CURRENT_CP": 4.640164282172918,
+          "agnews_count_business__n2048__cache1/CURRENT_CP/execution": 22.191644236445427,
+          "agnews_count_business__n2048__cache1/SIMILAR8": 14.002397706732154,
+          "agnews_count_business__n2048__cache1/S1": 21.954517921432853,
+          "agnews_count_business__n2048__cache1/RANDOM8": 14.068618023768067,
+          "agnews_count_business__n2048__cache1/S2": 21.037931740283966,
+          "agnews_count_sports__n2048__cache1/RANDOM8": 13.274640815332532,
+          "agnews_count_sports__n2048__cache1/S1": 21.336294328793883,
+          "agnews_count_sports__n2048__cache1/SIMILAR8": 13.050697788596153,
+          "agnews_count_sports__n2048__cache1/CURRENT_CP": 2.954386306926608,
+          "agnews_count_sports__n2048__cache1/CURRENT_CP/execution": 21.925273437052965,
+          "agnews_count_sports__n2048__cache1/S2": 22.21449933387339,
+          "agnews_count_science_technology__n2048__cache1/CURRENT_CP": 2.806683126837015,
+          "agnews_count_science_technology__n2048__cache1/CURRENT_CP/execution": 21.661526734009385,
+          "agnews_count_science_technology__n2048__cache1/S1": 22.262365417554975,
+          "agnews_count_science_technology__n2048__cache1/SIMILAR8": 13.762139035388827,
+          "agnews_count_science_technology__n2048__cache1/RANDOM8": 13.633458606898785,
+          "agnews_count_science_technology__n2048__cache1/S2": 22.11075107753277,
+          "movie_count_positive_other_critics__n2048__cache1/S1": 21.501430155709386,
+          "movie_count_positive_other_critics__n2048__cache1/RANDOM8": 9.528175618499517,
+          "movie_count_positive_other_critics__n2048__cache1/S2": 22.149810133501887,
+          "movie_count_positive_other_critics__n2048__cache1/SIMILAR8": 9.464091321453452,
+          "movie_count_positive_other_critics__n2048__cache1/CURRENT_CP": 2.5791348330676556,
+          "movie_count_positive_other_critics__n2048__cache1/CURRENT_CP/execution": 21.607368366792798,
+          "movie_count_positive_other_critics__n7600__cache1/S2": 82.18770531751215,
+          "movie_count_positive_other_critics__n7600__cache1/SIMILAR8": 34.20126625709236,
+          "movie_count_positive_other_critics__n7600__cache1/S1": 80.98584516905248,
+          "movie_count_positive_other_critics__n7600__cache1/CURRENT_CP": 2.4884977005422115,
+          "movie_count_positive_other_critics__n7600__cache1/CURRENT_CP/execution": 75.59672415815294,
+          "movie_count_positive_other_critics__n7600__cache1/RANDOM8": 35.418518491089344,
+          "movie_count_positive_top_critics__n512__cache1/S2": 4.977220328524709,
+          "movie_count_positive_top_critics__n512__cache1/S1": 5.370830973610282,
+          "movie_count_positive_top_critics__n512__cache1/CURRENT_CP": 3.3814785555005074,
+          "movie_count_positive_top_critics__n512__cache1/CURRENT_CP/execution": 5.789065022021532,
+          "movie_count_positive_top_critics__n512__cache1/RANDOM8": 2.3388567119836807,
+          "movie_count_positive_top_critics__n512__cache1/SIMILAR8": 2.3727395869791508,
+          "agnews_count_world__n2048__cache1/SIMILAR8": 13.529634468257427,
+          "agnews_count_world__n2048__cache1/S1": 21.272756526246667,
+          "agnews_count_world__n2048__cache1/S2": 22.46234650723636,
+          "agnews_count_world__n2048__cache1/CURRENT_CP": 3.180242098867893,
+          "agnews_count_world__n2048__cache1/CURRENT_CP/execution": 24.8770916108042,
+          "agnews_count_world__n2048__cache1/RANDOM8": 13.80133949033916
+        },
+        "independent_tokenizer_reencoding": "not_performed; submitted/effective/native token sequences independently hash-checked"
+      }
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache0",
+      "complete": true,
+      "failure": null,
+      "responses_observed": 95062,
+      "observed_research_union_usage": {
+        "requests": 95062,
+        "input_tokens": 16686459,
+        "output_tokens": 690671,
+        "total_tokens": 17377130,
+        "cached_tokens_unknown_requests": 0,
+        "cached_tokens_observed_lower_bound": 0,
+        "cached_tokens_upper_bound": 0,
+        "unknown_cache_input_tokens": 0,
+        "cached_tokens": 0,
+        "uncached_tokens": 16686459,
+        "uncached_tokens_lower_bound": 16686459,
+        "uncached_tokens_upper_bound": 16686459
+      },
+      "deep_integrity": {
+        "status": "checked_completed_run",
+        "submitted": 95062,
+        "effective": 95062,
+        "responses": 95062,
+        "raw_returns": 95062,
+        "raw_returns_without_validated_response": [],
+        "generation_seconds_by_stage": {
+          "controls": 65.89243533462286,
+          "OFFICIAL_SEMBENCH_Q3": 1.7344978675246239,
+          "agnews_count_science_technology__n2048__cache0/CURRENT_CP": 4.929279325529933,
+          "agnews_count_science_technology__n2048__cache0/CURRENT_CP/execution": 35.8160503115505,
+          "agnews_count_science_technology__n2048__cache0/S1": 35.936928272247314,
+          "agnews_count_science_technology__n2048__cache0/SIMILAR8": 25.64366815984249,
+          "agnews_count_science_technology__n2048__cache0/RANDOM8": 25.681484339758754,
+          "agnews_count_science_technology__n2048__cache0/S2": 35.88418669067323,
+          "movie_count_positive_other_critics__n7600__cache0/S2": 106.57118470408022,
+          "movie_count_positive_other_critics__n7600__cache0/SIMILAR8": 65.85845710337162,
+          "movie_count_positive_other_critics__n7600__cache0/S1": 107.49393153563142,
+          "movie_count_positive_other_critics__n7600__cache0/CURRENT_CP": 3.7512042447924614,
+          "movie_count_positive_other_critics__n7600__cache0/CURRENT_CP/execution": 108.74796918220818,
+          "movie_count_positive_other_critics__n7600__cache0/RANDOM8": 65.62843868508935,
+          "movie_count_positive_top_critics__n2048__cache0/RANDOM8": 17.700816120952368,
+          "movie_count_positive_top_critics__n2048__cache0/S2": 29.033167148008943,
+          "movie_count_positive_top_critics__n2048__cache0/S1": 28.83607635833323,
+          "movie_count_positive_top_critics__n2048__cache0/SIMILAR8": 17.67520380206406,
+          "movie_count_positive_top_critics__n2048__cache0/CURRENT_CP": 3.8671717699617147,
+          "movie_count_positive_top_critics__n2048__cache0/CURRENT_CP/execution": 29.44679743051529,
+          "agnews_count_science_technology__n7600__cache0/CURRENT_CP": 10.302456896752119,
+          "agnews_count_science_technology__n7600__cache0/CURRENT_CP/execution": 133.6659780293703,
+          "agnews_count_science_technology__n7600__cache0/RANDOM8": 95.25618635676801,
+          "agnews_count_science_technology__n7600__cache0/S2": 133.21936972625554,
+          "agnews_count_science_technology__n7600__cache0/S1": 132.63010394573212,
+          "agnews_count_science_technology__n7600__cache0/SIMILAR8": 95.28610926680267,
+          "movie_count_positive_other_critics__n2048__cache0/S1": 29.12674288265407,
+          "movie_count_positive_other_critics__n2048__cache0/RANDOM8": 17.5715490039438,
+          "movie_count_positive_other_critics__n2048__cache0/S2": 28.634927542880177,
+          "movie_count_positive_other_critics__n2048__cache0/SIMILAR8": 17.51393235474825,
+          "movie_count_positive_other_critics__n2048__cache0/CURRENT_CP": 3.8580947816371918,
+          "movie_count_positive_other_critics__n2048__cache0/CURRENT_CP/execution": 48.75688998773694,
+          "movie_count_positive_top_critics__n7600__cache0/CURRENT_CP": 7.86661190725863,
+          "movie_count_positive_top_critics__n7600__cache0/CURRENT_CP/execution": 206.91007955931127,
+          "movie_count_positive_top_critics__n7600__cache0/SIMILAR8": 75.96013121306896,
+          "movie_count_positive_top_critics__n7600__cache0/S1": 107.08131558634341,
+          "movie_count_positive_top_critics__n7600__cache0/S2": 110.48777810484171,
+          "movie_count_positive_top_critics__n7600__cache0/RANDOM8": 139.63093682192266
+        },
+        "independent_tokenizer_reencoding": "not_performed; submitted/effective/native token sequences independently hash-checked"
+      }
+    },
+    {
+      "path": "/home/gpu/IntentSat2S_upgrade_20261106/run_glm_cache1",
+      "complete": true,
+      "failure": null,
+      "responses_observed": 119366,
+      "observed_research_union_usage": {
+        "requests": 119366,
+        "input_tokens": 22437841,
+        "output_tokens": 886414,
+        "total_tokens": 23324255,
+        "cached_tokens_unknown_requests": 0,
+        "cached_tokens_observed_lower_bound": 7830096,
+        "cached_tokens_upper_bound": 7830096,
+        "unknown_cache_input_tokens": 0,
+        "cached_tokens": 7830096,
+        "uncached_tokens": 14607745,
+        "uncached_tokens_lower_bound": 14607745,
+        "uncached_tokens_upper_bound": 14607745
+      },
+      "deep_integrity": {
+        "status": "checked_completed_run",
+        "submitted": 119366,
+        "effective": 119366,
+        "responses": 119366,
+        "raw_returns": 119366,
+        "raw_returns_without_validated_response": [],
+        "generation_seconds_by_stage": {
+          "controls": 73.18360961601138,
+          "OFFICIAL_SEMBENCH_Q3": 1.490818029269576,
+          "agnews_count_science_technology__n7600__cache1/CURRENT_CP": 8.845205267891288,
+          "agnews_count_science_technology__n7600__cache1/CURRENT_CP/execution": 99.32054542563856,
+          "agnews_count_science_technology__n7600__cache1/RANDOM8": 90.13305176049471,
+          "agnews_count_science_technology__n7600__cache1/S2": 99.0183676071465,
+          "agnews_count_science_technology__n7600__cache1/S1": 96.76018836535513,
+          "agnews_count_science_technology__n7600__cache1/SIMILAR8": 90.41675446741283,
+          "agnews_count_science_technology__n512__cache1/RANDOM8": 6.100803596898913,
+          "agnews_count_science_technology__n512__cache1/S1": 6.619281649589539,
+          "agnews_count_science_technology__n512__cache1/CURRENT_CP": 5.1122793555259705,
+          "agnews_count_science_technology__n512__cache1/CURRENT_CP/execution": 6.3288758136332035,
+          "agnews_count_science_technology__n512__cache1/SIMILAR8": 6.006500532850623,
+          "agnews_count_science_technology__n512__cache1/S2": 6.8379140347242355,
+          "movie_count_positive_top_critics__n7600__cache1/CURRENT_CP": 3.2336382642388344,
+          "movie_count_positive_top_critics__n7600__cache1/CURRENT_CP/execution": 84.53793416172266,
+          "movie_count_positive_top_critics__n7600__cache1/SIMILAR8": 59.952308060601354,
+          "movie_count_positive_top_critics__n7600__cache1/S1": 84.31544683873653,
+          "movie_count_positive_top_critics__n7600__cache1/S2": 85.02645756304264,
+          "movie_count_positive_top_critics__n7600__cache1/RANDOM8": 59.94834705814719,
+          "movie_count_positive_top_critics__n2048__cache1/RANDOM8": 16.104093177244067,
+          "movie_count_positive_top_critics__n2048__cache1/S2": 24.031896440312266,
+          "movie_count_positive_top_critics__n2048__cache1/S1": 23.6990316323936,
+          "movie_count_positive_top_critics__n2048__cache1/SIMILAR8": 16.044689752161503,
+          "movie_count_positive_top_critics__n2048__cache1/CURRENT_CP": 3.2408188264817,
+          "movie_count_positive_top_critics__n2048__cache1/CURRENT_CP/execution": 23.25816135853529,
+          "movie_count_positive_other_critics__n512__cache1/SIMILAR8": 4.027304487302899,
+          "movie_count_positive_other_critics__n512__cache1/S1": 5.584065278992057,
+          "movie_count_positive_other_critics__n512__cache1/RANDOM8": 4.018928553909063,
+          "movie_count_positive_other_critics__n512__cache1/S2": 5.818929120898247,
+          "movie_count_positive_other_critics__n512__cache1/CURRENT_CP": 5.230276498943567,
+          "movie_count_positive_other_critics__n512__cache1/CURRENT_CP/execution": 6.271956389769912,
+          "agnews_count_business__n2048__cache1/CURRENT_CP": 8.849589170888066,
+          "agnews_count_business__n2048__cache1/CURRENT_CP/execution": 27.530421927571297,
+          "agnews_count_business__n2048__cache1/SIMILAR8": 24.5205996055156,
+          "agnews_count_business__n2048__cache1/S1": 27.098932975903153,
+          "agnews_count_business__n2048__cache1/RANDOM8": 24.641707990318537,
+          "agnews_count_business__n2048__cache1/S2": 27.204176746308804,
+          "agnews_count_sports__n2048__cache1/RANDOM8": 23.964411202818155,
+          "agnews_count_sports__n2048__cache1/S1": 26.29611204750836,
+          "agnews_count_sports__n2048__cache1/SIMILAR8": 24.066340632736683,
+          "agnews_count_sports__n2048__cache1/CURRENT_CP": 9.838326888158917,
+          "agnews_count_sports__n2048__cache1/CURRENT_CP/execution": 23.91958118416369,
+          "agnews_count_sports__n2048__cache1/S2": 26.110620426014066,
+          "agnews_count_sports__n2048__cache1/INDEPENDENT_VALIDATION": 8.895853839814663,
+          "agnews_count_science_technology__n2048__cache1/CURRENT_CP": 4.235947992652655,
+          "agnews_count_science_technology__n2048__cache1/CURRENT_CP/execution": 25.949342235922813,
+          "agnews_count_science_technology__n2048__cache1/S1": 26.425256196409464,
+          "agnews_count_science_technology__n2048__cache1/SIMILAR8": 24.21981757506728,
+          "agnews_count_science_technology__n2048__cache1/RANDOM8": 24.320063646882772,
+          "agnews_count_science_technology__n2048__cache1/S2": 26.994451388716698,
+          "movie_count_positive_other_critics__n2048__cache1/S1": 24.64409996010363,
+          "movie_count_positive_other_critics__n2048__cache1/RANDOM8": 15.98356238566339,
+          "movie_count_positive_other_critics__n2048__cache1/S2": 25.342097766697407,
+          "movie_count_positive_other_critics__n2048__cache1/SIMILAR8": 16.115324495360255,
+          "movie_count_positive_other_critics__n2048__cache1/CURRENT_CP": 3.330586366355419,
+          "movie_count_positive_other_critics__n2048__cache1/CURRENT_CP/execution": 23.713798133656383,
+          "movie_count_positive_other_critics__n7600__cache1/S2": 92.97554879263043,
+          "movie_count_positive_other_critics__n7600__cache1/SIMILAR8": 60.425971906632185,
+          "movie_count_positive_other_critics__n7600__cache1/S1": 93.75208075530827,
+          "movie_count_positive_other_critics__n7600__cache1/CURRENT_CP": 3.4064726438373327,
+          "movie_count_positive_other_critics__n7600__cache1/CURRENT_CP/execution": 93.18890449404716,
+          "movie_count_positive_other_critics__n7600__cache1/RANDOM8": 60.10122433677316,
+          "movie_count_positive_top_critics__n512__cache1/S2": 5.609896674752235,
+          "movie_count_positive_top_critics__n512__cache1/S1": 6.167447365820408,
+          "movie_count_positive_top_critics__n512__cache1/CURRENT_CP": 3.2951706666499376,
+          "movie_count_positive_top_critics__n512__cache1/CURRENT_CP/execution": 5.4860394056886435,
+          "movie_count_positive_top_critics__n512__cache1/RANDOM8": 4.044077144935727,
+          "movie_count_positive_top_critics__n512__cache1/SIMILAR8": 4.070017835125327,
+          "agnews_count_world__n2048__cache1/SIMILAR8": 24.751007165759802,
+          "agnews_count_world__n2048__cache1/S1": 27.363832883536816,
+          "agnews_count_world__n2048__cache1/S2": 28.17074186168611,
+          "agnews_count_world__n2048__cache1/CURRENT_CP": 7.519989505410194,
+          "agnews_count_world__n2048__cache1/CURRENT_CP/execution": 27.778502309694886,
+          "agnews_count_world__n2048__cache1/RANDOM8": 24.723366079851985
+        },
+        "independent_tokenizer_reencoding": "not_performed; submitted/effective/native token sequences independently hash-checked"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,url,xcolor}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Count}{\operatorname{COUNT}}
+\hyphenation{joint NousDB near context claim singleton strict}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\graphicspath{{../figures/}}
+\hypersetup{
+pdftitle={[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost},
+pdfauthor={Zida Yang; Kangzheng Peng; Guquan You; Yongjun Dai; Chenhang He; Zijian Wang; Jiexin Zheng; Zhangxuan Shi; Xiaolong Shi},
+pdfsubject={Experiment, Analysis, and Benchmark},
+pdfkeywords={semantic query processing; large language models; COUNT; fidelity certification; prefix caching; query optimization}
+}
+\begin{document}
+\title{[Experiment, Analysis, and Benchmark]\\Batch Fidelity Certificates for Semantic COUNT:\\Scope and Full Policy Cost}
+\input{authors.tex}
+\maketitle
+\begin{abstract}
+Putting several rows in one language-model prompt can reduce requests for a semantic filter and COUNT, but checking the batch plan also costs work. We empirically audit an existing current-input fidelity checker by connecting its sampled comparisons to the complete query result and policy bill. The study uses native LOTUS filtering and a declared custom batch operator in 36 configurations over six workloads, two text domains and two models, with 16 additional policies comparing checking budgets. Our joint benefit criterion requires a delivered batch result, at most 5\% row disagreement with each of two separate singleton executions, fewer requests and fewer raw input-plus-output tokens. Unchecked random and similarity batches meet it in one and two of the 12 primary configurations, respectively; the checked policy meets it in none. Source COUNT accuracy is a separate outcome. The sole accepted deployment meets observed fidelity tolerance, but calibration turns its token saving into a 3.01\% increase, despite 79.69\% fewer requests. Raising the budget from 80 to 320 probes leaves every follow-up policy in singleton fallback with a higher bill. All 48 cache-enabled fixed-plan executions use less raw input but more uncached input than their singleton baselines; all 24 cache-disabled executions use less of both. These cache rankings apply to the declared repeated-predicate representation. Distinguishing delivered labels, output format, reference fidelity, source COUNT and complete costs makes the bounded plan decisions reproducible.
+\end{abstract}
+\begin{IEEEkeywords}
+semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization
+\end{IEEEkeywords}
+
+\input{sections/introduction.tex}
+\input{sections/execution_objects.tex}
+\input{sections/certification_budget.tex}
+\input{sections/real_engine_design.tex}
+\input{sections/resources_reporting.tex}
+\input{sections/finite_controls.tex}
+\input{sections/primary_figure.tex}
+\input{sections/new_results.tex}
+\input{sections/legacy_replication.tex}
+\input{sections/related_work.tex}
+\input{sections/discussion.tex}
+\label{body:end}
+\clearpage
+\IEEEtriggeratref{15}
+\input{references.tex}
+\clearpage
+\input{sections/ai_disclosure.tex}
+\end{document}

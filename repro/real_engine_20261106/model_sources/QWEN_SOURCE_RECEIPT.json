@@ -1,0 +1,35 @@
+{
+  "status": "PUBLIC_MIRROR_METADATA_OBSERVED_NOT_WEIGHT_REDOWNLOAD",
+  "public_model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "metadata_url": "https://hf-mirror.com/api/models/Qwen/Qwen3-4B-Instruct-2507?blobs=true",
+  "metadata_sha256": "a32f419155c9af0c38631e3694d058984cf85ea20be01cab58dac2fa6e696e0c",
+  "lfs_comparisons": [
+    {
+      "file": "model-00001-of-00003.safetensors",
+      "public_lfs_sha256": "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6",
+      "frozen_sha256": "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6",
+      "match": true
+    },
+    {
+      "file": "model-00002-of-00003.safetensors",
+      "public_lfs_sha256": "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1",
+      "frozen_sha256": "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1",
+      "match": true
+    },
+    {
+      "file": "model-00003-of-00003.safetensors",
+      "public_lfs_sha256": "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d",
+      "frozen_sha256": "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d",
+      "match": true
+    },
+    {
+      "file": "tokenizer.json",
+      "public_lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "frozen_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "match": true
+    }
+  ],
+  "no_credentials_or_login_cache_used": true,
+  "time_unix": 1793970988.3730292
+}

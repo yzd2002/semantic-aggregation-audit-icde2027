@@ -1,0 +1,39 @@
+\section{Policies and the Existing Fidelity Check}
+\label{sec:budget}
+\subsection{Policy Key}
+The fixed-plan baselines are \textbf{Random8}, a seeded random-permutation partition into batches of eight, and \textbf{Similar8}, deterministic term-frequency/inverse-document-frequency (TF--IDF) sparse-cosine greedy grouping with frozen ties. Neither performs calibration or supplies a fidelity certificate. Similar8 is a known grouping reference, rather than the full BATCHER method~\cite{batcher}; its CPU construction is charged.
+
+The checked policies reproduce NousDB's paper-defined Algorithm~2 with a declared tested ceiling $k_{\max}=8$ supplied to the procedure~\cite{nousdb}. We evaluate this subprocedure, rather than NousDB's complete engine or histogram optimizer. Preflight retains complete fields: the longest tested eight-row prompts use 2,260 Qwen and 2,173 GLM tokens. Both plus 128 output tokens fit the 8,192-token window; a length guard also checks every submitted request. Eight is the tested ceiling, not a maximal or optimal size. Candidates are $8,4,2$ in descending order, with mismatch tolerance $\eta=.05$ and error budget $\delta=.05$. Names encode the probe budget and agreement rule:
+\begin{itemize}
+\item \textbf{Current80-S}, used in all 36 main configurations, permits 80 probes per candidate. Agreement requires valid strict batch and singleton labels that are equal.
+\item \textbf{Current80-N} and \textbf{Current320-N}, used in the follow-up, permit 80 and 320 probes. Both require a valid batch label equal to the native singleton Boolean, including disclosed defaults. Strict reference format remains a separate diagnostic.
+\end{itemize}
+The S/N suffix distinguishes the strict/native agreement rule. Only the Current80-N/Current320-N contrast holds that rule fixed while changing budget. A post-hoc native-rule replay rescores only original recorded responses. It recovers selection and issued-call bills because native mismatches alone already force every observed rejection (Section~\ref{sec:budget_results}). It runs no new deployment and supplies no quality or latency measurement for an unexecuted policy.
+
+\subsection{Check, Select and Deploy}
+For a fixed input $T$ and budget $n$, the procedure is:
+\begin{enumerate}
+\item Draw $n$ focal row occurrences independently and uniformly from $T$, with replacement, and issue $n$ fresh singleton requests, one per probe index. Even repeated occurrences receive new calls. Reuse this indexed focal/reference sequence across this policy's candidate sizes only.
+\item For each candidate $k=8,4,2$, construct each probe batch independently: sample $k-1$ other occurrences uniformly without replacement, excluding the focal occurrence, and insert it in a uniformly chosen slot. Require the entire $k$-label JSON response to be valid, then score only the focal label against its singleton reference under the chosen S/N rule.
+\item Issue batch probes in chunks of 16 requests. Select the first candidate whose fixed-budget agreement bound passes, accepting only after all $n$ trials. After each whole chunk returns, score every issued trial and reject if even perfect remaining trials cannot pass; then try the next size. Every issued response is scored and billed, including the tail after a logically decisive probe.
+\item Physically evaluate the frozen complete random partition at the selected size, obtaining new model responses. If no candidate passes, run fresh native singleton fallback ($k=1$). Deployment covers every occurrence once and reuses no probe responses.
+\end{enumerate}
+At $k=8$, the row grouping is exactly Random8's frozen grouping, evaluated through separate physical calls without reusing Random8 responses. Lower candidates use their frozen partitions. New calls preserve that layout; their statistical independence remains an assumption. Similar8's grouping is different and inherits no certificate from random probes.
+
+Write $V_B$ for validity of the entire $k$-label batch response and $V_S$ for strict validity of its singleton reference. One trial's success indicator $Z_k$ requires $V_B$, $V_S$ and equal focal labels under S; under N it requires $V_B$ and equality to the native singleton label. Then $\varphi(k)=\Pr(Z_k=1)$ under the stated focal/context sampler and oracle assumptions. This is one focal-trial probability, not a probability that every batch label is correct.
+
+For $X_k$ agreements out of $n$, the one-sided Clopper--Pearson (CP) lower endpoint is
+\begin{equation}
+\underline\varphi_k=\mathrm{Beta}^{-1}(\delta/3;X_k,n-X_k+1),
+\label{eq:cp}
+\end{equation}
+with endpoint zero when $X_k=0$~\cite{clopper}. The threshold is $\underline\varphi_k\ge1-\eta=.95$. The $\delta/3$ allocation covers the three candidates in this one policy. Its nominal interpretation retains fixed-oracle and independent-trial assumptions; replay observations do not establish them. It supplies no joint guarantee across the matrix, probe budgets or a post-hoc selected winner.
+
+\subsection{Why Compare Probe Budgets?}
+NousDB's zero-error feasibility rule~\cite{nousdb} gives
+\begin{equation}
+ n_{\min}=\left\lceil\frac{\log(3/\delta)}{\log(1/(1-\eta))}\right\rceil=80.
+\end{equation}
+At this budget, passing requires zero disagreements; 320 probes allow seven. Under a hypothetical independent and identically distributed (IID) mismatch probability $q$, acceptance probability is $\pi_n(q)=\Pr\{\mathrm{Binomial}(n,q)\le e_{\max}(n)\}$, where $e_{\max}$ is the allowed disagreement count. At $q=.01$, it rises from .447523 to .983697. This exact binomial calculation explains the potential power gain; it is not measured model behavior. A stopped probe prefix cannot provide an unbiased estimate of $q$.
+
+Greater power also costs more checking. Calibration uses at most $4n$ requests (singleton references and three candidate families), and deployment at most $N$, so $C_n\le4n+N$. A first-candidate $k=8$ pass uses $2n+N/8$ requests. At $N=7,600$, the 80/320 budgets therefore use 1,110/1,590 requests for that pass, or at most 7,920/8,880 with fallback. Each probe batch still reads and labels all $k$ rows. Whether more probes improve the complete bill is an empirical question.

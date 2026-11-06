@@ -1,0 +1,24 @@
+\section{Classical Controls for a COUNT-Only Goal}
+\label{sec:finite}
+A COUNT-only application can tolerate row errors that cancel, or estimate the count without first labeling every row. We include established finite-population controls with three reported outputs: accept/reject the unchanged COUNT; accept/reject row accuracy; or estimate COUNT directly with an interval and midpoint. These offline controls use supplied source labels, or a recorded singleton vector where available, as a fixed target $y$. Label lookups count as oracle queries; we do not price them as online model or human judgments.
+
+The main source-label analysis requires a complete \emph{plan strict vector}: all 72 fixed-plan vectors and 26 Current80-S vectors qualify, yielding 98 pairs over the 36 configurations. Source labels are already complete; this eligibility does not require a strict singleton reference. Strict-reference fidelity in Section~\ref{sec:objects}, by contrast, requires both strict plan and reference vectors. A post-hoc source-label sensitivity uses all 108 native plan vectors with the same sample order and fixed look. These eligibility counts do not change the 36-configuration study denominator. Dependence during generation does not invalidate design-based sampling of the fixed vector pair~\cite{worcs}; the guarantee concerns that pair, not another replay or correctness beyond supplied annotations.
+
+
+\subsection{Auditing a Complete Plan}
+For a complete realized binary plan vector $b$, take one simple random sample without replacement of $m=\min(1,024,N)$ target labels. All procedures use this one fixed look, with tolerance $\epsilon=.05$ and error budget $\alpha=.05$. For context, the standard difference estimator $C_b-N\overline{(b-y)}_{\rm sample}$ adjusts COUNT using sampled errors, following SampleClean/control-variate approximate query processing (AQP)~\cite{sampleclean,blazeit}. It is background lineage, not a corrected-count result in our tables. Our \emph{raw-COUNT gate} asks whether uncorrected $C_b$ is already within $\epsilon N$ of the target.
+
+To construct that gate, divide the plan into predicted-positive and predicted-negative strata. First take the overall random sample, then condition on its observed stratum sample sizes. In stratum $h$, $N_h$ is population size, $F_h$ total errors, $m_h$ sampled rows and $X_h$ sampled errors. The hypergeometric (HG) law is $X_h\sim\mathrm{HG}(N_h,F_h,m_h)$. Errors are false positives in the positive stratum and false negatives in the negative stratum. Inversion gives population \emph{error-count} intervals $[L_+,U_+]$ and $[L_-,U_-]$, in rows. Allocate $\alpha/H$ to each of $H$ nonempty strata, split across two tails. Empty strata contribute zero; an unsampled nonempty stratum retains $[0,N_h]$. A sole nonempty stratum uses full $\alpha$.
+
+On the same joint event, intervals for signed COUNT error and total row error are
+\begin{equation}
+ I_\Delta=[L_+-U_-,U_+-L_-],\quad
+ I_{\rm row}=[L_++L_-,U_++U_-].
+\end{equation}
+The raw-COUNT gate passes if $I_\Delta\subseteq[-\epsilon N,\epsilon N]$; the \emph{joint-strata row gate} passes if $\sup I_{\rm row}\le\epsilon N$. A separate direct row baseline inverts an unstratified two-sided HG interval for sample mismatches; neither row method is claimed uniformly tighter.
+
+
+\subsection{Estimating COUNT Directly}
+Direct AQP samples the target labels without requiring a complete batch vector. It independently inverts the sample's target-positive count to obtain a two-sided HG interval, reports the midpoint, and checks interval width $\le2\epsilon N$. It costs $m$ oracle queries and no full batch inference, so remains defined even if a batch plan cannot return a complete vector.
+
+Each method/vector pair has a separate nominal 95\% scope. The single look is not repeatedly inspected until passing~\cite{bargain,worcs}, and selecting a favorable method or plan afterward does not preserve joint 95\% coverage. An S1-based decision evaluated against S2 is a replay sensitivity, not a coverage failure against S1. Both COUNT-error normalizations are reported, while the gates use additive $.05N$ throughout.

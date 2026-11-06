@@ -1,0 +1,47 @@
+\section{Experimental Design and Cost Accounting}
+\label{sec:design}
+\subsection{Queries, Inputs and Configurations}
+A \emph{workload} pairs a semantic predicate with its prepared input. A \emph{configuration} fixes that workload, input size, model and cache setting. The primary matrix is six workloads $\times$ two models = 12 configurations. Each secondary family is three anchors $\times$ two sizes $\times$ two models = 12 more (36 total). The separate follow-up is two workloads $\times$ two models $\times$ two budgets $\times$ two repeats = 16 policies, or eight budget pairs (Table~\ref{tab:matrix}).
+
+\begin{table*}[t]
+\caption{Study design. Every listed workload/size/cache combination uses both Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat. $N$ counts rows entering the semantic filter after structured filtering. The follow-up crosses two workloads, two models, two budgets and two physical repeats.}
+\label{tab:matrix}
+\centering\small
+\begin{tabular}{P{.15\textwidth}P{.38\textwidth}P{.12\textwidth}P{.10\textwidth}P{.13\textwidth}}
+\toprule
+Family & Workloads & Input $N$ & Prefix cache & Count \\
+\midrule
+Primary & Movie top/other critics; AG World, Sports, Business, Sci/Tech & 2,048 & ON & 12 cases \\
+Scale anchors & Both Movie views; AG Sci/Tech & 512; 7,600 & ON & 12 cases \\
+Cache anchors & Same three anchors & 2,048; 7,600 & OFF & 12 cases \\
+\midrule
+Budget follow-up & Movie other critics; AG Sci/Tech & 7,600 & ON & 16 policies \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Movie has two disjoint critic views, defined by \texttt{isTopCritic=True/False}. Both count clearly positive reviews from the supplied \texttt{reviewText}, with metadata and sentiment labels withheld from inference. We use version~4 of the official SemBench generator's upstream source~\cite{sembench,movie_data}, deduplicate normalized text globally before forming the views, and fix order by a feature hash. An additional integration case runs original SemBench Movie Q3 unchanged on its official 2,000-row demonstration relation; 120 rows reach the semantic filter. The larger Movie workloads are prepared-relation COUNT variants, not scaled executions of original Q3 on the raw Reviews table.
+
+Throughout, $N$ counts rows entering the semantic filter. The unchanged Q3 integration case is outside both the 36 main configurations and the 16 follow-up policies.
+
+AG News uses a pinned, duplicate-free, feature-hash-ordered 7,600-row test split~\cite{agnews}. Four predicates---World, Sports, Business and Sci/Tech---share this corpus. Each frozen predicate asks for a four-topic classification and then membership in its named topic; Movie uses one clearly-positive question. We retain the complete supplied \texttt{text}/\texttt{reviewText} fields. They are not claimed to be complete original articles. Acquisition hashes and source notices are retained; AG's license remains unknown.
+
+For example, the frozen World predicate is:
+\begin{quote}\small
+Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is World (international affairs, politics, or world events). News item: \{text\}
+\end{quote}
+Native LOTUS also specifies: \texttt{Answer: <Your answer here. The answer should be either True or False>}. The conflicting topic-word responses are observed outcomes, not a matched causal test of this wording.
+
+Thus six workloads span two domains and three corpus views. Shared-corpus predicates, nested sizes, cache settings and model variants are dependent observations, not independent datasets. Source membership, fields, prompts, groupings and schedules were hash-bound before their corresponding inference; no text was shortened or replaced after outcomes.
+
+\subsection{Engine, Batching and Replays}
+LOTUS v1.2.4 at a pinned commit executes live \texttt{sem\_filter} against native vLLM~\cite{vllm} through an isolated CPU process. Native execution builds one prompt per row and submits prompts concurrently. This server concurrency differs from multirow prompting. Our custom batch operator serializes each record's complete native \texttt{context\_and\_claim}, including its repeated predicate, as a JSON string with escaped newlines and quotes. It also changes system instructions and output requirements. The comparison therefore concerns these integrated physical plans; it does not isolate neighboring-text effects or test a minimum-token template that factors out the predicate.
+
+The schematic prompt structures are: native instructions plus one complete context/claim, returning a Boolean; versus batch instructions plus $k$ serialized complete contexts/claims, including $k$ predicate copies, returning local-ID Boolean labels. These describe the representation, not new prompt variants.
+
+Every configuration executes separate S1/S2 references, Random8, Similar8 and Current80-S. Complete plans use no training fillers and cover each input occurrence once. After a main-study non-singleton selection, 80 independently seeded validation probes receive fresh singleton and batch calls at the selected size. Validation never enters selection and is charged only to the research ledger. Fixed-plan results span all 12/36 configurations. A separate same-size grouping comparison with Similar8 is available only for a checked $k=8$ deployment; other selections change both size and grouping. The follow-up adds no validation family.
+
+\subsection{Follow-Up and Runtime Settings}
+The follow-up fixes AG Sci/Tech and a feature-hash-selected Movie other-critics view, $N=7,600$, cache ON, two models, two budgets and two repeats: 16 complete policies. The trigger was the first Qwen AG Sci/Tech result at $N=7,600$: Current80-S fell back despite strict-valid calibration references. Sci/Tech was an existing anchor; the Movie view was chosen by the minimum seeded hash of the two existing workload IDs, yielding other critics. A fourfold budget tests the zero-versus-seven-allowed-disagreement contrast. The follow-up was frozen before its own calls. Common feature/probe seeds pair the inputs, while all responses and deployments are physically new. Existing S1/S2 are evaluation-only. The repeats are descriptive observations on fixed inputs, not independent datasets.
+
+Each model uses one NVIDIA GeForce RTX 5090 (32~GB; 32,607~MiB reported), PyTorch~2.8.0+cu128, vLLM~0.10.2 and Transformers~4.57.1. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat~\cite{qwen,glm} run native bfloat16 (BF16) inference with temperature zero, an 8,192-token window, eager execution, at most 32 active sequences and native/batch output caps 32/128. Effective classes, tokenizer/runtime hashes and actual cache-reset receipts are retained. Raw returns are stored before parsing. There is no automatic retry, model replacement, post-label resampling or selective deletion; failures and unknown costs remain explicit.

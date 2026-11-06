@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering\small
+\caption{Native singleton reference S1 against supplied source labels in all primary configurations ($N=2,048$, cache ON). $G$: source COUNT; $C$: delivered native COUNT; D: default-True parses; R: source row-error percentage. Native delivery and reference fidelity do not imply task correctness.}
+\label{tab:reference_quality}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Workload & $G$ & Qwen $C$ & Qwen D/$N$ & Qwen R (\%) & GLM $C$ & GLM D/$N$ & GLM R (\%) \\
+\midrule
+Movie top & 1,251 & 897 & 0/2048 & 19.92 & 1,028 & 0/2048 & 16.36 \\
+Movie other & 1,418 & 985 & 0/2048 & 22.61 & 1,143 & 0/2048 & 17.04 \\
+AG World & 514 & 1,999 & 1936/2048 & 74.37 & 622 & 4/2048 & 8.59 \\
+AG Sports & 517 & 1,741 & 1664/2048 & 60.74 & 530 & 0/2048 & 1.12 \\
+AG Business & 498 & 613 & 7/2048 & 10.69 & 847 & 2/2048 & 18.99 \\
+AG Sci/Tech & 519 & 480 & 21/2048 & 9.13 & 496 & 0/2048 & 8.25 \\
+\bottomrule
+\end{tabular}
+\end{table*}

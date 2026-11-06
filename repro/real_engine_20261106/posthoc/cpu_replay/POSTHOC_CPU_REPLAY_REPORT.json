@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "analysis_role": "explicit post-hoc native-vector sensitivity",
+  "configurations": 36,
+  "result_rows": 216,
+  "matching_canonical_pair_checks": 176,
+  "author_source_and_HG_math_changed": false,
+  "explicit_path_mapping": "Writer U is the expanded compact bundle; writer A is a fresh receipt/output view.",
+  "posthoc_source_snapshot_sha256": {
+    "manuscript/analyze_native_audit_sensitivity.py": "42225c663a7bb9531a4df768bf2b4f2733e887394268bd815c7a8a758229a6e3",
+    "manuscript/analysis/ANALYSIS_COMPLETE.json": "ee9d51c74208e66fdb282eb68e3b8295b1d4bbb3ea6e9851789da4184a450d71",
+    "manuscript/analysis/main/integrity.json": "d0ff76402e99d8aa467645c43487944ab7e26603d455b19de3a38afcb0f4c672",
+    "manuscript/analysis/finite/FIXED_BUDGET_AUDITS.json": "5f219f8ca43503d073655eafd0161d852a0da80be67c33078a58657c0f4c0107",
+    "manuscript/analysis/native_sensitivity/NATIVE_VECTOR_AUDITS.json": "5f3dc34649eda60bd9b6da86d82e88effebd9d192a15597b12d9fe2c9f032414",
+    "manuscript/analysis/native_sensitivity/NATIVE_VECTOR_AUDITS.csv": "0be496c9195a2ac7f4d74a5a9bd8c43c795ccf34db7bfc21ee10db3d5aaad651"
+  },
+  "recomputed_JSON_sha256": "5f3dc34649eda60bd9b6da86d82e88effebd9d192a15597b12d9fe2c9f032414",
+  "recomputed_CSV_sha256": "0be496c9195a2ac7f4d74a5a9bd8c43c795ccf34db7bfc21ee10db3d5aaad651",
+  "original_tree_access_guard": {
+    "enabled": true,
+    "blocked_original_tree_accesses": 0,
+    "scope": "Original scientific tree opens/listings are forbidden outside the expanded bundle, new replay output and portable tool directory."
+  },
+  "new_GPU_or_model_inference": false,
+  "source_text_or_token_reconstruction": false,
+  "future_reference_or_joint_budget_coverage_claimed": false
+}

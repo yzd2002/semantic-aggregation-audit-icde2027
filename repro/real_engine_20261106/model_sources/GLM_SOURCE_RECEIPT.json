@@ -1,0 +1,189 @@
+{
+  "status": "PUBLIC_MIRROR_METADATA_OBSERVED_NOT_WEIGHT_REDOWNLOAD",
+  "requested_revision": "bd8234fe5e0c09c48637a92abb0c797cb5fa0e73",
+  "observed_revision": "bd8234fe5e0c09c48637a92abb0c797cb5fa0e73",
+  "public_model_id": "zai-org/glm-4-9b-chat",
+  "metadata_url": "https://hf-mirror.com/api/models/THUDM/glm-4-9b-chat/revision/bd8234fe5e0c09c48637a92abb0c797cb5fa0e73?blobs=true",
+  "metadata_sha256": "81242cd91a477df9a137bd45e0ab358cd68b04c637a9fd5d104724167ed0f271",
+  "comparisons": [
+    {
+      "file": "LICENSE",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "d13f50f252706283b7495f659545d907d8b2e40cec5ae9c0e428450ee57c1868",
+      "public_git_blob_sha": "02d90edf1a5ed9fb69b0e4fbd93e60bbadd9df14",
+      "local_git_blob_sha": "02d90edf1a5ed9fb69b0e4fbd93e60bbadd9df14",
+      "match": true
+    },
+    {
+      "file": "README.md",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "015d2a493396b4d241cc6dc553486c35dd608841478b658003b99f41d3cdd4ac",
+      "public_git_blob_sha": "1b4456d6e5c1a833d59de5e57b5eae3f4bffc2ad",
+      "local_git_blob_sha": "1b4456d6e5c1a833d59de5e57b5eae3f4bffc2ad",
+      "match": true
+    },
+    {
+      "file": "README_en.md",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "61741e15a14f35d7c0d86ea8618207fa7b05e90ee7061e52e81162ef77aae38b",
+      "public_git_blob_sha": "32fcfa92f807431b68f236631d3cda80b368f442",
+      "local_git_blob_sha": "32fcfa92f807431b68f236631d3cda80b368f442",
+      "match": true
+    },
+    {
+      "file": "config.json",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "d135f1555ed1036be6eda988fc6ae365cdc8a8122aff0bf6d0602c1e1c93bee6",
+      "public_git_blob_sha": "f4e13cf449af415ec7b3185c3bb661c1603859f7",
+      "local_git_blob_sha": "f4e13cf449af415ec7b3185c3bb661c1603859f7",
+      "match": true
+    },
+    {
+      "file": "configuration.json",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "9aab662b490910d41e19e7a4599f97f2027f738407ecf35179b0035b6c012d32",
+      "public_git_blob_sha": "7853e762727fdc2e889c2606f8b9950cde165097",
+      "local_git_blob_sha": "7853e762727fdc2e889c2606f8b9950cde165097",
+      "match": true
+    },
+    {
+      "file": "configuration_chatglm.py",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "db714e8a9f7532eb2b6bfd4df01d24c700b373d2ab76b81eff0fe5a2617edb11",
+      "public_git_blob_sha": "65efd3ad198e42868ff0803975ff4b4246c008b8",
+      "local_git_blob_sha": "65efd3ad198e42868ff0803975ff4b4246c008b8",
+      "match": true
+    },
+    {
+      "file": "generation_config.json",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "36a24457eb6c8a162a932ab6834023b41bc2c648fc7ce575e2e70fc74efda4b5",
+      "public_git_blob_sha": "b442d7c6a44d862f041dff067ac6789cab973dba",
+      "local_git_blob_sha": "b442d7c6a44d862f041dff067ac6789cab973dba",
+      "match": true
+    },
+    {
+      "file": "model-00001-of-00010.safetensors",
+      "public_lfs_sha256": "d0040c9cf0d4d0553c4156dbd890437788ba43237037e1f9c4a3c1a3ddfad1f6",
+      "frozen_sha256": "d0040c9cf0d4d0553c4156dbd890437788ba43237037e1f9c4a3c1a3ddfad1f6",
+      "public_git_blob_sha": "1a590f0043e8c53b86ba7ee19ee3992b8b90a5af",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00002-of-00010.safetensors",
+      "public_lfs_sha256": "f9163d47c6e1073d68fb03f933122e2ece0b30ce43b5309da15b783e93a34ad4",
+      "frozen_sha256": "f9163d47c6e1073d68fb03f933122e2ece0b30ce43b5309da15b783e93a34ad4",
+      "public_git_blob_sha": "9b6fc576426818606c9b0f0444961c1569c89c8e",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00003-of-00010.safetensors",
+      "public_lfs_sha256": "28031e88b92dc942b47ac4dd0e73b2ce749fc87fc692a3ed72e1bdec74996968",
+      "frozen_sha256": "28031e88b92dc942b47ac4dd0e73b2ce749fc87fc692a3ed72e1bdec74996968",
+      "public_git_blob_sha": "5a79179c0075d75bfb0942996c2fba4dc613bb76",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00004-of-00010.safetensors",
+      "public_lfs_sha256": "708ef7836140bd1822253cae05f5891ea02cedbe4c8ef8b096f712cdfdc9b01e",
+      "frozen_sha256": "708ef7836140bd1822253cae05f5891ea02cedbe4c8ef8b096f712cdfdc9b01e",
+      "public_git_blob_sha": "db245eec2b16364a8a4a5227b4b9daf3a944b0ac",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00005-of-00010.safetensors",
+      "public_lfs_sha256": "c390a67a568f7f3d440a3c3357b4d08c0539435ea6d7a36baa4a4f0274740ae5",
+      "frozen_sha256": "c390a67a568f7f3d440a3c3357b4d08c0539435ea6d7a36baa4a4f0274740ae5",
+      "public_git_blob_sha": "e17f5fe5842ad5bfebf24350c69417ea2cf305fe",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00006-of-00010.safetensors",
+      "public_lfs_sha256": "32e0d285c514e750e78ae42630a498ec526db4caba993fc2ea7226069410d1e7",
+      "frozen_sha256": "32e0d285c514e750e78ae42630a498ec526db4caba993fc2ea7226069410d1e7",
+      "public_git_blob_sha": "d3a3136bf422941320d418a3c6fd702e1199e6db",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00007-of-00010.safetensors",
+      "public_lfs_sha256": "165687aa1873e91d13bf404ff91a4d702f79c5301f43c2645eabb45f17808cb2",
+      "frozen_sha256": "165687aa1873e91d13bf404ff91a4d702f79c5301f43c2645eabb45f17808cb2",
+      "public_git_blob_sha": "f6f1e58dc682c362049914093ecd9d45d82f1731",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00008-of-00010.safetensors",
+      "public_lfs_sha256": "5388bffb210043271cded04b28a5fae2eeeb31b64b695b62638d9b856e322033",
+      "frozen_sha256": "5388bffb210043271cded04b28a5fae2eeeb31b64b695b62638d9b856e322033",
+      "public_git_blob_sha": "f5559c81b6ebe755290ea05bcd4ff6ec4f518b9a",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00009-of-00010.safetensors",
+      "public_lfs_sha256": "449241babb7ce69a835c121efa26d9fd8823554ed0c8acd2af6666f482dd6809",
+      "frozen_sha256": "449241babb7ce69a835c121efa26d9fd8823554ed0c8acd2af6666f482dd6809",
+      "public_git_blob_sha": "a9b3f8d46b821725d267b8c5bbf5e5571a11b75a",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model-00010-of-00010.safetensors",
+      "public_lfs_sha256": "2544b92fc4f1cb511b31a6b06021a3136de0705436db6731d30ec5b8a2be80f6",
+      "frozen_sha256": "2544b92fc4f1cb511b31a6b06021a3136de0705436db6731d30ec5b8a2be80f6",
+      "public_git_blob_sha": "4d9ddc6ea78826c22ee7a2384c565c4f6d61e3e9",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "d153206225f09b11759dce2b36d32a7d65f36f00818535853bb0e3905038401a",
+      "public_git_blob_sha": "7396d4190da53394fe2e654fabbb3085976a1a7a",
+      "local_git_blob_sha": "7396d4190da53394fe2e654fabbb3085976a1a7a",
+      "match": true
+    },
+    {
+      "file": "modeling_chatglm.py",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "cb7b04f1ba3026677a714807da539a0abe6437203eb95e1ebd3aeda0ec634a36",
+      "public_git_blob_sha": "b52906283d87117b47fd8ea027d000db2ef146e2",
+      "local_git_blob_sha": "b52906283d87117b47fd8ea027d000db2ef146e2",
+      "match": true
+    },
+    {
+      "file": "tokenization_chatglm.py",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "90a9a1b739f834cdf7a2f40959f9eeff2a705b80acefb2cea9c19ff3958a9279",
+      "public_git_blob_sha": "cadd24d098a4b96ca8aa63f593dc88480e79a6c9",
+      "local_git_blob_sha": "cadd24d098a4b96ca8aa63f593dc88480e79a6c9",
+      "match": true
+    },
+    {
+      "file": "tokenizer.model",
+      "public_lfs_sha256": "5a493598071550244b2ee7f26118f3edec2150b9dfa967929a99052ac83fe716",
+      "frozen_sha256": "5a493598071550244b2ee7f26118f3edec2150b9dfa967929a99052ac83fe716",
+      "public_git_blob_sha": "8650fd94d949375a2ab1f4975e7e6ff51ebc364a",
+      "local_git_blob_sha": null,
+      "match": true
+    },
+    {
+      "file": "tokenizer_config.json",
+      "public_lfs_sha256": null,
+      "frozen_sha256": "f891e4d4ebb4009b6996dea97befb77a60c0cef0e88ac1edd6c741b1367f9c62",
+      "public_git_blob_sha": "b35f862ae59230b0504204acb652ef27fa88c1c8",
+      "local_git_blob_sha": "b35f862ae59230b0504204acb652ef27fa88c1c8",
+      "match": true
+    }
+  ],
+  "all_observed_comparisons_match": true,
+  "no_credentials_or_login_cache_used": true,
+  "time_unix": 1793971068.0965965
+}

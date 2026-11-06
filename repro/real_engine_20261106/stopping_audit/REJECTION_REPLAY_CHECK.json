@@ -1,0 +1,17 @@
+{
+  "status": "OBSERVED_REJECTION_CLI_REPLAY_PASS",
+  "files": [
+    {
+      "file": "observed_probe_rejection_candidates.csv",
+      "sha256": "53738dd30dd65a9148c1fed0468b8125d0d0331fe5489e590d046f8c5ebe5923",
+      "byte_identical_replay": true
+    },
+    {
+      "file": "observed_probe_rejection_summary.csv",
+      "sha256": "dcab0b13891bd44d8a684411e08bb672f3a8fb07c81d8ab5082c8ddf3d572ee7",
+      "byte_identical_replay": true
+    }
+  ],
+  "new_model_calls": 0,
+  "source_sha256": "d8fddb5979c35de1a7b0d9bd49f5c55f7797cf4d8ba05d8914f8b440112be435"
+}

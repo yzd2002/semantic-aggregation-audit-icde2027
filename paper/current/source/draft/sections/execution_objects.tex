@@ -1,0 +1,30 @@
+\section{What the Query and Check Preserve}
+\label{sec:objects}
+\subsection{Delivered Labels and Observed References}
+Let $T=(r_1,\ldots,r_N)$ be the prepared input relation. Each row occurrence has a distinct ID and its complete source-provided text field. A deployed plan labels every occurrence exactly once. A probe batch is an artificial context used for checking; probe batches can overlap and need not cover $T$ (Fig.~\ref{fig:execution}).
+
+\emph{Native delivery} means that the engine returns a complete Boolean vector and hence a COUNT. LOTUS's native parser searches for \texttt{true} before \texttt{false} after the first \texttt{Answer:}, or in the whole response if that prefix is absent; it defaults to \texttt{True} if neither occurs. We also apply an \emph{extra strict-format check}: only a standalone Boolean, optionally prefixed by \texttt{Answer:}, is valid. Its label is $s_i\in\{0,1,\bot\}$, where $\bot$ denotes invalid format. Thus a query can deliver a native COUNT while its strict COUNT is unavailable. We report format validity, actual defaults and execution exceptions separately.
+
+Preserved Qwen World S1 responses include \texttt{Answer: Sports} and \texttt{Answer: Sci/Tech}. Neither contains a Boolean word, so native parsing defaults to \texttt{True} while strict validity fails. The custom multirow operator instead requests a constrained JSON object mapping ordered local row IDs to \texttt{True}/\texttt{False} strings. All $k$ required labels must be valid; a missing or invalid label makes the complete vector and COUNT unavailable.
+
+S1 and S2 are two complete native singleton executions with fresh responses, used only to evaluate completed policies. Comparing with both exposes sensitivity to the observed reference execution. The checker pays for separate calibration singleton calls; neither S1/S2 nor source labels enter selection. Held-out validation also obtains fresh singleton/batch pairs. These are observed execution references, not ground truth. For a complete policy vector $b$, its native-reference row losses are
+\begin{equation}
+ d_j(b)=\frac{1}{N}\sum_i\ind[b_i\ne n_i^{(j)}],\quad j=1,2,
+\label{eq:fidelity}
+\end{equation}
+where $n_i^{(j)}$ is reference $j$'s native label. We summarize the larger loss as $d_{\max}=\max(d_1,d_2)$. Strict-vector fidelity is a separate diagnostic, available only when both full strict vectors exist; a valid subset cannot supply a full-relation COUNT.
+
+\subsection{Source COUNT and Row Fidelity}
+Supplied source labels give a separate task target. Let $g_i$ be the fixed binary source label, $G=\sum_i g_i$ the source COUNT and $C_b=\sum_i b_i$ the plan's COUNT. We report source row error and two COUNT-error units:
+\begin{equation}
+\begin{aligned}
+ e_{\rm row}&=\frac{\sum_i\ind[b_i\ne g_i]}{N},\\
+ e_N&=\frac{|C_b-G|}{N},\quad e_G=\frac{|C_b-G|}{G}\ (G>0).
+\end{aligned}
+\label{eq:task}
+\end{equation}
+$G=0$ is reported separately. The additive error $e_N$ measures error as a fraction of the input; $e_G$ measures it relative to the source-positive count. Source annotations have not been newly human-verified.
+
+False positives (FP) raise the count and false negatives (FN) lower it. They add in row error but can cancel in COUNT error: the respective numerators are $\mathrm{FP}+\mathrm{FN}$ and $|\mathrm{FP}-\mathrm{FN}|$. Similarly, $|C_b-C_{S_j}|/N\le d_j$: a realized row-fidelity bound also bounds additive COUNT change to that same realized reference. It does not establish source accuracy or a 5\% source-relative COUNT guarantee. Our COUNT controls use the additive tolerance $.05N$.
+
+The check targets a different object: the probability $\varphi(k)$ that a focal batch label agrees with a singleton label under a specified random row/context sampler~\cite{nousdb}. A nominal bound on this probability relies on the check's oracle and independence assumptions. It is distinct from $d_j$ for one complete deployed partition; the calibration references and later S1/S2 can also vary. We therefore report calibration, independent validation and deployment separately. Changing to similarity grouping changes the sampler again. A realized above-tolerance loss would require interpretation under these assumptions; it would not by itself establish a false certificate or a NousDB bug.

@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering\small
+\caption{Direct source-label AQP: all 12 workload/size pairs, collapsing repeated model/cache roles from 36 configurations. Each sample gives a separate nominal 95\% HG interval. Midpoint errors divide by $N$ and $G$; realized coverage is distinct from interval width. Cost is $m$ source-label oracle queries with no full batch inference.}
+\label{tab:aqp_results}
+\begin{tabular}{lrrrrrr}
+\toprule
+Workload & $N$ & $G$ & $m$ & HG interval & Midpoint $e_N\,|\,e_G$ (\%) & Covers $G$ \\
+\midrule
+Movie top & 512 & 309 & 512 & [309, 309] & 0.00 $\mid$ 0.00 & yes \\
+Movie top & 2,048 & 1,251 & 1,024 & [1,210, 1,297] & 0.12 $\mid$ 0.20 & yes \\
+Movie top & 7,600 & 4,778 & 1,024 & [4,685, 5,106] & 1.55 $\mid$ 2.46 & yes \\
+Movie other & 512 & 359 & 512 & [359, 359] & 0.00 $\mid$ 0.00 & yes \\
+Movie other & 2,048 & 1,418 & 1,024 & [1,423, 1,504] & 2.22 $\mid$ 3.21 & no \\
+Movie other & 7,600 & 5,197 & 1,024 & [5,109, 5,512] & 1.49 $\mid$ 2.18 & yes \\
+AG World & 2,048 & 514 & 1,024 & [466, 544] & 0.44 $\mid$ 1.75 & yes \\
+AG Sports & 2,048 & 517 & 1,024 & [457, 533] & 1.07 $\mid$ 4.26 & yes \\
+AG Business & 2,048 & 498 & 1,024 & [466, 544] & 0.34 $\mid$ 1.41 & yes \\
+AG Sci/Tech & 512 & 123 & 512 & [123, 123] & 0.00 $\mid$ 0.00 & yes \\
+AG Sci/Tech & 2,048 & 519 & 1,024 & [484, 562] & 0.20 $\mid$ 0.77 & yes \\
+AG Sci/Tech & 7,600 & 1,900 & 1,024 & [1,779, 2,164] & 0.94 $\mid$ 3.76 & yes \\
+\bottomrule
+\end{tabular}
+\end{table*}

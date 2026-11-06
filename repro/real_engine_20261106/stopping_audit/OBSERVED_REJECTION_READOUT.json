@@ -1,0 +1,465 @@
+{
+  "status": "OBSERVED_PREFIX_READOUT_COMPLETE",
+  "original_observed_candidates": 106,
+  "followup_observed_candidates": 48,
+  "aggregates": [
+    {
+      "family": "Original80-S",
+      "model": "qwen",
+      "planned_candidates": 54,
+      "observed_candidates": 54,
+      "unreached_candidates": 0,
+      "passed_candidates": 0,
+      "rejected_candidates": 54,
+      "issued_probe_trials": 1040,
+      "native_boolean_mismatch": 143,
+      "strict_only_reference_format_rejection": 31,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 84,
+      "native_mismatches_alone_make_pass_impossible": 54,
+      "strict_only_decisive_after_removing_format_gate": 0
+    },
+    {
+      "family": "Original80-S",
+      "model": "glm",
+      "planned_candidates": 54,
+      "observed_candidates": 52,
+      "unreached_candidates": 2,
+      "passed_candidates": 1,
+      "rejected_candidates": 51,
+      "issued_probe_trials": 1264,
+      "native_boolean_mismatch": 101,
+      "strict_only_reference_format_rejection": 0,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 2,
+      "native_mismatches_alone_make_pass_impossible": 51,
+      "strict_only_decisive_after_removing_format_gate": 0
+    },
+    {
+      "family": "Followup80-N",
+      "model": "qwen",
+      "planned_candidates": 12,
+      "observed_candidates": 12,
+      "unreached_candidates": 0,
+      "passed_candidates": 0,
+      "rejected_candidates": 12,
+      "issued_probe_trials": 256,
+      "native_boolean_mismatch": 26,
+      "strict_only_reference_format_rejection": 0,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 0,
+      "native_mismatches_alone_make_pass_impossible": 12,
+      "strict_only_decisive_after_removing_format_gate": 0
+    },
+    {
+      "family": "Followup80-N",
+      "model": "glm",
+      "planned_candidates": 12,
+      "observed_candidates": 12,
+      "unreached_candidates": 0,
+      "passed_candidates": 0,
+      "rejected_candidates": 12,
+      "issued_probe_trials": 304,
+      "native_boolean_mismatch": 32,
+      "strict_only_reference_format_rejection": 0,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 0,
+      "native_mismatches_alone_make_pass_impossible": 12,
+      "strict_only_decisive_after_removing_format_gate": 0
+    },
+    {
+      "family": "Followup320-N",
+      "model": "qwen",
+      "planned_candidates": 12,
+      "observed_candidates": 12,
+      "unreached_candidates": 0,
+      "passed_candidates": 0,
+      "rejected_candidates": 12,
+      "issued_probe_trials": 1088,
+      "native_boolean_mismatch": 108,
+      "strict_only_reference_format_rejection": 0,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 2,
+      "native_mismatches_alone_make_pass_impossible": 12,
+      "strict_only_decisive_after_removing_format_gate": 0
+    },
+    {
+      "family": "Followup320-N",
+      "model": "glm",
+      "planned_candidates": 12,
+      "observed_candidates": 12,
+      "unreached_candidates": 0,
+      "passed_candidates": 0,
+      "rejected_candidates": 12,
+      "issued_probe_trials": 1264,
+      "native_boolean_mismatch": 104,
+      "strict_only_reference_format_rejection": 0,
+      "batch_contract_failure": 0,
+      "strict_invalid_reference_trials": 0,
+      "native_mismatches_alone_make_pass_impossible": 12,
+      "strict_only_decisive_after_removing_format_gate": 0
+    }
+  ],
+  "source_files": [
+    {
+      "path": "run_qwen_cache1/agnews_count_world__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "9693d901ccd145ce81cbdda7c9b1442d96b50cc35d61cffd67b31e3b1abde585"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_world__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "7ca53c368879d5c7de65873daca4981c4b0330d952bfad39f5109d3046902bff"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "1239347e05084887f9ef71e5c162c730de575777eb01a4757673e3a9777f046f"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "fb0369d6a17e2d2188b78eaef036fc52846ac1f217448ae252ac0a2ca91e5733"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_business__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "904c09bd61ae3d84fa054129d1f9423f846ec8aa3b12ad66048d9f24d82fb2a3"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_business__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "bf3935e5faf64c1a6189c3c4c087163683ddbe2e5e8b43b9c599188ca9633e51"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "dbb70276f7654d4ce31a05015af6026249f920d07578b892a41b4f91da60663c"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "046c8433232447f5a6b979257e8bd3a53048b5621ad5e3c80bb0d1348644f2a0"
+    },
+    {
+      "path": "run_qwen_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "4b8bce4b1272f460a648b9082372e3fbb893e8eb7d135b56e00c36c06c00c89d"
+    },
+    {
+      "path": "run_qwen_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "4e1ad5f83f1af11b995988812c54e1b13949ab9649468cb99f50286855a9a101"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "2d55ffc7c42714367c48086d21b457433c6feede3f078cc2f1d204e57377205f"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "329647836432368b0a52b0316d2671a47a08dbf315f4a08efbdd2b23f5b49ff3"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "e4aeae35934fe5b027e41a2c796acd1a66418a1735d5f8f8e9f28e4884166f14"
+    },
+    {
+      "path": "run_qwen_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "dcadc7d8d343ea785ffd9f8e8298b9138798d9110611505d15f3d874a933bd4b"
+    },
+    {
+      "path": "run_qwen_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "76c47c8e1cb61bd9def16cbbe7dccdd69970b19c627fe6b232152c891aa62935"
+    },
+    {
+      "path": "run_qwen_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "16b15c36f13ee054303fcbda9b77b7493b8ef25facb7f670084a8cb0b502b764"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "1f02ea5b1216e42366941ad1c46d95dad5df024951fe97532f6bc1007a272e9f"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "67cc284bb75ef8910ef760f72402e422204b703901735b7a647338154d47a290"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "7587f9e594431b2e51507ee25541429c32cfdab19aad120a25bfad97aaabf6a8"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "b4e446a6505442130c6abf30e6551dfb01e58df10344a679caeedee5f4da664a"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "92833ff34ae05f3216ca73fb2a3ba54ed52d127f41123c89612547e1bfde8e52"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "6db872159e8fbfada754e11979a9fb0e177323b83feedfdd23c778a1899e1ff1"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "281c4d6082c44467de4bc5949e244aeac45c6f9ec4ad1426e2759c652a1b2cb0"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "1fed4bb3755493cf13b0324314056b1efa28b727e0291587b13bfb749e636151"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "41ff4e4fab62c83c258f2fe1fa04e1c8aaa23c3ea42507f75b67211b189e588e"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "c52d09ce8069a8aa7b66443971edf6a4a24d0b3799665c8cd00262aa281b27ff"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "72c0a34e3c9be644de922620b2748ee9e6d2f990c153dda2932cbb63565d4832"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "f0bca5ca4508c7382e906f0156e994a626b4b7407ee480db8c373946908e28a5"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "ab7a1779645bdd985907c7664931732f7cde881a5e589a38e8ac13e4f771c737"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "fb3f2eb8fef75a19c7e7d248f621fe6b2f6ed9eff0d9174785a17cbe453b0233"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "43a1cf853bc13d66e578e4b20ac15c0cb3125f896fb1279a1681b434231dd817"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "305dab220fddb689382994ca7bcbf001d67384a762232a2b96fad087ac1826cf"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "a60f2844c3951f486b0c8e90b779b0912c8801446cfe4ab7c844aad23cc508ca"
+    },
+    {
+      "path": "run_qwen_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "1241b41b8948b30ebc865bcec0bb31968cf1ab0edda7513feec88e6b06cecd7b"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "b20e349b41bd84b76a31dc56a6290c720ca6e91a3aea535e6f42f5785abc26de"
+    },
+    {
+      "path": "run_qwen_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "0fe9a3e76f51cf703730f8820a7f2d38e64449a92a93c7eddeaf733f16f0f4b6"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_world__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "b9848131975fd44dfa6b28f616be303a944b727e7db3bfbc279cf42ad971065e"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_world__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "64d8e905832a1f21be2a4c7bea0cde028b091dbbd919e93f14605bcaed9c4ce9"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "bcc183738fd5783f25a74e69208baef3606b0afc95d1957fa9e5f1e07da6aa75"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_sports__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "28aab64b56ff4c075a56ef602edb782b689eb34e6d96a184b81d23541cc310ef"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_business__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "cb182c991ea4965648f30797d488383abaa78ccd8f2b85e6206db84fa2203366"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_business__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "fc359a1040518dee05d6b29f5f63426aebcf6d54033ec5027c367fc104ce867e"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "7cf19a45ecb730b7e632674b1458907acbc37153396a2d5d6966933f023bf4fb"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "93fe033762710bcbef41f85e941c7807970098a4132a5f07a53fa1f69047c0aa"
+    },
+    {
+      "path": "run_glm_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "b63eb32573233aa349ee243cf7a4edbdb1ee3f06c3c78623b4823f3f135e8668"
+    },
+    {
+      "path": "run_glm_cache0/agnews_count_science_technology__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "95916cd3406b8d358b6143916576c273810a062f7737809da8b65b1393ddf783"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "1ab0b55ea653277a3b5a427153edf16798105e935568cc6590f824b47ad33267"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "8d53e501fbeb79552ec49ffdf31e2e8b39ad531930db16470c4483306348e4e5"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "38d582ddb38ca588611d703a8fb707b2416009d60f574819fc13234d10f5f481"
+    },
+    {
+      "path": "run_glm_cache1/agnews_count_science_technology__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "7ecfb0adf9a599d62b179315d5c07345e42fc64f050687d81c67ec85e627743f"
+    },
+    {
+      "path": "run_glm_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "c3d6cdb3299f96dc6183a10a2b4308d2ad5bb874186a465b858922488dfb9793"
+    },
+    {
+      "path": "run_glm_cache0/agnews_count_science_technology__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "503a01c175d579a0941974cf66ede2496458891afcc1a7bf3def773f3196e8e8"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "fd85810d2875ea4c457983be62f417b98619c1d6d158e86920f27b94c45e6513"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "8366858bdb42545c30f30f6e92db711446799d198d36324763ac2f853ab3827c"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "f45c8bdec00b8ecbc814bdf898f19ca06ebe2c44f8b4d677e0d5bb53aa7e5fc6"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_top_critics__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "1ac500703430c62e23c926df56a0b6db09480b2c6128a6fea1bdfbff4754d4ad"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "e6bba716184c1e62c432c2ea217a7aad3cbf72c76c7ab71a4d10f303e7185d23"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "e0afaa556bca252137e086b47b39a3fdc68dd39da72eb5c5ebfa63d4a5aceabf"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "30810b3f62d84784168d2199c94bb1cb4f79a1f9e06829596ee04354c2e17987"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_top_critics__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "5560aad9f0b3b66ce10a7aa28a4ea0496fdc1f27a1a31ed70b0c57bc88d7aec7"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "0c3ebc0fe8b1c926f23569e86ef84ea064cdbd18f525963c9d44181505b5781e"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_top_critics__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "4df5aadf04effca3e2e395ce1949c40a3759431e8ccdd4b73a293303ce03fe78"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "7359880c87cacd38653603d483a2d435c4ea802afdddec53523f9271061c51d9"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n2048__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "8a08828c58c2e4d92859ec37d1159e8802fceea302b7a2fde383e65bde9e3727"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "fb7576f669068c44d6ec23199ef5e076bd54d94a86b296f80eef86e6de06dda0"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_other_critics__n2048__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "3715a0538de8be1c81241f9c61a8101e6800708be250b5719f54d21d8a954265"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "8f147782172618987866e1b34c1870999f7ed42a9ecc7af688aa6d2e8ed4807c"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n512__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "40cc3d2c899fa3970777548c59908adfc48ecc07fa4d9e4fcee7d45ff1f6497c"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP_RESULT.json",
+      "sha256": "c156e629a2ffe250eb9366aec7d0cea1878f99506b07d8ed5c7cb52709d749a7"
+    },
+    {
+      "path": "run_glm_cache1/movie_count_positive_other_critics__n7600__cache1/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "7589c48522665971e34cd1f0f747ee6a4365c06837059fa3b3b0f6191ce903fc"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP_RESULT.json",
+      "sha256": "17f842bbf1d0a0581524aea10cf5bc8eb004e18261f1d2415f6f0614d0e2dec2"
+    },
+    {
+      "path": "run_glm_cache0/movie_count_positive_other_critics__n7600__cache0/CURRENT_CP/calibration_singletons/native_result.json",
+      "sha256": "1b487fc26d8d4d73e8b98ec0f94bff1ac88c40813c0ab1c318a2e37c676aef7a"
+    },
+    {
+      "path": "budget_run_qwen/movie_count_positive_other_critics__n7600__budget320__rep1/POLICY_RESULT.json",
+      "sha256": "d527ebda2eb080402f2cc5f94405572cb79444126d9fe1956c5384efef10b64a"
+    },
+    {
+      "path": "budget_run_qwen/movie_count_positive_other_critics__n7600__budget80__rep2/POLICY_RESULT.json",
+      "sha256": "5fb65b620c292ca0dacbcf5db6a79c331726f4313224ce486a4771fa71b5d547"
+    },
+    {
+      "path": "budget_run_qwen/movie_count_positive_other_critics__n7600__budget320__rep2/POLICY_RESULT.json",
+      "sha256": "ba1f8a9f90029516c12f111daf7f25bf732fe67fa9c9f408375379922cd2174d"
+    },
+    {
+      "path": "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep2/POLICY_RESULT.json",
+      "sha256": "9d6cc053182867e54aacb7c91b3ae7af94c8e2600cb732269a631f8e314853ef"
+    },
+    {
+      "path": "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep2/POLICY_RESULT.json",
+      "sha256": "43cb6eb9d8a142b0f7891cad7590d153dfcc88a18d2122bda04ac0d38de08d7c"
+    },
+    {
+      "path": "budget_run_qwen/agnews_count_science_technology__n7600__budget80__rep1/POLICY_RESULT.json",
+      "sha256": "4ed935d0f0c7ab3f169656e6efa5ab3c5af7db2fb0955f1c9d23ab9764f978c9"
+    },
+    {
+      "path": "budget_run_qwen/agnews_count_science_technology__n7600__budget320__rep1/POLICY_RESULT.json",
+      "sha256": "7d6d8b2dcdf7f8b3be23eeeef88f0b21331b98388d4b6fd8760c50b43d415062"
+    },
+    {
+      "path": "budget_run_qwen/movie_count_positive_other_critics__n7600__budget80__rep1/POLICY_RESULT.json",
+      "sha256": "f49cf71ded8cb550a2d17a3c76ec0bd63c89dfc640c327826f357185218513a2"
+    },
+    {
+      "path": "budget_run_glm/movie_count_positive_other_critics__n7600__budget320__rep1/POLICY_RESULT.json",
+      "sha256": "53c3231e2e13722c74cb7af49edf7327e7313f368febfde09261b498ce33665e"
+    },
+    {
+      "path": "budget_run_glm/movie_count_positive_other_critics__n7600__budget80__rep2/POLICY_RESULT.json",
+      "sha256": "25771792e585c434bd9a0f3ef0c76c2239d3b1334a3c532aea820e278d16af25"
+    },
+    {
+      "path": "budget_run_glm/movie_count_positive_other_critics__n7600__budget320__rep2/POLICY_RESULT.json",
+      "sha256": "d7512a298f1daa4f6927aa395931d9448ce9ac7ca3ce3f7a530ade07119ac17d"
+    },
+    {
+      "path": "budget_run_glm/agnews_count_science_technology__n7600__budget80__rep2/POLICY_RESULT.json",
+      "sha256": "f8f1551019f59c5a2a059d58d48b90f1ffa6bac914a099d377cf24f05ee65157"
+    },
+    {
+      "path": "budget_run_glm/agnews_count_science_technology__n7600__budget320__rep2/POLICY_RESULT.json",
+      "sha256": "cb4aefaeb710bca1744f47fad8b5465ebf102d97ea3c6abc0b4b395ef3535f2c"
+    },
+    {
+      "path": "budget_run_glm/agnews_count_science_technology__n7600__budget80__rep1/POLICY_RESULT.json",
+      "sha256": "d921ac745516f487adc937aa13bb33924513498e8923731e67fb00673cb7e78b"
+    },
+    {
+      "path": "budget_run_glm/agnews_count_science_technology__n7600__budget320__rep1/POLICY_RESULT.json",
+      "sha256": "67c42b005713393560d493143f7fd4370a42185fb3f358ed04f806891bce1a43"
+    },
+    {
+      "path": "budget_run_glm/movie_count_positive_other_critics__n7600__budget80__rep1/POLICY_RESULT.json",
+      "sha256": "ab77bd475e936b453d908a02baddc19e0bcafae3012510fc1adcf26d6a9613f4"
+    }
+  ],
+  "source_sha256": "d8fddb5979c35de1a7b0d9bd49f5c55f7797cf4d8ba05d8914f8b440112be435",
+  "input_summary_sha256": {
+    "main": "cd1eaec4d855d65eba24941a36309932b281609c9cc4bfac20f92d7a0d67463c",
+    "budget": "50add565342e436c4d186ba08fe551f24d5ca4e13d6e2b953754193e37933f82"
+  },
+  "no_new_inference": true,
+  "unreached_candidates_have_no_assigned_outcomes": true,
+  "q_estimation_claimed": false
+}

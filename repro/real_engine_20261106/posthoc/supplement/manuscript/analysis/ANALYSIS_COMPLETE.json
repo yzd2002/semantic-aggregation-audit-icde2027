@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE_ANALYSIS_INTEGRITY_PASS",
+  "main_configurations": 36,
+  "budget_policies": 16,
+  "main_integrity_errors": 0,
+  "budget_integrity_errors": 0,
+  "shadow_same_actual_decision_and_cost": 36,
+  "shadow_needs_faithful_followup": 0,
+  "completion_marker_sha256": {
+    "run_qwen_cache0/ALL_WORK_COMPLETE.json": "375c237ac114afa69b2e50fc1f38158f0c4d150d0f0144d30c997a7f86ac244e",
+    "run_qwen_cache1/ALL_WORK_COMPLETE.json": "16df4a1f9727a2391d6a556cd19c8517cde7c007878bc650f4de399f5837e216",
+    "run_glm_cache0/ALL_WORK_COMPLETE.json": "dff4c341baeb2af20833306e45133d0d06ecf024da247c28063fd199b4e62166",
+    "run_glm_cache1/ALL_WORK_COMPLETE.json": "da200d3dc4750410a36e90371b5e4ed2bed7abb3165835a5b17db22bcc3573ff",
+    "budget_run_qwen/BUDGET_ALL_WORK_COMPLETE.json": "88b9585b04d1fdb42b389e2553760e1898db3882734fbbacc52dc9c6aee7f67d",
+    "budget_run_glm/BUDGET_ALL_WORK_COMPLETE.json": "eca9570c01b036ba92065bf2b6ed147a6ff52f9a726fcb146824086f778ae8e1"
+  },
+  "program_sha256": {
+    "real_engine_analysis/analyze_study.py": "b5cb89ee1753710edaea8692d662f2e5a4dad9645b168afcc44d19b9e66aeca9",
+    "real_engine_analysis/budget_followup/analyze_budget_followup.py": "fbffcafd81c4c054fe4c9849ba1d56415b093fd39b2c76a816d164808bd5c2e6",
+    "analyze_finite_audits.py": "7d8197c117477888ed4a15a9c8aa7941d827591120b5a82e847852943b4b57a7",
+    "real_engine_analysis/representativeness_audit/audit_representativeness.py": "cfe26a701ef1c1ce28bf665666c6dc99b2f9c4777f45265baf346d90750a8968"
+  },
+  "result_sha256": {
+    "main/summary.json": "cd1eaec4d855d65eba24941a36309932b281609c9cc4bfac20f92d7a0d67463c",
+    "main/integrity.json": "d0ff76402e99d8aa467645c43487944ab7e26603d455b19de3a38afcb0f4c672",
+    "budget/summary.json": "50add565342e436c4d186ba08fe551f24d5ca4e13d6e2b953754193e37933f82",
+    "budget/runtime_integrity.json": "0723c7d07985f0e81479c86f448a55283889e2add75a6bcae03655ecaf379076",
+    "finite/FIXED_BUDGET_AUDITS.json": "5f219f8ca43503d073655eafd0161d852a0da80be67c33078a58657c0f4c0107",
+    "shadow/MATRIX_AUDIT.json": "f1bd7607ad33c09c60c26a069b4567ed945b5fc7f999443f4d7dde9da30ea35e"
+  },
+  "science_inference_performed": false,
+  "writes_confined_to_manuscript": true
+}

@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering\small
+\caption{Observed candidate prefixes: O/P/R = observed/passed/rejected. Flags are classified B (invalid full batch response), then M (native-label mismatch), then F (additional strict-only reference-format rejection). An M may also have a non-strict reference. The last column counts stops already forced by M alone at the fixed full budget. Probes include whole issued chunks; two lower candidates after the Sports pass are unobserved. Stopped prefixes do not estimate population mismatch probability.}
+\label{tab:rejection_evidence}
+\begin{tabular}{llrrrrrr}
+\toprule
+Family & Model & O/P/R & Issued probes & M flags & F flags & B flags & \shortstack{Native-sufficient\\stops / R} \\
+\midrule
+Current80-S & Qwen & 54/0/54 & 1,040 & 143 & 31 & 0 & 54/54 \\
+Current80-S & GLM & 52/1/51 & 1,264 & 101 & 0 & 0 & 51/51 \\
+Current80-N & Qwen & 12/0/12 & 256 & 26 & 0 & 0 & 12/12 \\
+Current80-N & GLM & 12/0/12 & 304 & 32 & 0 & 0 & 12/12 \\
+Current320-N & Qwen & 12/0/12 & 1,088 & 108 & 0 & 0 & 12/12 \\
+Current320-N & GLM & 12/0/12 & 1,264 & 104 & 0 & 0 & 12/12 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "payload_kind": "ACTUAL_COMPACT_EVIDENCE",
+  "configurations": 36,
+  "math_tables_equal": [
+    "case_matrix",
+    "policy_metrics",
+    "comparisons",
+    "costs",
+    "cp_decisions",
+    "validation",
+    "official_q3",
+    "failed_attempts"
+  ],
+  "separate_budget_followup_policy_jobs": 16,
+  "finite_audits_equal": true,
+  "original_mathematical_source_edited": false,
+  "original_tree_access_guard": {
+    "enabled": true,
+    "blocked_original_tree_accesses": 0,
+    "scope": "Original scientific tree opens/listings are forbidden outside the expanded bundle, new replay output and portable tool directory."
+  },
+  "explicit_read_adapters": [
+    "full-text workload reader",
+    "full-text native/batch message verification reader",
+    "official Q3 source reader",
+    "compact native binding reader"
+  ],
+  "source_input_scope": "Actual outputs and input identity/length receipts; omitted news text and prompt arrays require optional pinned reconstruction for full-source verification.",
+  "source_token_redecoding": false,
+  "new_GPU_or_model_inference": false,
+  "cleanroom_GPU_reproduction_claimed": false,
+  "original_root_mapping": "/home/gpu/IntentSat2S_upgrade_20261106"
+}
