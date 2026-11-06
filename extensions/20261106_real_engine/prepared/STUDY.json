@@ -1,0 +1,321 @@
+{
+  "config": {
+    "seed": "2026110619",
+    "anchor_seed": "2026110620",
+    "candidate_sizes": [
+      8,
+      4,
+      2
+    ],
+    "eta": 0.05,
+    "delta": 0.05,
+    "probe_budget": 80,
+    "calibration_chunk": 16,
+    "validation_probes": 80,
+    "science_block": 64,
+    "temperature": 0,
+    "native_max_output": 32,
+    "batch_max_output": 128,
+    "max_model_len": 8192,
+    "max_num_seqs": 32,
+    "gpu_memory_utilization": 0.7,
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "enforce_eager": true,
+    "response_cache": false,
+    "operator_cache": false,
+    "cache_on_semantics": "Each policy starts with empty prefix KV; its own calibration may warm its execution.",
+    "main_gold_audit_budget": 1024,
+    "gold_audit_epsilon": 0.05,
+    "gold_audit_alpha": 0.05,
+    "latency_scope": "Observed shared-server per-policy timing; no inferential latency ranking claim."
+  },
+  "models": {
+    "qwen": "/root/models/Qwen/Qwen3-4B-Instruct-2507",
+    "glm": "/smoothcloud/models/glm-4-9b-chat"
+  },
+  "workloads": [
+    {
+      "workload_id": "agnews_count_world",
+      "domain": "agnews",
+      "corpus_id": "agnews_test",
+      "predicate": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is World (international affairs, politics, or world events). News item: {text}",
+      "gold_positive_class": 0,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "rows_available": 7600,
+      "query_status": "SOURCE_DERIVED_BINARY_COUNT_NOT_SEMBENCH_QUERY",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_world.native_requests.jsonl",
+      "native_requests_sha256": "90a98f10aa525f99df9ce08736dc262dcf858a000799509814fddf4a76ddbf81",
+      "records_sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50",
+      "gold_sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "workload_id": "agnews_count_sports",
+      "domain": "agnews",
+      "corpus_id": "agnews_test",
+      "predicate": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is Sports (sports or athletic competition). News item: {text}",
+      "gold_positive_class": 1,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "rows_available": 7600,
+      "query_status": "SOURCE_DERIVED_BINARY_COUNT_NOT_SEMBENCH_QUERY",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_sports.native_requests.jsonl",
+      "native_requests_sha256": "dc4aa97ba19d1cff7f1a3142bce54cc878693f06e61d75f3d000ea4cb1e3dc49",
+      "records_sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50",
+      "gold_sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "workload_id": "agnews_count_business",
+      "domain": "agnews",
+      "corpus_id": "agnews_test",
+      "predicate": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is Business (business, finance, or the economy). News item: {text}",
+      "gold_positive_class": 2,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "rows_available": 7600,
+      "query_status": "SOURCE_DERIVED_BINARY_COUNT_NOT_SEMBENCH_QUERY",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_business.native_requests.jsonl",
+      "native_requests_sha256": "09c4bac38415f612c2b5bca7127fea1bb4218d9804828730b041c647e0073788",
+      "records_sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50",
+      "gold_sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "workload_id": "agnews_count_science_technology",
+      "domain": "agnews",
+      "corpus_id": "agnews_test",
+      "predicate": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is Sci/Tech (science or technology). News item: {text}",
+      "gold_positive_class": 3,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "rows_available": 7600,
+      "query_status": "SOURCE_DERIVED_BINARY_COUNT_NOT_SEMBENCH_QUERY",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_science_technology.native_requests.jsonl",
+      "native_requests_sha256": "6b0c2ccfd11bf240932dee99e2f375e6ce6cf1f62ff640bdfc22c460fbf5b6c2",
+      "records_sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50",
+      "gold_sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "workload_id": "movie_count_positive_top_critics",
+      "view": "top_critics",
+      "status": "SOURCE_DERIVED_QUERY_VARIANT_NOT_ORIGINAL_SEMBENCH_Q3",
+      "predicate": "Determine if the following review is clearly positive. Review: {reviewText}",
+      "operator": "semantic filter then deterministic COUNT",
+      "view_condition": "isTopCritic == True",
+      "available_unique_texts_in_view": 421547,
+      "selected_rows": 8192,
+      "prefix_sizes": [
+        512,
+        2048,
+        8192
+      ],
+      "prefixes_are_nested": true,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.gold.jsonl",
+      "metadata": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/top_critics.metadata.jsonl",
+      "records_sha256": "e17273f364febd60d48ea57464c1bd5d9100150d65c286a8b3593e7790073d17",
+      "gold_sha256": "66dbfbf3236d5ce567cc41a11e9ef456253b63774e1f8f4dd9b8e8abb2aeb7e9",
+      "metadata_sha256": "f4b0eea500ea1ac39e96dc814777fa23b5f46f9538bbbd6bb8f7d567a037f95e",
+      "post_selection_gold_counts": {
+        "positive": 5152,
+        "negative": 3040,
+        "unavailable": 0
+      },
+      "min_text_characters": 8,
+      "max_text_characters": 295,
+      "domain": "movie",
+      "corpus_id": "top_critics",
+      "rows_available": 7600,
+      "gold_field": "gold",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/movie_count_positive_top_critics.native_requests.jsonl",
+      "native_requests_sha256": "79852f2a92a842ba08eb6cef5444801ba66d7bed975852e618569b4413cc868f"
+    },
+    {
+      "workload_id": "movie_count_positive_other_critics",
+      "view": "other_critics",
+      "status": "SOURCE_DERIVED_QUERY_VARIANT_NOT_ORIGINAL_SEMBENCH_Q3",
+      "predicate": "Determine if the following review is clearly positive. Review: {reviewText}",
+      "operator": "semantic filter then deterministic COUNT",
+      "view_condition": "isTopCritic == False",
+      "available_unique_texts_in_view": 938120,
+      "selected_rows": 8192,
+      "prefix_sizes": [
+        512,
+        2048,
+        8192
+      ],
+      "prefixes_are_nested": true,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.gold.jsonl",
+      "metadata": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.metadata.jsonl",
+      "records_sha256": "dffe6f8184717a0ad38f43b001cff29e126ce9c71a9966cc4d81d69ca5403b37",
+      "gold_sha256": "116e2362dc923ed5b73a1a879f6370bb3bfe5499d315cae34953605c1410dbcd",
+      "metadata_sha256": "8cd2ec2ff5767433b15df0337a251638bb64f3fa8c876554a500ab6aa8a06995",
+      "post_selection_gold_counts": {
+        "positive": 5589,
+        "negative": 2603,
+        "unavailable": 0
+      },
+      "min_text_characters": 5,
+      "max_text_characters": 315,
+      "domain": "movie",
+      "corpus_id": "other_critics",
+      "rows_available": 7600,
+      "gold_field": "gold",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/movie_count_positive_other_critics.native_requests.jsonl",
+      "native_requests_sha256": "ce73f80381871423df2d80a5160e1fdad350bb01ae439c3f27860b6c6acc8a17"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "agnews_count_world__n2048__cache1",
+      "partition_key": "agnews_count_world__n2048",
+      "workload_id": "agnews_count_world",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "agnews_count_sports__n2048__cache1",
+      "partition_key": "agnews_count_sports__n2048",
+      "workload_id": "agnews_count_sports",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "agnews_count_business__n2048__cache1",
+      "partition_key": "agnews_count_business__n2048",
+      "workload_id": "agnews_count_business",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "agnews_count_science_technology__n2048__cache1",
+      "partition_key": "agnews_count_science_technology__n2048",
+      "workload_id": "agnews_count_science_technology",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "agnews_count_science_technology__n2048__cache0",
+      "partition_key": "agnews_count_science_technology__n2048",
+      "workload_id": "agnews_count_science_technology",
+      "n": 2048,
+      "prefix_cache": false,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "agnews_count_science_technology__n512__cache1",
+      "partition_key": "agnews_count_science_technology__n512",
+      "workload_id": "agnews_count_science_technology",
+      "n": 512,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "agnews_count_science_technology__n7600__cache1",
+      "partition_key": "agnews_count_science_technology__n7600",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "agnews_count_science_technology__n7600__cache0",
+      "partition_key": "agnews_count_science_technology__n7600",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "prefix_cache": false,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_top_critics__n2048__cache1",
+      "partition_key": "movie_count_positive_top_critics__n2048",
+      "workload_id": "movie_count_positive_top_critics",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "movie_count_positive_top_critics__n2048__cache0",
+      "partition_key": "movie_count_positive_top_critics__n2048",
+      "workload_id": "movie_count_positive_top_critics",
+      "n": 2048,
+      "prefix_cache": false,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_top_critics__n512__cache1",
+      "partition_key": "movie_count_positive_top_critics__n512",
+      "workload_id": "movie_count_positive_top_critics",
+      "n": 512,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_top_critics__n7600__cache1",
+      "partition_key": "movie_count_positive_top_critics__n7600",
+      "workload_id": "movie_count_positive_top_critics",
+      "n": 7600,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_top_critics__n7600__cache0",
+      "partition_key": "movie_count_positive_top_critics__n7600",
+      "workload_id": "movie_count_positive_top_critics",
+      "n": 7600,
+      "prefix_cache": false,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_other_critics__n2048__cache1",
+      "partition_key": "movie_count_positive_other_critics__n2048",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 2048,
+      "prefix_cache": true,
+      "primary_matrix": true
+    },
+    {
+      "case_id": "movie_count_positive_other_critics__n2048__cache0",
+      "partition_key": "movie_count_positive_other_critics__n2048",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 2048,
+      "prefix_cache": false,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_other_critics__n512__cache1",
+      "partition_key": "movie_count_positive_other_critics__n512",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 512,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_other_critics__n7600__cache1",
+      "partition_key": "movie_count_positive_other_critics__n7600",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "prefix_cache": true,
+      "primary_matrix": false
+    },
+    {
+      "case_id": "movie_count_positive_other_critics__n7600__cache0",
+      "partition_key": "movie_count_positive_other_critics__n7600",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "prefix_cache": false,
+      "primary_matrix": false
+    }
+  ],
+  "anchor_workloads": [
+    "movie_count_positive_top_critics",
+    "movie_count_positive_other_critics",
+    "agnews_count_science_technology"
+  ],
+  "not_independent_domains": "2 domains, 3 corpus views, 6 predicate-input workloads; scales, caches and models do not add domains."
+}

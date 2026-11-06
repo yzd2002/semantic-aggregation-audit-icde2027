@@ -1,0 +1,139 @@
+Prospective real-engine extension: frozen before any new model verdicts
+
+Purpose and prior knowledge
+The public v2 manuscript and its outcomes are known. This extension tests the
+two unresolved review risks: representative query-time checking and execution
+at larger cardinalities. It does not claim to discover batching sensitivity,
+invent CP certification, or invent difference estimators/finite-population
+auditing. The exact runtime, sources, definitions, and local pre-inference hash
+manifest are retained. A local freeze is not a claim of external registration.
+
+Sources and workloads
+Pinned LOTUS v1.2.4 commit 136ae4f4a344a2f75d89f811e516dfcb0de30e46 runs
+live sem_filter through an isolated CPU process connected to native vLLM.
+Operator and response caches are disabled. Default native coercion remains
+visible; an additional strict True/False contract reports completion separately.
+The pinned SemBench Q3 source is also executed unchanged on its own official
+2000-row demonstration relation (120 rows reach the semantic filter). Larger
+movie tests are explicitly source-derived COUNT variants, not original Q3.
+
+Movie: the official SemBench generator's Kaggle upstream, dataset version 4,
+hash-verified explicit-version download. Full reviewText, global text dedup,
+then disjoint isTopCritic true/false views, hash-based feature-only order.
+Sentiment is the source's label, not newly human-verified truth. Only complete
+reviewText enters the model; metadata/labels remain outside the inference path.
+AG News: pinned official repository revision
+eb185aade064a813bc0b7f42de02595523103ca4, complete 7600-row test split,
+SHA256 feature-only occurrence order, no duplicate text. Four primary-topic
+binary COUNT predicates map the four source classes. They share one corpus.
+The source card says license unknown. It is not relabeled CC0/open source;
+public artifacts provide a pinned anonymous acquisition/reconstruction recipe.
+
+Matrix
+Six predicate/input workloads, two domains, three corpus views. Qwen3-4B-
+Instruct-2507 and GLM-4-9B-Chat use native BF16 implementations. All six
+workloads run at N=2048 with prefix caching ON (12 model configurations).
+The two movie views and feature-hash-selected AG Sci/Tech anchor additionally
+run at N=512 and 7600 with cache ON (12). These same three anchors run at
+N=2048 and 7600 with cache OFF (12). Total: 36 configurations. Nested scales,
+model variants, caches, shared source records, and the two movie views do not
+constitute independent datasets. Every planned configuration is reported,
+including incomplete, invalid, singleton fallback, and negative outcomes.
+
+Physical policies and independent references
+S1 and S2 are separate full live native LOTUS singleton executions. RANDOM8 is
+a complete random partition with every indexed occurrence exactly once.
+SIMILAR8 is a complete deterministic TF-IDF greedy nearest-neighbor partition;
+its CPU construction time is included. This is a known grouping baseline.
+All fields are complete; no target is replaced or text shortened after labels.
+The custom in-context batch operator retains the native context/claim but uses
+ID-aligned constrained JSON output. Its prompt/output contract differs from
+native LOTUS; it is not called a native LOTUS batching optimization or a pure
+input-context causal intervention.
+
+CURRENT_CP implements NousDB paper Algorithm 2 given a fixed feasible kmax=8,
+not NousDB's official engine or histogram optimizer (official code unlocated).
+Candidates 8,4,2; eta=.05, delta=.05; delta'=delta/3; n=80. Probe occurrences
+are uniform with replacement from the current actual operator input; each
+candidate/probe has independently constructed distinct fillers and random
+probe position. Each call requests all k decisions, scoring one probe only.
+The 80 singleton reference calls are new live native LOTUS calls; they are
+not borrowed from S1/S2. Descending candidates may stop rejecting once no
+remaining outcomes could pass; no early acceptance. A 16-call chunk can
+over-issue, and all actually submitted calls are charged. Complete plans are
+executed only after selection; fallback k=1 is physically separate from S1/S2.
+Calibration and deployment have separately fixed seeds. The selected policy
+retains its own calibration prefix cache; no response is memoized.
+
+The CP lower bound targets the stated independent random-batch trial law,
+under the required oracle/independence assumptions. Its per-policy delta does
+not provide exact family coverage for the 36-configuration study, a guarantee
+on a future stochastic reference run, or a guarantee on one realised full
+partition. A finite full-plan mismatch above eta is reported descriptively,
+not automatically called a false CP certificate. Similarity deployment changes
+the grouping law. Certificate-transport comparisons with SIMILAR8 are limited
+to the predeclared selected-k=8 subset and retain all 36 as the coverage base.
+
+Independent validation
+After a non-singleton selection, 80 separately seeded probes have fresh
+native singleton calls and independently constructed all-k batch calls at the
+selected size. They never affect selection. Compare to the fresh reference,
+full S1 and S2, and the deployed same-size partition. Validation is a separately
+billed diagnostic, not silently folded into or removed from policy costs.
+
+Cache, token, timing, and failure ledger
+Every policy starts with empty prefix KV when caching is ON. CURRENT_CP keeps
+cache only within its own calibration-to-execution pipeline. OFF uses a
+separate actual engine configuration. Native input/output tokens, actual
+num_cached_tokens, observed uncached input, and missing usage are retained.
+Missing cached usage is unknown, never zero. Raw input/output tokens are not
+misrepresented as physical prefill work or provider dollar costs. Elapsed
+per-policy time includes live operator/transport and grouping/calibration/
+execution, excludes model loading and separately billed research diagnostics.
+Timing is observed on a shared server; no SOTA or statistical latency-ranking
+claim is made. Fixed case/policy permutations precede outcomes.
+
+Before data, each model/cache process runs an ordinary BANANA and incompatible
+guided control plus eight synthetic format checks. Semantic answers are not
+retention gates. Each actual native return is synced before count, alignment,
+or parsing validation. Unknown-cost failures remain unknown. No automatic
+inference retry, model replacement, post-label target resampling, or selective
+deletion. A technical failure is preserved; any needed amendment is explicit.
+Only a freshly checked idle GPU is used; other jobs are never stopped.
+
+Primary evaluation and falsifiable readout
+The N=2048/cache-ON 12 configurations are the primary matrix. Report per-policy
+strict completion, native fallback/coercion, row fidelity to both independent
+references, source-label row/COUNT errors, FP/FN, request counts, raw tokens,
+cache counts, and complete CURRENT_CP calibration+execution cost. A descriptive
+net-benefit flag requires complete output, selected k>1, fidelity loss<=.05 to
+BOTH S1 and S2, fewer requests, and fewer raw input+output tokens than S1.
+Its success count may be zero; no failed primary case is replaced by a .10
+tolerance, a different model, scale, cache setting, or selected example.
+No bootstrap treats the 36 configurations as independent observations.
+RANDOM8/SIMILAR8 effects and larger/smaller/cache-OFF cases are declared
+secondary. All source and reference errors remain distinct. Examples selected
+after outcomes are explicitly illustrations, not prospective primary claims.
+
+Classic finite-population controls (CPU, not new model inference)
+Condition on a materialized batch vector and an immutable source-gold vector.
+An independent SRS-without-replacement permutation supplies one primary budget
+m=min(1024,N), epsilon=.05, alpha=.05. Invert hypergeometric tails in the two
+predicted-label strata, allocating alpha/2 to each two-sided interval. The same
+joint FP/FN event gives raw COUNT-difference and row-error intervals. Also
+report a stronger direct hypergeometric row checker and direct AQP without
+paying full batch execution; each is a separately specified nominal method.
+Do not select among these separate intervals then claim a joint 95% guarantee.
+Any exploratory multiple looks have their own explicit alpha allocation.
+Apply the same fixed budget conditionally to frozen S1 only as a research
+replay; changes when transported to S2 are sensitivity, not coverage failures
+against the original fixed S1 target. Source-gold label queries are counted as
+label-oracle queries, not zero-cost LLM calls or newly performed human work.
+No universal cost win against direct AQP is presumed.
+
+Reporting and limits
+Keep the v2 baseline and this extension's original raw records. Use known AQP,
+SUPG/LOTUS, finite-population, and NousDB citations. Reframe the paper around
+new reproducible execution findings only if the actual outcomes support them.
+No measured SOTA, external acceptance, future-run guarantee, or Strong Accept
+grade is assumed in the protocol. Authors remain deferred per user instruction.
