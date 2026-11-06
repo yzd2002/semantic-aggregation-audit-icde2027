@@ -21,7 +21,7 @@ The [current scientific index](repro/real_engine_20261106/public/artifact_index.
 
 ## Rebuild the paper
 
-`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The nine-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
+`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The ten-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
 Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied aggregate CSVs. Generated table exports go to `regenerated/`, preserving the frozen editorial TeX. Plotting dependencies and source hashes are included in the clean source.
 

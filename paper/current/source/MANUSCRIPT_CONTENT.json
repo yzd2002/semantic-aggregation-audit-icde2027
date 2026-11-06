@@ -9,10 +9,11 @@
     "Chenhang He",
     "Zijian Wang",
     "Jiexin Zheng",
+    "Cong Wang",
     "Zhangxuan Shi",
     "Xiaolong Shi"
   ],
-  "author_count": 9,
+  "author_count": 10,
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
   "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} OpenAI Codex substantially assisted research design, literature verification, experiment implementation, data processing, analysis, drafting and revision of all sections, and code for the original figures and reproducibility checks. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat produced the new experimental judgments; the retained earlier experiments additionally used SmolLM2-1.7B-Instruct. Their inference roles, prompts and native configurations are recorded in the artifact. The human authors remain responsible for the correctness, originality, attribution and interpretation of the work. AI systems are not authors.\n",
   "pages": 14,
@@ -26,5 +27,5 @@
       14
     ]
   },
-  "frozen_pdf_sha256": "e7f1728c17c01bd04241f98696719066172a9cf52239c74cebd7bd8b65dec253"
+  "frozen_pdf_sha256": "bac7db7f7bd22377bc73818495f52ea374f8e10859289e6699662a3e0439bcd9"
 }
