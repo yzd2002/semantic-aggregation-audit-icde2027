@@ -1,0 +1,25 @@
+{
+  "version": 3,
+  "kind": "GLM-only identity-guard correction; preserve Qwen running original v2 bytes",
+  "created_unix": 1793960255.2752838,
+  "base_freeze_sha256": "b3f3c6098f5069fd8b14f97b67bae15fd1869e961aa3796c577613fea09f026a",
+  "base_public_commit": "c8eb58c1b2a7eefb99c850491c6c4e9989f43dea",
+  "change": "Retain native ChatGLMForCausalLM/BF16/exact parameter-count checks. Allow only the exact tokenization_chatglm dynamic module, with source SHA256 matching the previously frozen model provenance; reject all modeling/configuration or other dynamic modules.",
+  "statistical_or_input_change": false,
+  "frozen_v2_files_unchanged_verified": 117,
+  "entrypoint_sha256": "7a7a966ba4fcd69b54294bca65e2f41bea82f6b72327c90fdbedd3d988cbbd77",
+  "runtime_sha256": "90a95709a032e325f67e027d908542cebbe573033d46436b505892c4a309d2c4",
+  "launcher_sha256": "48627da53479549e1aa52d8629ebfb0b7da993391cf684b9522c4fffe6346383",
+  "allowed_tokenizer_module": "transformers_modules.glm_hyphen_4_hyphen_9b_hyphen_chat.tokenization_chatglm",
+  "allowed_tokenizer_sha256": "90a9a1b739f834cdf7a2f40959f9eeff2a705b80acefb2cea9c19ff3958a9279",
+  "prior_GLM_v2_generate_calls": 0,
+  "previous_failure": "failed_attempts/glm_cache1_attempt02",
+  "previous_failure_files": {
+    "execution.log": "21b7527a03a6d3d2e9ab5c4fde48fda2d7d696c0f09bc0208aff6f64f3565e04",
+    "FAILURE.json": "0290031a4d4049f8061edde98ae0be1b48892f84eae57404a0bca5ae5a7f0af7",
+    "EFFECTIVE_NATIVE_RUNTIME.json": "987cacdbff529159bedd63adc272f9252342b50a25931f6fe1cd315019301fca",
+    "START.json": "0772406ee6c6082a9a300760ae9d811afdb6751b952ac04329d57595e619642a"
+  },
+  "zero_generate_not_zero_initialization_cost": true,
+  "automatic_retry": false
+}
