@@ -1,0 +1,7 @@
+# Append-only CPU metadata correction before root GPU authorization
+
+The first CPU freeze was SHA256 d64b63ea22d781fe63b38707b07695b97395999c7a155bcd422c1802a1a0fb10. No root GPU authorization or new model inference had occurred. During self-review, the 34 redrawn targets' top-level random_similarities evaluation metadata was found to still describe their original random triplets. This field was not read by the rematching acceptance rule, prepared prompt builder or statistical functions, and all selected IDs, length matches, complete features, labels and requests were already correct.
+
+The exact original TF–IDF index is reconstructed from the preserved original banks, verifying vocabulary/IDF/bank hashes against the original selection report. New triplets' similarities are computed after selection; old values are retained as random_similarities_historical. The other 222 random and all near similarities are independently checked against the same index. No target, background ID, feature, prompt/token, grammar, schedule, sampling control, label, arm, budget or statistical function changes.
+
+The first freeze, pre-correction targets and pre-correction field-rejoin receipt remain under initial_cpu_preflight. A new current freeze is issued after the correction and checks. Root authorization must bind the new freeze hash. This is a documented pre-inference CPU correction, not an output-driven change or an attempt to reconstruct a missing historical certificate.

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "model": "qwen",
+  "freeze_sha256": "83ca3beb7488e4fd1c5998d5d6f38a6003286ad183dbf61c179a40d46672d38a",
+  "science_requests": 15552,
+  "controls": 20,
+  "all_native_engine_ID_prompt_grammar_and_canonical_payloads_independently_bound": true,
+  "native_journal_fsynced_before_binding_by_exact_reviewed_runner_source": true,
+  "all_effective_controls_replayed": true,
+  "all_valid_scientific_outputs": 15552,
+  "fixed_relations": 23,
+  "configuration_replay_target_predictions": 36096,
+  "policies_recomputed": 18,
+  "all_prefix_policy_and_zero_calibration_reference_costs_recomputed": true,
+  "calibration_cost_source": "Original baseline95 independent DEV source/hash/36policy audit inherited by immutable POLICY_LOCK hash; new costs derive independently from native return token-array lengths.",
+  "baseline95_certificate_sha256": "ff12bf4f24c8fb89cce4b9333d7760a320d80ded83fc1eabec2d4f94128b1090",
+  "pure_independent_helper_sha256": "4e369c84f7d40fb602981e967c5f0c6bedb8f94ba33dd832cc11d02685485496",
+  "only_AST_pure_independent_oracles_executed": [
+    "own_gold",
+    "own_fidelity"
+  ],
+  "producer_modules_imported": false,
+  "mathematical_comparison_fields": {
+    "all_nodes": 303880,
+    "numeric_fields": 171204
+  },
+  "comparison_mismatches": 0,
+  "unknown_token_calls": 0,
+  "tokens": {
+    "control_input": 4143,
+    "control_output": 471,
+    "science_input": 6765368,
+    "science_output": 229881
+  },
+  "source_hashes_stable": true,
+  "original_failure_and_destructor_logs_retained_without_altering_outputs": true,
+  "GPU_or_model_execution_by_reviewer": false,
+  "scientific_tree_modified": false,
+  "tokenizer_decoding_reexecuted": false,
+  "interpretation": "Finite relations and execution replays; same physical plan shared by selectors is not independent replication. Raw/count/token completeness is not deployment speed or paper acceptance.",
+  "elapsed_CPU_seconds": 6.515188932418823,
+  "created_unix": 1793924722.3004982
+}

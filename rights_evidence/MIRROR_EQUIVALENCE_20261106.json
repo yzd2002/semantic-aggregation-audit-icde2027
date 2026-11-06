@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-11-06",
+  "status": "PASS",
+  "files": {
+    "tableA.csv": {
+      "pinned_mirror_url": "https://raw.githubusercontent.com/ae3000/matchain/84478b2082eb60834e37852637f7c403b34e857d/data/Structured/DBLP-ACM/tableA.csv",
+      "sha256": "a83dfac196a4e263f3adac7aaf095c7198254a98fcaed0ec68d59130c74c43a7",
+      "bytes": 344698,
+      "official_source_bytes_equal": true,
+      "old_frozen_hash_match": true
+    },
+    "tableB.csv": {
+      "pinned_mirror_url": "https://raw.githubusercontent.com/ae3000/matchain/84478b2082eb60834e37852637f7c403b34e857d/data/Structured/DBLP-ACM/tableB.csv",
+      "sha256": "bd103ffdccdff4d8b9d04c18d90d04110b70b6fc87dec83c4e52e9616c58431a",
+      "bytes": 355649,
+      "official_source_bytes_equal": true,
+      "old_frozen_hash_match": true
+    },
+    "train.csv": {
+      "pinned_mirror_url": "https://raw.githubusercontent.com/ae3000/matchain/84478b2082eb60834e37852637f7c403b34e857d/data/Structured/DBLP-ACM/train.csv",
+      "sha256": "ad94b36b178bbf76023d3cee689565fbda1fe01b19d9a3926a51db382f45f0a5",
+      "bytes": 82310,
+      "official_source_bytes_equal": true,
+      "old_frozen_hash_match": true
+    },
+    "valid.csv": {
+      "pinned_mirror_url": "https://raw.githubusercontent.com/ae3000/matchain/84478b2082eb60834e37852637f7c403b34e857d/data/Structured/DBLP-ACM/valid.csv",
+      "sha256": "862f848ed3f3f005ae6c8997ecf571984bd575f6bbd319fc1a2170830a91132b",
+      "bytes": 27441,
+      "official_source_bytes_equal": true,
+      "old_frozen_hash_match": true
+    },
+    "test.csv": {
+      "pinned_mirror_url": "https://raw.githubusercontent.com/ae3000/matchain/84478b2082eb60834e37852637f7c403b34e857d/data/Structured/DBLP-ACM/test.csv",
+      "sha256": "e49adc4590d24c18b1a9bbd96011d9c745e10432e10e93e050d856a206fac394",
+      "bytes": 27429,
+      "official_source_bytes_equal": true,
+      "old_frozen_hash_match": true
+    }
+  }
+}

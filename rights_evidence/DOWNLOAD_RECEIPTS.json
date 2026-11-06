@@ -1,0 +1,57 @@
+{
+  "sources/dblp_acm/tableA.csv": {
+    "url": "https://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-ACM/exp_data/tableA.csv",
+    "bytes": 344698,
+    "sha256": "a83dfac196a4e263f3adac7aaf095c7198254a98fcaed0ec68d59130c74c43a7",
+    "expected_sha256": "a83dfac196a4e263f3adac7aaf095c7198254a98fcaed0ec68d59130c74c43a7",
+    "old_hash_match": true,
+    "saved_relative_path": "sources/dblp_acm/tableA.csv",
+    "recovered_utc": "2026-11-05T21:04:50Z"
+  },
+  "sources/dblp_acm/tableB.csv": {
+    "url": "https://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-ACM/exp_data/tableB.csv",
+    "bytes": 355649,
+    "sha256": "bd103ffdccdff4d8b9d04c18d90d04110b70b6fc87dec83c4e52e9616c58431a",
+    "expected_sha256": "bd103ffdccdff4d8b9d04c18d90d04110b70b6fc87dec83c4e52e9616c58431a",
+    "old_hash_match": true,
+    "saved_relative_path": "sources/dblp_acm/tableB.csv",
+    "recovered_utc": "2026-11-05T21:04:51Z"
+  },
+  "sources/dblp_acm/train.csv": {
+    "url": "https://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-ACM/exp_data/train.csv",
+    "bytes": 82310,
+    "sha256": "ad94b36b178bbf76023d3cee689565fbda1fe01b19d9a3926a51db382f45f0a5",
+    "expected_sha256": "ad94b36b178bbf76023d3cee689565fbda1fe01b19d9a3926a51db382f45f0a5",
+    "old_hash_match": true,
+    "saved_relative_path": "sources/dblp_acm/train.csv",
+    "recovered_utc": "2026-11-05T21:04:51Z"
+  },
+  "sources/dblp_acm/valid.csv": {
+    "url": "https://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-ACM/exp_data/valid.csv",
+    "bytes": 27441,
+    "sha256": "862f848ed3f3f005ae6c8997ecf571984bd575f6bbd319fc1a2170830a91132b",
+    "expected_sha256": "862f848ed3f3f005ae6c8997ecf571984bd575f6bbd319fc1a2170830a91132b",
+    "old_hash_match": true,
+    "saved_relative_path": "sources/dblp_acm/valid.csv",
+    "recovered_utc": "2026-11-05T21:04:50Z"
+  },
+  "sources/dblp_acm/test.csv": {
+    "url": "https://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-ACM/exp_data/test.csv",
+    "bytes": 27429,
+    "sha256": "e49adc4590d24c18b1a9bbd96011d9c745e10432e10e93e050d856a206fac394",
+    "expected_sha256": "e49adc4590d24c18b1a9bbd96011d9c745e10432e10e93e050d856a206fac394",
+    "old_hash_match": true,
+    "saved_relative_path": "sources/dblp_acm/test.csv",
+    "recovered_utc": "2026-11-05T21:04:50Z"
+  },
+  "recovery/public_sources/boolq_parquet/train-00000-of-00001.parquet": {
+    "url": "https://huggingface.co/datasets/google/boolq/resolve/35b264d03638db9f4ce671b711558bf7ff0f80d5/data/train-00000-of-00001.parquet",
+    "error_type": "URLError",
+    "message": "<urlopen error [Errno 101] Network is unreachable>"
+  },
+  "recovery/public_sources/boolq_parquet/validation-00000-of-00001.parquet": {
+    "url": "https://huggingface.co/datasets/google/boolq/resolve/35b264d03638db9f4ce671b711558bf7ff0f80d5/data/validation-00000-of-00001.parquet",
+    "error_type": "URLError",
+    "message": "<urlopen error [Errno 101] Network is unreachable>"
+  }
+}

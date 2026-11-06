@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/dbs/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="http://localhost:8080/research/projects/benchmark-datasets-for-entity-resolution" />
+<link rel="canonical" href="http://localhost:8080/research/projects/benchmark-datasets-for-entity-resolution" />
+<link rel="shortlink" href="http://localhost:8080/node/11455" />
+
+    <title>Benchmark datasets for entity resolution | Datenbanken Leipzig</title>
+    <link rel="stylesheet" media="all" href="/files/css/css_b1VWiAEtg6hk1DIsAUF_6lmsxJ-X9QwXi3lNnm2Vegg.css?delta=0&amp;language=en&amp;theme=dbs&amp;include=eJxtTksOhCAMvRAdFs7C25gCHYekUGNBgqcforN00-T1fR3j2a1XNcGpRY-BUvSSb7yyOGTwkjbJlMv9bRMMA5QvJYKaIzDF7YyrCXvdkOelTYNfLt6G-ULwj9LSOeZn6UdyAWykMnLfEPOj6m43jF1qWUJULwft3Y6BXtho10LJOlQyR6Sm9rqvJKEy_QBCAVq9" />
+<link rel="stylesheet" media="all" href="/files/css/css_wuDXZCMinPxkJAreUxYkPplj0sK1xYgkBE4AbeDkm7E.css?delta=1&amp;language=en&amp;theme=dbs&amp;include=eJxtTksOhCAMvRAdFs7C25gCHYekUGNBgqcforN00-T1fR3j2a1XNcGpRY-BUvSSb7yyOGTwkjbJlMv9bRMMA5QvJYKaIzDF7YyrCXvdkOelTYNfLt6G-ULwj9LSOeZn6UdyAWykMnLfEPOj6m43jF1qWUJULwft3Y6BXtho10LJOlQyR6Sm9rqvJKEy_QBCAVq9" />
+
+    
+  </head>
+  <body class="path-node-11455 path-node page-node-type-project">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <!-- Start: Page Wrapper -->
+<div class="page-wrapper w3-col w3-clear w3-animate-opacity w3-text-theme ">
+
+  <!-- Start: Header -->
+  <header id="header" class="w3-col w3-clear w3-theme-l4 none " role="banner" aria-label="Site header">
+    <div id="header-inner" class="w3-container header-inner none">
+                  
+<nav aria-labelledby="block-dbs-account-menu-menu" id="block-dbs-account-menu">
+            
+  <h2 class="visually-hidden" id="block-dbs-account-menu-menu">User account menu</h2>
+  
+
+                          <ul  class="ul-parent ul-parent-account" role="menu">
+                          <li class="li-item li-item-account" role="none">
+        <a href="/user/login" class="w3-button li-link li-link-account" role="menuitem" data-drupal-link-system-path="user/login">Log in</a>
+              </li>
+        </ul>
+  
+
+  </nav>
+
+<section id="block-dbs-branding" class="w3-block w3-block-wrapper block-system block-system-branding-block">
+  
+    
+    <a href="/" title="Home" rel="home" class="w3-left w3-padding-16 header-logo dbs-logo">
+    <img src="/themes/dbs/assets/images/logo-color.jpg" alt="DBS-Logo" />
+  </a>
+<div class="w3-left site-name-slogan">
+      <h1 class="site-name w3-show-block">
+      <a class="w3-xlarge w3-padding w3-show-inline-block" href="/" title="Home" rel="home">Datenbanken Leipzig</a>
+    </h1>
+        <h3 class="site-slogan w3-large w3-show-block">am <a href="https://www.mathcs.uni-leipzig.de/ifi" target="_blank">Institut für Informatik</a></h3>
+  </div>
+  <a href="https://scads.ai/" title="ScaDS.AI" class="w3-left w3-padding-16 header-logo scads-logo">
+    <img src="/themes/dbs/assets/images/scadsAI.png" alt="ScaDS-Logo" />
+  </a>
+  <a href="https://www.uni-leipzig.de/" title="University of Leipzig" class="w3-left w3-padding-16 header-logo uni-logo">
+    <img src="/themes/dbs/assets/images/uni_leipzig_logo_v2b.svg" alt="Logo of the University of Leipzig" />
+  </a>
+  </section>
+
+
+          </div>
+  </header>
+  <!-- End: Header -->
+
+    <!-- Start: Main Navigation - Horizontal -->
+  <div id="main-navigation-h" class="w3-col w3-clear main-navigation-wrapper w3-theme " role="navigation" aria-label="Main Navigation" >
+    <div id="main-navigation-inner-h" class="w3-row main-navigation-inner-h none">
+      <div class="mobile-nav w3-hide-large w3-button w3-block w3-right-align w3-large w3-theme ">
+        <i class="fa fa-bars"></i>
+      </div>
+      
+<nav aria-labelledby="block-dbs-main-menu-menu" id="block-dbs-main-menu">
+            
+  <h2 class="visually-hidden" id="block-dbs-main-menu-menu">Main navigation</h2>
+  
+
+                          <ul  class="ul-parent ul-parent-main" role="menu">
+                          <li class="li-item li-item-main" role="none">
+        <a href="/index.php/" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="&lt;front&gt;">Home</a>
+              </li>
+                      <li class="li-item li-item-main li-expanded li-parent" role="none">
+        <a href="/index.php/study" title="Informations for students" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/9960">Study</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-down"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main li-expanded" role="none">
+        <a href="/index.php/study/exams" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="study/exams">Exams</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-right"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/exams/general-information" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/26">Hinweise zu Klausuren</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+                      <li class="li-item li-item-main li-expanded" role="none">
+        <a href="/index.php/study/courses" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="study/courses">Courses</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-right"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/courses/current" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11743">Current</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/modules" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="study/modules">Modules</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/lots" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/53">LOTS-Training</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/theses" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/9951">Abschlussarbeiten</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/mds" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/10878">Masterstudiengang Data Science</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/oberseminare" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11562">Oberseminare</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/problemseminare" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11563">Problemseminare</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/study/top" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/10945">Top-Studierende</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+                      <li class="li-item li-item-main li-expanded li-parent active" role="none">
+        <a href="/index.php/research" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/20">Research</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-down"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main li-expanded active" role="none">
+        <a href="/index.php/research/projects" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="research/projects">Projects</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-right"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main active" role="none">
+        <a href="/index.php/research/projects/benchmark-datasets-for-entity-resolution" class="w3-button li-link li-link-main is-active" role="menuitem" data-drupal-link-system-path="node/11455" aria-current="page">Benchmark datasets for entity resolution</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/projects/famer" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11450">FAMER</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/projects/hygraph" title="HyGraph : a hybrid data model combining graph and time-series data" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11761">HyGraph</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/projects/pprl" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/10949">Privacy-Preserving Record Linkage</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/projects/gradoop" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/18">GRADOOP</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/publications" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="research/publications">Publications</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/labs" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/21">Prototypes</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/annual_reports" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="research/annual_reports">Annual reports</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/cooperations" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/15">Cooperations</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/graduations" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="research/graduations">Graduations</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/colloquia" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="research/colloquia">Colloquia</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/research/conferences" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/11532">Conferences</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+                      <li class="li-item li-item-main li-expanded li-parent" role="none">
+        <a href="/index.php/person" title="Information about current and former team members" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="person">Team</a>
+                  <div class="div-expanded">
+                          <a href="javascript:void(0)" class="w3-button toggle-child" aria-haspopup="true">
+                <span class="fa fa-chevron-down"></span>
+              </a>
+                                                        <ul  class="ul-child ul-child-main" role="menu">
+                          <li class="li-item li-item-main" role="none">
+        <a href="/index.php/person/rahm" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="node/9966">Erhard Rahm</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/person?field_person_type_value%5B0%5D=employee" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-query="{&quot;field_person_type_value&quot;:[&quot;employee&quot;]}" data-drupal-link-system-path="person">Member</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/person?field_person_type_value%5B0%5D=former_employee" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-query="{&quot;field_person_type_value&quot;:[&quot;former_employee&quot;]}" data-drupal-link-system-path="person">Former employees</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/person?field_person_type_value%5B0%5D=associated_member" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-query="{&quot;field_person_type_value&quot;:[&quot;associated_member&quot;]}" data-drupal-link-system-path="person">Associated members</a>
+              </li>
+                      <li class="li-item li-item-main" role="none">
+        <a href="/index.php/person/galleries" class="w3-button li-link li-link-main" role="menuitem" data-drupal-link-system-path="person/galleries">Gallery</a>
+              </li>
+        </ul>
+  
+                      </div>
+              </li>
+        </ul>
+  
+
+  </nav>
+
+
+    </div>
+  </div>
+  <!-- End: Main Navigation - Horizontal -->
+  
+  
+    <!-- Start: Highlighted -->
+  <div id="highlighted" class="w3-col w3-clear w3-theme-l2 ">
+    <div id="highlighted-inner" class="w3-row highlighted-inner none">
+      
+
+<section id="block-languageswitcher" role="navigation" class="w3-block w3-block-wrapper block-language block-language-blocklanguage-interface">
+  
+    
+      
+  </section>
+
+
+    </div>
+  </div>
+  <!-- End: Highlighted -->
+  
+  
+      <!-- Start: Page Title -->
+  <div id="page-title" class="w3-col w3-clear w3-theme-d5 none ">
+    <div id="page-title-inner" class="w3-row page-title-inner none">
+      
+
+<section id="block-dbs-page-title" class="w3-block w3-block-wrapper block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title">
+<span>Benchmark datasets for entity resolution</span>
+</h1>
+
+
+  </section>
+
+
+    </div>
+  </div>
+  <!-- End: Page Title -- >
+  
+  <!-- Start: Main -->
+  <div id="main-container" class="w3-col w3-clear w3-theme-l5 ">
+    <div id="main-container-inner" class="w3-row main-container-inner none">
+            <!-- Start Main Container  -->
+      <div class="w3-col w3-clear w3-row-padding">
+                        <!-- Start: Main Content -->
+        <div class="w3-threequarter main-box main-region w3css-content" role="main">
+          <div class="w3-mobile  ">
+            
+
+<section id="block-dbs-breadcrumbs" class="w3-block w3-block-wrapper block-system block-system-breadcrumb-block">
+  
+    
+        <nav class="w3-block w3-section breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ul class="w3-ul w3-small breadcrumb">
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/research">Research</a>
+              </li>
+          <li>
+                  <a href="/research/projects">Projects</a>
+              </li>
+          <li>
+                  Benchmark datasets for entity resolution
+              </li>
+        </ul>
+  </nav>
+
+  </section>
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+<section id="block-dbs-content" class="w3-block w3-block-wrapper block-system block-system-main-block">
+  
+    
+      
+<article class="w3-row node node--type-project node--view-mode-full">
+
+  
+  <div class="w3-row node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      
+<section class="w3-block w3-block-wrapper block-layout-builder block-field-blocknodeprojectfield-project-period">
+  
+    
+      
+  <div class="field field--name-field-project-period field--type-string field--label-above field__items">
+    <div class="field__label">Zeitraum</div>
+        <div class="field__item">2010-2019</div>
+  </div>
+  </section>
+
+<section class="w3-block w3-block-wrapper block-layout-builder block-field-blocknodeprojectfield-project-description">
+  
+    
+      
+  <div class="field field--name-field-project-description field--type-text-with-summary field--label-above field__items">
+    <div class="field__label">Beschreibung</div>
+        <div class="field__item"><p><strong>Benchmark datasets for entity resolution:</strong></p><p>We offer several datasets for evaluating entity resolution that have been used in our own evaluations and that are made available for other researchers. The initial set of datasets have been used for pairwise matching of entities from two sources. The second set of datasets are also usable for entity clustering, mostly for more than two sources.</p><p><strong>Datasets for Binary Entity Resolution:</strong></p><p>In the VLDB 2010 paper <a href="/research/publications/evaluation-entity-resolution-approaches-real-world-match-problems">[1]</a> we present a first comparative evaluation on the relative match quality and runtime efficiency of entity resolution approaches using challenging real-world match tasks. The evaluation considers existing approaches both with and without using machine learning to find suitable parameterization and combination of similarity functions. In addition to approaches from the research community a state-of-the-art commercial entity resolution implementation is considered. Our results indicate significant quality and efficiency differences between different approaches. We also find that some challenging resolution tasks such as matching product entities from online shops are not sufficiently solved with conventional approaches based on the similarity of attribute values.</p><p>Below you can download the datasets used in our evaluation. The zip-files each contain three csv-files: Two are the entity source files, the third one is the perfect mapping. Please refer to the papers to see how we determined the perfect mapping.</p><table><tbody><tr><td><strong>Task/source files</strong></td><td><strong>Domain</strong></td><td><strong>Attributes</strong></td><td><strong>#entities</strong></td><td><strong>#matches</strong></td><td><strong>Used in</strong></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/Abt-Buy.zip">Abt-Buy</a></td><td>E-commerce</td><td>name, description, manufacturer, price</td><td>1081+1092</td><td>1097</td><td><a href="/research/publications/evaluation-of-entity-resolution-approaches-on-real-world-match-problems">[1]</a>, <a href="/research/publications/learning-based-approaches-for-matching-web-data-entities">[2]</a>&nbsp;</td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/Amazon-GoogleProducts.zip">Amazon-GoogleProducts</a></td><td>E-commerce</td><td>name, description, manufacturer, price</td><td>1363+3226</td><td>1300</td><td><a href="/research/publications/evaluation-of-entity-resolution-approaches-on-real-world-match-problems">[1]</a>, <a href="/research/publications/learning-based-approaches-for-matching-web-data-entities">[2]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/DBLP-ACM.zip">DBLP-ACM</a></td><td>Bibliographic</td><td>title, authors, venue, year</td><td>2614+2294</td><td>2224</td><td><a href="/research/publications/moma-a-mapping-based-object-matching-system">[0]</a>, <a href="/research/publications/evaluation-of-entity-resolution-approaches-on-real-world-match-problems">[1]</a>, <a href="/research/publications/learning-based-approaches-for-matching-web-data-entities">[2]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/DBLP-Scholar.zip">DBLP-Scholar</a></td><td>Bibliographic</td><td>title, authors, venue, year</td><td>2616+64263</td><td>5347</td><td><a href="/research/publications/moma-a-mapping-based-object-matching-system">[0]</a>, <a href="/research/publications/evaluation-of-entity-resolution-approaches-on-real-world-match-problems">[1]</a>, <a href="/research/publications/learning-based-approaches-for-matching-web-data-entities">[2], </a><a href="/research/publications/parallel-entity-resolution-with-dedoop">[3]</a></td><td>&nbsp;</td></tr></tbody></table><p>January 2019: These datasets are made available by the database group of Prof. Erhard Rahm under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons license</a>. To give proper credit please refer to this website and the VLDB2010 paper <a href="/research/publications/evaluation-entity-resolution-approaches-real-world-match-problems">[1]</a></p><p><strong>Datasets for Entity Clustering:</strong></p><p>Entity clustering is commonly used to determine matching entities within a single data source. It is also needed for matching entities from multiple (&gt;2) sources to group all matching entities from different soutrces within entity clusters. We provide one benchmark dataset for single-source entity clustering and several ones for multi-source entity clustering with more than two duplicate-free sources:</p><ul><li>The affiliation dataset contain affilations trings extracted from the PDFs of database publications that appeared between 2000 and 2009. The strings often contain multiple address components such as the name of the institution/company and often also the city name.</li><li>Geographic Settlements contains geographical real-world entities from four different data sources (DBpedia, Geonames, Freebase, NYTimes) and has already been used in the OAEI competition.</li><li>The Music Brainz dataset is based on real records about songs from the MusicBrainz database but uses the <a href="https://ieeexplore.ieee.org/abstract/document/7809119">DAPO</a> data generator to create duplicates with modified attribute values. The generated dataset consists of five sources and contains duplicates for 50% of the original records in two to five sources. All duplicates are generated with a high degree of corruption to stress-test the ER and clustering approaches.</li><li>The North Carolina Voters dataset is based on real person records from the North-Carolina voter registry and synthetically generated duplicates using the tool <a href="https://dl.acm.org/citation.cfm?id=2507815">GeCo</a>. We consider two configurations with either 5 or 10 sources each having 1 million entities; i.e. we process up to 10 million person records. Each source is duplicate free, but 50% of the entities are replicated in all sources without any corruption. Moreover, 25% of entities are corrupted and replicated in all sources, and the remaining 25% are corrupted but present in only some sources. For the generation of corrupted records we applied a moderate corruption rate of 20%, i.e., most attribute values remained unchanged.</li></ul><table><tbody><tr><td><strong>Task/source files</strong></td><td><strong>Domain</strong></td><td><strong>Attributes</strong></td><td><strong>#sources</strong></td><td><strong>#entities</strong></td><td><strong>#matches</strong></td><td><strong>#clusters</strong></td><td><strong>Used in</strong></td><td><strong>More information</strong></td></tr><tr><td><a href="/files/datasets/affiliationstrings.zip">Affiliations</a></td><td>Bibliographic, geography</td><td>affiliation string</td><td>1</td><td>2,260</td><td>32,816</td><td>330</td><td><a href="/research/publications/web-based-affiliation-matching">[9], </a><a href="/research/publications/affiliation-analysis-database-publications">[10]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/geographicalSettelments.zip">Geographic Settlements</a></td><td>geography</td><td>name, longitude, latitude</td><td>4</td><td>3,054</td><td>4,391</td><td>820</td><td><a href="/research/publications/comparative-evaluation-distributed-clustering-schemes-multi-source-entity">[4], </a><a href="/research/publications/using-link-features-entity-clustering-knowledge-graphs">[5], </a><a href="/research/publications/scalable-matching-and-clustering-entities-famer">[6], </a><a href="/research/publications/distributed-holistic-clustering-linked-data">[7], </a><a href="/research/publications/incremental-clustering-linked-data">[8]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/saeedi/musicbrainz-20-A01.csv.dapo">Music Brainz 20K</a></td><td>&nbsp;</td><td>artist, title, album, year, length</td><td>5</td><td>19,375</td><td>16,250</td><td>10,000</td><td><a href="/research/publications/comparative-evaluation-distributed-clustering-schemes-multi-source-entity">[4], </a><a href="/research/publications/using-link-features-entity-clustering-knowledge-graphs">[5], </a><a href="/research/publications/scalable-matching-and-clustering-entities-famer">[6], </a><a href="/research/publications/distributed-holistic-clustering-linked-data">[7], </a><a href="/research/publications/incremental-clustering-linked-data">[8]</a></td><td><a href="/files/datasets/saeedi/musicBrainz_readme.txt">readMe</a></td></tr><tr><td><a href="/files/datasets/saeedi/musicbrainz-200-A01.csv.dapo">Music Brainz 200K</a></td><td>&nbsp;</td><td>&nbsp;</td><td>5</td><td>193,750</td><td>162,500</td><td>100,000</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/saeedi/musicbrainz-2000-A01.csv.dapo">Music Brainz 2M</a></td><td>&nbsp;</td><td>&nbsp;</td><td>5</td><td>1,937,500</td><td>1,624,503</td><td>1,000,000</td><td><a href="/research/publications/distributed-holistic-clustering-linked-data">[7], </a><a href="/research/publications/incremental-clustering-linked-data">[8]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/saeedi/musicbrainz-20000-A01.csv.zip">Music Brainz 20M</a></td><td>&nbsp;</td><td>&nbsp;</td><td>5</td><td>19,375,000</td><td>16,250,000</td><td>10,000,000</td><td><a href="https://dbs.uni-leipzig.de/publication/title/distributed_holistic_clustering_on_linked_data">[7]</a></td><td>&nbsp;</td></tr><tr><td><a href="/files/datasets/saeedi/5Party-ocp20.tar.gz">North Carolina Voters 5M</a></td><td>Persons</td><td>name, surname, suburb, postcode</td><td>5</td><td>5,000,000</td><td>3,331,384</td><td>3,500,840</td><td><a href="/research/publications/comparative-evaluation-distributed-clustering-schemes-multi-source-entity">[4], </a><a href="/research/publications/using-link-features-entity-clustering-knowledge-graphs">[5], </a><a href="/research/publications/scalable-matching-and-clustering-entities-famer">[6], </a><a href="/research/publications/incremental-clustering-linked-data">[8]</a></td><td><a href="/files/datasets/saeedi/NCVoters_Readme.txt">readMe</a></td></tr><tr><td><a href="/files/datasets/saeedi/10Party-ocp20.tar.gz">North Carolina Voters 10M</a></td><td>&nbsp;</td><td>&nbsp;</td><td>10</td><td>10,000,000</td><td>14,995,973</td><td>6,625,848</td><td><a href="/research/publications/comparative-evaluation-distributed-clustering-schemes-multi-source-entity">[4]</a>, <a href="/research/publications/scalable-matching-and-clustering-entities-famer">[6],</a> <a href="/research/publications/incremental-clustering-linked-data">[8]</a></td><td>&nbsp;</td></tr></tbody></table><p>June 2019: These datasets are made available by the database group of Prof. Erhard Rahm under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons license</a>. To give proper credit please refer to this website and, for the multi-source datasets, to the ADBIS2017 paper <a href="/research/publications/comparative-evaluation-distributed-clustering-schemes-multi-source-entity">[4]</a></p></div>
+  </div>
+  </section>
+
+<section class="views-element-container w3-block w3-block-wrapper block-views block-views-blockpublications-by-tags-publications-by-tags">
+  
+    
+      <div class="w3-row element-container-wrapper"><div class="pptest w3-row view view-publications-by-tags view-id-publications_by_tags view-display-id-publications_by_tags js-view-dom-id-3e583c184852e2ed4c34ab540474649b7bf41336f86b329af14016db28acc629">
+  
+    
+      <header class="view-header">
+      <h2>Publikationen (19)</h2>
+    </header>
+        <button onclick="toggleFilters(event)" class="w3-button w3-block w3-left-align w3-border w3-theme-border">
+      <i class="fa fa-search"></i>
+      <span>Filter anzeigen</span>
+    </button>
+    <div class="w3-border w3-hide">
+      <div class="view-filters form-group">
+        <form class="views-exposed-form w3-row" data-drupal-selector="views-exposed-form-publications-by-tags-publications-by-tags" action="/research/projects/benchmark-datasets-for-entity-resolution" method="get" id="views-exposed-form-publications-by-tags-publications-by-tags" accept-charset="UTF-8">
+  <div class="w3-block form--inline clearfix">
+  <div class="w3-section js-form-item form-item js-form-type-select form-type-select js-form-item-items-per-page form-item-items-per-page">
+      <label for="edit-items-per-page">Items per page</label>
+        <select data-drupal-selector="edit-items-per-page" id="edit-items-per-page" name="items_per_page" class="form-select w3-select w3-border w3-theme-border"><option value="10" selected="selected">10</option><option value="20">20</option><option value="50">50</option><option value="All">- All -</option></select>
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions w3-row element-container-wrapper js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-publications-by-tags" type="submit" id="edit-submit-publications-by-tags" value="Apply" class="button js-form-submit form-submit w3-button w3-border w3-theme-border w3-margin-top w3-margin-bottom" />
+</div>
+
+</div>
+
+</form>
+
+      </div>
+    </div>
+    <script>
+      function toggleFilters(event) {
+        let sibling = event.currentTarget.nextElementSibling
+        if (sibling.className.indexOf("w3-show") === -1) {
+          sibling.className += " w3-show";
+        } else {
+          sibling.className = sibling.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+    
+      <div class="view-content">
+      <div class="w3-responsive">
+  <table class="w3-table-all cols-11">
+        <thead>
+      <tr>
+                                                                                <th class="w3-center" id="view-field-publication-file-pdf-table-column" scope="col" style="width: 15%">Dateien</th>
+                                                                                                                                                        <th id="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image" scope="col" style="width: 10%">Cover</th>
+                                                                                                                    <th id="view-title-table-column" class="views-field views-field-title" scope="col" style="">Beschreibung</th>
+                                                                                                                    <th id="view-field-publication-year-table-column" class="views-field views-field-field-publication-year" scope="col" style="width: 85px"><a href="?items_per_page=10&amp;order=field_publication_year&amp;sort=desc" title="sort by Jahr">Jahr</a></th>
+                                                                                                                  </tr>
+    </thead>
+    <tbody>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2026-5/pdf/2605.22304v1.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Evaluation of Pipelines for Data Integration into Knowledge Graphs%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/evaluation-of-pipelines-for-data-integration-into-knowledge-graphs" hreflang="en">Evaluation of Pipelines for Data Integration into Knowledge Graphs</a></div>
+              <div class="textlink">
+                <small><a href="/person/marvin_hofer">Hofer, M.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>arXiv</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2026
+              / 5
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="https://scholar.google.com/scholar?q=intitle%3A%22KGpipe: Generation and Evaluation of Pipelines for Data Integration into Knowledge Graphs%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+  <a href="https://arxiv.org/pdf/2511.18364" class="w3-button w3-border w3-theme-border" title="Visit URL" target="_blank">
+    <i class="fa fa-external-link" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/kgpipe-generation-and-evaluation-of-pipelines-for-data-integration-into" hreflang="en">KGpipe: Generation and Evaluation of Pipelines for Data Integration into Knowledge Graphs</a></div>
+              <div class="textlink">
+                <small><a href="/person/marvin_hofer">Hofer, M.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>arxiv</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2025
+              / 11
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2021-10/pdf/MSCD_HAC_KEOD.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Matching Entities from Multiple Sources with Hierarchical Agglomerative Clustering%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/matching-entities-from-multiple-sources-with-hierarchical-agglomerative" hreflang="de">Matching Entities from Multiple Sources with Hierarchical Agglomerative Clustering</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/index.php/person/l_david">David, L.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>KEOD 2021</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2021
+              / 10
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2021-3/pdf/Paper_MSCD_AP_BTW21_Dresden.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Extended Affinity Propagation Clustering for Multi-source Entity Resolution%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/research/publications/2021-3/cover/btw_2021.png?itok=QDIbX0HW" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/extended-affinity-propagation-clustering-for-multi-source-entity-resolution" hreflang="de">Extended Affinity Propagation Clustering for Multi-source Entity Resolution</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/stefan_lerm">Lerm, S.</a>
+; <a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>BTW 2021</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2021
+              / 3
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2020-6/pdf/FAMER_Incremental_eswc2020.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Incremental Multi-source Entity Resolution for Knowledge Graph Completion%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/research/publications/2020-6/cover/eswc20.jpg?itok=5_j0LO-K" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/incremental-multi-source-entity-resolution-for-knowledge-graph-completion" hreflang="de">Incremental Multi-source Entity Resolution for Knowledge Graph Completion</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/person/eric_peukert">Peukert, E.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Proc. ESWC </span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2020
+              / 6
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2019-8/pdf/DI2KG_paper_10.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Knowledge Graph Completion with FAMER%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+  <a href="http://ceur-ws.org/Vol-2512/" class="w3-button w3-border w3-theme-border" title="Visit URL" target="_blank">
+    <i class="fa fa-external-link" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/knowledge-graph-completion-with-famer" hreflang="de">Knowledge Graph Completion with FAMER</a></div>
+              <div class="textlink">
+                <small><a href="/person/daniel_obraczka">Obraczka, D.</a>
+; <a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Proc. KDD workshop on Data Integration  to Knowledge Graphs (DI2KG) (DI2KG Challenge Winner)</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2019
+              / 8
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2018-11/pdf/incremtal-dmc2018-final.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Incremental Clustering on Linked Data%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/incremental-clustering-on-linked-data" hreflang="de">Incremental Clustering on Linked Data</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/markus_nentwig">Nentwig, M.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Proc. IEEE International Conference on Data Mining Workshop, ICDMW 2018, Singapore</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2018
+              / 11
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2018-11/pdf/FAMER-2407-8454-1-SM.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Scalable Matching and Clustering of Entities with FAMER%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+  <a href="https://doi.org/10.7250/csimq.2018-16.04 " class="w3-button w3-border w3-theme-border" title="Visit URL" target="_blank">
+    <i class="fa fa-external-link" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/default_images/paper.png?itok=qR-HfOXo" width="57" height="75" alt="" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/scalable-matching-and-clustering-of-entities-with-famer" hreflang="de">Scalable Matching and Clustering of Entities with FAMER</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/index.php/person/markus_nentwig">Nentwig, M.</a>
+; <a href="/person/eric_peukert">Peukert, E.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Complex Systems Informatics and Modeling Quarterly (CSIMQ), Issue 16, Sep./Oct. 2018, pp 61–83</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2018
+              / 11
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2018-6/pdf/eswc.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Using Link Features for Entity Clustering in Knowledge Graphs%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/research/publications/2018-6/cover/eswc18_0.jpg?itok=lLMroAm6" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/using-link-features-for-entity-clustering-in-knowledge-graphs" hreflang="de">Using Link Features for Entity Clustering in Knowledge Graphs</a></div>
+              <div class="textlink">
+                <small><a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/person/eric_peukert">Peukert, E.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Proc. ESWC 2018 (Best research paper award)</span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2018
+              / 6
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+          <tr>
+                  <!-- field_publication_file_pdf -->
+                                          <!-- Dateien/Links -->
+            <td class="w3-center" headers="view-field-publication-file-pdf-table-column">  <a href="/files/research/publications/2018-3/pdf/edbt-demopaper.pdf" class="w3-button w3-border w3-theme-border" title="Download PDF" target="_blank">
+    <i class="fa fa-file-pdf-o" style="width: 16px"></i>
+  </a>
+  <a href="https://scholar.google.com/scholar?q=intitle%3A%22Interactive Visualization of Large Similarity Graphs and Entity Resolution Clusters%22" class="w3-button w3-border w3-theme-border" title="Google Scholar Search Link" target="_blank">
+    <i class="ai ai-google-scholar" style="width: 16px"></i>
+  </a>
+</td>
+                            <!-- field_publication_file_bibtex -->
+                                                                                                            <!-- field_publication_url -->
+                                                                                                            <!-- field_publication_cover_image -->
+                                                                                                      <!-- Cover -->
+            <td headers="view-field-publication-cover-image-table-column" class="views-field views-field-field-publication-cover-image">  <img loading="lazy" src="/files/styles/thumbnail/public/research/publications/2018-3/cover/edbt-icdt-logo.png?itok=63RGWPYQ" class="image-style-thumbnail" />
+
+
+</td>
+                            <!-- title -->
+                                                                                                      <!-- Text -->
+            <td headers="view-title-table-column" class="views-field views-field-title">
+              <div class="readon"><a href="/research/publications/interactive-visualization-of-large-similarity-graphs-and-entity-resolution" hreflang="de">Interactive Visualization of Large Similarity Graphs and Entity Resolution Clusters</a></div>
+              <div class="textlink">
+                <small><a href="/person/m-ali_rostami">Rostami, M.</a>
+; <a href="/index.php/person/alieh_saeedi">Saeedi, A.</a>
+; <a href="/person/eric_peukert">Peukert, E.</a>
+; <a href="/person/rahm">Rahm, E.</a>
+</small>
+              <div>
+              <span>Proc. EDBT 2018 </span>
+                          </td>
+                            <!-- field_publication_year -->
+                                                                                                      <!-- Jahr -->
+            <td headers="view-field-publication-year-table-column" class="views-field views-field-field-publication-year">
+              2018
+              / 3
+            </td>
+                            <!-- field_publication_month -->
+                                                                                                            <!-- field_publication_authors -->
+                                                                                                            <!-- field_publication_venue -->
+                                                                                                            <!-- field_publication_authors_scholar -->
+                                                                                                            <!-- google_scholar_link -->
+                                            </tr>
+      </tbody>
+  </table>
+</div>
+
+
+    </div>
+  
+        <nav class="w3-center pager" role="navigation" aria-labelledby="pagination-heading">
+    <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+    <ul class="w3-bar pager__items js-pager__items">
+                                                        <li class="w3-button pager__item w3-light-gray w3-active-pager is-active">
+                                          <a href="?page=0" title="Current page" aria-current="page">
+            <span class="visually-hidden">
+              Current page
+            </span>1</a>
+        </li>
+              <li class="w3-button pager__item">
+                                          <a href="?page=1" title="Go to page 2">
+            <span class="visually-hidden">
+              Page
+            </span>2</a>
+        </li>
+                                      <li class="w3-button pager__item pager__item--next">
+          <a href="?page=1" title="Go to next page" rel="next">
+            <span class="visually-hidden">Next page</span>
+            <span aria-hidden="true">Next ›</span>
+          </a>
+        </li>
+                          <li class="w3-button pager__item pager__item--last">
+          <a href="?page=1" title="Go to last page">
+            <span class="visually-hidden">Last page</span>
+            <span aria-hidden="true">Last »</span>
+          </a>
+        </li>
+          </ul>
+  </nav>
+
+          </div>
+</div>
+
+  </section>
+
+<section class="w3-block w3-block-wrapper block-layout-builder block-extra-field-blocknodeprojectlinks">
+  
+    
+      
+  </section>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </section>
+
+
+          </div>
+        </div>
+        <!-- End: Main Content -->
+                        <!-- Start: Right SideBar -->
+        <div class="w3-quarter main-box main-region second-sidebar" role="complementary">
+          <div class="w3-sidebar-second w3-mobile ">
+            
+
+<section id="block-views-block-new-publications-new-publications-block" class="w3-block w3-block-wrapper block-views block-views-blocknew-publications-new-publications-block">
+  
+    
+      <div class="views-element-container w3-row element-container-wrapper"><div class="w3-row view view-new-publications view-id-new_publications view-display-id-new_publications_block js-view-dom-id-5395bed88a9a56088e315af45f92bade0401350d064f9f3a2219db5ee3a7af99">
+  
+    
+      <header class="view-header">
+      <h2><a href="/research/publications/">Recent publications</a> <a href="/research/publications/feed"><span class="fa fa-rss"></span></a></h2>
+    </header>
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul   class="item-list w3-ul">
+
+          <li class="w3-panel"><div class="views-field views-field-field-publication-year-1"><div class="field-content readon">2026 / 10: <a href="/research/publications/configuration-and-optimization-of-knowledge-graph-integration-pipelines" hreflang="en">Configuration and Optimization of Knowledge Graph Integration Pipelines</a></div></div></li>
+          <li class="w3-panel"><div class="views-field views-field-field-publication-year-1"><div class="field-content readon">2026 / 10: <a href="/research/publications/designing-and-evaluating-knowledge-graph-pipelines-with-kgpipe-explorer" hreflang="en">Designing and Evaluating Knowledge Graph Pipelines with KGpipe Explorer</a></div></div></li>
+          <li class="w3-panel"><div class="views-field views-field-field-publication-year-1"><div class="field-content readon">2026 / 9: <a href="/research/publications/kgpipe-generation-of-pipelines-for-data-integration-into-knowledge-graphs" hreflang="en">KGpipe: Generation of Pipelines for Data Integration into Knowledge Graphs</a></div></div></li>
+          <li class="w3-panel"><div class="views-field views-field-field-publication-year-1"><div class="field-content readon">2026 / 6: <a href="/research/publications/robust-and-transparent-privacy-preserving-record-linkage" hreflang="en">Robust and transparent Privacy-Preserving Record Linkage</a></div></div></li>
+          <li class="w3-panel"><div class="views-field views-field-field-publication-year-1"><div class="field-content readon">2026 / 5: <a href="/research/publications/evaluation-of-pipelines-for-data-integration-into-knowledge-graphs" hreflang="en">Evaluation of Pipelines for Data Integration into Knowledge Graphs</a></div></div></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+          </div>
+        </div>
+        <!-- End: Right SideBar -->
+              </div>
+      <!-- Endn: Main Container  -->
+    </div>
+  </div>
+  <!-- End: Main -->
+
+  
+  
+    <!-- Start: Footer Menu -->
+  <div id="footer-menu" class="w3-col w3-clear w3-theme-d5 ">
+    <div id="footer-menu-inner" class="w3-row footer-menu-inner none">
+            <!-- Start: Bottom Menu -->
+            <div class="w3-container w3-center w3-mobile">
+        
+<nav aria-labelledby="block-dbs-footer-menu" id="block-dbs-footer">
+            
+  <h2 class="visually-hidden" id="block-dbs-footer-menu">Footer menu</h2>
+  
+
+                          <ul  class="ul-parent ul-parent-footer" role="menu">
+                          <li class="li-item li-item-footer" role="none">
+        <a href="/directions" class="w3-button li-link li-link-footer" role="menuitem" data-drupal-link-system-path="node/11740">Directions</a>
+              </li>
+                      <li class="li-item li-item-footer" role="none">
+        <a href="/contact" class="w3-button li-link li-link-footer" role="menuitem" data-drupal-link-system-path="node/11724">Contact</a>
+              </li>
+                      <li class="li-item li-item-footer" role="none">
+        <a href="https://www.mathcs.uni-leipzig.de/impressum" class="w3-button li-link li-link-footer" role="menuitem">Impressum</a>
+              </li>
+        </ul>
+  
+
+  </nav>
+
+
+      </div>
+      <!-- End: Bottom Menu -->
+          </div>
+  </div>
+  <!-- End: Footer Menu -->
+  
+  </div>
+<!-- End: Page Wrapper -->
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/11455","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJyFUEkOwjAM_FBCDnDgN5WTmGLkxBV2KeH1VM0BDiwXS7NoPHZkeLQQSXZwgbvLUQMkyFgoSdUNjywR2Ccpk1Ss1tll75OqtzMW9HMlz0jTg0aXr_MEfByW_aoPmx7ycUN-POH9j4Hqb0Mvo9aY6udlJ6nmYUGVtdnBfwns_X9IH05jaDLbkEmT3PDawvqPJOzUwEiNkoaet3sxTpsalhBB0d0IFw3b7P9-J4rkmfEJPlCYDQ","theme":"dbs","theme_token":null},"ajaxTrustedUrl":{"\/research\/projects\/benchmark-datasets-for-entity-resolution":true},"statistics":{"data":{"nid":"11455"},"url":"\/modules\/contrib\/statistics\/statistics.php"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:3e583c184852e2ed4c34ab540474649b7bf41336f86b329af14016db28acc629":{"view_name":"publications_by_tags","view_display_id":"publications_by_tags","view_args":"3305, 3297, 3486","view_path":"\/node\/11455","view_base_path":null,"view_dom_id":"3e583c184852e2ed4c34ab540474649b7bf41336f86b329af14016db28acc629","pager_element":0}}},"user":{"uid":0,"permissionsHash":"abc146056198cf06a66a48f5383d7241487ca50828a4213c0bf32a5e1cbc5dd8"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=4.0.0"></script>
+<script src="/files/js/js_a2AzydziMl6UPV-bUVHquShX0fybX4lHn2Wm2IqAESA.js?scope=footer&amp;delta=1&amp;language=en&amp;theme=dbs&amp;include=eJxFjUsKhDAQRC8U0ws33iZ0Pjg9tIlY7Th6eiEz4KagHvWoqHydFKV5fvPX5QiatUXWIbVlbbVUg8vbvrJO4RgTEOxVlkJ56m34r2GnSp0djE1gkkA_yz_EfaQcoJ797gbCVzBJ"></script>
+
+  </body>
+</html>

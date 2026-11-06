@@ -1,0 +1,19 @@
+{
+  "checked_utc_date": "2026-11-06",
+  "source_documents": {
+    "DBLP": "https://dbs.uni-leipzig.de/research/projects/benchmark-datasets-for-entity-resolution",
+    "BoolQ": "https://github.com/google-research-datasets/boolean-questions/blob/90af34107399cc7a446b373dc4ee35b8001da7c2/README.md#license",
+    "DeepMatcher": "https://github.com/anhaidgroup/deepmatcher/blob/82445a5425353a9b5dee51c61ec517577bbebb8d/Datasets.md#dblp-acm"
+  },
+  "DBLP_page_scope": "Original binary entity resolution benchmarks, including DBLP-ACM. The January 2019 declaration links CC BY 4.0. No separate license for DeepMatcher split annotations is invented.",
+  "BoolQ_declared_license": "CC BY-SA 3.0",
+  "SNLI_declared_license": "CC BY-SA 4.0",
+  "project_blanket_license": null,
+  "source_document_hashes": {
+    "MIRROR_EQUIVALENCE_20261106.json": "af881d0662781dbabf00a80a515760f12730e9ce4117ea3c5775d237906c86ef",
+    "SNLI_DATA_LICENSE_AND_ATTRIBUTION.txt": "905a23d1533d62781fc834c570f60ab5955f98d0c48df0420f7c1d1e323e7ea6",
+    "DOWNLOAD_RECEIPTS.json": "1420b3f34189df48fc0855544469b6582b8345875d30342dd4988cf8e18dd802",
+    "leipzig_dataset_page.html": "f0cb75b15b9c25d9e8ab61051332c110a46a8a5f7a5879ceb4d5cda84fb10683",
+    "boolq_pinned_README.md": "07447668f46c7c1e62e24b650ea2a73f1ab34f2b3759b1587c7b7a81b4bf1cf4"
+  }
+}

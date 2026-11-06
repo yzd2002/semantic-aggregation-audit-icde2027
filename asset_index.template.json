@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "[Experiment, Analysis, and Benchmark] Auditing Reference Fidelity and Checking Costs in Semantic COUNT",
+  "repository_url": "https://github.com/yzd2002/semantic-aggregation-audit-icde2027",
+  "candidate_tag": "v2026.11.06-final",
+  "published": false,
+  "public_release_url": null,
+  "complete_artifact_modules_built": true,
+  "publication_note": "Local candidate only. Root must upload, anonymously verify actual URLs and bytes, then write verified publication metadata.",
+  "assets": [
+    {
+      "module": "context",
+      "filename": "context.tar.xz",
+      "sha256": "87181001bcbf33742c8234708f63bce91476e9ba9e795f88f2770812697aa920",
+      "bytes": 25802952,
+      "uncompressed_bytes": 614675388,
+      "file_count": 516,
+      "url": null,
+      "module_manifest_sha256": "d724f9d54d24972e899d6fefc897d93788b8e71af5eb534c8a2d666fe2de6b34",
+      "public_asset_api_url": null
+    },
+    {
+      "module": "snli",
+      "filename": "snli.tar.xz",
+      "sha256": "4a22b2e380905208a515cd99517e8c9a53ae2e4c9e9ec99e451ce2467dd2dade",
+      "bytes": 58921080,
+      "uncompressed_bytes": 260215938,
+      "file_count": 273,
+      "url": null,
+      "module_manifest_sha256": "da1ebbc76a2e24e6d5b5bedd9e41e62aed44247b0021a6ba7751ed818087d6a1",
+      "public_asset_api_url": null
+    },
+    {
+      "module": "transfer",
+      "filename": "transfer.tar.xz",
+      "sha256": "d3edfdda7a6bd0f8cf678e7660c230d8b970900ab4ad073821c8e7039e689a58",
+      "bytes": 27412376,
+      "uncompressed_bytes": 404927786,
+      "file_count": 269,
+      "url": null,
+      "module_manifest_sha256": "f8515c23b68b2549e4edf8b950b5b8df46386ba03dd7c86398a388b7bf9b89cb",
+      "public_asset_api_url": null
+    },
+    {
+      "module": "decision_dependency",
+      "filename": "decision_dependency.tar.xz",
+      "sha256": "8169a02e6f9ad855e36c097bb955e88de4d525238a733a01b90d81449181e77c",
+      "bytes": 9106624,
+      "uncompressed_bytes": 119581937,
+      "file_count": 98,
+      "url": null,
+      "module_manifest_sha256": "6e2326a0cd8ba2fe5ca41deca7c846d7d35096fc2388a7a108563be42d046bb6",
+      "public_asset_api_url": null
+    },
+    {
+      "module": "independent_audit",
+      "filename": "independent_audit.tar.xz",
+      "sha256": "ca9ca018af4ba91a42490f3f981835189346829f88b8ac2be6c9972a3b11a531",
+      "bytes": 810720,
+      "uncompressed_bytes": 19584636,
+      "file_count": 49,
+      "url": null,
+      "module_manifest_sha256": "8a0db7c8047151d7c5a2b10d3ad8e97cd5637dfbaad140b85220ea40b50c0c56",
+      "public_asset_api_url": null
+    },
+    {
+      "module": "independent_transfer_audit",
+      "filename": "independent_transfer_audit.tar.xz",
+      "sha256": "82ed7d6b41d5b431b9012ca1ffc9fe0071c81136c636264d6f4ea7b1defc9ade",
+      "bytes": 263796,
+      "uncompressed_bytes": 13076425,
+      "file_count": 42,
+      "url": null,
+      "module_manifest_sha256": "48cddaa3b04653c271b4f5456dee822478e99de611c0b74d33191c4605a00fc6",
+      "public_asset_api_url": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "started_unix": 1793924715.6595263,
+  "new_inference": false,
+  "gpu_used": false,
+  "python": "3.12.11 (main, Jun  4 2025, 08:56:18) [GCC 11.4.0]",
+  "modules": {
+    "independent_transfer_audit": {
+      "status": "PASS",
+      "archived_files_verified": 42,
+      "result_comparisons": {
+        "qwen": {
+          "ALL_WHOLE_RELATION_COUNT_EXAMPLES.json": "6389df1f830a63383076ba88586772917a2b692bff456fc4594decc7c6de968d",
+          "AUDIT_SOURCE_SNAPSHOT.py": "e68d5a7f8bda0c00705105737eb4bf1931ed10897f2947d2f69e7eadaaf7890b",
+          "INDEPENDENT_FIXED_REFERENCE_VIEWS.json": "590894045f526ec010aa0257621efaf79da5f319c0cb849b43b25b411dc39f45",
+          "INDEPENDENT_PER_TARGET.jsonl": "16d95079f4c3a104754af6dc795cfcdb6a42c3b5453b169c46157687452e9122",
+          "INDEPENDENT_POLICY_AND_PREFIX_VIEWS.json": "2fad980084fb10797814e368421e9e8716e74c2b714de786acb2da09380b748a",
+          "INDEPENDENT_RECOMPUTED_CONFIGURATIONS.json": "359eced91966e4e4aff39a4a758b6c8e0cc947a616502f92b791f38ad8594bda",
+          "MATHEMATICAL_COMPARISON_MISMATCHES.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "SOURCE_SHA256_AFTER.json": "209098ff7419a25a5214f517c188ac414b6b985898bb33b76e3c26b7bba417c4",
+          "SOURCE_SHA256_BEFORE.json": "209098ff7419a25a5214f517c188ac414b6b985898bb33b76e3c26b7bba417c4",
+          "certificate_scientific_fields_equal": true
+        },
+        "smol": {
+          "ALL_WHOLE_RELATION_COUNT_EXAMPLES.json": "94d2a426c1d9a4e2a628cf1a4149ff80536eddcd20a75a2e4e6fdb49737881eb",
+          "AUDIT_SOURCE_SNAPSHOT.py": "e68d5a7f8bda0c00705105737eb4bf1931ed10897f2947d2f69e7eadaaf7890b",
+          "INDEPENDENT_FIXED_REFERENCE_VIEWS.json": "fc7f51d598c681f3a5407b377d4aa726eb07a076d35da4a11d73a0f6b9fb8ce9",
+          "INDEPENDENT_PER_TARGET.jsonl": "b7d8db4682489d1cddd8adbe31fff34154b43beceea9ce40f0e78fc25b75b4f4",
+          "INDEPENDENT_POLICY_AND_PREFIX_VIEWS.json": "59f2c8572f6855fc0d986d1529b96331830645a4faecb53cec0138cae3c0bb63",
+          "INDEPENDENT_RECOMPUTED_CONFIGURATIONS.json": "83c381a0eb8c6156c2814a8f4725acabc3da3a993035408d734e5fb3faa869aa",
+          "MATHEMATICAL_COMPARISON_MISMATCHES.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "SOURCE_SHA256_AFTER.json": "7243569ed6998de235837bb67d155a06cd758404c307fcbbec2c05a8dc6a92b0",
+          "SOURCE_SHA256_BEFORE.json": "7243569ed6998de235837bb67d155a06cd758404c307fcbbec2c05a8dc6a92b0",
+          "certificate_scientific_fields_equal": true
+        }
+      }
+    }
+  },
+  "source_root": "/home/gpu/IntentSat2S_revision_20261106/final_artifact_staging/six_module_relocation_20261106/expanded",
+  "limits": "Relocated CPU recomputation of archived actual outcomes; no clean-machine GPU rerun or external human assessment is claimed.",
+  "numpy": "2.2.6",
+  "pyarrow": "22.0.0",
+  "finished_unix": 1793924727.3595035
+}

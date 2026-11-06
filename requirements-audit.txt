@@ -1,2 +1,0 @@
-# Optional PDF-text coverage for tools/audit_archives.py; not needed for replay.
-pypdf==6.1.1

@@ -1,88 +1,30 @@
-# Semantic Aggregation Audit — ICDE 2027 EAB Artifacts
+# Auditing Reference Fidelity and Checking Costs in Semantic COUNT
 
-Reproduction entry point for the historical ICDE 2027 EAB review manuscript,
-`[Experiment, Analysis, and Benchmark] Auditing LLM-Based Semantic Aggregation
-over Fixed Candidate Pools`. The execution harness retains the name IntentSat-2S.
+Artifact candidate for **[Experiment, Analysis, and Benchmark] Auditing Reference Fidelity and Checking Costs in Semantic COUNT** (ICDE 2027 EAB).
 
-**Published snapshot:** [v2026.11.06-recovered](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-recovered).
-It matches the historical review manuscript retained by 2026-11-02, with renewed
-archive checks and CPU replay. All ten selected files have been downloaded without credentials or cookies and
-matched against their exact SHA-256 digests and byte counts. The public asset
-API was used for this check; [verification receipts](verification/PUBLIC_DOWNLOADS.json)
-record each route and result.
+请先读 [中文 START_HERE](START_HERE_zh.md)。实际已发布版本与下载入口只以随后经匿名校验的 `asset_index.json` 为准。`asset_index.template.json` 是本地候选清单，`published: false` 不表示 release 已存在。历史 `v2026.11.06-recovered` 与最终重构论文不匹配。
 
-The [prospective follow-up analysis plan](prospective_20261106/README.md) records the new nine-case primary family before new GPU authorization. It does not imply observed effects or completed experiments.
+The final-paper artifacts are modular: fresh DBLP–ACM/BoolQ context experiments in three model families; fresh SNLI in the same families; new real transfer checking-cost runs; the original DEV-only 36-policy/calibration dependency; separate mathematical/agent audits of the nine fresh context cases; and the real-transfer independent mathematical audit. Complete selected frozen files, actual durable returns, analyses, controls, failed attempts and notices accompany each applicable module. Model weights, caches, credentials and unused historical pilots are excluded.
 
-The recovered context/decision extensions and new model replications are being
-prepared as separately versioned additions. They are not yet claimed by this
-snapshot. See [coverage and limits](docs/COVERAGE.md).
+Use Python 3.12.11 with [the recorded CPU versions](requirements-cpu.txt). CPU outcome replay requires NumPy 2.2.6 and PyArrow 22.0.0; deterministic decision prompt reconstruction additionally uses the listed SciPy/Transformers/tokenizer packages. Do not change a working environment merely to run the replay; a separate environment is suitable when installation is needed.
 
-The historical study is an empirical audit of completion, semantic quality,
-order/replay variation, checking cost, and conditional diagnostics over fixed
-candidate pools. Aggregate ratio accuracy can hide candidate-label mistakes.
-Saved-trace verification is distinct from rerunning model inference.
+The immutable `v2026.11.06-final` tag binds the scientific source snapshot. Its source tree may contain only `asset_index.template.json`: the verified `asset_index.json` is generated after actual publication and anonymous verification, then attached to that same GitHub release. **First download `asset_index.json` from the matching release's attachments into this tool directory**, then run:
 
-## Get the artifacts
-
-Use the actual release links in [ASSETS.md](ASSETS.md). One main archive plus **all seven
-supplements** is necessary for the historical manuscript. The selected main
-variant omits sampled TREC article titles/abstracts and provides fixed-source
-reconstruction. The full internal research workspace is not a release artifact.
-Model weights and complete upstream datasets are obtained separately.
-
-The repository contains readable scientific source in `science/`, reproduction
-guides, source notices and hashes. Large fixed archives are intended for a
-versioned GitHub Release, rather than Git history. GitHub's automatically
-generated source ZIP is not a substitute for the separately attached artifacts.
-
-```sh
-# Run from this repository; choose new output directories.
-python3 -B tools/download_assets.py --out /path/to/downloaded-assets
-python3 -B tools/verify_assets.py --asset-dir /path/to/downloaded-assets
-python3 -B tools/prepare_workspace.py \
-  --asset-dir /path/to/downloaded-assets --out /path/to/new-workspace
+```bash
+python3 -B artifact_cli.py download --index asset_index.json --archives-dir downloaded
+python3 -B artifact_cli.py verify --index asset_index.json --archives-dir downloaded
+python3 -B artifact_cli.py extract --index asset_index.json --archives-dir downloaded --out expanded
+python3 -B cpu_replay.py --bundle-root expanded --out replay_results
 ```
 
-The download, verification and extraction tools use only Python's standard library. The workspace tool rejects an
-existing output directory and unsafe archive members. It does not load models,
-use a GPU, contact a model service, or download source data.
+Both `expanded` and `replay_results` must be new directories. Extraction verifies archive hashes/sizes, rejects absolute paths, traversal, symbolic/hard links, special files and duplicate members, then verifies every expanded scientific file. Replay rechecks those inventories, hides GPU devices, uses offline inputs and writes only a new output tree. Frozen sources are never silently edited. The SNLI independent-audit adapter explicitly maps the original certificate's recorded absolute context path to the expanded context module.
 
-## Recompute on CPU first
+For a local candidate, the same `verify`/`extract` commands accept `asset_index.template.json` and locally supplied archives. The `download` command deliberately refuses an unpublished template.
 
-Use Python 3.12. [CPU_REPRODUCTION.md](docs/CPU_REPRODUCTION.md) supplies explicit
-commands for the standard-library error-cancellation diagnostic, controlled-order
-replay, consensus references, and count-envelope checks. These read the delivered
-saved traces. Each result is written to a new path. ACORD and TREC are rebuilt
-from the exact upstream revisions in [DATA.md](docs/DATA.md), without distributing
-the omitted source text here. The historical detailed runbook is preserved as
-[HISTORICAL_REPRODUCTION_GUIDE.md](docs/HISTORICAL_REPRODUCTION_GUIDE.md).
+The main branch may additionally provide a convenience copy of the actual verified index and receipts. That convenience update does not rewrite the immutable scientific tag. A missing local `asset_index.json` means the release attachment must be obtained first; it does not justify treating the unpublished template as verified public metadata.
 
-Environment requirements differ by historical analysis: the broad verification
-suite and midpoint/lexical work record NumPy 1.26.4; controlled-order, consensus,
-and routing work record NumPy 2.2.6. Keep those environments separate. Historical
-GPU dependency conflicts and runtime amendments are disclosed in the artifacts.
-No complete clean-machine GPU rerun is claimed.
+On this server, add `--direct` to the download command if its inherited proxy prevents anonymous access. This creates a process-local proxy-free opener and retains TLS certificate verification; it does not change system proxy settings. If the browser asset URL returns HTTP 403 or disconnects, a publisher-provided `public_asset_api_url` permits an anonymous GitHub asset-API fallback with `Accept: application/octet-stream`. No token or cookie is used. Every failed partial download is retained under a unique attempt name; signed redirect queries are never logged.
 
-## Manuscript and source provenance
+Raw outcomes are the original preserved actual model returns. CPU replay recomputes the paper's statistics and costs; it does not generate new model judgments. It is not a clean-machine GPU replication, outside human review, population-coverage certificate, SOTA claim or acceptance guarantee. Finite selected-target bootstrap intervals remain approximate; legacy 98.75% flags do not replace the final nine-case primary criterion.
 
-The manuscript PDF and standalone LaTeX archive are identified by exact hashes
-in `asset_index.json`; they retain their historical review status. The saved
-manuscript has author placeholders. It is not a final single-blind submission.
-Author identities, acceptance decisions and a DOI remain unset. The artifact URLs identify the actual published GitHub release.
-`science/SOURCE_PROVENANCE.json` maps copied source bytes to archive members.
-Copied historical code is unchanged; the wrapper tools are new publication aids.
-
-## Rights and interpretation
-
-Upstream license texts and notices are retained under [LICENSES](LICENSES/README.md)
-and [NOTICE](NOTICE). No project-wide open-source license is fabricated. The
-project-authored code's license status is explicit in
-[PROJECT_LICENSE_STATUS.md](LICENSES/PROJECT_LICENSE_STATUS.md). Public access
-does not change third-party rights or turn linkable ACORD pseudonyms into
-anonymized data. The historical disclosure of AI assistance remains in the paper.
-
-According to the [official ICDE 2027 CFP](https://icde2027.github.io/cf-research-papers),
-EAB submissions must supply all necessary reproduction artifacts through an
-openly accessible standard service. This public repository and its versioned release supply the selected snapshot.
-Publication and verification are documented in [RELEASE_PLAN.md](docs/RELEASE_PLAN.md);
-coverage claims must match the submitted manuscript revision.
+Read [RIGHTS_AND_NOTICES.md](RIGHTS_AND_NOTICES.md) before reuse. Dataset licenses differ: DBLP benchmark CC BY 4.0 provenance; BoolQ CC BY-SA 3.0; SNLI CC BY-SA 4.0. Upstream model terms are retained separately. This repository makes no blanket MIT grant for project or third-party material.

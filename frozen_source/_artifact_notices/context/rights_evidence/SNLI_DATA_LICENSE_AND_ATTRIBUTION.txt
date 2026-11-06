@@ -1,0 +1,35 @@
+SNLI 1.0 dataset provenance and attribution
+
+The Stanford Natural Language Inference Corpus by The Stanford NLP Group.
+Declared dataset license: Creative Commons Attribution-ShareAlike 4.0
+International (CC BY-SA 4.0).
+License link: https://creativecommons.org/licenses/by-sa/4.0/
+Project: https://nlp.stanford.edu/projects/snli/
+Fixed publisher repository card:
+https://huggingface.co/datasets/stanfordnlp/snli/blob/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/README.md
+
+Bowman, Samuel R.; Angeli, Gabor; Potts, Christopher; Manning, Christopher D.
+(2015). A large annotated corpus for learning natural language inference.
+Proceedings of EMNLP 2015, pages 632–642.
+https://aclanthology.org/D15-1075/
+DOI: 10.18653/v1/D15-1075
+
+The publisher card additionally credits Flickr 30k content, also released
+under an Attribution-ShareAlike licence. Citation:
+Young, Peter; Lai, Alice; Hodosh, Micah; Hockenmaier, Julia (2014).
+From image descriptions to visual denotations: New similarity metrics for
+semantic inference over event descriptions. TACL 2, pages 67–78.
+https://aclanthology.org/Q14-1006/
+DOI: 10.1162/tacl_a_00166
+
+Research adaptation by this audit: selected subsets; stable split/index IDs;
+feature wrappers; entailment mapped to Y and neutral/contradiction to N.
+Premise/hypothesis text is preserved complete without truncation.
+Redistributed SNLI text and adapted SNLI data remain under CC BY-SA 4.0.
+This statement concerns the dataset; it does not assign the same license to
+independently authored research code or other model assets.
+
+Transport disclosure: fixed Git LFS Parquet objects were downloaded using
+the third-party hf-mirror.com resolver and public Hugging Face CDN. Source
+and transport URLs, checksums and failures are recorded separately. The
+original Stanford ZIP could not be directly retrieved and was not compared.

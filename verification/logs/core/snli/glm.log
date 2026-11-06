@@ -1,0 +1,2 @@
+{"model":"glm","scheduled":1792,"submitted":1792,"returned":1792,"tasks":{"snli":{"selected":128,"common12":128,"common14":128,"full_first_excess":{"n":128,"mean":0.03125,"ci95":[0.0078125,0.0625],"ci98_75":[0.0,0.0703125],"positive_primary_evidence":false}}}}
+{"model":"glm","mixed_submitted":1792,"serial_submitted":448,"tasks":{"snli":{"probe_pass":123,"near_evaluable":123,"paired_modes_n":32}}}

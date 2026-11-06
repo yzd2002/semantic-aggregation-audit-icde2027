@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "case": "traversal",
+      "rejected_before_output_directory": true
+    },
+    {
+      "case": "absolute",
+      "rejected_before_output_directory": true
+    },
+    {
+      "case": "symlink",
+      "rejected_before_output_directory": true
+    },
+    {
+      "case": "hardlink",
+      "rejected_before_output_directory": true
+    },
+    {
+      "case": "device",
+      "rejected_before_output_directory": true
+    },
+    {
+      "case": "duplicate",
+      "rejected_before_output_directory": true
+    }
+  ]
+}

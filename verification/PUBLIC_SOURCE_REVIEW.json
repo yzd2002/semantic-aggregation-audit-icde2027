@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "frozen_source_whitelist_files": 275,
+  "actual_frozen_source_files": 275,
+  "source_hashes_equal": true,
+  "forbidden_paths_weights_and_obvious_secret_patterns_absent": true,
+  "inspection_scope": "Explicit public_repo tree only; no credential files or login caches accessed",
+  "public_repo_file_count_before_review_receipt": 313,
+  "simulated_review_scores_excluded": true
+}

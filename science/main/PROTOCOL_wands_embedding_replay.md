@@ -1,5 +1,0 @@
-# Post-hoc embedding-vector replay
-
-This diagnostic is fixed after observing the calibrated embedding results and before running this replay. In a fresh process on the same GPU and software, rerun exactly the first 32 query strings and the original document batches at offsets 0, 3200, 6400, 9600 and 12800 (32 unique document strings each), in that fixed order. Reconstruct the first-occurrence input order from the recorded WANDS selections and check the input-index mapping and model fingerprints. Use the identical batch size, query instruction, left padding, bfloat16 model, SDPA and last-token pooling/normalization from `PROTOCOL_wands_embedding_reference.md`. Save all 192 replay vectors and per-vector original-versus-replay error and cosine, exact-equality count, software and GPU. Do not alter the prior scores or threshold.
-
-This checks selected fixed batches, not every vector, new data, or reproducibility across hardware. Identical outcomes would not guarantee general numerical determinism. Freeze this protocol, implementation, model fingerprints, inputs and the prior stored vectors before the replay, and independently recompute vector differences afterward.

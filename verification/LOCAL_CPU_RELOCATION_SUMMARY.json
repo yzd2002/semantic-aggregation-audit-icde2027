@@ -1,0 +1,48 @@
+{
+  "status": "PASS: all six modules passed in two actual relocation runs",
+  "core_run_status": "PASS",
+  "core_modules": [
+    "context",
+    "snli",
+    "transfer",
+    "decision_dependency",
+    "independent_audit"
+  ],
+  "additional_real_transfer_independent_status": "PASS",
+  "additional_modules": [
+    "independent_transfer_audit"
+  ],
+  "all_archives_safely_expanded_together_in_second_fresh_tree": true,
+  "weights_GPU_network_required_by_CPU_replay": false,
+  "clean_machine_GPU_replication_claimed": false,
+  "external_human_review_claimed": false,
+  "public_download_test_status": "Pending actual root publication and anonymous verification",
+  "original_sources_edited": false,
+  "frozen_counts": {
+    "context": 269,
+    "snli": 163,
+    "transfer": 158
+  },
+  "DEV_policy_count": 36,
+  "all_original_DEV_payload_and_actual_costs_match": true,
+  "per_module_archive_sha256": {
+    "context": "87181001bcbf33742c8234708f63bce91476e9ba9e795f88f2770812697aa920",
+    "snli": "4a22b2e380905208a515cd99517e8c9a53ae2e4c9e9ec99e451ce2467dd2dade",
+    "transfer": "d3edfdda7a6bd0f8cf678e7660c230d8b970900ab4ad073821c8e7039e689a58",
+    "decision_dependency": "8169a02e6f9ad855e36c097bb955e88de4d525238a733a01b90d81449181e77c",
+    "independent_audit": "ca9ca018af4ba91a42490f3f981835189346829f88b8ac2be6c9972a3b11a531",
+    "independent_transfer_audit": "82ed7d6b41d5b431b9012ca1ffc9fe0071c81136c636264d6f4ea7b1defc9ade"
+  },
+  "evidence_files": [
+    "CORE_CPU_REPLAY_REPORT.json",
+    "REAL_TRANSFER_INDEPENDENT_CPU_REPLAY_REPORT.json",
+    "EXTRACTION_SAFETY_TESTS.json",
+    "DOWNLOAD_CONTROL_TESTS.json"
+  ],
+  "limits": [
+    "Same installed Python 3.12.11 environment, relocated directories and supplied CPU packages.",
+    "No new model decisions or independent hardware/model execution.",
+    "Historical decision provenance remains incomplete; only the necessary DEV numerical/input closure is supplied.",
+    "The optional env-path portable transfer audit variant is retained with provenance; the actual tested path is the unchanged original source plus the explicit Path adapter."
+  ]
+}

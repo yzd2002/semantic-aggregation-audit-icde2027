@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "live_publication_download_test": "Reserved for root after actual publication; these are controlled transport-path tests only",
+  "checks": [
+    {
+      "case": "http403",
+      "anonymous_API_fallback": true,
+      "failed_unique_partial_preserved": true,
+      "process_local_proxy_bypass": true
+    },
+    {
+      "case": "disconnected",
+      "anonymous_API_fallback": true,
+      "failed_unique_partial_preserved": true,
+      "process_local_proxy_bypass": true
+    },
+    {
+      "case": "unpublished_template",
+      "refused_before_network": true
+    }
+  ]
+}

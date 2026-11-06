@@ -1,0 +1,2 @@
+{"model":"smol","scheduled":1792,"submitted":1792,"returned":1792,"tasks":{"snli":{"selected":128,"common12":128,"common14":128,"full_first_excess":{"n":128,"mean":0.1484375,"ci95":[0.09375,0.2109375],"ci98_75":[0.078125,0.234375],"positive_primary_evidence":true}}}}
+{"model":"smol","mixed_submitted":1792,"serial_submitted":448,"tasks":{"snli":{"probe_pass":90,"near_evaluable":90,"paired_modes_n":32}}}
