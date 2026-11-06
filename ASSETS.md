@@ -4,8 +4,8 @@
 
 | 内容 | 路径 / 校验 |
 |---|---|
-| 十作者当前PDF | [paper/current/ICDE2027_Semantic_COUNT.pdf](paper/current/ICDE2027_Semantic_COUNT.pdf)，SHA-256 `bac7db7f7bd22377bc73818495f52ea374f8e10859289e6699662a3e0439bcd9` |
-| 实测重建的clean source ZIP | [paper/current/paper_source.zip](paper/current/paper_source.zip)，SHA-256 `354f028e6f0c35b27b6eb48a600c2f041a257d94cf86613cddbdc9feb514b57f` |
+| 十作者当前PDF | [paper/current/ICDE2027_Semantic_COUNT.pdf](paper/current/ICDE2027_Semantic_COUNT.pdf)，SHA-256 `1d6136ad731e4988b6b1a6335609d440245076003967af49f31c2e576ffd8368` |
+| 实测重建的clean source ZIP | [paper/current/paper_source.zip](paper/current/paper_source.zip)，SHA-256 `c89e753fefe3b7709d8f671a4da4c5c491c2f7029c50e8dd3821665500662deb` |
 | 活跃TeX与四图输入/源码 | [paper/current/source/](paper/current/source/) |
 | 矢量PDF/SVG | [paper/current/figures/](paper/current/figures/) |
 | 本版文件SHA清单 | [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) |

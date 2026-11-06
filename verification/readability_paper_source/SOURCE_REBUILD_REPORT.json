@@ -1,15 +1,15 @@
 {
   "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
-  "created_utc": "2026-11-06T21:20:47.937460+00:00",
-  "freeze_sha256": "417785314cffcf4ae851aaa78918dfdd44e26273d35ef140a5fd28dc831819a6",
-  "frozen_pdf": "/home/gpu/IntentSat2S_ten_authors_final_20261107/manuscript/draft/main.pdf",
-  "frozen_pdf_sha256": "bac7db7f7bd22377bc73818495f52ea374f8e10859289e6699662a3e0439bcd9",
-  "source_zip": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/paper_source.zip",
-  "source_zip_sha256": "354f028e6f0c35b27b6eb48a600c2f041a257d94cf86613cddbdc9feb514b57f",
-  "clean_source": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/clean_source",
-  "actually_unpacked_source": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/unpacked/paper_source",
-  "rebuilt_pdf": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/unpacked/paper_source/draft/main.pdf",
-  "rebuilt_pdf_sha256": "9ce69e91abf90d2864c1f15b3a7d6bcd2dd7c69cb6e94542f4503b5ea35dcfbc",
+  "created_utc": "2026-11-06T21:35:29.672244+00:00",
+  "freeze_sha256": "568d1d2a6ceb1985767b33e0e23c68eb3d347e3351d6a0bc1224b1f92c09c4e8",
+  "frozen_pdf": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "1d6136ad731e4988b6b1a6335609d440245076003967af49f31c2e576ffd8368",
+  "source_zip": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/paper_source.zip",
+  "source_zip_sha256": "c89e753fefe3b7709d8f671a4da4c5c491c2f7029c50e8dd3821665500662deb",
+  "clean_source": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "6d35c059c7a8184981c26b78ab4e5ba50962293f5276474396b5c247c4e76892",
   "author_count": 10,
   "authors": [
     "Zida Yang",
@@ -39,15 +39,15 @@
       14
     ]
   },
-  "four_figure_render_comparison": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/FIGURE_RENDER_COMPARISON.json",
-  "page_text_render_comparison": "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/PAGE_TEXT_RENDER_COMPARISON.json",
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
   "all_page_text_and_render_content_equal": true,
   "active_source_or_scientific_data_edited": false,
   "new_GPU_or_experiment": false,
   "source_default_ordinary_pdflatex": true,
   "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
   "logs": [
-    "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/logs/01_REDRAW_FIGURES.log",
-    "/home/gpu/IntentSat2S_ten_authors_final_20261107/packaging/clean_rebuild_attempt03/logs/02_TEX_BUILD.log"
+    "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
   ]
 }

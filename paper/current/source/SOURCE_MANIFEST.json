@@ -1,11 +1,11 @@
 {
   "files": {
-    "BUILD_ADAPTATIONS.json": "ec367c3e07235101df54a125215ab086fb272441a241eb8b4e8a7f830d8ef6eb",
-    "MANUSCRIPT_CONTENT.json": "1142cacf067bdaddfcc4bce140bc218ffdeba836298d597f16c4f4416b4bb3eb",
+    "BUILD_ADAPTATIONS.json": "54d642cbde8591e6e4fd127aaac805fca63f209d5f9be7fd0ef7a33b990f77f7",
+    "MANUSCRIPT_CONTENT.json": "ad70f826c6a44e0a78ff31f599c774e6cf8865ba9c1e172b33f330e0aa1b9bb5",
     "README_SOURCE.md": "f456ca2dd961d6b30bac99383f42a963167031ccdd3a5de576f3c6e19e9a6bdd",
     "build.sh": "f6711af70325f1ca2dd1b69c7d0400574f5b5c35c5a0694843fb9b74c844b034",
     "draft/IEEEtran.cls": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
-    "draft/authors.tex": "f7b46d34d687b2befedb1532f4cd9ae92d895b89c26ccb7c921e19820e94a15d",
+    "draft/authors.tex": "b223ffdce08619ad03ab2f6ef08ad27e6b6d5e16e0b9884ccd6baddf4eeae0d0",
     "draft/main.tex": "884ece4ae4e5c067b10241a8af1f66cc1237655ded2be5a89af4e217b2ca5512",
     "draft/references.tex": "1d0b8f9955e6dff551af2e712c5cf9e610e2234745eebad3715685c91d675920",
     "draft/results/budget_results.tex": "94de082fbe26f775b27269f1f6783a593f351215e1018df3f865cce5c7d96835",

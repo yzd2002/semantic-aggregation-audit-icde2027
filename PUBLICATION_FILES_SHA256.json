@@ -3,19 +3,19 @@
   "files": {
     "ASSETS.md": {
       "bytes": 3327,
-      "sha256": "5bfffa5dabd981fba25a3bde3cd14b7a3aa8b9c497b2a90f713d783be2774dd3"
+      "sha256": "94e7266edf46469a867dab1b3ee4120a66c503adb570178eb5cec58dac182d65"
     },
     "README.md": {
-      "bytes": 5344,
-      "sha256": "76fe4b53b8336ad4e5bd6ca8a5a6272b5c02655eff5d798eefbefc09c39cf185"
+      "bytes": 5449,
+      "sha256": "0e96e187eeb1a2fb80a15fa7a36aab947a4e260659c7450c6cc13ad6637b1e0f"
     },
     "START_HERE_zh.md": {
       "bytes": 3722,
       "sha256": "0178e15751111b71945cbf64b2fc0922c668f2502269cbc9c9d341facb89463b"
     },
     "paper/current/ICDE2027_Semantic_COUNT.pdf": {
-      "bytes": 438915,
-      "sha256": "bac7db7f7bd22377bc73818495f52ea374f8e10859289e6699662a3e0439bcd9"
+      "bytes": 439361,
+      "sha256": "1d6136ad731e4988b6b1a6335609d440245076003967af49f31c2e576ffd8368"
     },
     "paper/current/figures/budget_full_bill.pdf": {
       "bytes": 13849,
@@ -50,16 +50,16 @@
       "sha256": "5114b67ba10109d57bdee8935e0b9f53b5373d699e90e457f4b289e39b4f27f3"
     },
     "paper/current/paper_source.zip": {
-      "bytes": 269879,
-      "sha256": "354f028e6f0c35b27b6eb48a600c2f041a257d94cf86613cddbdc9feb514b57f"
+      "bytes": 270015,
+      "sha256": "c89e753fefe3b7709d8f671a4da4c5c491c2f7029c50e8dd3821665500662deb"
     },
     "paper/current/source/BUILD_ADAPTATIONS.json": {
       "bytes": 5162,
-      "sha256": "ec367c3e07235101df54a125215ab086fb272441a241eb8b4e8a7f830d8ef6eb"
+      "sha256": "54d642cbde8591e6e4fd127aaac805fca63f209d5f9be7fd0ef7a33b990f77f7"
     },
     "paper/current/source/MANUSCRIPT_CONTENT.json": {
       "bytes": 3033,
-      "sha256": "1142cacf067bdaddfcc4bce140bc218ffdeba836298d597f16c4f4416b4bb3eb"
+      "sha256": "ad70f826c6a44e0a78ff31f599c774e6cf8865ba9c1e172b33f330e0aa1b9bb5"
     },
     "paper/current/source/README_SOURCE.md": {
       "bytes": 1746,
@@ -67,7 +67,7 @@
     },
     "paper/current/source/SOURCE_MANIFEST.json": {
       "bytes": 5704,
-      "sha256": "9335ccd9fdcdfad8d104e91071e85534bc5b8959f91ac5a9e0b238a3a2d70387"
+      "sha256": "4e959623a7f2b09dc4200c4e94d0e40aef3c749dbff07a954464145f77168622"
     },
     "paper/current/source/build.sh": {
       "bytes": 409,
@@ -78,8 +78,8 @@
       "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
     },
     "paper/current/source/draft/authors.tex": {
-      "bytes": 1303,
-      "sha256": "f7b46d34d687b2befedb1532f4cd9ae92d895b89c26ccb7c921e19820e94a15d"
+      "bytes": 1763,
+      "sha256": "b223ffdce08619ad03ab2f6ef08ad27e6b6d5e16e0b9884ccd6baddf4eeae0d0"
     },
     "paper/current/source/draft/main.tex": {
       "bytes": 3277,
@@ -1214,8 +1214,8 @@
       "sha256": "bd85b84bbd0a9b45015c3c83d1c33299775019e04502ab3fb1214f6d1504c8bd"
     },
     "verification/readability_paper_source/SOURCE_REBUILD_REPORT.json": {
-      "bytes": 4927,
-      "sha256": "f494cb1aefe6ddf68c1bd8aaaf431d9ace2dc50589681db08fc87e069f6a13eb"
+      "bytes": 4793,
+      "sha256": "2b4bdea31230d979d6b1c2440f852c4b4336fe7df16dabc871479c31a5d04005"
     }
   }
 }

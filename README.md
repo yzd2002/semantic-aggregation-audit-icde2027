@@ -36,3 +36,5 @@ The compact modules retain raw model completions, canonical responses, effective
 Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repository edition and `repro/real_engine_20261106/public/artifact_index.json` for its eight scientific modules. The historical root `asset_index.json` and older SHA/checksum lists describe v2 files. They remain historical provenance; their hashes do not validate the new README or current paper.
 
 The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.
+
+All ten author names in the paper PDF link directly to the corresponding author-supplied ORCID records.
