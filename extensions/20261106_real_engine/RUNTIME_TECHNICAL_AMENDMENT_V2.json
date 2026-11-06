@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "kind": "explicit runtime-only technical amendment after zero scientific query/model outputs",
+  "created_unix": 1793959561.7972107,
+  "original_public_commit": "533393dc3ab392c99344183acbe164272dccdcf4",
+  "old_freeze_sha256": "14c9fddf4872e175d7ad65933f5e0acf14dc2166ae96bfa69d9fc2a1559fa8b5",
+  "changes": {
+    "run_study.py": {
+      "before_sha256": "3eab4afda1f02fe20edeed95f3f2775f2ee390f583ae1ab01589f8d71241c56a",
+      "after_sha256": "83737023c6b90be266171a006fddcbf6a8ea66d00d09a02065099217cfa86c82"
+    },
+    "native_runtime.py": {
+      "before_sha256": "2072e2868473e7f0ca9a3cdaf61515dd02f6ffedc3a0431d75d747a09a448d26",
+      "after_sha256": "6024d8d2143ee9aeb3e1890e8ffa07fce21bdff30ba4ff62841de760a81f6385"
+    },
+    "launch_study.py": {
+      "before_sha256": "1237016884bd2277da5eda04f651edf6a90d084e8df295170b28ed20975104f7",
+      "after_sha256": "6446f85f25682b47d8441e94ba0c4ed6bf9adf580d660ff7fbc60cef9313229d"
+    },
+    "runtime_override/sitecustomize.py": {
+      "before_sha256": "c5f07b6b05d1121c01df710ae5ce7d41d9753b06c751a1b27c84095558728664",
+      "after_sha256": "9f529852af64e17e7b4d5b3a0199ec8c4dcf7b5c794c38c92bea5fbb2d67b54c"
+    }
+  },
+  "new_observer_sha256": "9ab2768c4259817d4021b63bb2ce066ce473ed6d3d39307eb0a3341703448d7a",
+  "unchanged_previously_frozen_files_verified": 111,
+  "scientific_design_change": false,
+  "GLM": "Allow already hash-verified local tokenizer code; native model identity gates remain.",
+  "Qwen_cache": "Public V1 reset API drops the underlying boolean. Observe native BlockPool result, empty hash map, single null used block, expected engine/worker PID and one new receipt. Do not infer success from None.",
+  "CPU_transport": "Prevent GPU-only compatibility/observer hooks in isolated LOTUS CPU children.",
+  "before_amended_science": {
+    "glm_generate_calls": 0,
+    "qwen_controls": 10,
+    "qwen_official_Q3_calls": 0,
+    "qwen_scientific_case_calls": 0
+  },
+  "qwen_controls_usage": {
+    "requests": 10,
+    "input_tokens": 814,
+    "output_tokens": 62,
+    "cached_tokens_unknown_requests": 0,
+    "cached_tokens_observed_lower_bound": 688,
+    "cached_tokens": 688,
+    "uncached_tokens": 126
+  },
+  "failures_preserved": {
+    "qwen_cache1_attempt01": {
+      "responses.jsonl": "e3e6b504bf77851e123e77d5a860dac97731bb75bd20581837fe78471853925f",
+      "effective_requests.jsonl": "3cc86557149ee2034879f54a18d69a5541ad5f3fd874e60038a634e960be875f",
+      "submissions.jsonl": "f50aed88df662d82b82e2b5764c17a2d98ae7ee4f4fb7e14924d4f0fd6a9b4a8",
+      "execution.log": "a8030247f631d8fb7faf7de40a168a621335f53b866ec7735fb8610daf6af34b",
+      "FAILURE.json": "872eb4573131dfbf3459d7256fd278adec212e8c24cb3659f0f1a83d6ba4a4ca",
+      "cache_resets.jsonl": "0ef1f8e36ce6613a383195b803a072a1149cb209b7ccbd0e43df4c2451b217fc",
+      "CONTROLS.json": "0b715a6332beba3cf697357f3ec3dc6dc53c97d0414b1084f5f60239f6130fd5",
+      "EFFECTIVE_NATIVE_RUNTIME.json": "db0411dd5f2524f1a3a003a10b608d0cb7e20da3e3d1e2bbd870a9f3270e9a8c",
+      "raw_returns.jsonl": "fa3ba18d740d6abe3942a0520040c71438025504e75efb7fe89092a105e9c964",
+      "START.json": "1a49299245100738eae558e9d597e2ebd243e3807360f5d6a3d22389338c446a"
+    },
+    "glm_cache1_attempt01": {
+      "execution.log": "fea62d34cf48463ce297bd667b64db81e7c16bd8f982aa8e1ea1ac32b7b401ef",
+      "FAILURE.json": "e9bbeecd7ab254d3a5fd58a9f276ea86adc80c6f66c64b8908f7308a358fcd64",
+      "START.json": "b9c6d4d955e0d13f8b29e3f1725bc17b7ab533ba9db98d234afa11065700e06a"
+    }
+  },
+  "startup_cost_not_zero": true,
+  "automatic_retry": false,
+  "original_runtime_preserved": "runtime_versions/v1",
+  "unused_glm_only_candidate": "runtime_versions/glm_only_unexecuted_candidate",
+  "native_reset_call_chain_sha256": {
+    "v1/core/block_pool.py": "1122ed808606e1a266995113505417401baa5fa7c42afa372314462c38790876",
+    "v1/core/kv_cache_manager.py": "2e4c15158d569eefd521700de220cf986ce25ec4e2971846ea2977f4496a7c83",
+    "v1/core/sched/scheduler.py": "2bd28fc32cea71370298bb8da0d9a0bbd163ab315b2c6428540131e3999a255f",
+    "v1/engine/llm_engine.py": "909823763732074b5c421b3658ed96cd1b6659af4c34f81968567d1773670bb5",
+    "v1/engine/core_client.py": "bf815cbc2cce2869f77a08d53a746f416f1fd495f8dc081faf660ebe2e122189",
+    "v1/engine/core.py": "d1219de0d526b2326a471fe8464b3b8a55730dcab63ea99eb9b15e8b90bb116b"
+  }
+}

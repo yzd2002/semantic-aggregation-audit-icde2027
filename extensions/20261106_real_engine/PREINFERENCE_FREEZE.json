@@ -1,13 +1,18 @@
 {
+  "version": 2,
   "scope": "prospective scientific sources, fixed inputs, complete native formatters, packages and model provenance; later analyses/paper edits are not claimed pre-registered",
   "science_started": false,
-  "created_unix": 1793957829.3574002,
+  "created_unix": 1793959659.2404153,
+  "original_public_protocol_commit": "533393dc3ab392c99344183acbe164272dccdcf4",
+  "supersedes_freeze_sha256": "14c9fddf4872e175d7ad65933f5e0acf14dc2166ae96bfa69d9fc2a1559fa8b5",
+  "technical_amendment_sha256": "3663c4a446256ad8cfe5db48d9faa66f13abb82dedf9526b975984e0809a9216",
+  "unchanged_design_and_data": true,
   "files": {
     "PROTOCOL.txt": "e5e68e7f00bdd067e05950a4a98e81234107935e77a8cfebb95524c56775eb8f",
     "analyze_finite_audits.py": "7d8197c117477888ed4a15a9c8aa7941d827591120b5a82e847852943b4b57a7",
     "experiment_common.py": "a8ea8f43ba874bf11ff583548d8aeffbf25af8404f35a9adfe3ffdcbf3de9c07",
-    "launch_study.py": "1237016884bd2277da5eda04f651edf6a90d084e8df295170b28ed20975104f7",
-    "native_runtime.py": "2072e2868473e7f0ca9a3cdaf61515dd02f6ffedc3a0431d75d747a09a448d26",
+    "launch_study.py": "6446f85f25682b47d8441e94ba0c4ed6bf9adf580d660ff7fbc60cef9313229d",
+    "native_runtime.py": "6024d8d2143ee9aeb3e1890e8ffa07fce21bdff30ba4ff62841de760a81f6385",
     "novelty_theory/finite_audit.py": "5b31484ff39eb0ef4b831e67e1ba0deb03ce992313d12f49b711c411266f0fa5",
     "prepare_agnews.py": "82344f2526849be8536d8144634bf384d14da374e02364b74bc117e96be4e29f",
     "prepare_study.py": "9d2742c38238b0cc9e9bed5162303774fe2e4acbb4b8a1661ae0f82b8e2e731c",
@@ -114,10 +119,12 @@
     "real_engine/sources/sembench_q3_smoke/gold.jsonl": "c5653b82c82fc803c29aee8b42394710394977781108eb32a2d7d545c30ea4ce",
     "real_engine/sources/sembench_q3_smoke/native_requests.jsonl": "923b8dcba8c5d3b9aade01c57511a703d7c11134eb412ad1d0baa3c5f2b2736d",
     "real_engine/sources/sembench_q3_smoke/records.jsonl": "3673a13175adf1b62bac09e548bc0df754932f49b9410d92ec3244e3e1ba9085",
-    "run_study.py": "3eab4afda1f02fe20edeed95f3f2775f2ee390f583ae1ab01589f8d71241c56a",
+    "run_study.py": "83737023c6b90be266171a006fddcbf6a8ea66d00d09a02065099217cfa86c82",
     "runtime_override/single_rank_nccl_compat.py": "c2921cab561466fb59d8a4fe8fec64ea32a72d2355ef7f666c4bea8ea62bfc6f",
-    "runtime_override/sitecustomize.py": "c5f07b6b05d1121c01df710ae5ce7d41d9753b06c751a1b27c84095558728664",
-    "similarity_groups.py": "fb05bd6770cd05d787ecb85700fb5753ada5e2c45f86587508efa1d138848c92"
+    "runtime_override/sitecustomize.py": "9f529852af64e17e7b4d5b3a0199ec8c4dcf7b5c794c38c92bea5fbb2d67b54c",
+    "similarity_groups.py": "fb05bd6770cd05d787ecb85700fb5753ada5e2c45f86587508efa1d138848c92",
+    "cache_reset_observer.py": "9ab2768c4259817d4021b63bb2ce066ce473ed6d3d39307eb0a3341703448d7a",
+    "RUNTIME_TECHNICAL_AMENDMENT_V2.json": "3663c4a446256ad8cfe5db48d9faa66f13abb82dedf9526b975984e0809a9216"
   },
   "installed_vllm_files": {
     "outputs.py": "4f28c679bf6310d47e10c81ff0fd6b41afa3f7bbe1f5d47550b4ae1817487c7c",
@@ -125,7 +132,13 @@
     "v1/engine/processor.py": "36e614b74beaeaf93335096c2fbe5cfafcfe4c8102b843869daa96798f434b9d",
     "sampling_params.py": "84c3af26b194b18525e247e749341b91d0bfad49a6c109f7f3c9b38877fd05ce",
     "model_executor/models/qwen3.py": "47abada06a2258f6bd48ed6e50f08aca67153d8aa6b2862daf47b368ee110ff9",
-    "model_executor/models/chatglm.py": "c9c53cbae6cfb0afb7df5f8ee6aac9513d233595b6e587d2662b77e3edc37a3d"
+    "model_executor/models/chatglm.py": "c9c53cbae6cfb0afb7df5f8ee6aac9513d233595b6e587d2662b77e3edc37a3d",
+    "v1/core/block_pool.py": "1122ed808606e1a266995113505417401baa5fa7c42afa372314462c38790876",
+    "v1/core/kv_cache_manager.py": "2e4c15158d569eefd521700de220cf986ce25ec4e2971846ea2977f4496a7c83",
+    "v1/core/sched/scheduler.py": "2bd28fc32cea71370298bb8da0d9a0bbd163ab315b2c6428540131e3999a255f",
+    "v1/engine/llm_engine.py": "909823763732074b5c421b3658ed96cd1b6659af4c34f81968567d1773670bb5",
+    "v1/engine/core_client.py": "bf815cbc2cce2869f77a08d53a746f416f1fd495f8dc081faf660ebe2e122189",
+    "v1/engine/core.py": "d1219de0d526b2326a471fe8464b3b8a55730dcab63ea99eb9b15e8b90bb116b"
   },
   "root": "/home/gpu/IntentSat2S_upgrade_20261106"
 }
