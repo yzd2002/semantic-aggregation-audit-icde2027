@@ -1,0 +1,281 @@
+{
+  "status": "PASS",
+  "started_unix": 1793926089.0345302,
+  "new_inference": false,
+  "gpu_used": false,
+  "python": "3.12.11 (main, Jun  4 2025, 08:56:18) [GCC 11.4.0]",
+  "modules": {
+    "context": {
+      "status": "PASS",
+      "archived_files_verified": 516,
+      "result_comparisons": {
+        "qwen": {
+          "PAIRED_PRIMARY_MINUS_HISTORICAL.json": "849900b9d686dadd090a09d1306dbfe9409756c7f03ba2140a56d2b2aadb8d56",
+          "REPORT_INDEX.json": "3dcfa809f3fbf6b76f83d1ccb585303c5d6d84052b61cc1062de7f5e96dd2326",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "e0679dc658aefcbfedfa5651223abfccd97526ae2dec62c162734eb27ebf936a",
+          "derived_historical_view/DERIVED_VIEW.json": "8fe026b9fe40391f209dbb919b31a5a40cf2b2bc32fb68f136c4b54c637b4971",
+          "derived_historical_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "945c8accb962959b21405f128f65f781b8b4ce3d9d401e93c1d99ed02934e82d",
+          "derived_historical_view/prepared/schedule.jsonl": "5143d1e0c59645cf13bd2f06e94306654b8be66f6b3c35499092f58882b6e989",
+          "derived_historical_view/prepared/serial_schedule.jsonl": "e27b1719e1b6a5e58b84a5a1ea661a84421e89764c26326887cf3b6b38857cfc",
+          "derived_historical_view/run_qwen/block_submissions.jsonl": "f1f8089550e489c2d5a0b09d4b766f76bcb98fad9ff9053ccafd459fbb2e1f45",
+          "derived_historical_view/run_qwen/responses.jsonl": "180fa449c0fa9cc4ed0347bcdae9e43fd2e9795172a1fda7ff94b12b2c0892f1",
+          "derived_historical_view/run_qwen/serial/block_submissions.jsonl": "6891ae72b412444590540b32963444a4b0abce7b884d4b2ff291a15a0d076e1f",
+          "derived_historical_view/run_qwen/serial/responses.jsonl": "e3d26d2969c0f09c63b6cbb7d2ff002e7577fa01fd4eb8c6bd5ef52432ea1d53",
+          "derived_historical_view/selection/targets.jsonl": "26cadc58de6058a563d459399d7d1227c19197196bd98213c160bc8e5b75894c",
+          "derived_original_length_pass_view/DERIVED_VIEW.json": "6895419b92565909fbc03db466561a2a1ce992dd7cf8bf5bed7f1cebc15f0b09",
+          "derived_original_length_pass_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "57591f65d89b6713a46b858ca63b59df8fcf20d61b317ead6534bd84fb7eab86",
+          "derived_original_length_pass_view/prepared/schedule.jsonl": "0a10f81c1ec108276ea255ff06615999a3a8ab8acf314e5789c585760616616e",
+          "derived_original_length_pass_view/prepared/serial_schedule.jsonl": "433479c2c2430f0cf16c6c4ffea7cb5029c5b83eddb2790c757084212e68f941",
+          "derived_original_length_pass_view/run_qwen/block_submissions.jsonl": "452c9514984057145dc5aa8c7a24e18e6940ff7fed875df211e4f0d3232c7fcc",
+          "derived_original_length_pass_view/run_qwen/responses.jsonl": "69b012043e88e988a836b577c9c6ce87f4482348319b753c07451204cd750a91",
+          "derived_original_length_pass_view/run_qwen/serial/block_submissions.jsonl": "925e78a16219c7941f7e741debb100a399851db48c2f399e4602975359ae2c70",
+          "derived_original_length_pass_view/run_qwen/serial/responses.jsonl": "495306e853a10f28fb606256550c0b59f5f6ce9888df017cb0c22a86aca455c4",
+          "derived_original_length_pass_view/selection/targets.jsonl": "17ffdd341e71d0c8fb26563cfb89ff955fcbd01b51456e6da3504c6aa16171db",
+          "global_primary_component.json": "326a6139ba0cd5d29b38942bbcf63e33aa34aa8652542b3f46c7cc0ddbd6a8c7",
+          "historical_main/analysis.json": "ccab4566b0c1faf8f450932b1fc62ec0d030a35c537da93ef4a2a0c9ecb79777",
+          "historical_main/per_target.jsonl": "b717e7f980735a1e08291a1ee24afd88ec26392573285f9500acfbfa9f749bd3",
+          "historical_secondary/secondary.json": "4ac963983314af10a21da9d3552c54033105114185241fccd31f78aaa51f66f4",
+          "original_length_pass_main/analysis.json": "0385f86ce0c01497ae2596acf4c379d9766fa5daf02d787f21623d4e64b6aeda",
+          "original_length_pass_main/per_target.jsonl": "b93c1d15faec1b62a72f3252e23fc4cd18bae1c3e1e81c2fadbd0d24390d689d",
+          "original_length_pass_secondary/secondary.json": "b3bd37986c66e5e419a0029e16262ba36ca907d09582d8960e71760fe2832147",
+          "primary_main/analysis.json": "8c77dcc84067afced31d369aecc71b5502236abd7489ecdbbac43cb959bb3c8f",
+          "primary_main/per_target.jsonl": "efe1f4519a994a1f43af1aaafc1d3ab2ea860763f64f024cfd4635c107c8b6d6",
+          "primary_secondary/secondary.json": "caa7d78af74b882bb2b32419de77fb7242843bbe5624cf03104adad26de252e9"
+        },
+        "smol": {
+          "PAIRED_PRIMARY_MINUS_HISTORICAL.json": "2d41d7c43191c9edc95d68986c8fe69a2e42c84a9a1f7d45dd253bffe60f1084",
+          "REPORT_INDEX.json": "da54c5f770c2aaf72f19a36b2260d9589122e1a9c5b628685f7fcbb5b61647c5",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "ce45d139ff30a75b03992078e6bfdaf8d1ec6011155532c2b1f3df85d450c54c",
+          "derived_historical_view/DERIVED_VIEW.json": "8fe026b9fe40391f209dbb919b31a5a40cf2b2bc32fb68f136c4b54c637b4971",
+          "derived_historical_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "4d7a490f156b3b49732371ce2f06d71baa5787b23407af5dcbc76f4cab752cb4",
+          "derived_historical_view/prepared/schedule.jsonl": "5143d1e0c59645cf13bd2f06e94306654b8be66f6b3c35499092f58882b6e989",
+          "derived_historical_view/prepared/serial_schedule.jsonl": "e27b1719e1b6a5e58b84a5a1ea661a84421e89764c26326887cf3b6b38857cfc",
+          "derived_historical_view/run_smol/block_submissions.jsonl": "ffa8a376b6532295aa7c17fdb12b080cdd5e46717e4833221d52ee01a5a31ef9",
+          "derived_historical_view/run_smol/responses.jsonl": "3a42181a00fc1471c432f7bbd38fba512c4e946101676d7674b653ff92c16086",
+          "derived_historical_view/run_smol/serial/block_submissions.jsonl": "1ab919a91943dff83961417175b1a4b1961cedda74f730fb22294d50d2187418",
+          "derived_historical_view/run_smol/serial/responses.jsonl": "0343b46a98ceecbbc0507163b7069096b8c2593bb25ad9fa47a8e83ae276e3ce",
+          "derived_historical_view/selection/targets.jsonl": "26cadc58de6058a563d459399d7d1227c19197196bd98213c160bc8e5b75894c",
+          "derived_original_length_pass_view/DERIVED_VIEW.json": "6895419b92565909fbc03db466561a2a1ce992dd7cf8bf5bed7f1cebc15f0b09",
+          "derived_original_length_pass_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "aeb6aaad87d3e7c07c56c0440e680e4c53830310be4585691e4ccb3230f7200d",
+          "derived_original_length_pass_view/prepared/schedule.jsonl": "0a10f81c1ec108276ea255ff06615999a3a8ab8acf314e5789c585760616616e",
+          "derived_original_length_pass_view/prepared/serial_schedule.jsonl": "433479c2c2430f0cf16c6c4ffea7cb5029c5b83eddb2790c757084212e68f941",
+          "derived_original_length_pass_view/run_smol/block_submissions.jsonl": "a4b01c7820ae802846291ff728c9868da4786abe7e2c308a4051334a53225dcd",
+          "derived_original_length_pass_view/run_smol/responses.jsonl": "52474ba7be2f737fc284220615c3922548286d2dcd39eb200c575bd982c7e283",
+          "derived_original_length_pass_view/run_smol/serial/block_submissions.jsonl": "63b06ccb22f148446d4578bef6d9302086a31f3f5c7d923f85494f62c9ba614e",
+          "derived_original_length_pass_view/run_smol/serial/responses.jsonl": "e27451e3666996b7d4ad68f592e6e36beceaf65700d5f3b2f9a698bf43d9fd73",
+          "derived_original_length_pass_view/selection/targets.jsonl": "17ffdd341e71d0c8fb26563cfb89ff955fcbd01b51456e6da3504c6aa16171db",
+          "global_primary_component.json": "3f9336bbf468de264ad16cdd46677ddc15194aa698bcd6fe7c5e4fedf2df0aea",
+          "historical_main/analysis.json": "aa27ca430faf93b3c093095071d6505e7cf5fdafab0a3e9f33710fd0c8d46a33",
+          "historical_main/per_target.jsonl": "12cb65e546be19aa0865168b23b3138e612ced0fbd91ea5f68143a6c196380b0",
+          "historical_secondary/secondary.json": "b9ee8e0439c0db58cb7e1a74cc6a515e14cfdb7f6b90c3887874e87933642453",
+          "original_length_pass_main/analysis.json": "730c74421ea2f54053b192fb006dfd3377177fe7e99053e242fece1d9ae7abe8",
+          "original_length_pass_main/per_target.jsonl": "c96aa74933838d2517ab386fb6cd9199e705832ac9c41c6fc9dd759d87a0bd24",
+          "original_length_pass_secondary/secondary.json": "5e6d1b658ff8eaf9b376c5226e31797438402d842113454a010a1448356738ad",
+          "primary_main/analysis.json": "2835004631da9fce239c08477a7474f8699a40bc9dc1acdd703bdf074ca3fe8a",
+          "primary_main/per_target.jsonl": "6a5f8d5a4dfc6f57aebcb1971219a7e06098b654c33cf58f324c9b8dae3f837e",
+          "primary_secondary/secondary.json": "84e2441f81a4b14fe99062639405c74a748160c807299d8fac2f3e2f597946dc"
+        },
+        "glm": {
+          "PAIRED_PRIMARY_MINUS_HISTORICAL.json": "febf9d65399684e29ec8e796c44a4ab091592cac5e50c175903a8e4c605dfc26",
+          "REPORT_INDEX.json": "82534f16125a246dbafcb5391f2ddfe86eb69035a0cef57ae52f02896105a664",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "60b16473002a8122e1cc9fcd8701e75645d651a41c1aa59fd3b6c5b336b0ea80",
+          "derived_historical_view/DERIVED_VIEW.json": "8fe026b9fe40391f209dbb919b31a5a40cf2b2bc32fb68f136c4b54c637b4971",
+          "derived_historical_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "3627d9e424c52f4c5ca2af86a1177ecb6fb11cd12bdd341bc6eb0cc80f065996",
+          "derived_historical_view/prepared/schedule.jsonl": "5143d1e0c59645cf13bd2f06e94306654b8be66f6b3c35499092f58882b6e989",
+          "derived_historical_view/prepared/serial_schedule.jsonl": "e27b1719e1b6a5e58b84a5a1ea661a84421e89764c26326887cf3b6b38857cfc",
+          "derived_historical_view/run_glm/block_submissions.jsonl": "c5b20e63ee722218da89e103a818b183ae3edb407b2fb7624f215db91ca97732",
+          "derived_historical_view/run_glm/responses.jsonl": "15963ba25aa5237f5b20dedb7bc5326167a5d27ae2e934a2583f93b30d17bc58",
+          "derived_historical_view/run_glm/serial/block_submissions.jsonl": "7c99704569fee984eda40d485c1a39f961f853549a059e6b8c59ef60db96e338",
+          "derived_historical_view/run_glm/serial/responses.jsonl": "fd5c2bd55038e7a0f634944142bd69fe90b51dc53fbda6de559051a47e669575",
+          "derived_historical_view/selection/targets.jsonl": "26cadc58de6058a563d459399d7d1227c19197196bd98213c160bc8e5b75894c",
+          "derived_original_length_pass_view/DERIVED_VIEW.json": "6895419b92565909fbc03db466561a2a1ce992dd7cf8bf5bed7f1cebc15f0b09",
+          "derived_original_length_pass_view/OBSERVATION_LOOKUP_PROVENANCE.jsonl": "aa7803476b3a781aebada5db62ab7e3d0fba98cba199f4e4741f3d451a77a7ad",
+          "derived_original_length_pass_view/prepared/schedule.jsonl": "0a10f81c1ec108276ea255ff06615999a3a8ab8acf314e5789c585760616616e",
+          "derived_original_length_pass_view/prepared/serial_schedule.jsonl": "433479c2c2430f0cf16c6c4ffea7cb5029c5b83eddb2790c757084212e68f941",
+          "derived_original_length_pass_view/run_glm/block_submissions.jsonl": "76be122013c1ded4df6b89d6fd9cb8fc6503eeca73d3db44c3cd98169d5eb23e",
+          "derived_original_length_pass_view/run_glm/responses.jsonl": "8acd46bac692e15128a175164230ef297b4c775e3e424836bb4762d4609f10a5",
+          "derived_original_length_pass_view/run_glm/serial/block_submissions.jsonl": "272a8d11a2041e06220bd463bd9b9435b41d1079335a28162777385fcf4af6ee",
+          "derived_original_length_pass_view/run_glm/serial/responses.jsonl": "a7b82c907f5091c8f26cf7a6dff3d746470fa489d616293aefcdeb45a41e5558",
+          "derived_original_length_pass_view/selection/targets.jsonl": "17ffdd341e71d0c8fb26563cfb89ff955fcbd01b51456e6da3504c6aa16171db",
+          "global_primary_component.json": "797cc68307e21e97db1be04b3ac544832552ad5c0eaf1f27e5cab88000feb857",
+          "historical_main/analysis.json": "0cabe4cc2da9a3a699c8a25bae27ef405c93d87c82925f1b5e0dc2216876dfaf",
+          "historical_main/per_target.jsonl": "caea341958e64002b5e039eddf8985f81206d49f9707d88cd6a0d124934a339c",
+          "historical_secondary/secondary.json": "92f371e584e9df53611176264f0baed714f5008ce44f1ca0b69290ff6e59c9b0",
+          "original_length_pass_main/analysis.json": "142a61df16be1ca564d5cb13b3b04dcf42e430a14f3f3bec91b0f354937183c3",
+          "original_length_pass_main/per_target.jsonl": "1a0678ca1a489e2bd956d34914b084b84847c7a1b2868d3558a0d25832a99dde",
+          "original_length_pass_secondary/secondary.json": "34cafaff66522157bc59dbf464f1450870ce68f15cdb7bd7a6e2c72a525571c3",
+          "primary_main/analysis.json": "62f326853ffe54586c84d5deeb13525974de1f7675ae4e6ca0673fb78cd9ab86",
+          "primary_main/per_target.jsonl": "efb17a839fba8ade967c698d38eee321c7614455355c0fcc2cc2467f36f79091",
+          "primary_secondary/secondary.json": "dd4b1ee86086604b3ad2aaeb659d847e389a64ada9765cf8ea6806e456fb38c8"
+        }
+      }
+    },
+    "snli": {
+      "status": "PASS",
+      "archived_files_verified": 273,
+      "result_comparisons": {
+        "qwen": {
+          "RAW_RETURN_COSTS_BEFORE_IDENTITY_ANALYSIS.json": "2383bc055ad0edba1a009004ca25a079cb0ed41a4d0ca6f0b1678c581600d7d7",
+          "REPORT_INDEX.json": "841b5cfd5cc03e3785c06ad2c82a5baabbd5509841595987b3a9272a22ad61b9",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "6d3cce9f84ddb3f33a256d9f739e48aaaa9d73452d5cb301d6544fbb995ed9f9",
+          "global_primary_component.json": "8d2dfbb093ca3d6d0e8eba5535ecef62e70221bc506e2467cd9b06ec6595fa17",
+          "legacy_main/analysis.json": "4ff54d3375b493246c5c9be1f78f4981820e7cbe30ae494681d5837a5b3d8dd0",
+          "legacy_main/per_target.jsonl": "4d1882611234eb49a92e5760afc6ce7aca5ec7d84bc13f1ad91c815dd444a885",
+          "legacy_secondary/secondary.json": "55edb832abcec916d39bc3de1256ae3eb90ac3e0f8f3ee2e82ab6e827b12bdc3"
+        },
+        "smol": {
+          "RAW_RETURN_COSTS_BEFORE_IDENTITY_ANALYSIS.json": "108ce23b810b25b2c813b32aefb9ee79b7e05e0b1ff827c9e7d872f6471a827d",
+          "REPORT_INDEX.json": "07615e0c0cbfdd8b6b9b25d8785f63639297077a3e5784bc1d2dfadfa1faca5c",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "69f5822e24139d0178b43e9db813b3aab6f286369955df73ad2771cd80742330",
+          "global_primary_component.json": "be261fce53cf6d6fdce57dd1c2deab748b2bc955d031d43b8da8f8b100093dac",
+          "legacy_main/analysis.json": "e00bb83a2c40aeb51a45bd1d5ca58d8332afa7360ed2034373b5a935c3a6b367",
+          "legacy_main/per_target.jsonl": "9d7ce1f74a8ed556d40b2a689b5d7e7ff6733cd1cd3212fe8c7dc2784fbfdb09",
+          "legacy_secondary/secondary.json": "4ce07647692fec4749c9ac4a4c5dad54c533db668bfe443f330850f2efb668e8"
+        },
+        "glm": {
+          "RAW_RETURN_COSTS_BEFORE_IDENTITY_ANALYSIS.json": "cadd59e135bcc9b65eabc7901f9902364d4e4f26ca66786d0a99c0ecc65df2ec",
+          "REPORT_INDEX.json": "1904d3dc8d4c5c5fa3769e190c56c4043300d5c29efc75f98803c7e9c2a31b8e",
+          "UNIQUE_RAW_COSTS_AND_COMPLETION.json": "2f822ace3b4c7332c2f62668fe165e65ef1368387a86c24415b6fb3a92cee858",
+          "global_primary_component.json": "acd8cea9f0c7b37278f414a69df6903f8c6fee5bcd3a02bd93550c2174415e99",
+          "legacy_main/analysis.json": "f34b15b212d8b7e5a1be0a4a7ae7b0cef02e9b4ec2f37dc01271122479d47555",
+          "legacy_main/per_target.jsonl": "f74d7eaf0447b5842e0146d431c3939d0f893972f426ee597fa599e78c821480",
+          "legacy_secondary/secondary.json": "2d7b0347ff4f2cf83ee51d1d6167ff91efbc4138bd5af4fcf024c6a909d30bd6"
+        }
+      }
+    },
+    "transfer": {
+      "status": "PASS",
+      "archived_files_verified": 269,
+      "result_comparisons": {
+        "qwen": {
+          "ANALYSIS_SHA256.json": "2fd7c1956f582a9627b57e0c4c05943b7897903e92c21a32daaa2c5a3ea973bd",
+          "analysis.json": "c7ee5d8fafb4e1f4de0699476bebf82b7bf654743a5944a60e952561c21527e3",
+          "per_target.jsonl": "c1614033b6bb9ac6d7eb9741d0e97a4ea63378167d8b5f3dc7929774ccc57ff6"
+        },
+        "smol": {
+          "ANALYSIS_SHA256.json": "bf46ac0f5c4a6bbd418ad8cf00802e04151fd8a92a4ba76ad1b597781f444287",
+          "analysis.json": "eee681f3c9289893c436a7958138ac6e31ac006d7109b64e10525e1166973460",
+          "per_target.jsonl": "76842d97d4a1f505cfa552b17886cdd2659bb3a9586fb772e7dd11b92a612da7"
+        }
+      }
+    },
+    "decision_dependency": {
+      "status": "PASS",
+      "archived_files_verified": 98,
+      "result_comparisons": {
+        "status": "PASS",
+        "replayed_unix": 1793926188.425355,
+        "gpu_used": false,
+        "new_inference": false,
+        "policy_count": 36,
+        "complete_policy_payload_equal": true,
+        "policy_payload_sha256": "3fb43c89705f838ae677c348320acc5f99a9147cd047de7d75ce2d18b307a81e",
+        "CPU_contract_checks": 40,
+        "input_file_hashes_equal": {
+          "inputs/FEATURE_ONLY_PLAN_HASH.json": "a5f218872122a1bad9bb8b3d6e5697a42e3f4b764abff12e130fe57f4e804c04",
+          "inputs/LEXICAL_INDEX_AUDIT.json": "9f2c5d1f0d593f45c5d5e7ee269d04b0e3ff2a891ca347d3b01095176e936a77",
+          "inputs/RANDOM_BASE_PERMUTATIONS.json": "d9be92be56a6cd7161af343709419bcc05e9791b02ba0dd748c7c91723da2083",
+          "inputs/gold.jsonl": "5367f45dc146f5b4739697ee65b10a0a061615770ff9335328b6fd8b305129e6",
+          "inputs/partitions.jsonl": "e256819c0cf8243ed3e3a8996e8ee22e9b5df1bb5a414e6dfac9da407d0f8063",
+          "inputs/relations.jsonl": "0a5e6ec9b6670c335b6235731663cafac395f42cf3acd5e82f71f669aa47fd51",
+          "prepared/dev_block_membership.json": "7cdb93c62e9b9bfa4ddd207ffd48c242597504cb44ceb945c460297ed6434d8c",
+          "prepared/dev_schedule.jsonl": "a7c24c4e6cfaaffd86ee37ecfcaf31fc59bae8fce150b560398c27e50119a3c0",
+          "prepared/qwen_dev_requests.jsonl": "629d3523262635add6873c3ca0e3547efc07fd863c18f2b88992d5ccb6e0a0bb",
+          "prepared/smol_dev_requests.jsonl": "f942806f1fff23a2041d3cf39210e555bbf068f4c35667fa6b092fa2acc708f7"
+        },
+        "DEV_actual_tokens": {
+          "qwen": {
+            "scientific_calls": 4096,
+            "diagnostic_calls": 20,
+            "scientific_actual_input_tokens": 2096140,
+            "diagnostic_actual_input_tokens": 4143,
+            "all_actual_input_tokens": 2100283,
+            "scientific_actual_output_tokens": 76428,
+            "diagnostic_actual_output_tokens": 471,
+            "all_actual_output_tokens": 76899
+          },
+          "smol": {
+            "scientific_calls": 4096,
+            "diagnostic_calls": 20,
+            "scientific_actual_input_tokens": 2213766,
+            "diagnostic_actual_input_tokens": 4460,
+            "all_actual_input_tokens": 2218226,
+            "scientific_actual_output_tokens": 86967,
+            "diagnostic_actual_output_tokens": 549,
+            "all_actual_output_tokens": 87516
+          }
+        },
+        "coverage": "Original DEV input closure, all 36 policy payloads, selector ledgers and actual calibration cost. Full source/partition/gold inputs are reconstructed, but no old TEST inference or TEST-result claim is replayed.",
+        "historical_boundary": "Preserved historical 73/242-file inventories remain incomplete. Missing old certificates are not recreated; the old freeze is not represented as fully recovered."
+      }
+    },
+    "independent_audit": {
+      "status": "PASS",
+      "archived_files_verified": 49,
+      "result_comparisons": {
+        "six": {
+          "RECOMPUTED_qwen.json": "8871fcf868ec4ba9d854dc2680d4a07b9324a1e8bcc00cfc3ea02783032ccaf6",
+          "RAW_CHAIN_AND_COSTS_qwen.json": "6e1730546c625faa4a3a5dd9a869c74e8798011556026c961d7b7ec5830720e7",
+          "RECOMPUTED_smol.json": "cf50ab9ab161a6fa3c5af04ea949721767f8631334cd2ac7dfd98f0d9bb852a8",
+          "RAW_CHAIN_AND_COSTS_smol.json": "e5b766e0be78866b673fa3704eba6de3f8a9fd9089e0a1ef2b68ac44a01d2665",
+          "RECOMPUTED_glm.json": "6da6202611330fc98831349e8b6ef33ca86328652d5b6ab96076a54159772314",
+          "RAW_CHAIN_AND_COSTS_glm.json": "86020bbc6afe173c2ef1ec4b5cf387d6cca9a5cd0aa806a72516dd391a5be9a6",
+          "INDEPENDENT_RAW_BINDINGS.jsonl": "febe55ed3797e54f0b48e8924e600f5674786907340485fc19a0585ffd86e00a",
+          "INDEPENDENT_PER_TARGET.jsonl": "67a28905c872075accf371cd98c092e5c053e65ed517a33900ab2a0b7160206d",
+          "NINE_FAMILY_PRIMARY_SIX_OBSERVED.json": "8d7f15bf1948cd32ae0ee36e9ec591f744496ae1a6bfd1f2920c4530106ae925",
+          "SIX_STARTUP_FAILURES.json": "01480b54333d20b0a8efab5337fb52b2a5b7f09612c208fb7e637ccd6b11050f",
+          "SELF_CHECKS.json": "6fc36dc238aae0b134a8669405050e33aa8057fe9bf5b90a03bcf41ee525719b",
+          "SOURCE_RAW_ANALYSIS_SHA256.json": "098faa725a308a3319b8974da842a11ac34fa01357c144ea84790326807ac6fb"
+        },
+        "nine": {
+          "SNLI_RECOMPUTED_qwen.json": "ec97e308a4561f0958fc241fbf081a7b2ff7282bfb374984757c204076a825aa",
+          "SNLI_RAW_CHAIN_AND_COSTS_qwen.json": "30659fd674dcd2ef9dba6e538791391aeadb1b18e6f16bf4a5355caf7f8c0479",
+          "SNLI_RECOMPUTED_smol.json": "ce4feac1c87b898a0be8560a2c2d0c1c3136601c7878fc51635ee512719021e4",
+          "SNLI_RAW_CHAIN_AND_COSTS_smol.json": "e1146d86bd7e70e68ee01733f5f0dcf3a0465ad244ae963811176b18bcd519c2",
+          "SNLI_RECOMPUTED_glm.json": "eb83d5434604263f70a9e86b3c724d3294a83cc36acda5175ce36d9eb4e9fc19",
+          "SNLI_RAW_CHAIN_AND_COSTS_glm.json": "d761cf358be2c5cc38f379a94b1acac2673213832d1c65ab0dd6513a2c67875c",
+          "NINE_CASE_PRIMARY_INDEPENDENT.json": "9f9565436082688c1aa35ba1fbddbadc97081447479a96008f9f35d0de0af07b",
+          "SNLI_INDEPENDENT_PER_TARGET.jsonl": "a6ec487c4ae273924730ec740121f88aa399dc7cbd0706941f65ce6c0e36c98d",
+          "SNLI_INDEPENDENT_RAW_BINDINGS.jsonl": "6083feb692d0a3b2d62b490f7a94223b20ddc169753e2d83f375c38b7f63af69",
+          "SNLI_SOURCE_AND_FREEZE.json": "1a2fd069e16d27cbdabd27a162f0c4bdb584f124a8f14d51eff66a36e99475b1",
+          "SNLI_SOURCE_RAW_ANALYSIS_SHA256.json": "082ebb01e160ef9a693babc777bd7a0fd20b427938720f242ebce8bd7b0f7cc7"
+        }
+      }
+    },
+    "independent_transfer_audit": {
+      "status": "PASS",
+      "archived_files_verified": 42,
+      "result_comparisons": {
+        "qwen": {
+          "ALL_WHOLE_RELATION_COUNT_EXAMPLES.json": "6389df1f830a63383076ba88586772917a2b692bff456fc4594decc7c6de968d",
+          "AUDIT_SOURCE_SNAPSHOT.py": "e68d5a7f8bda0c00705105737eb4bf1931ed10897f2947d2f69e7eadaaf7890b",
+          "INDEPENDENT_FIXED_REFERENCE_VIEWS.json": "590894045f526ec010aa0257621efaf79da5f319c0cb849b43b25b411dc39f45",
+          "INDEPENDENT_PER_TARGET.jsonl": "16d95079f4c3a104754af6dc795cfcdb6a42c3b5453b169c46157687452e9122",
+          "INDEPENDENT_POLICY_AND_PREFIX_VIEWS.json": "2fad980084fb10797814e368421e9e8716e74c2b714de786acb2da09380b748a",
+          "INDEPENDENT_RECOMPUTED_CONFIGURATIONS.json": "359eced91966e4e4aff39a4a758b6c8e0cc947a616502f92b791f38ad8594bda",
+          "MATHEMATICAL_COMPARISON_MISMATCHES.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "SOURCE_SHA256_AFTER.json": "209098ff7419a25a5214f517c188ac414b6b985898bb33b76e3c26b7bba417c4",
+          "SOURCE_SHA256_BEFORE.json": "209098ff7419a25a5214f517c188ac414b6b985898bb33b76e3c26b7bba417c4",
+          "certificate_scientific_fields_equal": true
+        },
+        "smol": {
+          "ALL_WHOLE_RELATION_COUNT_EXAMPLES.json": "94d2a426c1d9a4e2a628cf1a4149ff80536eddcd20a75a2e4e6fdb49737881eb",
+          "AUDIT_SOURCE_SNAPSHOT.py": "e68d5a7f8bda0c00705105737eb4bf1931ed10897f2947d2f69e7eadaaf7890b",
+          "INDEPENDENT_FIXED_REFERENCE_VIEWS.json": "fc7f51d598c681f3a5407b377d4aa726eb07a076d35da4a11d73a0f6b9fb8ce9",
+          "INDEPENDENT_PER_TARGET.jsonl": "b7d8db4682489d1cddd8adbe31fff34154b43beceea9ce40f0e78fc25b75b4f4",
+          "INDEPENDENT_POLICY_AND_PREFIX_VIEWS.json": "59f2c8572f6855fc0d986d1529b96331830645a4faecb53cec0138cae3c0bb63",
+          "INDEPENDENT_RECOMPUTED_CONFIGURATIONS.json": "83c381a0eb8c6156c2814a8f4725acabc3da3a993035408d734e5fb3faa869aa",
+          "MATHEMATICAL_COMPARISON_MISMATCHES.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "SOURCE_SHA256_AFTER.json": "7243569ed6998de235837bb67d155a06cd758404c307fcbbec2c05a8dc6a92b0",
+          "SOURCE_SHA256_BEFORE.json": "7243569ed6998de235837bb67d155a06cd758404c307fcbbec2c05a8dc6a92b0",
+          "certificate_scientific_fields_equal": true
+        }
+      }
+    }
+  },
+  "source_root": "/home/gpu/IntentSat2S_revision_20261106/final_publication/public_end_to_end/expanded",
+  "limits": "Relocated CPU recomputation of archived actual outcomes; no clean-machine GPU rerun or external human assessment is claimed.",
+  "numpy": "2.2.6",
+  "pyarrow": "22.0.0",
+  "finished_unix": 1793926214.723154
+}

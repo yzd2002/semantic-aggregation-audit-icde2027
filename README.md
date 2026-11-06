@@ -1,8 +1,10 @@
 # Auditing Reference Fidelity and Checking Costs in Semantic COUNT
 
-Artifact candidate for **[Experiment, Analysis, and Benchmark] Auditing Reference Fidelity and Checking Costs in Semantic COUNT** (ICDE 2027 EAB).
+Verified public artifacts for **[Experiment, Analysis, and Benchmark] Auditing Reference Fidelity and Checking Costs in Semantic COUNT** (ICDE 2027 EAB).
 
-请先读 [中文 START_HERE](START_HERE_zh.md)。实际已发布版本与下载入口只以随后经匿名校验的 `asset_index.json` 为准。`asset_index.template.json` 是本地候选清单，`published: false` 不表示 release 已存在。历史 `v2026.11.06-recovered` 与最终重构论文不匹配。
+Current version: [v2026.11.06-final](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final). All eight scientific/manuscript assets were downloaded without authentication or cookies and matched their SHA-256 digests; all315 files from the public scientific tag also matched. Complete CPU replay using the actual public downloads passed. See [download receipts](verification/PUBLIC_DOWNLOAD_VERIFICATION.json), [CPU replay](verification/PUBLIC_SOURCE_CPU_REPLAY.json), and [asset manifest](asset_index.json).
+
+The manuscript is the final scientific v2 with author placeholders. This is an authors-pending submission draft, not an acceptance announcement or completed CMT submission. The historical recovered release remains separate. 请先读 [中文 START_HERE](START_HERE_zh.md)。
 
 The final-paper artifacts are modular: fresh DBLP–ACM/BoolQ context experiments in three model families; fresh SNLI in the same families; new real transfer checking-cost runs; the original DEV-only 36-policy/calibration dependency; separate mathematical/agent audits of the nine fresh context cases; and the real-transfer independent mathematical audit. Complete selected frozen files, actual durable returns, analyses, controls, failed attempts and notices accompany each applicable module. Model weights, caches, credentials and unused historical pilots are excluded.
 
