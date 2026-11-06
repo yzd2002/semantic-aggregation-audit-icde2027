@@ -1,0 +1,186 @@
+{
+  "status": "PROSPECTIVE_FOR_THIS_FOLLOWUP_NOT_RETROACTIVE_REGISTRATION",
+  "trigger": "The first completed original Qwen Sci/Tech N7600 case fell back at CP80; all its calibration references were strict valid. No hidden error-rate estimate is inferred from the early-stopped prefix.",
+  "original_36_configurations_unchanged": true,
+  "question": "Does a larger fixed certification budget improve complete-policy cost under the same native Boolean semantic contract?",
+  "models": [
+    "qwen",
+    "glm"
+  ],
+  "n": 7600,
+  "prefix_cache": true,
+  "selected_workloads": [
+    {
+      "workload_id": "agnews_count_science_technology",
+      "domain": "agnews",
+      "corpus_id": "agnews_test",
+      "predicate": "Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is Sci/Tech (science or technology). News item: {text}",
+      "gold_positive_class": 3,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews/gold.jsonl",
+      "rows_available": 7600,
+      "query_status": "SOURCE_DERIVED_BINARY_COUNT_NOT_SEMBENCH_QUERY",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/agnews_count_science_technology.native_requests.jsonl",
+      "native_requests_sha256": "6b0c2ccfd11bf240932dee99e2f375e6ce6cf1f62ff640bdfc22c460fbf5b6c2",
+      "records_sha256": "f08065411474c65e99704082bc9c7cf60c7b03b6a226bb59e9b0aedb459fbd50",
+      "gold_sha256": "5a4f268ff18695dffb6b9b967a0d5ee833b38ef4d3207fc19ed9d3d41bcea649"
+    },
+    {
+      "workload_id": "movie_count_positive_other_critics",
+      "view": "other_critics",
+      "status": "SOURCE_DERIVED_QUERY_VARIANT_NOT_ORIGINAL_SEMBENCH_Q3",
+      "predicate": "Determine if the following review is clearly positive. Review: {reviewText}",
+      "operator": "semantic filter then deterministic COUNT",
+      "view_condition": "isTopCritic == False",
+      "available_unique_texts_in_view": 938120,
+      "selected_rows": 8192,
+      "prefix_sizes": [
+        512,
+        2048,
+        8192
+      ],
+      "prefixes_are_nested": true,
+      "records": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.records.jsonl",
+      "gold": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.gold.jsonl",
+      "metadata": "/home/gpu/IntentSat2S_upgrade_20261106/real_engine/prepared/movie/other_critics.metadata.jsonl",
+      "records_sha256": "dffe6f8184717a0ad38f43b001cff29e126ce9c71a9966cc4d81d69ca5403b37",
+      "gold_sha256": "116e2362dc923ed5b73a1a879f6370bb3bfe5499d315cae34953605c1410dbcd",
+      "metadata_sha256": "8cd2ec2ff5767433b15df0337a251638bb64f3fa8c876554a500ab6aa8a06995",
+      "post_selection_gold_counts": {
+        "positive": 5589,
+        "negative": 2603,
+        "unavailable": 0
+      },
+      "min_text_characters": 5,
+      "max_text_characters": 315,
+      "domain": "movie",
+      "corpus_id": "other_critics",
+      "rows_available": 7600,
+      "gold_field": "gold",
+      "native_requests": "/home/gpu/IntentSat2S_upgrade_20261106/prepared/movie_count_positive_other_critics.native_requests.jsonl",
+      "native_requests_sha256": "ce73f80381871423df2d80a5160e1fdad350bb01ae439c3f27860b6c6acc8a17"
+    }
+  ],
+  "movie_anchor_hash_seed": "2026110621",
+  "budgets": [
+    80,
+    320
+  ],
+  "repeats": [
+    1,
+    2
+  ],
+  "jobs_per_model": [
+    {
+      "job_id": "movie_count_positive_other_critics__n7600__budget320__rep1",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "repeat": 1,
+      "budget": 320,
+      "sampling_key": "budget_followup_20261106|movie_count_positive_other_critics|rep1"
+    },
+    {
+      "job_id": "movie_count_positive_other_critics__n7600__budget80__rep2",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "repeat": 2,
+      "budget": 80,
+      "sampling_key": "budget_followup_20261106|movie_count_positive_other_critics|rep2"
+    },
+    {
+      "job_id": "movie_count_positive_other_critics__n7600__budget320__rep2",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "repeat": 2,
+      "budget": 320,
+      "sampling_key": "budget_followup_20261106|movie_count_positive_other_critics|rep2"
+    },
+    {
+      "job_id": "agnews_count_science_technology__n7600__budget80__rep2",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "repeat": 2,
+      "budget": 80,
+      "sampling_key": "budget_followup_20261106|agnews_count_science_technology|rep2"
+    },
+    {
+      "job_id": "agnews_count_science_technology__n7600__budget320__rep2",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "repeat": 2,
+      "budget": 320,
+      "sampling_key": "budget_followup_20261106|agnews_count_science_technology|rep2"
+    },
+    {
+      "job_id": "agnews_count_science_technology__n7600__budget80__rep1",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "repeat": 1,
+      "budget": 80,
+      "sampling_key": "budget_followup_20261106|agnews_count_science_technology|rep1"
+    },
+    {
+      "job_id": "agnews_count_science_technology__n7600__budget320__rep1",
+      "workload_id": "agnews_count_science_technology",
+      "n": 7600,
+      "repeat": 1,
+      "budget": 320,
+      "sampling_key": "budget_followup_20261106|agnews_count_science_technology|rep1"
+    },
+    {
+      "job_id": "movie_count_positive_other_critics__n7600__budget80__rep1",
+      "workload_id": "movie_count_positive_other_critics",
+      "n": 7600,
+      "repeat": 1,
+      "budget": 80,
+      "sampling_key": "budget_followup_20261106|movie_count_positive_other_critics|rep1"
+    }
+  ],
+  "model_policy_executions": 16,
+  "eta": 0.05,
+  "delta": 0.05,
+  "candidates": [
+    8,
+    4,
+    2
+  ],
+  "probe_chunk": 16,
+  "reference_contract": "Unchanged native LOTUS parsed Boolean, including disclosed default=True behavior; strict-format validity separately retained.",
+  "physical_pairing": "Common feature/probe seed within workload/repeat across budgets, but all singleton and batch calls physically independent; no response reuse.",
+  "evaluation_references": "Existing independently executed complete native S1/S2 on the same original ON input, plus source gold. They are evaluation data only, never borrowed for calibration.",
+  "alpha_scope": "delta/3 across candidates within one predeclared budget/policy. No joint 95% guarantee across budgets/repeats/workloads and no certified post-hoc budget winner.",
+  "no_new_online_HG_no_new_models_or_thresholds": true,
+  "outcomes": "Report every job and failure, native COUNT and strict-format status, selected size, calibration/execution/full request and raw/cache-token bill, and fidelity/source errors. Two repeats are descriptive, not population inference or latency significance.",
+  "exact_iid_power_not_model_measurements": [
+    {
+      "budget": 80,
+      "maximum_disagreements_allowed": 0,
+      "iid_theoretical_pass_probabilities": {
+        "0.0": 1.0,
+        "0.005": 0.6696478204705644,
+        "0.01": 0.44752321376381093,
+        "0.02": 0.19864885008204095,
+        "0.03": 0.08744575691882732,
+        "0.04": 0.03816793317353633,
+        "0.05": 0.01651537438501365,
+        "0.1": 0.0002184745005283919
+      }
+    },
+    {
+      "budget": 320,
+      "maximum_disagreements_allowed": 7,
+      "iid_theoretical_pass_probabilities": {
+        "0.0": 1.0,
+        "0.005": 0.999753831328617,
+        "0.01": 0.9836971515307666,
+        "0.02": 0.6882095592286668,
+        "0.03": 0.25442938598833476,
+        "0.04": 0.05634090143161817,
+        "0.05": 0.008690489267240616,
+        "0.1": 3.770844646958048e-08
+      }
+    }
+  ],
+  "worst_case_scientific_requests": 134400,
+  "scope": "This is the final bounded experimental addition in the current round; no outcome-dependent extension."
+}
