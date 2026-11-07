@@ -1,30 +1,39 @@
-\section{What the Query and Check Preserve}
+\section{Reading a Result: Labels, References and Counts}
 \label{sec:objects}
-\subsection{Delivered Labels and Observed References}
-Let $T=(r_1,\ldots,r_N)$ be the prepared input relation. Each row occurrence has a distinct ID and its complete source-provided text field. A deployed plan labels every occurrence exactly once. A probe batch is an artificial context used for checking; probe batches can overlap and need not cover $T$ (Fig.~\ref{fig:execution}).
-
-\emph{Native delivery} means that the engine returns a complete Boolean vector and hence a COUNT. LOTUS's native parser searches for \texttt{true} before \texttt{false} after the first \texttt{Answer:}, or in the whole response if that prefix is absent; it defaults to \texttt{True} if neither occurs. We also apply an \emph{extra strict-format check}: only a standalone Boolean, optionally prefixed by \texttt{Answer:}, is valid. Its label is $s_i\in\{0,1,\bot\}$, where $\bot$ denotes invalid format. Thus a query can deliver a native COUNT while its strict COUNT is unavailable. We report format validity, actual defaults and execution exceptions separately.
-
-Preserved Qwen World S1 responses include \texttt{Answer: Sports} and \texttt{Answer: Sci/Tech}. Neither contains a Boolean word, so native parsing defaults to \texttt{True} while strict validity fails. The custom multirow operator instead requests a constrained JSON object mapping ordered local row IDs to \texttt{True}/\texttt{False} strings. All $k$ required labels must be valid; a missing or invalid label makes the complete vector and COUNT unavailable.
-
-S1 and S2 are two complete native singleton executions with fresh responses, used only to evaluate completed policies. Comparing with both exposes sensitivity to the observed reference execution. The checker pays for separate calibration singleton calls; neither S1/S2 nor source labels enter selection. Held-out validation also obtains fresh singleton/batch pairs. These are observed execution references, not ground truth. For a complete policy vector $b$, its native-reference row losses are
+\subsection{The Input and Two Evaluation Targets}
+Let $T=(r_1,\ldots,r_N)$ be the input to the semantic filter: $N$ is the number of rows after any structured filtering. Each row occurrence has a distinct ID. A complete plan returns $b_i\in\{0,1\}$ for every row $i$, where one means yes. The database, rather than the model, adds those labels to obtain its count $C_b$. Supplied dataset labels $g_i\in\{0,1\}$ give a separate source count $G$:
 \begin{equation}
- d_j(b)=\frac{1}{N}\sum_i\ind[b_i\ne n_i^{(j)}],\quad j=1,2,
+C_b=\sum_{i=1}^{N}b_i,\qquad G=\sum_{i=1}^{N}g_i.
+\label{eq:counts}
+\end{equation}
+For the running Sports execution, $N=2,048$, $C_b=519$ and $G=517$. Source accuracy asks how the plan compares with these supplied labels.
+
+Reference fidelity asks another question: how much did the plan change the labels produced by single-row execution? We call one-row-per-prompt execution \emph{singleton execution}. S1 and S2 are two complete singleton runs with fresh model responses. Their labels $s_i^{(1)}$ and $s_i^{(2)}$ are evaluation references. Both return 530 in the Sports case. The checker buys its own singleton calls; S1, S2 and source labels never enter size selection.
+
+\subsection{How Many Labels Changed?}
+The reference loss is the fraction of rows whose plan label differs from a reference:
+\begin{equation}
+d_j(b)=\frac{1}{N}\sum_{i=1}^{N}\ind[b_i\ne s_i^{(j)}],\qquad j=1,2.
 \label{eq:fidelity}
 \end{equation}
-where $n_i^{(j)}$ is reference $j$'s native label. We summarize the larger loss as $d_{\max}=\max(d_1,d_2)$. Strict-vector fidelity is a separate diagnostic, available only when both full strict vectors exist; a valid subset cannot supply a full-relation COUNT.
+The bracket contributes one for a disagreement and zero otherwise. In Sports, $d_1=d_2=17/2,048\approx.83\%$. We report $d_{\max}=\max(d_1,d_2)$ so that meeting a 5\% threshold means meeting it against both observed references. These references are model outputs; matching them does not establish agreement with source labels.
 
-\subsection{Source COUNT and Row Fidelity}
-Supplied source labels give a separate task target. Let $g_i$ be the fixed binary source label, $G=\sum_i g_i$ the source COUNT and $C_b=\sum_i b_i$ the plan's COUNT. We report source row error and two COUNT-error units:
+\subsection{How Far Is the Returned Count from the Source?}
+Row errors and COUNT errors answer different application needs. We report
 \begin{equation}
 \begin{aligned}
- e_{\rm row}&=\frac{\sum_i\ind[b_i\ne g_i]}{N},\\
- e_N&=\frac{|C_b-G|}{N},\quad e_G=\frac{|C_b-G|}{G}\ (G>0).
+e_{\rm row}&=\frac{\sum_i\ind[b_i\ne g_i]}{N},\\
+e_N&=\frac{|C_b-G|}{N},\qquad e_G=\frac{|C_b-G|}{G}\quad(G>0).
 \end{aligned}
 \label{eq:task}
 \end{equation}
-$G=0$ is reported separately. The additive error $e_N$ measures error as a fraction of the input; $e_G$ measures it relative to the source-positive count. Source annotations have not been newly human-verified.
+The first quantity counts wrong individual labels. The other two use the same absolute COUNT error, but divide by the input size or the number of source-positive rows. We report $G=0$ separately; $e_G$ can exceed 100\% when the absolute error is larger than $G$.
 
-False positives (FP) raise the count and false negatives (FN) lower it. They add in row error but can cancel in COUNT error: the respective numerators are $\mathrm{FP}+\mathrm{FN}$ and $|\mathrm{FP}-\mathrm{FN}|$. Similarly, $|C_b-C_{S_j}|/N\le d_j$: a realized row-fidelity bound also bounds additive COUNT change to that same realized reference. It does not establish source accuracy or a 5\% source-relative COUNT guarantee. Our COUNT controls use the additive tolerance $.05N$.
+In Sports, 18 rows are counted despite negative source labels (false positives), while 16 source-positive rows are missed (false negatives). There are $18+16=34$ wrong labels, but COUNT is high by only $18-16=2$. Thus $e_{\rm row}=1.66\%$, $e_N=.10\%$ and $e_G=.39\%$. Wrong labels can cancel in a count; they remain wrong if another query reuses those labels. Likewise, changing at most $d_jN$ reference labels can change that reference's count by at most $d_jN$, because each changed label adds or removes one. This bounds $|C_b-C_{S_j}|/N$ by $d_j$, rather than bounding source error. All COUNT controls below use the additive tolerance $.05N$.
 
-The check targets a different object: the probability $\varphi(k)$ that a focal batch label agrees with a singleton label under a specified random row/context sampler~\cite{nousdb}. A nominal bound on this probability relies on the check's oracle and independence assumptions. It is distinct from $d_j$ for one complete deployed partition; the calibration references and later S1/S2 can also vary. We therefore report calibration, independent validation and deployment separately. Changing to similarity grouping changes the sampler again. A realized above-tolerance loss would require interpretation under these assumptions; it would not by itself establish a false certificate or a NousDB bug.
+\subsection{Did the Engine Return a Complete Result?}
+We keep output delivery separate from both accuracy measures. \emph{Native delivery} means that the engine returns a Boolean for every row and hence a COUNT. LOTUS's native parser looks for \texttt{true} before \texttt{false} after the first \texttt{Answer:}, or in the whole response if that prefix is absent. It defaults to \texttt{True} when neither occurs. An additional \emph{strict-format check} accepts only a standalone Boolean, optionally prefixed by \texttt{Answer:}. For example, observed Qwen responses \texttt{Answer: Sports} and \texttt{Answer: Sci/Tech} trigger a native default but fail the strict check. A native count can therefore exist when a strict-format count is unavailable.
+
+The custom batch operator requests a JSON object containing all $k$ local row IDs and Boolean labels. Every required label must be valid; one missing or invalid label makes that batch incomplete. Strict-reference fidelity additionally requires a complete strict plan vector and complete strict reference vectors. Keeping only valid rows would change the query's input and count.
+
+Finally, a \emph{probe} is a test used to choose a size. Its artificial batch may overlap other probes, and only one designated label is scored. Deployment instead partitions $T$ and labels every occurrence exactly once. A probability bound for a sampled probe and a measured loss for a complete deployed result are therefore reported separately. Section~\ref{sec:budget} makes this distinction operational.

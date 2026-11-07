@@ -1,4 +1,4 @@
-# [Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost
+# [Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost
 
 This artifact connects sampled batch-fidelity checks to complete semantic COUNT results and full policy costs, including calibration, fallback, and native cache counters. It provides actual execution evidence for 36 main configurations and 16 separately frozen budget-follow-up policies, together with CPU reconstruction of the reported decisions and bills.
 
@@ -21,7 +21,7 @@ The [current scientific index](repro/real_engine_20261106/public/artifact_index.
 
 ## Rebuild the paper
 
-`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The ten-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
+`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The nine-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
 Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied aggregate CSVs. Generated table exports go to `regenerated/`, preserving the frozen editorial TeX. Plotting dependencies and source hashes are included in the clean source.
 
@@ -37,4 +37,4 @@ Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repo
 
 The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.
 
-All ten author names in the paper PDF link directly to the corresponding author-supplied ORCID records.
+The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All nine author names link to their supplied ORCID records.

@@ -1,26 +1,26 @@
-\begin{table*}[t]
+\begin{table*}[!t]
 \centering\small
-\caption{Current80-S in all 12 primary configurations ($N=2,048$, cache ON). $V_s$: strict-valid plan rows; $C/G$: native/source COUNT; $e_N,e_G$: absolute COUNT error divided by $N,G$; $d_1,d_2$: native row disagreement with S1/S2. Complete calibration-plus-execution costs are divided by S1. A missing strict COUNT does not mean native failure.}
+\caption{All 12 primary Current80-S executions ($N=2,048$, cache ON). Every case returns a native COUNT. The two count columns are integers, not a ratio. Strict-valid rows report output format; maximum reference loss compares the native result with both S1/S2. Requests and raw input-plus-output tokens include checking and full execution, divided by S1. Size one denotes fresh singleton fallback.}
 \label{tab:primary_results}
-\begin{tabular}{lrrrrrrrr}
+\begin{tabular}{lrrrrrrr}
 \toprule
-Workload & $k$ & \shortstack{Native\\delivery} & $V_s/N$ & $C/G$ & $e_N\,|\,e_G$ (\%) & $d_1\,|\,d_2$ (\%) & Calls/S1 & \shortstack{Raw tokens\\/S1} \\
+Workload & $k$ & \shortstack{Strict-valid\\rows / $N$} & \shortstack{Returned\\COUNT $C_b$} & \shortstack{Source\\COUNT $G$} & \shortstack{Max. reference\\loss (\%)} & Requests/S1 & \shortstack{Raw tokens\\/ S1} \\
 \midrule
-\multicolumn{9}{l}{\textit{Qwen}} \\
-Movie top & 1 & yes & 2048/2048 & 896/1,251 & 17.33 $\mid$ 28.38 & 0.15 $\mid$ 0.20 & 1.062 & 1.11 \\
-Movie other & 1 & yes & 2048/2048 & 986/1,418 & 21.09 $\mid$ 30.47 & 0.15 $\mid$ 0.15 & 1.062 & 1.11 \\
-AG World & 1 & yes & 114/2048 & 1,999/514 & 72.51 $\mid$ 288.91 & 0.00 $\mid$ 0.00 & 1.062 & 1.12 \\
-AG Sports & 1 & yes & 387/2048 & 1,750/517 & 60.21 $\mid$ 238.49 & 1.12 $\mid$ 0.98 & 1.062 & 1.12 \\
-AG Business & 1 & yes & 2040/2048 & 613/498 & 5.62 $\mid$ 23.09 & 0.10 $\mid$ 0.15 & 1.078 & 1.18 \\
-AG Sci/Tech & 1 & yes & 2025/2048 & 483/519 & 1.76 $\mid$ 6.94 & 0.34 $\mid$ 0.24 & 1.062 & 1.12 \\
+\multicolumn{8}{l}{\textit{Qwen}} \\
+Movie top & 1 & 2048/2,048 & 896 & 1,251 & 0.20 & 1.062 & 1.11 \\
+Movie other & 1 & 2048/2,048 & 986 & 1,418 & 0.15 & 1.062 & 1.11 \\
+AG World & 1 & 114/2,048 & 1,999 & 514 & 0.00 & 1.062 & 1.12 \\
+AG Sports & 1 & 387/2,048 & 1,750 & 517 & 1.12 & 1.062 & 1.12 \\
+AG Business & 1 & 2040/2,048 & 613 & 498 & 0.15 & 1.078 & 1.18 \\
+AG Sci/Tech & 1 & 2025/2,048 & 483 & 519 & 0.34 & 1.062 & 1.12 \\
 \midrule
-\multicolumn{9}{l}{\textit{GLM}} \\
-Movie top & 1 & yes & 2048/2048 & 1,025/1,251 & 11.04 $\mid$ 18.07 & 0.24 $\mid$ 0.24 & 1.062 & 1.12 \\
-Movie other & 1 & yes & 2048/2048 & 1,145/1,418 & 13.33 $\mid$ 19.25 & 0.39 $\mid$ 0.39 & 1.062 & 1.12 \\
-AG World & 1 & yes & 2045/2048 & 621/514 & 5.22 $\mid$ 20.82 & 0.24 $\mid$ 0.20 & 1.086 & 1.21 \\
-AG Sports & 8 & yes & 2048/2048 & 519/517 & 0.10 $\mid$ 0.39 & 0.83 $\mid$ 0.83 & 0.203 & 1.03 \\
-AG Business & 1 & yes & 2045/2048 & 845/498 & 16.94 $\mid$ 69.68 & 0.10 $\mid$ 0.10 & 1.102 & 1.25 \\
-AG Sci/Tech & 1 & yes & 2048/2048 & 499/519 & 0.98 $\mid$ 3.85 & 0.15 $\mid$ 0.05 & 1.062 & 1.12 \\
+\multicolumn{8}{l}{\textit{GLM}} \\
+Movie top & 1 & 2048/2,048 & 1,025 & 1,251 & 0.24 & 1.062 & 1.12 \\
+Movie other & 1 & 2048/2,048 & 1,145 & 1,418 & 0.39 & 1.062 & 1.12 \\
+AG World & 1 & 2045/2,048 & 621 & 514 & 0.24 & 1.086 & 1.21 \\
+AG Sports & 8 & 2048/2,048 & 519 & 517 & 0.83 & 0.203 & 1.03 \\
+AG Business & 1 & 2045/2,048 & 845 & 498 & 0.10 & 1.102 & 1.25 \\
+AG Sci/Tech & 1 & 2048/2,048 & 499 & 519 & 0.15 & 1.062 & 1.12 \\
 \bottomrule
 \end{tabular}
 \end{table*}

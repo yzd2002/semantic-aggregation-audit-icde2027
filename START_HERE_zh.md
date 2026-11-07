@@ -1,6 +1,6 @@
 # 从这里开始：当前论文与可复现材料
 
-当前论文：**[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost**。论文已包含十位作者，14页由12页正文、1页参考文献和1页AI披露组成。
+当前论文：**[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost**。论文已包含九位作者，14页由12页正文、1页参考文献和1页AI披露组成。
 
 - [当前PDF](paper/current/ICDE2027_Semantic_COUNT.pdf)
 - [clean source ZIP](paper/current/paper_source.zip)与[可编辑TeX](paper/current/source/draft/main.tex)

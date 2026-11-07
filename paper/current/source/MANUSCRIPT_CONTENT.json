@@ -1,6 +1,6 @@
 {
-  "title": "[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost",
-  "abstract": "Putting several rows in one language-model prompt can reduce requests for a semantic filter and COUNT, but checking the batch plan also costs work. We empirically audit an existing current-input fidelity checker by connecting its sampled comparisons to the complete query result and policy bill. The study uses native LOTUS filtering and a declared custom batch operator in 36 configurations over six workloads, two text domains and two models, with 16 additional policies comparing checking budgets. Our joint benefit criterion requires a delivered batch result, at most 5% row disagreement with each of two separate singleton executions, fewer requests and fewer raw input-plus-output tokens. Unchecked random and similarity batches meet it in one and two of the 12 primary configurations, respectively; the checked policy meets it in none. Source COUNT accuracy is a separate outcome. The sole accepted deployment meets observed fidelity tolerance, but calibration turns its token saving into a 3.01% increase, despite 79.69% fewer requests. Raising the budget from 80 to 320 probes leaves every follow-up policy in singleton fallback with a higher bill. All 48 cache-enabled fixed-plan executions use less raw input but more uncached input than their singleton baselines; all 24 cache-disabled executions use less of both. These cache rankings apply to the declared repeated-predicate representation. Distinguishing delivered labels, output format, reference fidelity, source COUNT and complete costs makes the bounded plan decisions reproducible.",
+  "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
+  "abstract": "Semantic COUNT applies a language-model filter to rows and counts the positive labels. Batching several rows in one request can save calls, but an optimizer may first pay to check whether their labels change. We audit that complete decision by following an existing fidelity check through size selection, full execution and fallback, and measuring the returned result and the cost of every stage. Native LOTUS and a declared custom batch operator are evaluated in 36 configurations over six workloads, two domains and two models, with 16 further policies comparing probe budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement remains below 5%; nevertheless, checking turns the deployment's token saving into a 3.01% increase despite 79.69% fewer requests. Across 12 primary configurations, unchecked random and similarity batches jointly preserve both observed references and reduce requests and raw tokens in one and two cases; the checked policy does so in none. Larger probe budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use less raw input but more uncached input than their singleton baselines, under the declared repeated-predicate representation. The artifact makes these result targets and complete-cost comparisons reproducible.",
   "authors": [
     "Zida Yang",
     "Kangzheng Peng",
@@ -10,10 +10,9 @@
     "Zijian Wang",
     "Jiexin Zheng",
     "Cong Wang",
-    "Zhangxuan Shi",
     "Xiaolong Shi"
   ],
-  "author_count": 10,
+  "author_count": 9,
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
   "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} OpenAI Codex substantially assisted research design, literature verification, experiment implementation, data processing, analysis, drafting and revision of all sections, and code for the original figures and reproducibility checks. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat produced the new experimental judgments; the retained earlier experiments additionally used SmolLM2-1.7B-Instruct. Their inference roles, prompts and native configurations are recorded in the artifact. The human authors remain responsible for the correctness, originality, attribution and interpretation of the work. AI systems are not authors.\n",
   "pages": 14,
@@ -27,5 +26,5 @@
       14
     ]
   },
-  "frozen_pdf_sha256": "1d6136ad731e4988b6b1a6335609d440245076003967af49f31c2e576ffd8368"
+  "frozen_pdf_sha256": "684e500f206bdbf3a0d114236fd0fca5fb61ce01f8d4615de92a4a4750c36b48"
 }

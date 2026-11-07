@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\small
+\caption{Source-label controls across all 36 configurations (18 per model/plan). $E$: eligible plan vectors; C/R/D: accepted raw-COUNT/joint-strata-row/direct-HG-row gates. Main eligibility requires complete strict plan labels, not strict singleton references. Native columns are post-hoc sensitivity with the same sample and fixed look. Each method/pair has nominal 95\% scope at additive $.05N$; columns are not simultaneous certificates.}
+\label{tab:finite_results}
+\begin{tabular}{llrrrr}
+\toprule
+Model & Plan & Canonical strict $E/18$ & Strict C/R/D & Native sensitivity $E/18$ & Native C/R/D \\
+\midrule
+Qwen & Random8 & 18/18 & 0/0/0 & 18/18 & 0/0/0 \\
+Qwen & Similar8 & 18/18 & 0/0/0 & 18/18 & 0/0/0 \\
+Qwen & Current80-S & 10/18 & 0/0/0 & 18/18 & 3/0/0 \\
+\midrule
+GLM & Random8 & 18/18 & 10/1/1 & 18/18 & 10/1/1 \\
+GLM & Similar8 & 18/18 & 8/1/1 & 18/18 & 8/1/1 \\
+GLM & Current80-S & 16/18 & 6/1/1 & 18/18 & 6/1/1 \\
+\bottomrule
+\end{tabular}
+\end{table*}

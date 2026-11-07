@@ -1,9 +1,9 @@
 \section{Experimental Design and Cost Accounting}
 \label{sec:design}
 \subsection{Queries, Inputs and Configurations}
-A \emph{workload} pairs a semantic predicate with its prepared input. A \emph{configuration} fixes that workload, input size, model and cache setting. The primary matrix is six workloads $\times$ two models = 12 configurations. Each secondary family is three anchors $\times$ two sizes $\times$ two models = 12 more (36 total). The separate follow-up is two workloads $\times$ two models $\times$ two budgets $\times$ two repeats = 16 policies, or eight budget pairs (Table~\ref{tab:matrix}).
+The study separates a 12-configuration primary comparison, 24 size/cache extensions and eight paired budget comparisons (16 complete policies). Each main configuration executes S1, S2, Random8, Similar8 and Current80-S. A \emph{workload} pairs a semantic predicate with its prepared input. A \emph{configuration} fixes that workload, input size, model and cache setting. The primary matrix is six workloads $\times$ two models = 12 configurations. Each secondary family is three anchors $\times$ two sizes $\times$ two models = 12 more (36 total). The separate follow-up is two workloads $\times$ two models $\times$ two budgets $\times$ two repeats = 16 policies, or eight budget pairs (Table~\ref{tab:matrix}).
 
-\begin{table*}[t]
+\begin{table*}[!t]
 \caption{Study design. Every listed workload/size/cache combination uses both Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat. $N$ counts rows entering the semantic filter after structured filtering. The follow-up crosses two workloads, two models, two budgets and two physical repeats.}
 \label{tab:matrix}
 \centering\small
@@ -26,9 +26,9 @@ Throughout, $N$ counts rows entering the semantic filter. The unchanged Q3 integ
 
 AG News uses a pinned, duplicate-free, feature-hash-ordered 7,600-row test split~\cite{agnews}. Four predicates---World, Sports, Business and Sci/Tech---share this corpus. Each frozen predicate asks for a four-topic classification and then membership in its named topic; Movie uses one clearly-positive question. We retain the complete supplied \texttt{text}/\texttt{reviewText} fields. They are not claimed to be complete original articles. Acquisition hashes and source notices are retained; AG's license remains unknown.
 
-For example, the frozen World predicate is:
+The frozen Sports predicate used in the running example is:
 \begin{quote}\small
-Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is World (international affairs, politics, or world events). News item: \{text\}
+Classify the news item by its primary topic among World, Sports, Business, and Sci/Tech. Determine if its primary topic is Sports (sports or athletic competition). News item: \{text\}
 \end{quote}
 Native LOTUS also specifies: \texttt{Answer: <Your answer here. The answer should be either True or False>}. The conflicting topic-word responses are observed outcomes, not a matched causal test of this wording.
 
@@ -44,4 +44,4 @@ Every configuration executes separate S1/S2 references, Random8, Similar8 and Cu
 \subsection{Follow-Up and Runtime Settings}
 The follow-up fixes AG Sci/Tech and a feature-hash-selected Movie other-critics view, $N=7,600$, cache ON, two models, two budgets and two repeats: 16 complete policies. The trigger was the first Qwen AG Sci/Tech result at $N=7,600$: Current80-S fell back despite strict-valid calibration references. Sci/Tech was an existing anchor; the Movie view was chosen by the minimum seeded hash of the two existing workload IDs, yielding other critics. A fourfold budget tests the zero-versus-seven-allowed-disagreement contrast. The follow-up was frozen before its own calls. Common feature/probe seeds pair the inputs, while all responses and deployments are physically new. Existing S1/S2 are evaluation-only. The repeats are descriptive observations on fixed inputs, not independent datasets.
 
-Each model uses one NVIDIA GeForce RTX 5090 (32~GB; 32,607~MiB reported), PyTorch~2.8.0+cu128, vLLM~0.10.2 and Transformers~4.57.1. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat~\cite{qwen,glm} run native bfloat16 (BF16) inference with temperature zero, an 8,192-token window, eager execution, at most 32 active sequences and native/batch output caps 32/128. Effective classes, tokenizer/runtime hashes and actual cache-reset receipts are retained. Raw returns are stored before parsing. There is no automatic retry, model replacement, post-label resampling or selective deletion; failures and unknown costs remain explicit.
+Each model uses one NVIDIA GeForce RTX 5090 (32~GB; 32,607~MiB reported), PyTorch~2.8.0+cu128, vLLM~0.10.2 and Transformers~4.57.1. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat~\cite{qwen,glm} run native bfloat16 (BF16) inference with temperature zero, an 8,192-token window, eager execution, at most 32 active sequences and native/batch output caps 32/128. Effective classes, tokenizer/runtime hashes and actual cache-reset receipts are retained. The longest tested eight-row prompts use 2,260 Qwen and 2,173 GLM tokens; each plus 128 output tokens fits the window, and a guard checks every request. Raw returns are stored before parsing. There is no automatic retry, model replacement, post-label resampling or selective deletion; failures and unknown costs remain explicit.

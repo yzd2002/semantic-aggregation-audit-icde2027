@@ -1,10 +1,10 @@
-\begin{table*}[t]
+\begin{table*}[!t]
 \centering\small
 \caption{Every paired Current80-N$\to$Current320-N follow-up ($N=7,600$, cache ON). $R$: complete requests; $d_{\max}$: maximum native row disagreement with S1/S2. Raw-token and uncached-input ratios compare complete 320-probe with 80-probe policies. Repeats are descriptive; each budget has its own nominal scope.}
 \label{tab:budget_results}
 \begin{tabular}{llrrrrrr}
 \toprule
-Model / workload & Rep. & $k$ & \shortstack{Calibration\\calls} & Full $R$ & \shortstack{Raw tokens\\$320/80$} & \shortstack{Uncached input\\$320/80$} & $d_{\max}$ (\%) \\
+Model / workload & Rep. & $k$ & \shortstack{Checking\\calls} & Full $R$ & \shortstack{Raw tokens\\$320/80$} & \shortstack{Uncached input\\$320/80$} & $d_{\max}$ (\%) \\
 \midrule
 Qwen / AG Sci/Tech & 1 & 1$\to$1 & 160$\to$608 & 7,760$\to$8,208 & 1.11 & 1.13 & 0.41$\to$0.36 \\
 Qwen / AG Sci/Tech & 2 & 1$\to$1 & 144$\to$656 & 7,744$\to$8,256 & 1.11 & 1.12 & 0.45$\to$0.28 \\

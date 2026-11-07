@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\small
+\caption{Every paired Current80-N$\to$Current320-N follow-up ($N=7,600$, cache ON). $R$: complete requests; $d_{\max}$: maximum native row disagreement with S1/S2. Raw-token and uncached-input ratios compare complete 320-probe with 80-probe policies. Repeats are descriptive; each budget has its own nominal scope.}
+\label{tab:budget_results}
+\begin{tabular}{llrrrrrr}
+\toprule
+Model / workload & Rep. & $k$ & \shortstack{Calibration\\calls} & Full $R$ & \shortstack{Raw tokens\\$320/80$} & \shortstack{Uncached input\\$320/80$} & $d_{\max}$ (\%) \\
+\midrule
+Qwen / AG Sci/Tech & 1 & 1$\to$1 & 160$\to$608 & 7,760$\to$8,208 & 1.11 & 1.13 & 0.41$\to$0.36 \\
+Qwen / AG Sci/Tech & 2 & 1$\to$1 & 144$\to$656 & 7,744$\to$8,256 & 1.11 & 1.12 & 0.45$\to$0.28 \\
+Qwen / Movie other & 1 & 1$\to$1 & 128$\to$464 & 7,728$\to$8,064 & 1.07 & 1.09 & 0.17$\to$0.17 \\
+Qwen / Movie other & 2 & 1$\to$1 & 144$\to$640 & 7,744$\to$8,240 & 1.12 & 1.17 & 0.14$\to$0.20 \\
+GLM / AG Sci/Tech & 1 & 1$\to$1 & 176$\to$672 & 7,776$\to$8,272 & 1.16 & 1.21 & 0.16$\to$0.05 \\
+GLM / AG Sci/Tech & 2 & 1$\to$1 & 144$\to$736 & 7,744$\to$8,336 & 1.19 & 1.25 & 0.09$\to$0.08 \\
+GLM / Movie other & 1 & 1$\to$1 & 128$\to$464 & 7,728$\to$8,064 & 1.07 & 1.10 & 0.20$\to$0.20 \\
+GLM / Movie other & 2 & 1$\to$1 & 176$\to$672 & 7,776$\to$8,272 & 1.15 & 1.23 & 0.20$\to$0.14 \\
+\bottomrule
+\end{tabular}
+\end{table*}

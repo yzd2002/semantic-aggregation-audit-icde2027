@@ -1,14 +1,14 @@
-\begin{table*}[t]
+\begin{table*}[!t]
 \centering\small
 \caption{Three policies over the same 12 primary configurations. Benefit requires native delivery, $k>1$, both reference losses $\le.05$, fewer requests and fewer raw input-plus-output tokens than S1. Ranges use each case's S1. Strict benefit retains the 12-case denominator; it is unavailable if a full strict plan or S1/S2 reference is missing. For the fixed plans, all six unavailable cases arise from incomplete strict references. Fixed plans have no certificate; source correctness is separate.}
 \label{tab:policy_summary}
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrr}
 \toprule
-Plan & Native delivery & Native $d_{\max}$ (\%) & Calls/S1 & Raw tokens/S1 & Native benefit & \shortstack{Strict benefit;\\unavailable of 12} \\
+Plan & Max. reference loss (\%) & Calls/S1 & Raw tokens/S1 & Native benefit & \shortstack{Strict benefit;\\unavailable of 12} \\
 \midrule
-Random8 & 12/12 & 0.83--55.71 & 0.125--0.125 & 0.640--0.761 & 1/12 & 1/12; 6 \\
-Similar8 & 12/12 & 0.63--59.47 & 0.125--0.125 & 0.640--0.761 & 2/12 & 1/12; 6 \\
-Current80-S & 12/12 & 0.00--1.12 & 0.203--1.102 & 1.030--1.251 & 0/12 & 0/12; 6 \\
+Random8 & 0.83--55.71 & 0.125--0.125 & 0.640--0.761 & 1/12 & 1/12; 6 \\
+Similar8 & 0.63--59.47 & 0.125--0.125 & 0.640--0.761 & 2/12 & 1/12; 6 \\
+Current80-S & 0.00--1.12 & 0.203--1.102 & 1.030--1.251 & 0/12 & 0/12; 6 \\
 \bottomrule
 \end{tabular}
 \end{table*}

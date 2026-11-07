@@ -1,16 +1,16 @@
 {
   "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
-  "created_utc": "2026-11-06T21:35:29.672244+00:00",
-  "freeze_sha256": "568d1d2a6ceb1985767b33e0e23c68eb3d347e3351d6a0bc1224b1f92c09c4e8",
-  "frozen_pdf": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/manuscript/draft/main.pdf",
-  "frozen_pdf_sha256": "1d6136ad731e4988b6b1a6335609d440245076003967af49f31c2e576ffd8368",
-  "source_zip": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/paper_source.zip",
-  "source_zip_sha256": "c89e753fefe3b7709d8f671a4da4c5c491c2f7029c50e8dd3821665500662deb",
-  "clean_source": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/clean_source",
-  "actually_unpacked_source": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/unpacked/paper_source",
-  "rebuilt_pdf": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
-  "rebuilt_pdf_sha256": "6d35c059c7a8184981c26b78ab4e5ba50962293f5276474396b5c247c4e76892",
-  "author_count": 10,
+  "created_utc": "2026-11-07T11:39:48.924966+00:00",
+  "freeze_sha256": "eb65e67c23ed6ca92d8ac4632999d858468432741ec6d67db95142ea896362c8",
+  "frozen_pdf": "/home/gpu/IntentSat2S_readability_v3_20261107/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "684e500f206bdbf3a0d114236fd0fca5fb61ce01f8d4615de92a4a4750c36b48",
+  "source_zip": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/paper_source.zip",
+  "source_zip_sha256": "93eff84924e3e2529df1bd2fd39a663a0c7c1693f67c9a07eb3f89c3573e8a39",
+  "clean_source": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "6c9bf4c5bcdc0ff741e64ea96b4671058280125f1a1138b189d0c2507e9a7d58",
+  "author_count": 9,
   "authors": [
     "Zida Yang",
     "Kangzheng Peng",
@@ -20,11 +20,10 @@
     "Zijian Wang",
     "Jiexin Zheng",
     "Cong Wang",
-    "Zhangxuan Shi",
     "Xiaolong Shi"
   ],
-  "title": "[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost",
-  "abstract": "Putting several rows in one language-model prompt can reduce requests for a semantic filter and COUNT, but checking the batch plan also costs work. We empirically audit an existing current-input fidelity checker by connecting its sampled comparisons to the complete query result and policy bill. The study uses native LOTUS filtering and a declared custom batch operator in 36 configurations over six workloads, two text domains and two models, with 16 additional policies comparing checking budgets. Our joint benefit criterion requires a delivered batch result, at most 5% row disagreement with each of two separate singleton executions, fewer requests and fewer raw input-plus-output tokens. Unchecked random and similarity batches meet it in one and two of the 12 primary configurations, respectively; the checked policy meets it in none. Source COUNT accuracy is a separate outcome. The sole accepted deployment meets observed fidelity tolerance, but calibration turns its token saving into a 3.01% increase, despite 79.69% fewer requests. Raising the budget from 80 to 320 probes leaves every follow-up policy in singleton fallback with a higher bill. All 48 cache-enabled fixed-plan executions use less raw input but more uncached input than their singleton baselines; all 24 cache-disabled executions use less of both. These cache rankings apply to the declared repeated-predicate representation. Distinguishing delivered labels, output format, reference fidelity, source COUNT and complete costs makes the bounded plan decisions reproducible.",
+  "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
+  "abstract": "Semantic COUNT applies a language-model filter to rows and counts the positive labels. Batching several rows in one request can save calls, but an optimizer may first pay to check whether their labels change. We audit that complete decision by following an existing fidelity check through size selection, full execution and fallback, and measuring the returned result and the cost of every stage. Native LOTUS and a declared custom batch operator are evaluated in 36 configurations over six workloads, two domains and two models, with 16 further policies comparing probe budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement remains below 5%; nevertheless, checking turns the deployment's token saving into a 3.01% increase despite 79.69% fewer requests. Across 12 primary configurations, unchecked random and similarity batches jointly preserve both observed references and reduce requests and raw tokens in one and two cases; the checked policy does so in none. Larger probe budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use less raw input but more uncached input than their singleton baselines, under the declared repeated-predicate representation. The artifact makes these result targets and complete-cost comparisons reproducible.",
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
   "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} OpenAI Codex substantially assisted research design, literature verification, experiment implementation, data processing, analysis, drafting and revision of all sections, and code for the original figures and reproducibility checks. Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat produced the new experimental judgments; the retained earlier experiments additionally used SmolLM2-1.7B-Instruct. Their inference roles, prompts and native configurations are recorded in the artifact. The human authors remain responsible for the correctness, originality, attribution and interpretation of the work. AI systems are not authors.\n",
   "pages": 14,
@@ -39,15 +38,15 @@
       14
     ]
   },
-  "four_figure_render_comparison": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
-  "page_text_render_comparison": "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
   "all_page_text_and_render_content_equal": true,
   "active_source_or_scientific_data_edited": false,
   "new_GPU_or_experiment": false,
   "source_default_ordinary_pdflatex": true,
   "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
   "logs": [
-    "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
-    "/home/gpu/IntentSat2S_ORCID_FINAL_20261107/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
+    "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_readability_v3_20261107/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
   ]
 }

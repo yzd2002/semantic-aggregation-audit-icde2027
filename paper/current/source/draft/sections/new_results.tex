@@ -1,25 +1,14 @@
-\section{Live Execution Results}
+\section{Does the Checked Policy Improve the Complete Query?}
 \label{sec:results}
-All 36 main configurations and 16 follow-up policies completed. Figure~\ref{fig:primary} summarizes the primary matrix. The main checker selected a batch size above one only for GLM Sports at $N=2,048$, cache ON. We follow that execution from checking to the returned count and full bill before examining the remaining outcomes.
+All 36 main configurations and 16 follow-up policies completed. Figure~\ref{fig:primary} summarizes the primary matrix.\input{sections/primary_figure.tex} The main checker selected a batch size above one only for GLM Sports at $N=2,048$, cache ON. We follow that execution from checking to the returned count and full bill before examining the remaining outcomes.
 
 \subsection{Walkthrough: A Passed Check and Its Full Bill}
 \label{sec:sports_walkthrough}
-For GLM Sports, Current80-S selected $k=8$ after all 80 calibration comparisons agreed. The separately seeded validation then found two mismatches in 80 fresh comparisons (.025). Deployment labeled all 2,048 rows in 256 disjoint batches and disagreed with each complete S1/S2 reference on 17 rows (.00830). These probe and partition fractions have different denominators; all meet the .05 observed tolerance here. The accepted execution supplies no observed certificate-transport failure.
+For GLM Sports, Current80-S selected $k=8$ after all 80 calibration comparisons agreed. The separately seeded validation then found two mismatches in 80 fresh comparisons (2.5\%). Deployment labeled all 2,048 rows in 256 disjoint batches and disagreed with each complete S1/S2 reference on 17 rows (.83\%). The 80/80 checking result, the 2/80 validation result and the 17/2,048 deployment result answer separate questions. Validation is evaluation-only; it changes neither selection nor the policy bill.
 
-The returned count was 519 against source $G=517$, giving $e_N=.10\%$ and $e_G=.39\%$, with 1.66\% source row error. S1 itself had 2,025/2,048 correct source labels. This is therefore a usable-reference case for studying costs, independently of the Qwen failure panels below. The separately executed Similar8 plan had 13/2,048 reference mismatches (.00635); its changed grouping is an observed alternative, not an additional certificate from random probes.
+The returned count was 519 against source $G=517$, giving $e_N=.10\%$ and $e_G=.39\%$, with 1.66\% source row error, as worked through in Section~\ref{sec:objects}. S1 itself had 2,025/2,048 correct source labels. This provides a usable-reference case for separating fidelity from cost. The separately executed Similar8 plan had 13/2,048 reference mismatches (.63\%); its changed grouping is an observed alternative, not an additional certificate from random probes.
 
 Deployment alone used 256 requests and 255,425 raw input-plus-output tokens. Calibration added 160 requests and 93,120 tokens. The complete policy thus used 416 requests and 348,545 tokens, compared with S1's 2,048 requests and 338,365 tokens. Requests fell by 79.69\%, but raw tokens rose by 3.01\%. The separately executed Random8 baseline had the same observed deployment-only token bill, .754880 times S1. Charging the check consumes that saving, so the checked plan fails the joint benefit criterion despite meeting observed fidelity tolerance.
-
-\subsection{Reference Fidelity and Source COUNT Are Different}
-\label{sec:quality_results}
-Table~\ref{tab:reference_quality} reports S1's source quality for every primary workload. Qwen World and Sports triggered default-True parsing on 1,936 and 1,664 of 2,048 rows. Their native counts were 1,999 versus source $G=514$, and 1,741 versus $G=517$; source row errors were 74.37\% and 60.74\%. A post-hoc World S1 inspection found normal \texttt{stop} termination on all 2,048 calls with only 4--6 output tokens. These observations characterize the frozen two-step query wording, model and native parser together; no matched rewrite isolates the cause. Strict-format checking exposes the format issue while native COUNT remains delivered. Preserving such a reference would also preserve its task errors.
-
-\input{results/reference_quality.tex}
-\input{results/primary_results.tex}
-
-All 12 primary Current80-S policies delivered native counts, but only six had complete strict vectors (Table~\ref{tab:primary_results}). The native joint benefit result is 0/12. The strict-vector sensitivity has zero satisfied, six evaluated-negative and six unavailable cases. Unavailable strict COUNT is distinct from native query failure.
-
-The unchanged SemBench Q3 integration case illustrates the denominator distinction. Its 2,000-row demonstration relation sends $N=120$ rows to the semantic filter, with $G=14$. Qwen returns 7 and GLM 9 under both cache settings, without defaults and with complete strict outputs. The absolute COUNT errors are seven and five rows: $e_N=5.83\%$ and 4.17\%, but $e_G=50.00\%$ and 35.71\%. These integration measurements are separate from the larger prepared-relation variants.
 
 \subsection{Whole-Policy Benefit Across the Primary Matrix}
 \label{sec:bill_results}
@@ -28,14 +17,24 @@ Figure~\ref{fig:primary} separates native-reference loss, source COUNT error and
 \input{results/primary_policy_summary.tex}
 
 
-Current80-S meets the criterion in 0/12 primary configurations, including 0/10 outside the two Qwen failure panels. The other 35 main configurations select fresh singleton fallback and pay for calibration as well as their new complete execution. No secondary size/cache configuration adds a non-singleton selection. Sports was not a preselected scale anchor, so these measurements do not identify its break-even size outside $N=2,048$.
+Current80-S meets the criterion in 0/12 primary configurations, including 0/10 outside the two Qwen workloads with severe default-True parsing. The other 35 main configurations select fresh singleton fallback and pay for calibration as well as their new complete execution. No secondary size/cache configuration adds a non-singleton selection. Sports was not a preselected scale anchor, so these measurements do not identify its break-even size outside $N=2,048$.
+
+\subsection{Reference Fidelity and Source COUNT Are Different}
+\label{sec:quality_results}
+The supplied labels also let us evaluate the singleton reference itself; complete per-workload baseline readouts are retained in the artifact. Qwen World and Sports triggered default-True parsing on 1,936 and 1,664 of 2,048 rows. Their native counts were 1,999 versus source $G=514$, and 1,741 versus $G=517$; source row errors were 74.37\% and 60.74\%. A post-hoc World S1 inspection found normal \texttt{stop} termination on all 2,048 calls with only 4--6 output tokens. These observations characterize the frozen two-step query wording, model and native parser together; no matched rewrite isolates the cause. Strict-format checking exposes the format issue while native COUNT remains delivered. Preserving such a reference would also preserve its task errors.
+
+\input{results/primary_results.tex}
+
+All 12 primary Current80-S policies delivered native counts, but only six had complete strict vectors (Table~\ref{tab:primary_results}). The native joint benefit result is 0/12. The strict-vector sensitivity has zero satisfied, six evaluated-negative and six unavailable cases. Unavailable strict COUNT is distinct from native query failure.
+
+The unchanged SemBench Q3 integration case illustrates the denominator distinction. Its 2,000-row demonstration relation sends $N=120$ rows to the semantic filter, with $G=14$. Qwen returns 7 and GLM 9 under both cache settings, without defaults and with complete strict outputs. The absolute COUNT errors are seven and five rows: $e_N=5.83\%$ and 4.17\%, but $e_G=50.00\%$ and 35.71\%. These integration measurements are separate from the larger prepared-relation variants.
 
 \subsection{More Probes, the Same Fallback Decisions}
 \label{sec:budget_results}
 The follow-up holds the native-Boolean agreement rule fixed while comparing Current80-N with Current320-N. All 16 policies select singleton fallback and deliver native COUNT. Twelve have complete strict vectors; four have unavailable strict counts. Table~\ref{tab:budget_results} gives every paired comparison, and Fig.~\ref{fig:budget} separates checking from execution.
 
 \input{results/budget_results.tex}
-\begin{figure*}[t]
+\begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{budget_full_bill.pdf}
 \caption{All 16 native-rule follow-up policies ($N=7,600$, cache ON). Each pair compares 80 and 320 probes within one descriptive physical repeat. Bars include fresh calibration and complete execution, divided by the original S1 input-plus-output token bill for that input. Every selected size is one. These measured costs are distinct from the hypothetical IID acceptance-power calculation.}
@@ -44,19 +43,18 @@ The follow-up holds the native-Boolean agreement rule fixed while comparing Curr
 
 In all eight pairs, 320 probes increase full requests by 4.35--7.64\%, raw tokens by 6.82--19.20\%, and API uncached input by 8.69--25.46\%. Neither tested budget improves the deployment choice on these anchors. The hypothetical IID power calculation in Section~\ref{sec:budget} does not estimate this panel's mismatch probability. Rejecting a candidate means that the policy did not certify it, not that every possible batch is unsafe.
 
-One recorded pair makes the stopping bill concrete: Qwen AG Sci/Tech, $N=7,600$, cache ON, repeat~1. In candidate order $8,4,2$, the 80-probe policy issues/scores 16, 16 and 48 batches, with 15, 15 and 47 agreements. Its first decisive disagreement is at probe 14, 13 and 33, leaving billed chunk tails of 2, 3 and 15 requests. At 320 probes the corresponding issued/scored counts are 48, 112 and 128, with 37, 104 and 120 agreements; the eighth disagreement occurs at 39, 101 and 119, leaving tails of 9, 11 and 9. All issued trials enter the recorded counts. Calibration is therefore $80+80=160$ versus $320+288=608$ requests. Both deploy 7,600 fresh singletons, yielding 7,760 versus 8,208 total requests. Table~\ref{tab:budget_worked_pair} gives the absolute token receipts; phase-level receipts remain in the artifact.
+One recorded Qwen AG Sci/Tech pair shows where the extra requests arise ($N=7,600$, cache ON, repeat~1). At budget 80, the three candidates issue 16, 16 and 48 batch probes; the 80 singleton references are reused across them. Checking therefore costs $80+16+16+48=160$ requests. At budget 320 it costs $320+48+112+128=608$. Both policies then obtain 7,600 fresh singleton labels. Table~\ref{tab:budget_worked_pair} places this request arithmetic next to the exact token receipts. In the 80-probe first candidate, the first failure is at trial 14, but the issued 16-request chunk is fully scored and billed; detailed stopping prefixes remain in the artifact.
 
 \input{results/budget_worked_pair.tex}
 
-Table~\ref{tab:rejection_evidence} records the stop evidence. The main study observes 106 candidate prefixes (105 rejections, one pass); the follow-up observes 48 rejections. At every rejected candidate prefix, accumulated native-Boolean mismatches alone make passing impossible. Qwen also has 31 probe-level strict-only format flags, classified after excluding batch failures and native mismatches. These flags do not mean that format alone caused a candidate stop. No issued probe has a batch-contract failure. The two lower candidates after the Sports pass remain unobserved. Stopped prefixes estimate neither population mismatch probability nor a false-rejection rate.
+The retained stopping-audit CSV records every observed candidate prefix. The main study observes 106 candidate prefixes (105 rejections, one pass); the follow-up observes 48 rejections. At every rejected candidate prefix, accumulated native-Boolean mismatches alone make passing impossible. Qwen also has 31 probe-level strict-only format flags, classified after excluding batch failures and native mismatches. These flags do not mean that format alone caused a candidate stop. No issued probe has a batch-contract failure. The two lower candidates after the Sports pass remain unobserved. Stopped prefixes estimate neither population mismatch probability nor a false-rejection rate.
 
-\input{results/observed_rejection_evidence.tex}
 
 \subsection{Cache Counters Reverse the Input-Cost Ranking}
 \label{sec:cache_results}
 All 48 cache-ON fixed-plan executions (24 configurations, two plans) use less raw input but more API uncached input than their own S1. Qwen's ratios are .626--.739 for raw input versus 1.083--1.157 for uncached input; GLM's are .649--.758 versus 1.142--1.285. All 24 cache-OFF fixed-plan executions favor batching on both counters. Table~\ref{tab:cache_costs} keeps raw input, output and uncached input separate, while Fig.~\ref{fig:cache} shows matched examples.
 
-\begin{figure*}[t]
+\begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{cache_input_cost_objects.pdf}
 \caption{Raw versus API uncached input for Movie top and AG Sci/Tech at $N=7,600$. Lines connect matched cache-OFF/ON executions under each model. Ratios use the corresponding singleton S1 counter; one marks equal cost. Outer Random8 circles and inner Similar8 squares show coincident measured counters without jitter. Complete-matrix ranges are in Table~\ref{tab:cache_costs}. Uncached input is a prefill-work proxy.}
@@ -64,20 +62,5 @@ All 48 cache-ON fixed-plan executions (24 configurations, two plans) use less ra
 \end{figure*}
 \input{results/cache_cost_ranges.tex}
 
-All 24 matched anchor/size/model/fixed-plan comparisons have identical raw input counts with cache ON and OFF. Since $U=P-K$, the ON singleton's cached-token advantage exceeds its extra raw input: $K_{S1}-K_{\rm batch}>P_{S1}-P_{\rm batch}$. This explains how lower batch input can coexist with higher uncached input. A raw-input-only cost model cannot reproduce that ranking. Output ratios remain separate: .974--1.106 for Qwen and approximately .850 for GLM with cache ON. These are counter rankings for the declared representation, not universal time or monetary advantages.
+All 24 matched anchor/size/model/fixed-plan comparisons have identical raw input counts with cache ON and OFF. In the running cache-ON Sports case, S1 writes 328,125 input tokens and reuses 131,008, leaving $U=197,117$. Random8 writes fewer inputs (246,721) but reuses only 20,400, leaving $U=226,321$. Its smaller prompt total therefore requires more uncached input. This comparison concerns input processing; the complete raw-token bill also includes output tokens. Output ratios remain separate: .974--1.106 for Qwen and approximately .850 for GLM with cache ON. These are counter rankings for the declared representation, not universal time or monetary advantages.
 
-\subsection{Classical Controls Can Accept COUNT Without Rows}
-\label{sec:audit_results}
-Under the main strict-vector eligibility rule, the source-label raw-COUNT gate accepts 24/98 complete plan/configuration pairs; both the joint-strata and direct HG row gates accept 3/98 (Table~\ref{tab:finite_results}). The 21 additional COUNT passes concern aggregate accuracy, not reusable row labels. No accepted source COUNT falls outside additive $.05N$ tolerance in these observed vectors. The post-hoc native-vector sensitivity evaluates 108 pairs, accepting 27 COUNTs and three row-gate passes. Its three extra COUNT passes are Qwen fallback vectors; it changes neither calibration nor deployment.
-
-\input{results/finite_results.tex}
-\input{results/direct_AQP_results.tex}
-
-Direct AQP has a readout for every configuration regardless of batch completion. The same source-only estimate is reused across model/cache configurations sharing a workload, size and sample. Table~\ref{tab:aqp_results} therefore shows 12 distinct workload/size pairs while the artifact retains all 36 configuration entries. Every interval has width at most $.1N$, but realized coverage is 32/36 entries, or 11/12 distinct pairs. Movie other at $N=2,048$ is uncovered: $G=1,418$, sample positives 732/1,024, HG interval $[1,423,1,504]$. Its midpoint 1,463.5 gives $e_N=2.22\%$ and $e_G=3.21\%$. That sample is reused in four configurations. Width sufficiency and the repeated miss give no matrix-wide guarantee. The offline label lookups are not priced as native calls.
-
-\subsection{Reproducibility and the Research Ledger}
-Independent reconstruction performs 13,219,995 main-study and 4,059,851 follow-up checks with zero integrity errors or warnings. These concern execution-chain and resource reconstruction, not model correctness or the certificate's assumptions. Replaying the native agreement rule recovers the same selections and issued-call costs in all 36 main cases. Source hashes, request chains, cache-reset receipts, exact CSVs, plotting sources and native/strict readouts support CPU reconstruction without new judgments.
-
-The successful-run ledger contains 557,996 calls: 429,584 main-study, 127,712 follow-up, 160 independent-validation, 480 original-Q3 and 60 format-control calls. It records 98,862,260 input tokens and 3,576,771 output tokens. The earlier supporting studies are outside this new-study ledger. The 160 independent-validation calls are outside Current80-S's standalone bill. Three preserved failed starts returned zero, zero and ten requests; their initialization work is unmetered. The ten returns add 814 input and 62 output tokens, giving 558,006 returned requests across successful and failed attempts. This research ledger includes evaluation work; the policy tables charge each policy's own calibration and execution.
-
-Materials and run instructions are available in the \href{https://github.com/yzd2002/semantic-aggregation-audit-icde2027}{public repository}, including source/acquisition records, execution receipts, exported readouts, plotting code and reconstruction/build instructions.

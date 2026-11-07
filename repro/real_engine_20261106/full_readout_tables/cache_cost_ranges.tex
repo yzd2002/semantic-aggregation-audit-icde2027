@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering\small
+\caption{Fixed-plan cost ratios to the corresponding separately executed S1. Cells give complete-matrix ranges; ON has 12 and OFF six configurations per model/plan. The last column counts raw-input ratio $P/P_{S1}<1$ but uncached-input ratio $U/U_{S1}>1$. Input, output and uncached input are distinct; uncached input is a prefill-work proxy.}
+\label{tab:cache_costs}
+\begin{tabular}{llrrrrr}
+\toprule
+Model/cache & Plan & Cases & Raw input/S1 & Output/S1 & Uncached input/S1 & \shortstack{$P/P_{S1}<1$,\\$U/U_{S1}>1$} \\
+\midrule
+Qwen/ON & Random8 & 12 & 0.63--0.74 & 0.98--1.11 & 1.08--1.16 & 12/12 \\
+Qwen/ON & Similar8 & 12 & 0.63--0.74 & 0.97--1.09 & 1.08--1.16 & 12/12 \\
+Qwen/OFF & Random8 & 6 & 0.63--0.73 & 1.06--1.08 & 0.63--0.73 & 0/6 \\
+Qwen/OFF & Similar8 & 6 & 0.63--0.73 & 1.06--1.08 & 0.63--0.73 & 0/6 \\
+\midrule
+GLM/ON & Random8 & 12 & 0.65--0.76 & 0.85--0.85 & 1.14--1.28 & 12/12 \\
+GLM/ON & Similar8 & 12 & 0.65--0.76 & 0.85--0.85 & 1.14--1.28 & 12/12 \\
+GLM/OFF & Random8 & 6 & 0.65--0.75 & 0.85--0.85 & 0.65--0.75 & 0/6 \\
+GLM/OFF & Similar8 & 6 & 0.65--0.75 & 0.85--0.85 & 0.65--0.75 & 0/6 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -124,51 +124,51 @@ def primary_policy_summary(rows):
 
 def main_plot(rows):
     cells=[(m,w) for m in ['qwen','glm'] for w in ORDER]
-    fig,axes=plt.subplots(1,3,figsize=(7.16,4.20),sharey=True,gridspec_kw={'wspace':.14})
+    fig,axes=plt.subplots(1,4,figsize=(7.16,4.20),sharey=True,
+                          gridspec_kw={'wspace':.17,'width_ratios':[1.05,.85,1.0,1.1]})
     ys=np.arange(len(cells))[::-1]
     for ax in axes:
-        ax.spines[['top','right']].set_visible(False);ax.grid(axis='x',alpha=.18)
+        ax.spines[['top','right']].set_visible(False);ax.grid(axis='x',alpha=.16)
         ax.axhline(5.5,color='#B9C0C7',lw=.7)
     for j,p in enumerate(['RANDOM8','SIMILAR8','CURRENT_CP']):
         for idx,(m,w) in enumerate(cells):
             r=lookup(rows,model=m,workload_id=w,n=2048,prefix_cache=True,policy=p,contract='native')
-            vals=[None if r['max_loss_to_S1_S2'] is None else 100*r['max_loss_to_S1_S2'],
-                  None if r['count_error_over_N'] is None else 100*r['count_error_over_N'],r['total_tokens_ratio_vs_S1']]
+            loss=None if r['max_loss_to_S1_S2'] is None else 100*r['max_loss_to_S1_S2']
+            vals=[loss,loss,None if r['count_error_over_N'] is None else 100*r['count_error_over_N'],r['total_tokens_ratio_vs_S1']]
             for ax,v in zip(axes,vals):
                 if v is not None:
-                    fallback=(p=='CURRENT_CP' and r['selected_k']==1)
+                    fallback=p=='CURRENT_CP' and r['selected_k']==1
                     ax.scatter(v,ys[idx]+(j-1)*.17,s=14,marker=['o','s','D'][j],
                                facecolors='none' if fallback else COLORS[p],
                                edgecolors=COLORS[p],linewidths=.7 if fallback else .4,zorder=3)
     for idx,(m,w) in enumerate(cells):
-        s=lookup(rows,model=m,workload_id=w,n=2048,prefix_cache=True,policy='S1',contract='native')
-        if s['count_error_over_N'] is not None:axes[1].scatter(100*s['count_error_over_N'],ys[idx]-.33,s=14,marker='x',color='#263340',zorder=4)
+        baseline=lookup(rows,model=m,workload_id=w,n=2048,prefix_cache=True,policy='S1',contract='native')
+        if baseline['count_error_over_N'] is not None:
+            axes[2].scatter(100*baseline['count_error_over_N'],ys[idx]-.33,s=14,marker='x',color='#263340',zorder=4)
     axes[0].set_yticks(ys,[MODELS[m]+' / '+NAMES[w] for m,w in cells],fontsize=7.4)
-    axes[0].axvline(5,color='#777777',ls='--',lw=.8)
-    axes[2].axvline(1,color='#777777',ls='--',lw=.8)
-    axes[0].set_title('(a) Native reference loss',fontsize=8.4)
-    axes[1].set_title('(b) Source COUNT error',fontsize=8.4)
-    axes[2].set_title('(c) Full raw-token bill',fontsize=8.4)
-    axes[0].set_xlabel('max $d(S1),d(S2)$ (%)',fontsize=7.5)
-    axes[1].set_xlabel('$|C-G|/N$ (%)',fontsize=7.5)
-    axes[2].set_xlabel('(input + output) / S1',fontsize=7.5)
-    for index,ax in enumerate(axes):
-        right=ax.get_xlim()[1]
-        ax.set_xlim(left=-.03*right if index<2 else 0,right=right)
-        if index<2:ax.set_xticks([t for t in ax.get_xticks() if 0<=t<=right])
+    axes[0].set_xlim(-.15,5.25);axes[0].set_xticks([0,2.5,5]);axes[0].axvspan(0,5,color='#DDEFE5',alpha=.5,zorder=0)
+    axes[0].axvline(5,color='#577567',ls='--',lw=.8)
+    axes[1].axvline(5,color='#577567',ls='--',lw=.8)
+    axes[3].axvline(1,color='#777777',ls='--',lw=.8)
+    for index,title in enumerate(['(a) Fidelity detail','(b) Full fidelity','(c) COUNT error','(d) Full policy cost']):axes[index].set_title(title,fontsize=8.1)
+    axes[0].set_xlabel('Reference loss (%)',fontsize=7.2)
+    axes[1].set_xlabel('Reference loss (%)',fontsize=7.2)
+    axes[2].set_xlabel('Error / input rows (%)',fontsize=7.2)
+    axes[3].set_xlabel('Raw tokens / S1',fontsize=7.2)
+    for index in [1,2,3]:
+        ax=axes[index];right=ax.get_xlim()[1];ax.set_xlim(left=-.03*right if index<3 else 0,right=right)
+        if index<3:ax.set_xticks([t for t in ax.get_xticks() if 0<=t<=right])
     handles=[plt.Line2D([],[],marker=mk,ls='',color=COLORS[p],markersize=4,label=lab)
              for p,mk,lab in [('RANDOM8','o','Random8'),('SIMILAR8','s','Similar8')]]
-    handles.append(plt.Line2D([],[],marker='D',ls='',color=COLORS['CURRENT_CP'],
-                             markerfacecolor='none',markersize=4,label='Current80-S fallback (k=1)'))
-    handles.append(plt.Line2D([],[],marker='D',ls='',color=COLORS['CURRENT_CP'],
-                             markersize=4,label='Current80-S accepted (k=8)'))
-    handles.append(plt.Line2D([],[],marker='x',ls='',color='#263340',markersize=4,label='S1 (COUNT only)'))
+    handles.append(plt.Line2D([],[],marker='D',ls='',color=COLORS['CURRENT_CP'],markerfacecolor='none',markersize=4,label='Current80-S fallback (k=1)'))
+    handles.append(plt.Line2D([],[],marker='D',ls='',color=COLORS['CURRENT_CP'],markersize=4,label='Current80-S accepted (k=8)'))
+    handles.append(plt.Line2D([],[],marker='x',ls='',color='#263340',markersize=4,label='S1 (COUNT panel only)'))
     fig.legend(handles=handles,loc='lower center',ncol=3,fontsize=7.1,bbox_to_anchor=(.54,-.015))
     fig.subplots_adjust(left=.245,right=.995,top=.91,bottom=.18)
     pngpdf(fig,'primary_execution_readouts')
 
 def budget_plot(brows,budget,rows):
-    fig,axes=plt.subplots(2,2,figsize=(7.16,3.35),sharex=True)
+    fig,axes=plt.subplots(2,2,figsize=(7.16,3.05),sharex=True)
     for i,model in enumerate(['qwen','glm']):
         for j,w in enumerate(['agnews_count_science_technology','movie_count_positive_other_critics']):
             ax=axes[i,j]
@@ -186,14 +186,14 @@ def budget_plot(brows,budget,rows):
             ax.set_xticks(range(4),['80 r1','320 r1','80 r2','320 r2'],fontsize=7.4)
             ax.set_ylim(bottom=0);ax.margins(y=.20)
             if j==0:ax.set_ylabel('Full raw tokens / S1',fontsize=7.5)
-    fig.legend(handles=[plt.Rectangle((0,0),1,1,color='#315E78',label='Execution'),plt.Rectangle((0,0),1,1,color='#CCBCE0',label='Calibration')],loc='lower center',ncol=2,fontsize=7.5)
+    fig.legend(handles=[plt.Rectangle((0,0),1,1,color='#315E78',label='Execution'),plt.Rectangle((0,0),1,1,color='#CCBCE0',label='Checking')],loc='lower center',ncol=2,fontsize=7.5)
     fig.tight_layout(rect=(0,.08,1,1),h_pad=1.0,w_pad=1.5)
     pngpdf(fig,'budget_full_bill')
 
 def cache_plot(rows):
     # Two frozen large-input examples; aggregate tables below retain all 36 cases.
     examples=['movie_count_positive_top_critics','agnews_count_science_technology']
-    fig,axes=plt.subplots(1,2,figsize=(7.16,2.85),sharex=True,sharey=True)
+    fig,axes=plt.subplots(1,2,figsize=(7.16,2.50),sharex=True,sharey=True)
     for ax,model in zip(axes,['qwen','glm']):
         for w in examples:
             for policy in ['RANDOM8','SIMILAR8']:

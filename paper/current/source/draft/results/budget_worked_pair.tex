@@ -1,7 +1,16 @@
 \begin{table}[t]
 \centering\small
-\caption{Complete token receipts for the worked Qwen AG Sci/Tech pair ($N=7,600$, cache ON, repeat 1). $P$: raw input; $O$: output; $K$: cached input; $U=P-K$: uncached input. Both policies deploy fresh singleton fallback. These absolute counters accompany the pair's request trace in the text.}
+\caption{One measured Qwen AG Sci/Tech pair ($N=7,600$, cache ON, repeat 1). Top: requests, with probes listed at sizes 8/4/2. Each full policy adds 7,600 singleton execution calls to checking. Bottom: complete token receipts; $P$ is raw input, $O$ output, $K$ cached input and $U=P-K$.}
 \label{tab:budget_worked_pair}
+\begin{tabular}{rrrrr}
+\toprule
+Budget & \shortstack{Singleton\\references} & \shortstack{Batch probes\\8 / 4 / 2} & \shortstack{Checking\\calls} & \shortstack{Full\\calls} \\
+\midrule
+80 & 80 & 16 / 16 / 48 & 160 & 7,760 \\
+320 & 320 & 48 / 112 / 128 & 608 & 8,208 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
 \begin{tabular}{rrrrr}
 \toprule
 Budget & $P$ & $O$ & $K$ & $U$ \\

@@ -7,17 +7,17 @@
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \graphicspath{{../figures/}}
 \hypersetup{
-pdftitle={[Experiment, Analysis, and Benchmark] Batch Fidelity Certificates for Semantic COUNT: Scope and Full Policy Cost},
-pdfauthor={Zida Yang; Kangzheng Peng; Guquan You; Yongjun Dai; Chenhang He; Zijian Wang; Jiexin Zheng; Cong Wang; Zhangxuan Shi; Xiaolong Shi},
+pdftitle={[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost},
+pdfauthor={Zida Yang; Kangzheng Peng; Guquan You; Yongjun Dai; Chenhang He; Zijian Wang; Jiexin Zheng; Cong Wang; Xiaolong Shi},
 pdfsubject={Experiment, Analysis, and Benchmark},
 pdfkeywords={semantic query processing; large language models; COUNT; fidelity certification; prefix caching; query optimization}
 }
 \begin{document}
-\title{[Experiment, Analysis, and Benchmark]\\Batch Fidelity Certificates for Semantic COUNT:\\Scope and Full Policy Cost}
+\title{[Experiment, Analysis, and Benchmark]\\Auditing Batched Semantic COUNT:\\Fidelity Checks and Full Policy Cost}
 \input{authors.tex}
 \maketitle
 \begin{abstract}
-Putting several rows in one language-model prompt can reduce requests for a semantic filter and COUNT, but checking the batch plan also costs work. We empirically audit an existing current-input fidelity checker by connecting its sampled comparisons to the complete query result and policy bill. The study uses native LOTUS filtering and a declared custom batch operator in 36 configurations over six workloads, two text domains and two models, with 16 additional policies comparing checking budgets. Our joint benefit criterion requires a delivered batch result, at most 5\% row disagreement with each of two separate singleton executions, fewer requests and fewer raw input-plus-output tokens. Unchecked random and similarity batches meet it in one and two of the 12 primary configurations, respectively; the checked policy meets it in none. Source COUNT accuracy is a separate outcome. The sole accepted deployment meets observed fidelity tolerance, but calibration turns its token saving into a 3.01\% increase, despite 79.69\% fewer requests. Raising the budget from 80 to 320 probes leaves every follow-up policy in singleton fallback with a higher bill. All 48 cache-enabled fixed-plan executions use less raw input but more uncached input than their singleton baselines; all 24 cache-disabled executions use less of both. These cache rankings apply to the declared repeated-predicate representation. Distinguishing delivered labels, output format, reference fidelity, source COUNT and complete costs makes the bounded plan decisions reproducible.
+Semantic COUNT applies a language-model filter to rows and counts the positive labels. Batching several rows in one request can save calls, but an optimizer may first pay to check whether their labels change. We audit that complete decision by following an existing fidelity check through size selection, full execution and fallback, and measuring the returned result and the cost of every stage. Native LOTUS and a declared custom batch operator are evaluated in 36 configurations over six workloads, two domains and two models, with 16 further policies comparing probe budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement remains below 5\%; nevertheless, checking turns the deployment's token saving into a 3.01\% increase despite 79.69\% fewer requests. Across 12 primary configurations, unchecked random and similarity batches jointly preserve both observed references and reduce requests and raw tokens in one and two cases; the checked policy does so in none. Larger probe budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use less raw input but more uncached input than their singleton baselines, under the declared repeated-predicate representation. The artifact makes these result targets and complete-cost comparisons reproducible.
 \end{abstract}
 \begin{IEEEkeywords}
 semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization
@@ -28,10 +28,10 @@ semantic query processing, large language models, COUNT, fidelity certification,
 \input{sections/certification_budget.tex}
 \input{sections/real_engine_design.tex}
 \input{sections/resources_reporting.tex}
-\input{sections/finite_controls.tex}
-\input{sections/primary_figure.tex}
 \input{sections/new_results.tex}
-\input{sections/legacy_replication.tex}
+\clearpage
+\input{sections/finite_controls.tex}
+\input{sections/reproducibility.tex}
 \input{sections/related_work.tex}
 \input{sections/discussion.tex}
 \label{body:end}
