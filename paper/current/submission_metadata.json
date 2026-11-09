@@ -26,8 +26,7 @@
       "source": "User screenshot",
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
-      "name": "Zida Yang",
-      "affiliation_code": "pku_guanghua"
+      "name": "Zida Yang"
     },
     {
       "order": 2,
@@ -40,8 +39,7 @@
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Kangzheng Peng",
-      "affiliation_code": "gzhu_ai"
+      "name": "Kangzheng Peng"
     },
     {
       "order": 3,
@@ -56,8 +54,7 @@
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
       "affiliation_source": "Latest explicit user correction overrides earlier selection",
-      "name": "Guquan You",
-      "affiliation_code": "gzhu_emergency"
+      "name": "Guquan You"
     },
     {
       "order": 4,
@@ -71,8 +68,7 @@
       "source": "User text + screenshot English name; email and ORCID explicitly supplied by user",
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
-      "name": "Yongjun Dai",
-      "affiliation_code": "gzhu_computing"
+      "name": "Yongjun Dai"
     },
     {
       "order": 5,
@@ -85,8 +81,7 @@
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Chenhang He",
-      "affiliation_code": "gzhu_ai"
+      "name": "Chenhang He"
     },
     {
       "order": 6,
@@ -99,8 +94,7 @@
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Zijian Wang",
-      "affiliation_code": "gzhu_ai"
+      "name": "Zijian Wang"
     },
     {
       "order": 7,
@@ -110,12 +104,11 @@
       "email": "jiexinzheng@gsm.pku.edu.cn",
       "orcid": "0009-0005-5838-0135",
       "equal_contributor": false,
-      "corresponding": false,
+      "corresponding": true,
       "source": "User screenshot",
       "orcid_checksum_valid": true,
       "orcid_source": "User correction resolving duplicate",
-      "name": "Jiexin Zheng",
-      "affiliation_code": "pku_guanghua"
+      "name": "Jiexin Zheng"
     },
     {
       "order": 8,
@@ -125,28 +118,17 @@
       "email": "wangcong@gsm.pku.edu.cn",
       "orcid": "0000-0002-5300-0122",
       "equal_contributor": false,
-      "corresponding": false,
+      "corresponding": true,
       "source": "User explicit author addition after Jiexin Zheng",
       "orcid_checksum_valid": true,
-      "name": "Cong Wang",
-      "affiliation_code": "pku_guanghua"
-    },
-    {
-      "order": 9,
-      "name_zh": "石小龙",
-      "name_en": "Xiaolong Shi",
-      "affiliation": "Institute of Computing Science and Technology, Guangzhou University, Guangzhou, China",
-      "email": "xlshi@gzhu.edu.cn",
-      "orcid": "0000-0002-1838-8643",
-      "equal_contributor": false,
-      "corresponding": true,
-      "source": "User text; English name transliteration",
-      "orcid_checksum_valid": true,
-      "name": "Xiaolong Shi",
-      "affiliation_code": "gzhu_computing"
+      "name": "Cong Wang"
     }
   ],
-  "paper_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022",
+  "corresponding_authors": [
+    "Cong Wang",
+    "Jiexin Zheng"
+  ],
+  "paper_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a",
   "cmt_submitted": false,
-  "metadata_scope": "Exact paper metadata; personal profiles, conflicts, eligibility, coauthor consent and declarations require the authors."
+  "metadata_scope": "Eight author metadata per latest user instruction; personal CMT declarations are not attested."
 }

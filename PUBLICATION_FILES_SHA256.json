@@ -1,25 +1,25 @@
 {
-  "scope": "Current edition SHA256 file inventory; excludes itself. Historical indexes retain their own scopes.",
+  "scope": "Current staged edition; checksum excludes itself. Historical indexes preserve prior scopes.",
   "files": {
     "ASSETS.md": {
       "bytes": 3327,
-      "sha256": "24188934cd665b1b5a803aeb7f8bb3b83d9241bc5f0845365e825b0b8950bd5a"
+      "sha256": "e8d9982a159a8f10b1c5fcc2655f9eda50e23854919f92a1c48b1bea8678b03d"
     },
     "README.md": {
-      "bytes": 5783,
-      "sha256": "010c2ef4034f0ed19cae172bd2c5d840e919a0b3ffa930986659bf6d50b65304"
+      "bytes": 5823,
+      "sha256": "716be2aa3d0e90ccdd931772878db29a5df62764865fd814f8b98ee4a86252fa"
     },
     "START_HERE_zh.md": {
       "bytes": 3717,
-      "sha256": "a295be2a549a33abe67e0a1195c7b50608c9e2367d0f65971559fbe36c3a5d43"
+      "sha256": "3f0287cd7944ea3ca372060e44c9bd7110450cae00ec2fb2157262a1a1aafe8e"
     },
     "paper/current/ICDE2027_Semantic_COUNT.pdf": {
-      "bytes": 419505,
-      "sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022"
+      "bytes": 419362,
+      "sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a"
     },
     "paper/current/READING_MAP.md": {
-      "bytes": 1130,
-      "sha256": "a6afc8e2acfba442f187243a7efaebbc7d4f797963a4c604ac5b6edd1da58707"
+      "bytes": 1142,
+      "sha256": "2af5ee39a69f6378358c8c3a3ee7797b7383e534cd43e788ae39ae64212bc98b"
     },
     "paper/current/figures/budget_full_bill.pdf": {
       "bytes": 13884,
@@ -54,24 +54,24 @@
       "sha256": "221c08a27ef6d32ee7485e533f2a1af0aa598e6a5355f6e784c7b5ca9e6db5d9"
     },
     "paper/current/paper_source.zip": {
-      "bytes": 262651,
-      "sha256": "5c812eefd85b9602006d7f0ac2c61202805af89b16cf882527c63c1f23348fd7"
+      "bytes": 262624,
+      "sha256": "ee23b049db2cd4366cb2b7c76641df34d18654fea00a0761a8c32372eb8feafd"
     },
     "paper/current/source/BUILD_ADAPTATIONS.json": {
       "bytes": 4815,
-      "sha256": "cca315891345863b5b469c45ce438039d1e4d8ff3a833d0cdea2c23ed474dcd7"
+      "sha256": "80c130833f7ad809f15cc7c9a0736b1cc866c2da1d37cba73f40cd706a917689"
     },
     "paper/current/source/MANUSCRIPT_CONTENT.json": {
-      "bytes": 3054,
-      "sha256": "63882a47215a524c819f0facd0dde832ec546338d1230b8f00469fc8891b73fc"
+      "bytes": 3034,
+      "sha256": "9ea72866abdcc5b45712ed1eed27276c8c6d71527a69466d1167004ea759d4d5"
     },
     "paper/current/source/README_SOURCE.md": {
-      "bytes": 1748,
-      "sha256": "fa6e391824c626cccbdd446a93d0f09696cf89d0c26d07a3c1f324136f66dcb1"
+      "bytes": 1750,
+      "sha256": "3f0522fcffa1f55a48d034d5566de75fd0e4a34ac146ef1defc8495f1e45d503"
     },
     "paper/current/source/SOURCE_MANIFEST.json": {
       "bytes": 5357,
-      "sha256": "65f49ebc3c8165c659054d3c69cdbb10008b8cfc39052d01b1cbcb77b4a828da"
+      "sha256": "254dc82b23439acbb4368c1d7095e2205838182fcc9449306910b1e63dcc2458"
     },
     "paper/current/source/build.sh": {
       "bytes": 409,
@@ -82,12 +82,12 @@
       "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
     },
     "paper/current/source/draft/authors.tex": {
-      "bytes": 1553,
-      "sha256": "af2f524336a5895431f3999219173effc525dc9be88afc718ae11a49fc7ffda6"
+      "bytes": 1482,
+      "sha256": "84b35006c1f32914345adb9e64ba269dc37d7ec7cabd5314b5e823882b89fa92"
     },
     "paper/current/source/draft/main.tex": {
-      "bytes": 3253,
-      "sha256": "9b14170887dcc33db1c24c7bbe688f558d0aa978965014f61d13017835def153"
+      "bytes": 3239,
+      "sha256": "54e01fee4b40cd37900e96dad945536b3674864c6f003e9c462b20265177f73f"
     },
     "paper/current/source/draft/references.tex": {
       "bytes": 5977,
@@ -258,8 +258,8 @@
       "sha256": "67ca867be6c15fff020cec1570e0b241254170f76ef7743fdd84d9184032d85d"
     },
     "paper/current/submission_metadata.json": {
-      "bytes": 7717,
-      "sha256": "c721ab63571c46445202dc8a17540bb1f259c592c981f84fca353337b2f1b12f"
+      "bytes": 6926,
+      "sha256": "32c740cd0c769de4da8c523b55f2ca55c71008eba593771dbf0e3e8a629d666e"
     },
     "repro/real_engine_20261106/archive_compact.py": {
       "bytes": 7299,
@@ -1246,8 +1246,8 @@
       "sha256": "39818b58061e15c769cc86420709f3240b2f348ae660434aec27ae3fee4ceaa5"
     },
     "verification/readability_paper_source/FINAL_PAGE_AUDIT.json": {
-      "bytes": 4420,
-      "sha256": "bbb41bf05f6303eceb95df29b1b43e2242fce610cc8bcf535c83b78a90b76136"
+      "bytes": 3092,
+      "sha256": "6aac2d059572deafcfc7753c92067334e16b564b671a6dc2aaa7e8effa7f2de2"
     },
     "verification/readability_paper_source/MOVIE_LABEL_MAPPING_CHECK.json": {
       "bytes": 689,
@@ -1255,11 +1255,11 @@
     },
     "verification/readability_paper_source/PAGE_TEXT_RENDER_COMPARISON.json": {
       "bytes": 4169,
-      "sha256": "3fb609fb25b4566c0f460a5cb186358406a0b76c571c536eebedc8aa3ffbea38"
+      "sha256": "5482fecba3b926f51c20f9912a6bfc41487645569bccf0157506511a67ef6749"
     },
     "verification/readability_paper_source/SOURCE_REBUILD_REPORT.json": {
-      "bytes": 4760,
-      "sha256": "afc55c073433a6e462696f9bd91a6c62a5e17c2b470a93f2d104c21584635cd7"
+      "bytes": 4767,
+      "sha256": "87c9ece752ee4669e91130926aa60a5e52105a65b96fc1d7ebaa87cff3fb195f"
     }
   }
 }

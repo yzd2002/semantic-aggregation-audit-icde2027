@@ -9,10 +9,9 @@
     "Chenhang He",
     "Zijian Wang",
     "Jiexin Zheng",
-    "Cong Wang",
-    "Xiaolong Shi"
+    "Cong Wang"
   ],
-  "author_count": 9,
+  "author_count": 8,
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
   "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
   "pages": 14,
@@ -26,5 +25,5 @@
       14
     ]
   },
-  "frozen_pdf_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022"
+  "frozen_pdf_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a"
 }

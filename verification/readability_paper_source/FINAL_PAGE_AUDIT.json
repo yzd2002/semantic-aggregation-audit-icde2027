@@ -1,142 +1,183 @@
 {
   "status": "PASS",
-  "pdf_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022",
-  "total_pages": 14,
-  "main_body_pages": 12,
-  "abstract_characters": 1567,
-  "abstract_utf16_units": 1567,
-  "ai_disclosure_paragraphs": 1,
+  "pdf_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a",
+  "author_count": 8,
   "authors": [
-    {
-      "name": "Zida Yang",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0000-2386-2533",
-      "supplied_name_link_matches": true,
-      "affiliation": "pku_guanghua"
-    },
-    {
-      "name": "Kangzheng Peng",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0005-1960-6488",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_ai"
-    },
-    {
-      "name": "Guquan You",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0005-5915-7058",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_emergency"
-    },
-    {
-      "name": "Yongjun Dai",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0005-7049-2607",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_computing"
-    },
-    {
-      "name": "Chenhang He",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0001-9002-0974",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_ai"
-    },
-    {
-      "name": "Zijian Wang",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0001-8267-7247",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_ai"
-    },
-    {
-      "name": "Jiexin Zheng",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0009-0005-5838-0135",
-      "supplied_name_link_matches": true,
-      "affiliation": "pku_guanghua"
-    },
-    {
-      "name": "Cong Wang",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0000-0002-5300-0122",
-      "supplied_name_link_matches": true,
-      "affiliation": "pku_guanghua"
-    },
-    {
-      "name": "Xiaolong Shi",
-      "email_present": true,
-      "orcid_uri": "https://orcid.org/0000-0002-1838-8643",
-      "supplied_name_link_matches": true,
-      "affiliation": "gzhu_computing"
-    }
+    "Zida Yang",
+    "Kangzheng Peng",
+    "Guquan You",
+    "Yongjun Dai",
+    "Chenhang He",
+    "Zijian Wang",
+    "Jiexin Zheng",
+    "Cong Wang"
   ],
-  "author_count": 9,
-  "clickable_orcid_names": 9,
+  "corresponding_authors": [
+    "Cong Wang",
+    "Jiexin Zheng"
+  ],
   "first_four_equal_first": true,
-  "sole_corresponding_author": "Xiaolong Shi",
-  "ORCID_identity_authentication_claimed": false,
-  "ORCID_source": "User-confirmed author identifiers; checksum and PDF linkage verified",
+  "eight_clickable_name_ORCID_links_correct": true,
   "removed_author_absent": true,
-  "font_count": 30,
-  "all_fonts_embedded": true,
-  "type3_fonts": 0,
-  "overfull_boxes": 0,
-  "undefined_references": 0,
-  "count_section_first_column_starts_near_heading": true,
-  "unchanged_original_aggregate_csvs": [
+  "main_text_and_all_measurements_unchanged": true,
+  "page_1_from_abstract_onward_text_identical": true,
+  "page_2_to_14_comparison": [
     {
-      "name": "all_budget_cost_components.csv",
-      "sha256": "c0e38f8e7d34e8eb1bb7f34e7944cbe2119dd0634e73fb7990a42362f62db5b9",
-      "unchanged": true
+      "page": 2,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "all_budget_policy_readouts.csv",
-      "sha256": "e61793f014b184110ad297b93c06a8ddf66002d48122b2cc4371a52c71a62b28",
-      "unchanged": true
+      "page": 3,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "all_cache_cost_objects.csv",
-      "sha256": "038372e42e311f5363f5c14d49da62a80a8db58df744bcbe778f62b353fd4d11",
-      "unchanged": true
+      "page": 4,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "all_main_policy_readouts.csv",
-      "sha256": "c477c3627d3952a735e291be1c012b8d1136df866287b6efdea32c33e7f8afc1",
-      "unchanged": true
+      "page": 5,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "direct_AQP_unique_inputs.csv",
-      "sha256": "ec28fb4fcab73ac6dd433c3dea19d82e705e86306abcf805af1e642461111991",
-      "unchanged": true
+      "page": 6,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "finite_audit_method_summary.csv",
-      "sha256": "be90dc7b05e477330d1f8d361ea7a9607f76ccdbda11450c051dc8fb58542ca9",
-      "unchanged": true
+      "page": 7,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "matched_cache_ON_OFF.csv",
-      "sha256": "5ff8c03e38ee311768e449a23b2dbc552d914e024f31f9663003f5e32242d14c",
-      "unchanged": true
+      "page": 8,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "observed_probe_rejection_summary.csv",
-      "sha256": "dcab0b13891bd44d8a684411e08bb672f3a8fb07c81d8ab5082c8ddf3d572ee7",
-      "unchanged": true
+      "page": 9,
+      "text_unchanged": true,
+      "render_unchanged": true
     },
     {
-      "name": "primary_policy_benefit_summary.csv",
-      "sha256": "afd8cf717b2285d7c2684cd1e5826c58a4d02ba0843faaaabdbb4564dae88de3",
-      "unchanged": true
+      "page": 10,
+      "text_unchanged": true,
+      "render_unchanged": true
+    },
+    {
+      "page": 11,
+      "text_unchanged": true,
+      "render_unchanged": true
+    },
+    {
+      "page": 12,
+      "text_unchanged": true,
+      "render_unchanged": true
+    },
+    {
+      "page": 13,
+      "text_unchanged": true,
+      "render_unchanged": true
+    },
+    {
+      "page": 14,
+      "text_unchanged": true,
+      "render_unchanged": true
     }
   ],
-  "active_source_files": 41,
-  "figures": [
-    "budget_full_bill",
-    "cache_input_cost_objects",
-    "contract_execution_overview",
-    "primary_execution_readouts"
+  "body_pages": 12,
+  "total_pdf_pages": 14,
+  "pages": [
+    {
+      "page": 1,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 2,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 3,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 4,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 5,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 6,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 7,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 8,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 9,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 10,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 11,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 12,
+      "roles": [
+        "body"
+      ]
+    },
+    {
+      "page": 13,
+      "roles": [
+        "references"
+      ]
+    },
+    {
+      "page": 14,
+      "roles": [
+        "ai_acknowledgement"
+      ]
+    }
   ],
-  "source_compile_log": "checks/compile_final_layout.log"
+  "default_ieee_conference_format_reviewed": true,
+  "appendix_present": false,
+  "template_class_sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
+  "new_model_experiments": false
 }

@@ -1,16 +1,16 @@
 {
   "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
-  "created_utc": "2026-11-09T11:12:43.633921+00:00",
-  "freeze_sha256": "5f556b1e9f9614143d9e5c26b517b7432082bfd367ff182964c6dbdd8f6b58f9",
-  "frozen_pdf": "/home/gpu/IntentSat2S_final_20261109/manuscript/draft/main.pdf",
-  "frozen_pdf_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022",
-  "source_zip": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/paper_source.zip",
-  "source_zip_sha256": "5c812eefd85b9602006d7f0ac2c61202805af89b16cf882527c63c1f23348fd7",
-  "clean_source": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/clean_source",
-  "actually_unpacked_source": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/unpacked/paper_source",
-  "rebuilt_pdf": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
-  "rebuilt_pdf_sha256": "6f99d53b0052af46f49cc1838606b71b51069788ac6d772a57c8ab512beda857",
-  "author_count": 9,
+  "created_utc": "2026-11-09T14:50:58.486014+00:00",
+  "freeze_sha256": "b873617eb878e6ab2e8c2caaf51e06fafc3de76099675ba819fee8f49ee34b2d",
+  "frozen_pdf": "/home/gpu/IntentSat2S_authors8_20261109/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a",
+  "source_zip": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/paper_source.zip",
+  "source_zip_sha256": "ee23b049db2cd4366cb2b7c76641df34d18654fea00a0761a8c32372eb8feafd",
+  "clean_source": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "b3633923203d17e97b9f473f7786fb6146280a31b09c881c1d65b607d7e4a3ae",
+  "author_count": 8,
   "authors": [
     "Zida Yang",
     "Kangzheng Peng",
@@ -19,8 +19,7 @@
     "Chenhang He",
     "Zijian Wang",
     "Jiexin Zheng",
-    "Cong Wang",
-    "Xiaolong Shi"
+    "Cong Wang"
   ],
   "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
   "abstract": "Semantic COUNT answers queries such as \"How many news items concern sports?\" by asking a language model to label each row and counting the positives. Batching rows reduces model calls but may change their labels; checking candidate batch sizes also incurs work before execution. Evaluating sampled agreement or deployment cost alone can therefore miss the optimizer's actual trade-off. We study the complete checked policy, from testing and size selection to full execution and fallback, while separating fidelity to single-row model outputs from accuracy against supplied labels. Our trace-based audit covers native LOTUS filtering and a custom batch operator in 36 configurations over six workloads, two domains, and two models, plus 16 policies comparing checking budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement is below 5%; yet checking turns a deployment-only token saving into a 3.01% increase despite 79.69% fewer calls. Across 12 primary configurations, unchecked random and similarity batches meet both reference-fidelity thresholds and reduce calls and raw tokens in one and two cases, respectively; the checked policy does so in none. Larger budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use fewer raw input tokens but more uncached input tokens than their singleton baselines under the tested representation. The public artifact links each selection decision to its complete result and cost for reproducible, cache-aware policy comparisons.",
@@ -38,15 +37,15 @@
       14
     ]
   },
-  "four_figure_render_comparison": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
-  "page_text_render_comparison": "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
   "all_page_text_and_render_content_equal": true,
   "active_source_or_scientific_data_edited": false,
   "new_GPU_or_experiment": false,
   "source_default_ordinary_pdflatex": true,
   "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
   "logs": [
-    "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
-    "/home/gpu/IntentSat2S_final_20261109/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
+    "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
   ]
 }

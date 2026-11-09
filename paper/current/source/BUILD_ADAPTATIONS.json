@@ -5,8 +5,8 @@
   "figure_redraw": "Only explicit output-root mapping for generated tables; frozen draft tables remain intact",
   "original_active_file_sha256": {
     "draft/IEEEtran.cls": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
-    "draft/authors.tex": "af2f524336a5895431f3999219173effc525dc9be88afc718ae11a49fc7ffda6",
-    "draft/main.tex": "9b14170887dcc33db1c24c7bbe688f558d0aa978965014f61d13017835def153",
+    "draft/authors.tex": "84b35006c1f32914345adb9e64ba269dc37d7ec7cabd5314b5e823882b89fa92",
+    "draft/main.tex": "54e01fee4b40cd37900e96dad945536b3674864c6f003e9c462b20265177f73f",
     "draft/references.tex": "1d0b8f9955e6dff551af2e712c5cf9e610e2234745eebad3715685c91d675920",
     "draft/results/budget_results.tex": "11e9c2dbe33d1ef82fc4e0818936eb8bebab03014302e1a589edca6b7ff4b96b",
     "draft/results/budget_worked_pair.tex": "0b41ea8f6089071c62935be9eb0a0d17d1bb39d754187cf26bb3587609877601",

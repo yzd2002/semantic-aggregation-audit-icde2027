@@ -21,7 +21,7 @@ The [current scientific index](repro/real_engine_20261106/public/artifact_index.
 
 ## Rebuild the paper
 
-`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The nine-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
+`bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The eight-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
 Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied aggregate CSVs. Generated table exports go to `regenerated/`, preserving the frozen editorial TeX. Plotting dependencies and source hashes are included in the clean source.
 
@@ -37,6 +37,6 @@ Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repo
 
 The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.
 
-The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All nine author names link to their supplied ORCID records.
+The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All eight author names link to their supplied ORCID records.
 
-[Reading map and terminology](paper/current/READING_MAP.md) · [Exact submission metadata](paper/current/submission_metadata.json)
+[Reading map](paper/current/READING_MAP.md) · [Current submission metadata](paper/current/submission_metadata.json). Corresponding authors: Cong Wang and Jiexin Zheng.
