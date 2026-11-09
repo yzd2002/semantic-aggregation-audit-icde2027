@@ -7,7 +7,7 @@ We reproduce the current-input fidelity check in NousDB's Algorithm~2~\cite{nous
 \item \textbf{Test size eight.} For each focal draw, add seven other row occurrences and request all eight labels in one batch response.
 \item \textbf{Score one comparison.} Require the complete batch response and singleton reference to have valid formats, then compare their labels for the focal row. The other seven labels do not create seven more statistical trials.
 \item \textbf{Choose a size.} Size eight passes only if all 80 comparisons succeed. Otherwise try four, then two, using the same 80 indexed singleton references but newly constructed batch probes.
-\item \textbf{Execute the full input.} At the first passing size, label every input row once in a new disjoint partition. Probe responses are not reused as deployed labels.
+\item \textbf{Execute the full input.} At the first passing size, run a fresh complete execution using that size's frozen disjoint partition, labeling every input row once. Probe responses are not reused as deployed labels.
 \item \textbf{Fall back if necessary.} If all candidates fail, obtain $N$ new singleton responses and compute COUNT from them.
 \end{enumerate}
 Thus the Sports check spent $80+80=160$ requests before its 256-request deployment. Its 80 probe batches were evidence for choosing a plan, rather than part of the complete partition.

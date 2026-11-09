@@ -102,7 +102,7 @@ def overview():
     txt(ax,x3+.11,.57,'Calls: 79.69% lower',size=7.6,fontweight='bold')
     txt(ax,x3+.11,.38,'Raw tokens: 3.01% higher',size=7.6,fontweight='bold')
     arrow(ax,2.27,1.13,2.43,1.13,color=CHECK);arrow(ax,4.71,1.13,4.87,1.13,color=PLAN)
-    txt(ax,3.58,.13,'Passing the label check preserves observed fidelity; checking still has to be paid for.',size=7.5,ha='center')
+    txt(ax,3.58,.13,'In this execution, the accepted batch meets observed fidelity tolerance; checking adds to its cost.',size=7.5,ha='center')
     render(fig,'contract_execution_overview')
 
 

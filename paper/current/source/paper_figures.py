@@ -151,8 +151,8 @@ def main_plot(rows):
     axes[1].axvline(5,color='#577567',ls='--',lw=.8)
     axes[3].axvline(1,color='#777777',ls='--',lw=.8)
     for index,title in enumerate(['(a) Fidelity detail','(b) Full fidelity','(c) COUNT error','(d) Full policy cost']):axes[index].set_title(title,fontsize=8.1)
-    axes[0].set_xlabel('Reference loss (%)',fontsize=7.2)
-    axes[1].set_xlabel('Reference loss (%)',fontsize=7.2)
+    axes[0].set_xlabel(r'$d_{\max}$ (%)',fontsize=7.2)
+    axes[1].set_xlabel(r'$d_{\max}$ (%)',fontsize=7.2)
     axes[2].set_xlabel('Error / input rows (%)',fontsize=7.2)
     axes[3].set_xlabel('Raw tokens / S1',fontsize=7.2)
     for index in [1,2,3]:

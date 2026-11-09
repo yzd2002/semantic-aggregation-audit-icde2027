@@ -36,8 +36,8 @@
         "page": 1,
         "text_equal": true,
         "render_pixels_equal": true,
-        "reference_render_sha256": "968b96e73d137448c5b68bd4e4cdcca08eb3ebcf2bc35e0699366b25dc689890",
-        "rebuilt_render_sha256": "968b96e73d137448c5b68bd4e4cdcca08eb3ebcf2bc35e0699366b25dc689890"
+        "reference_render_sha256": "763eb1980be7cc330eb1fc222c8ffa7b342a4965a30fb4efbb2f2f99c6b977a8",
+        "rebuilt_render_sha256": "763eb1980be7cc330eb1fc222c8ffa7b342a4965a30fb4efbb2f2f99c6b977a8"
       }
     ]
   },
@@ -50,8 +50,8 @@
         "page": 1,
         "text_equal": true,
         "render_pixels_equal": true,
-        "reference_render_sha256": "c7809fc91989614ce61479c78298da993da67df77124cb0fa8fcbeb845f0b3c3",
-        "rebuilt_render_sha256": "c7809fc91989614ce61479c78298da993da67df77124cb0fa8fcbeb845f0b3c3"
+        "reference_render_sha256": "8685c8bee6179304d2277aaf5531c87753756ed1c29344ebd48eb2c007e1f3a6",
+        "rebuilt_render_sha256": "8685c8bee6179304d2277aaf5531c87753756ed1c29344ebd48eb2c007e1f3a6"
       }
     ]
   }

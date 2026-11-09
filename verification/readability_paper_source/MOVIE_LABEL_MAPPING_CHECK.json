@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "frozen_preparation_source": "/home/gpu/IntentSat2S_readability_v3_20261107/final_publication/anonymous_verification/attempt_20261107T114744Z_14ff3da6/core_CPU_replay/expanded/real_engine/adapters/prepare_movie.py",
+  "sha256": "0aa72bfe93f9abe9d595478a62b6df68061e033691aacbca27fa24858d6d4fc9",
+  "gold_vectors": [
+    {
+      "file": "other_critics.gold.jsonl",
+      "rows": 8192,
+      "mapping": "scoreSentiment: POSITIVE→1; NEGATIVE→0",
+      "passed": true
+    },
+    {
+      "file": "top_critics.gold.jsonl",
+      "rows": 8192,
+      "mapping": "scoreSentiment: POSITIVE→1; NEGATIVE→0",
+      "passed": true
+    }
+  ],
+  "inference_rerun": false
+}

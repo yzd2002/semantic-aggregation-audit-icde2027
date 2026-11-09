@@ -29,7 +29,7 @@ Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied 
 
 Six workloads cover two text domains and two models. The follow-up contains four model/workload configurations and 16 physical policy executions; it was frozen after an initial main case had been observed. Native delivery, strict output format, named-reference fidelity, supplied-label COUNT, and complete calibration-plus-execution cost have separate readouts. The post-hoc HG analysis conditions on existing immutable vectors. Stopped prefixes describe issued comparisons and retain unreached candidates as unobserved.
 
-The compact modules retain raw model completions, canonical responses, effective settings, partitions, labels, probes and token-length/hash receipts. Pinned acquisition recipes support separate exact source reconstruction. Full source news/review text, token arrays and model weights are omitted. AG News has unknown license as declared by its publisher; movie CC0 is recorded as the host declaration. See [rights/notices](repro/real_engine_20261106/public/RIGHTS_AND_NOTICES.md) and [model provenance](repro/real_engine_20261106/model_sources/MODEL_ACQUISITION.md). Built with glm-4.
+The compact modules retain raw model completions, canonical responses, effective settings, partitions, labels, probes and token-length/hash receipts. Pinned acquisition recipes support separate exact source reconstruction. Full source news/review text, token arrays and model weights are omitted. AG News has unknown license as declared by its publisher; movie CC0 is recorded as the host declaration. See [rights/notices](repro/real_engine_20261106/public/RIGHTS_AND_NOTICES.md) and [model provenance](repro/real_engine_20261106/model_sources/MODEL_ACQUISITION.md).
 
 ## Current and historical indexes
 
@@ -38,3 +38,5 @@ Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repo
 The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.
 
 The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All nine author names link to their supplied ORCID records.
+
+[Reading map and terminology](paper/current/READING_MAP.md) · [Exact submission metadata](paper/current/submission_metadata.json)

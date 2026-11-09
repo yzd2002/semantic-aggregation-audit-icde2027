@@ -1,0 +1,143 @@
+{
+  "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
+  "abstract": "Semantic COUNT answers queries such as \"How many news items concern sports?\" by asking a language model to label each row and counting the positives. Batching rows reduces model calls but may change their labels; checking candidate batch sizes also incurs work before execution. Evaluating sampled agreement or deployment cost alone can therefore miss the optimizer's actual trade-off. We study the complete checked policy, from testing and size selection to full execution and fallback, while separating fidelity to single-row model outputs from accuracy against supplied labels. Our trace-based audit covers native LOTUS filtering and a custom batch operator in 36 configurations over six workloads, two domains, and two models, plus 16 policies comparing checking budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement is below 5%; yet checking turns a deployment-only token saving into a 3.01% increase despite 79.69% fewer calls. Across 12 primary configurations, unchecked random and similarity batches meet both reference-fidelity thresholds and reduce calls and raw tokens in one and two cases, respectively; the checked policy does so in none. Larger budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use fewer raw input tokens but more uncached input tokens than their singleton baselines under the tested representation. The public artifact links each selection decision to its complete result and cost for reproducible, cache-aware policy comparisons.",
+  "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
+  "page_roles": {
+    "total_pages": 14,
+    "main_body_pages": 12,
+    "references": [
+      13
+    ],
+    "ai_disclosure": [
+      14
+    ]
+  },
+  "ai_acknowledgement": "AI-generated content disclosure. The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section IV and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.",
+  "authors": [
+    {
+      "order": 1,
+      "name_zh": "杨子达",
+      "name_en": "Zida Yang",
+      "affiliation": "pku_guanghua",
+      "email": "2401111090@stu.pku.edu.cn",
+      "orcid": "0009-0000-2386-2533",
+      "equal_contributor": true,
+      "corresponding": false,
+      "source": "User screenshot",
+      "orcid_checksum_valid": true,
+      "orcid_source": "User current reply",
+      "name": "Zida Yang"
+    },
+    {
+      "order": 2,
+      "name_zh": "彭康正",
+      "name_en": "Kangzheng Peng",
+      "affiliation": "gzhu_ai",
+      "email": "pkz6@qq.com",
+      "orcid": "0009-0005-1960-6488",
+      "equal_contributor": true,
+      "corresponding": false,
+      "source": "User text; English name transliteration",
+      "orcid_checksum_valid": true,
+      "name": "Kangzheng Peng"
+    },
+    {
+      "order": 3,
+      "name_zh": "游股泉",
+      "name_en": "Guquan You",
+      "affiliation": "gzhu_emergency",
+      "email": "youguquan@gzhu.edu.cn",
+      "orcid": "0009-0005-5915-7058",
+      "equal_contributor": true,
+      "corresponding": false,
+      "source": "Latest user correction + screenshot name/email",
+      "orcid_checksum_valid": true,
+      "orcid_source": "User current reply",
+      "affiliation_source": "Latest explicit user correction overrides earlier selection",
+      "name": "Guquan You"
+    },
+    {
+      "order": 4,
+      "name_zh": "戴勇军",
+      "name_en": "Yongjun Dai",
+      "affiliation": "gzhu_computing",
+      "email": "1112433026@e.gzhu.edu.cn",
+      "orcid": "0009-0005-7049-2607",
+      "equal_contributor": true,
+      "corresponding": false,
+      "source": "User text + screenshot English name; email and ORCID explicitly supplied by user",
+      "orcid_checksum_valid": true,
+      "orcid_source": "User current reply",
+      "name": "Yongjun Dai"
+    },
+    {
+      "order": 5,
+      "name_zh": "贺晨航",
+      "name_en": "Chenhang He",
+      "affiliation": "gzhu_ai",
+      "email": "18221681139@139.com",
+      "orcid": "0009-0001-9002-0974",
+      "equal_contributor": false,
+      "corresponding": false,
+      "source": "User text; English name transliteration",
+      "orcid_checksum_valid": true,
+      "name": "Chenhang He"
+    },
+    {
+      "order": 6,
+      "name_zh": "王子剑",
+      "name_en": "Zijian Wang",
+      "affiliation": "gzhu_ai",
+      "email": "2209744955@qq.com",
+      "orcid": "0009-0001-8267-7247",
+      "equal_contributor": false,
+      "corresponding": false,
+      "source": "User text; English name transliteration",
+      "orcid_checksum_valid": true,
+      "name": "Zijian Wang"
+    },
+    {
+      "order": 7,
+      "name_zh": "郑杰鑫",
+      "name_en": "Jiexin Zheng",
+      "affiliation": "pku_guanghua",
+      "email": "jiexinzheng@gsm.pku.edu.cn",
+      "orcid": "0009-0005-5838-0135",
+      "equal_contributor": false,
+      "corresponding": false,
+      "source": "User screenshot",
+      "orcid_checksum_valid": true,
+      "orcid_source": "User correction resolving duplicate",
+      "name": "Jiexin Zheng"
+    },
+    {
+      "order": 8,
+      "name_zh": "王聪",
+      "name_en": "Cong Wang",
+      "affiliation": "pku_guanghua",
+      "email": "wangcong@gsm.pku.edu.cn",
+      "orcid": "0000-0002-5300-0122",
+      "equal_contributor": false,
+      "corresponding": false,
+      "source": "User explicit author addition after Jiexin Zheng",
+      "orcid_checksum_valid": true,
+      "name": "Cong Wang"
+    },
+    {
+      "order": 9,
+      "name_zh": "石小龙",
+      "name_en": "Xiaolong Shi",
+      "affiliation": "gzhu_computing",
+      "email": "xlshi@gzhu.edu.cn",
+      "orcid": "0000-0002-1838-8643",
+      "equal_contributor": false,
+      "corresponding": true,
+      "source": "User text; English name transliteration",
+      "orcid_checksum_valid": true,
+      "name": "Xiaolong Shi"
+    }
+  ],
+  "paper_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022",
+  "cmt_submitted": false,
+  "metadata_scope": "Exact paper metadata; personal profiles, conflicts, eligibility, coauthor consent and declarations require the authors."
+}
