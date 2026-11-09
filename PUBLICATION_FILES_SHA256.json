@@ -258,8 +258,8 @@
       "sha256": "67ca867be6c15fff020cec1570e0b241254170f76ef7743fdd84d9184032d85d"
     },
     "paper/current/submission_metadata.json": {
-      "bytes": 6785,
-      "sha256": "0110a1bca9dc1e64cb066edb66e5088071dc9d68dcc31bcd4eb7ed38851ca28f"
+      "bytes": 7717,
+      "sha256": "c721ab63571c46445202dc8a17540bb1f259c592c981f84fca353337b2f1b12f"
     },
     "repro/real_engine_20261106/archive_compact.py": {
       "bytes": 7299,

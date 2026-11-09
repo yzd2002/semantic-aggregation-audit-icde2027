@@ -18,7 +18,7 @@
       "order": 1,
       "name_zh": "杨子达",
       "name_en": "Zida Yang",
-      "affiliation": "pku_guanghua",
+      "affiliation": "Guanghua School of Management, Peking University, Beijing, China",
       "email": "2401111090@stu.pku.edu.cn",
       "orcid": "0009-0000-2386-2533",
       "equal_contributor": true,
@@ -26,26 +26,28 @@
       "source": "User screenshot",
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
-      "name": "Zida Yang"
+      "name": "Zida Yang",
+      "affiliation_code": "pku_guanghua"
     },
     {
       "order": 2,
       "name_zh": "彭康正",
       "name_en": "Kangzheng Peng",
-      "affiliation": "gzhu_ai",
+      "affiliation": "School of Artificial Intelligence, Guangzhou University, Guangzhou, China",
       "email": "pkz6@qq.com",
       "orcid": "0009-0005-1960-6488",
       "equal_contributor": true,
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Kangzheng Peng"
+      "name": "Kangzheng Peng",
+      "affiliation_code": "gzhu_ai"
     },
     {
       "order": 3,
       "name_zh": "游股泉",
       "name_en": "Guquan You",
-      "affiliation": "gzhu_emergency",
+      "affiliation": "Institute of Emergency Safety Innovations, Guangzhou University, Guangzhou, China",
       "email": "youguquan@gzhu.edu.cn",
       "orcid": "0009-0005-5915-7058",
       "equal_contributor": true,
@@ -54,13 +56,14 @@
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
       "affiliation_source": "Latest explicit user correction overrides earlier selection",
-      "name": "Guquan You"
+      "name": "Guquan You",
+      "affiliation_code": "gzhu_emergency"
     },
     {
       "order": 4,
       "name_zh": "戴勇军",
       "name_en": "Yongjun Dai",
-      "affiliation": "gzhu_computing",
+      "affiliation": "Institute of Computing Science and Technology, Guangzhou University, Guangzhou, China",
       "email": "1112433026@e.gzhu.edu.cn",
       "orcid": "0009-0005-7049-2607",
       "equal_contributor": true,
@@ -68,39 +71,42 @@
       "source": "User text + screenshot English name; email and ORCID explicitly supplied by user",
       "orcid_checksum_valid": true,
       "orcid_source": "User current reply",
-      "name": "Yongjun Dai"
+      "name": "Yongjun Dai",
+      "affiliation_code": "gzhu_computing"
     },
     {
       "order": 5,
       "name_zh": "贺晨航",
       "name_en": "Chenhang He",
-      "affiliation": "gzhu_ai",
+      "affiliation": "School of Artificial Intelligence, Guangzhou University, Guangzhou, China",
       "email": "18221681139@139.com",
       "orcid": "0009-0001-9002-0974",
       "equal_contributor": false,
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Chenhang He"
+      "name": "Chenhang He",
+      "affiliation_code": "gzhu_ai"
     },
     {
       "order": 6,
       "name_zh": "王子剑",
       "name_en": "Zijian Wang",
-      "affiliation": "gzhu_ai",
+      "affiliation": "School of Artificial Intelligence, Guangzhou University, Guangzhou, China",
       "email": "2209744955@qq.com",
       "orcid": "0009-0001-8267-7247",
       "equal_contributor": false,
       "corresponding": false,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Zijian Wang"
+      "name": "Zijian Wang",
+      "affiliation_code": "gzhu_ai"
     },
     {
       "order": 7,
       "name_zh": "郑杰鑫",
       "name_en": "Jiexin Zheng",
-      "affiliation": "pku_guanghua",
+      "affiliation": "Guanghua School of Management, Peking University, Beijing, China",
       "email": "jiexinzheng@gsm.pku.edu.cn",
       "orcid": "0009-0005-5838-0135",
       "equal_contributor": false,
@@ -108,33 +114,36 @@
       "source": "User screenshot",
       "orcid_checksum_valid": true,
       "orcid_source": "User correction resolving duplicate",
-      "name": "Jiexin Zheng"
+      "name": "Jiexin Zheng",
+      "affiliation_code": "pku_guanghua"
     },
     {
       "order": 8,
       "name_zh": "王聪",
       "name_en": "Cong Wang",
-      "affiliation": "pku_guanghua",
+      "affiliation": "Guanghua School of Management, Peking University, Beijing, China",
       "email": "wangcong@gsm.pku.edu.cn",
       "orcid": "0000-0002-5300-0122",
       "equal_contributor": false,
       "corresponding": false,
       "source": "User explicit author addition after Jiexin Zheng",
       "orcid_checksum_valid": true,
-      "name": "Cong Wang"
+      "name": "Cong Wang",
+      "affiliation_code": "pku_guanghua"
     },
     {
       "order": 9,
       "name_zh": "石小龙",
       "name_en": "Xiaolong Shi",
-      "affiliation": "gzhu_computing",
+      "affiliation": "Institute of Computing Science and Technology, Guangzhou University, Guangzhou, China",
       "email": "xlshi@gzhu.edu.cn",
       "orcid": "0000-0002-1838-8643",
       "equal_contributor": false,
       "corresponding": true,
       "source": "User text; English name transliteration",
       "orcid_checksum_valid": true,
-      "name": "Xiaolong Shi"
+      "name": "Xiaolong Shi",
+      "affiliation_code": "gzhu_computing"
     }
   ],
   "paper_sha256": "c9fb797521950aef0570dfc5d436046e10eee68a2a1ffd7a93518deaefcd6022",
