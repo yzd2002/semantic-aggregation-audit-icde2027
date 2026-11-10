@@ -1,92 +1,17 @@
 {
   "status": "PASS",
-  "pdf_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a",
+  "pdf_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19",
   "author_count": 8,
-  "authors": [
-    "Zida Yang",
-    "Kangzheng Peng",
-    "Guquan You",
-    "Yongjun Dai",
-    "Chenhang He",
-    "Zijian Wang",
-    "Jiexin Zheng",
-    "Cong Wang"
-  ],
   "corresponding_authors": [
     "Cong Wang",
     "Jiexin Zheng"
   ],
-  "first_four_equal_first": true,
-  "eight_clickable_name_ORCID_links_correct": true,
-  "removed_author_absent": true,
-  "main_text_and_all_measurements_unchanged": true,
-  "page_1_from_abstract_onward_text_identical": true,
-  "page_2_to_14_comparison": [
-    {
-      "page": 2,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 3,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 4,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 5,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 6,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 7,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 8,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 9,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 10,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 11,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 12,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 13,
-      "text_unchanged": true,
-      "render_unchanged": true
-    },
-    {
-      "page": 14,
-      "text_unchanged": true,
-      "render_unchanged": true
-    }
+  "approved_abstract_exact_source_match": true,
+  "abstract_characters": 1583,
+  "remaining_CMT_characters": 417,
+  "body_sections_and_measurements_unchanged": true,
+  "changed_active_files": [
+    "draft/main.tex"
   ],
   "body_pages": 12,
   "total_pdf_pages": 14,
@@ -178,6 +103,61 @@
   ],
   "default_ieee_conference_format_reviewed": true,
   "appendix_present": false,
-  "template_class_sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
-  "new_model_experiments": false
+  "overfull_boxes": 0,
+  "undefined_references": 0,
+  "new_model_experiments": false,
+  "post_frontmatter_page_render_comparison": [
+    {
+      "page": 2,
+      "unchanged": true
+    },
+    {
+      "page": 3,
+      "unchanged": true
+    },
+    {
+      "page": 4,
+      "unchanged": true
+    },
+    {
+      "page": 5,
+      "unchanged": true
+    },
+    {
+      "page": 6,
+      "unchanged": true
+    },
+    {
+      "page": 7,
+      "unchanged": true
+    },
+    {
+      "page": 8,
+      "unchanged": true
+    },
+    {
+      "page": 9,
+      "unchanged": true
+    },
+    {
+      "page": 10,
+      "unchanged": true
+    },
+    {
+      "page": 11,
+      "unchanged": true
+    },
+    {
+      "page": 12,
+      "unchanged": true
+    },
+    {
+      "page": 13,
+      "unchanged": true
+    },
+    {
+      "page": 14,
+      "unchanged": true
+    }
+  ]
 }

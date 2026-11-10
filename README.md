@@ -39,4 +39,4 @@ The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit
 
 The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All eight author names link to their supplied ORCID records.
 
-[Reading map](paper/current/READING_MAP.md) · [Current submission metadata](paper/current/submission_metadata.json). Corresponding authors: Cong Wang and Jiexin Zheng.
+The current paper adopts the author-approved revised abstract. [Exact abstract text](paper/current/abstract.txt) · [Submission metadata](paper/current/submission_metadata.json).

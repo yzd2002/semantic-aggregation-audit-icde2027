@@ -1,25 +1,29 @@
 {
-  "scope": "Current staged edition; checksum excludes itself. Historical indexes preserve prior scopes.",
+  "scope": "Current edition file hashes; excludes itself; historical indexes retain their scopes.",
   "files": {
     "ASSETS.md": {
       "bytes": 3327,
-      "sha256": "e8d9982a159a8f10b1c5fcc2655f9eda50e23854919f92a1c48b1bea8678b03d"
+      "sha256": "9e2f0fb5d6dfd789ee71714401ba3a276f7dd4c00b72cdd5c3dd59d6c9022277"
     },
     "README.md": {
-      "bytes": 5823,
-      "sha256": "716be2aa3d0e90ccdd931772878db29a5df62764865fd814f8b98ee4a86252fa"
+      "bytes": 5833,
+      "sha256": "0c166614e2f2f4c11cc86be65b4763dbd1201a7856c19d3d75db311771104576"
     },
     "START_HERE_zh.md": {
       "bytes": 3717,
       "sha256": "3f0287cd7944ea3ca372060e44c9bd7110450cae00ec2fb2157262a1a1aafe8e"
     },
     "paper/current/ICDE2027_Semantic_COUNT.pdf": {
-      "bytes": 419362,
-      "sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a"
+      "bytes": 418908,
+      "sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19"
     },
     "paper/current/READING_MAP.md": {
       "bytes": 1142,
       "sha256": "2af5ee39a69f6378358c8c3a3ee7797b7383e534cd43e788ae39ae64212bc98b"
+    },
+    "paper/current/abstract.txt": {
+      "bytes": 1584,
+      "sha256": "791e49b778044d03c1e6703146c8436c429ab78eef39a7f0bb40dfbd615675ba"
     },
     "paper/current/figures/budget_full_bill.pdf": {
       "bytes": 13884,
@@ -54,16 +58,16 @@
       "sha256": "221c08a27ef6d32ee7485e533f2a1af0aa598e6a5355f6e784c7b5ca9e6db5d9"
     },
     "paper/current/paper_source.zip": {
-      "bytes": 262624,
-      "sha256": "ee23b049db2cd4366cb2b7c76641df34d18654fea00a0761a8c32372eb8feafd"
+      "bytes": 262500,
+      "sha256": "1118cc6691e04a4210f595781036c1de5b529d9b59900dcebc921325aaa4ef1f"
     },
     "paper/current/source/BUILD_ADAPTATIONS.json": {
       "bytes": 4815,
-      "sha256": "80c130833f7ad809f15cc7c9a0736b1cc866c2da1d37cba73f40cd706a917689"
+      "sha256": "09739c151ca57367895a8ff029bdb58c166f9fe398ebd2620af4aa613096933b"
     },
     "paper/current/source/MANUSCRIPT_CONTENT.json": {
-      "bytes": 3034,
-      "sha256": "9ea72866abdcc5b45712ed1eed27276c8c6d71527a69466d1167004ea759d4d5"
+      "bytes": 3048,
+      "sha256": "1eb5705e87469a760cbefd261296f5cdbac381c2a8ced999a2a00e3f2be5d309"
     },
     "paper/current/source/README_SOURCE.md": {
       "bytes": 1750,
@@ -71,7 +75,7 @@
     },
     "paper/current/source/SOURCE_MANIFEST.json": {
       "bytes": 5357,
-      "sha256": "254dc82b23439acbb4368c1d7095e2205838182fcc9449306910b1e63dcc2458"
+      "sha256": "9a2a5e3065b718f0b2580e4ed4d9cdddc6fa6b83bb7a4d99acf12c90ee8d8e56"
     },
     "paper/current/source/build.sh": {
       "bytes": 409,
@@ -86,8 +90,8 @@
       "sha256": "84b35006c1f32914345adb9e64ba269dc37d7ec7cabd5314b5e823882b89fa92"
     },
     "paper/current/source/draft/main.tex": {
-      "bytes": 3239,
-      "sha256": "54e01fee4b40cd37900e96dad945536b3674864c6f003e9c462b20265177f73f"
+      "bytes": 3253,
+      "sha256": "71cd9e665552d2d097e618286a62081f877d004d7565f159d81c62d85cbf63f3"
     },
     "paper/current/source/draft/references.tex": {
       "bytes": 5977,
@@ -258,8 +262,8 @@
       "sha256": "67ca867be6c15fff020cec1570e0b241254170f76ef7743fdd84d9184032d85d"
     },
     "paper/current/submission_metadata.json": {
-      "bytes": 6926,
-      "sha256": "32c740cd0c769de4da8c523b55f2ca55c71008eba593771dbf0e3e8a629d666e"
+      "bytes": 6901,
+      "sha256": "b87c76523ad8130c69f65b0476c3734eddff94373bb1f12adcdc9752c0fdd374"
     },
     "repro/real_engine_20261106/archive_compact.py": {
       "bytes": 7299,
@@ -1246,8 +1250,8 @@
       "sha256": "39818b58061e15c769cc86420709f3240b2f348ae660434aec27ae3fee4ceaa5"
     },
     "verification/readability_paper_source/FINAL_PAGE_AUDIT.json": {
-      "bytes": 3092,
-      "sha256": "6aac2d059572deafcfc7753c92067334e16b564b671a6dc2aaa7e8effa7f2de2"
+      "bytes": 2409,
+      "sha256": "96f411de0df96bf9632220a39078238111e78d17c58a8ed5ee2431b856315950"
     },
     "verification/readability_paper_source/MOVIE_LABEL_MAPPING_CHECK.json": {
       "bytes": 689,
@@ -1255,11 +1259,11 @@
     },
     "verification/readability_paper_source/PAGE_TEXT_RENDER_COMPARISON.json": {
       "bytes": 4169,
-      "sha256": "5482fecba3b926f51c20f9912a6bfc41487645569bccf0157506511a67ef6749"
+      "sha256": "ace36905b7279ea380033ddbd8229adfb0b204f9e65327d694f0828b500aa8c1"
     },
     "verification/readability_paper_source/SOURCE_REBUILD_REPORT.json": {
-      "bytes": 4767,
-      "sha256": "87c9ece752ee4669e91130926aa60a5e52105a65b96fc1d7ebaa87cff3fb195f"
+      "bytes": 4781,
+      "sha256": "36ee92550b947182a2169cab73fba863c60d3d3cf7f3f69484499717bd168a81"
     }
   }
 }

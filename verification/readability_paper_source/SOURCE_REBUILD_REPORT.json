@@ -1,15 +1,15 @@
 {
   "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
-  "created_utc": "2026-11-09T14:50:58.486014+00:00",
-  "freeze_sha256": "b873617eb878e6ab2e8c2caaf51e06fafc3de76099675ba819fee8f49ee34b2d",
-  "frozen_pdf": "/home/gpu/IntentSat2S_authors8_20261109/manuscript/draft/main.pdf",
-  "frozen_pdf_sha256": "154f16e55c926319a541db1e96d0271ed1ca6b09fc40dcf9bc47fdbcb2f9c80a",
-  "source_zip": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/paper_source.zip",
-  "source_zip_sha256": "ee23b049db2cd4366cb2b7c76641df34d18654fea00a0761a8c32372eb8feafd",
-  "clean_source": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/clean_source",
-  "actually_unpacked_source": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/unpacked/paper_source",
-  "rebuilt_pdf": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
-  "rebuilt_pdf_sha256": "b3633923203d17e97b9f473f7786fb6146280a31b09c881c1d65b607d7e4a3ae",
+  "created_utc": "2026-11-10T12:46:20.902915+00:00",
+  "freeze_sha256": "3f2002bad14ca6dd496e7e5a370b8bd748c522b677c236941cbdea3b2513fff0",
+  "frozen_pdf": "/home/gpu/IntentSat2S_abstract_20261110/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19",
+  "source_zip": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/paper_source.zip",
+  "source_zip_sha256": "1118cc6691e04a4210f595781036c1de5b529d9b59900dcebc921325aaa4ef1f",
+  "clean_source": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "342945102d708c44634f1cc888f244b2eee4e6925ff6f7c413e4ffa2e8ce7e53",
   "author_count": 8,
   "authors": [
     "Zida Yang",
@@ -22,7 +22,7 @@
     "Cong Wang"
   ],
   "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
-  "abstract": "Semantic COUNT answers queries such as \"How many news items concern sports?\" by asking a language model to label each row and counting the positives. Batching rows reduces model calls but may change their labels; checking candidate batch sizes also incurs work before execution. Evaluating sampled agreement or deployment cost alone can therefore miss the optimizer's actual trade-off. We study the complete checked policy, from testing and size selection to full execution and fallback, while separating fidelity to single-row model outputs from accuracy against supplied labels. Our trace-based audit covers native LOTUS filtering and a custom batch operator in 36 configurations over six workloads, two domains, and two models, plus 16 policies comparing checking budgets. In the sole accepted batch deployment, all 80 check comparisons agree and full-result disagreement is below 5%; yet checking turns a deployment-only token saving into a 3.01% increase despite 79.69% fewer calls. Across 12 primary configurations, unchecked random and similarity batches meet both reference-fidelity thresholds and reduce calls and raw tokens in one and two cases, respectively; the checked policy does so in none. Larger budgets retain singleton fallback at higher cost. With caching enabled, all 48 fixed-plan executions use fewer raw input tokens but more uncached input tokens than their singleton baselines under the tested representation. The public artifact links each selection decision to its complete result and cost for reproducible, cache-aware policy comparisons.",
+  "abstract": "Large language models (LLMs) enable database systems to flexibly answer semantic COUNT queries, such as counting news articles about sports. Batching multiple records into one prompt can reduce model calls and improve query efficiency, but may compromise the reliability and consistency of model outputs. To balance efficiency and reliability, existing approaches test candidate batch sizes against single-record answers, selecting a batch size that passes the check or falling back to single-record execution. However, these checks introduce additional costs, and passing them does not necessarily mean that the complete query is accurate or efficient. We evaluate whether checked batching delivers reliable results at a lower overall cost. Rather than considering the checks or batch execution alone, we measure the results and costs of the entire process, including checking, execution, and fallback. Across 36 experimental configurations involving two language models and six workloads, the checked policy selects batching only once. In that case, 99.17% of labels agree with single-record execution, and model calls decrease by 79.69%, but total token use increases by 3.01% after including checking costs. Increasing the checking budget does not improve batch-size selection in our follow-up experiments. We also find that prefix caching can reverse the apparent cost advantage of batching: fewer input tokens do not always mean less input processing. Our findings highlight the importance of evaluating both result reliability and the full cost of semantic query optimization.",
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
   "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
   "pages": 14,
@@ -37,15 +37,15 @@
       14
     ]
   },
-  "four_figure_render_comparison": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
-  "page_text_render_comparison": "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
   "all_page_text_and_render_content_equal": true,
   "active_source_or_scientific_data_edited": false,
   "new_GPU_or_experiment": false,
   "source_default_ordinary_pdflatex": true,
   "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
   "logs": [
-    "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
-    "/home/gpu/IntentSat2S_authors8_20261109/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
+    "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
   ]
 }
