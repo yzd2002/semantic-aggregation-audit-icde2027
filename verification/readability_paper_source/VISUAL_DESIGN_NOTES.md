@@ -38,3 +38,5 @@
 - [Gated Attention](https://arxiv.org/pdf/2505.06708)
 - [NeurIPS 2026 Press](https://neurips.cc/Conferences/2026/Press)
 - [ICDE 2027 Research Track要求](https://icde2027.github.io/cf-research-papers.html)
+
+本记录来自上一轮视觉设计。本轮保留这四张矢量图及统一表格样式，改进文字解释和浮动图位置；本轮具体检查见《首次阅读视角复查与修订记录》。

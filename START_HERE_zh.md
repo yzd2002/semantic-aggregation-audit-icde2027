@@ -7,7 +7,7 @@
 - [四张矢量图](paper/current/figures/)与[源码重建核验](verification/readability_paper_source/)
 - [本版文件校验表](PUBLICATION_FILES_SHA256.json)与[材料定位表](ASSETS.md)
 
-本版统一四张矢量图和七张编号表的风格，保留老师确认的摘要、八作者与全部实验输入。直接上传Overleaf的项目ZIP在[这里](paper/current/overleaf_source.zip)。设计参考与年度说明见[视觉学习记录](verification/readability_paper_source/VISUAL_DESIGN_NOTES.md)。
+本版保留四张矢量图和七张编号表的统一风格，进一步解释任务、公式、策略名称、参考与回退结果，以及实验计数。老师确认的摘要、八作者与全部实验输入保持不变。关键统计阈值与成本恒等式已基于冻结CSV独立核算。直接上传Overleaf的项目ZIP在[这里](paper/current/overleaf_source.zip)。设计参考与年度说明见[视觉学习记录](verification/readability_paper_source/VISUAL_DESIGN_NOTES.md)。
 
 本版把采样批处理保真检查连接到完整COUNT结果与完整策略账单，提供36个原始配置、16次预算扩展执行及实际响应、分区、标签和成本证据。
 

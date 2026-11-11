@@ -1,7 +1,7 @@
 \section{Introduction}
-Consider a query that counts sports news in a relation of 2,048 items. A language-model filter gives each item a yes/no label; the database counts the yes labels. Sending one item per prompt requires 2,048 model requests. Putting eight items in each prompt requires only 256 requests, but the labels may change. A checked policy therefore tests a batch size before using it for the complete query.
+A semantic COUNT query counts rows that satisfy a natural-language condition, such as news items about sports. A language-model filter labels each row yes or no; the database counts the yes labels. For 2,048 items, one item per prompt requires 2,048 model calls. Eight items per prompt require only 256 calls, but their labels may change. The query optimizer must therefore choose how much batching to use. A checked policy tests candidate batch sizes against single-row answers before executing the full input.
 
-Our GLM Sports execution makes the optimizer's decision concrete (Fig.~\ref{fig:execution}). The check bought 80 fresh single-row references and 80 batch tests. Every comparison agreed, so the policy selected batches of eight. The completed query differed from each full single-row reference on 17 of 2,048 labels, within the stated 5\% tolerance. Yet its full bill was 348,545 input-plus-output tokens, compared with 338,365 for single-row execution: 79.69\% fewer requests, but 3.01\% more tokens. The selected batch met the observed fidelity tolerance, but checking consumed the deployment's token saving.
+One measured Sports execution with the GLM model makes the trade-off concrete (Fig.~\ref{fig:execution}). The check obtained 80 fresh single-row reference responses and tested 80 batches. Every comparison agreed, so the policy selected batches of eight. The completed query differed from each full single-row reference on 17 of 2,048 labels, within the stated 5\% tolerance. Yet its full bill was 348,545 input-plus-output tokens, compared with 338,365 for single-row execution: 79.69\% fewer requests, but 3.01\% more tokens. The selected batch met the observed fidelity tolerance, but checking consumed the deployment's token saving.
 
 \begin{figure*}[!t]
 \centering
@@ -10,11 +10,11 @@ Our GLM Sports execution makes the optimizer's decision concrete (Fig.~\ref{fig:
 \label{fig:execution}
 \end{figure*}
 
-We use \emph{plan} for one complete labeling execution and \emph{checked policy} for checking, selecting a batch size and executing the resulting plan. A useful optimizer comparison must follow the policy through all three stages. It must also say which result is being preserved. Agreement with another model execution measures reference fidelity; agreement with supplied dataset labels measures task accuracy. Prefix caching adds a further distinction: tokens present in a prompt and tokens requiring fresh input processing can rank the same plans differently.
+We use \emph{plan} for one complete labeling execution and \emph{checked policy} for checking, selecting a batch size and executing the resulting plan. A useful optimizer comparison must follow the policy through all three stages. It must also say which result is being preserved. Agreement with another model execution measures reference fidelity; agreement with supplied dataset labels measures task accuracy. Prefix caching reuses computation for shared prompt prefixes. The number of prompt tokens and the number requiring fresh input processing can therefore rank the same plans differently.
 
-We connect these decisions in a live execution audit with three contributions:
+Our audit follows each size-selection decision through its complete result and cost, with three contributions:
 \begin{enumerate}
-\item \textbf{Comparable result targets.} We measure returned labels, output validity, agreement with two complete single-row executions, and source COUNT separately. A returned count and a faithful replay have different meanings.
+\item \textbf{Comparable result targets.} We measure returned labels, output validity, agreement with two complete single-row executions, and source COUNT separately. A stable model output can still disagree with the supplied labels.
 \item \textbf{Complete policy accounting.} We join probe decisions to the entire deployed result and charge checking, execution and fallback together. A paired 80/320-probe follow-up measures whether spending more on the check improves that decision.
 \item \textbf{Cost comparisons under actual caching.} We retain raw input, output and native cached-input counters. We show when accounting for reused prefixes reverses the raw-input ordering of the declared plans.
 \end{enumerate}

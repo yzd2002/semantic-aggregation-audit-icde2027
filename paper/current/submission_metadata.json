@@ -124,10 +124,12 @@
       14
     ]
   },
-  "pdf_sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248",
+  "pdf_sha256": "493460339b383779325c00c5d9e2f54e77a41859356cc4ecd8ff87a1bd2a3546",
   "revision_scope": {
-    "four_figures_redesigned_as_vector": true,
-    "numbered_tables_restyled": 7,
+    "four_vector_figures_preserved": true,
+    "numbered_tables": 7,
+    "shared_table_style_preserved": true,
+    "formula_and_first_reader_explanations_improved": true,
     "limited_caption_and_readability_polish": true,
     "teacher_abstract_verbatim": true,
     "author_block_unchanged": true,

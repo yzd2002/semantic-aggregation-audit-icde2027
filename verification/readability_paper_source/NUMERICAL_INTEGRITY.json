@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "comparison_source": "/home/gpu/IntentSat2S_abstract_20261110/manuscript",
+  "comparison_source": "/home/gpu/IntentSat2S_visual_final_20261111/manuscript",
   "figure_input_CSVs_unchanged": [
     {
       "path": "figure_inputs/all_budget_cost_components.csv",

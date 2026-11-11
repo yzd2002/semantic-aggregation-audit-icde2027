@@ -3,7 +3,7 @@
 \subsection{The Main Policy in Six Steps}
 We reproduce the current-input fidelity check in NousDB's Algorithm~2~\cite{nousdb}. Given the current input, it tries sizes 8, 4 and 2, in that order. A successful candidate determines a new complete execution; otherwise the policy executes singletons. The main policy, \textbf{Current80-S}, uses 80 comparisons per candidate and the strict-format agreement rule from Section~\ref{sec:objects}:
 \begin{enumerate}
-\item \textbf{Buy reference labels.} Draw 80 focal row occurrences uniformly with replacement. Obtain one fresh singleton response for each draw, including repeated draws of the same row.
+\item \textbf{Obtain reference labels.} Draw 80 focal row occurrences uniformly with replacement. Obtain one fresh singleton response for each draw, including repeated draws of the same row.
 \item \textbf{Test size eight.} For each focal draw, add seven other row occurrences and request all eight labels in one batch response.
 \item \textbf{Score one comparison.} Require the complete batch response and singleton reference to have valid formats, then compare their labels for the focal row. The other seven labels do not create seven more statistical trials.
 \item \textbf{Choose a size.} Size eight passes only if all 80 comparisons succeed. Otherwise try four, then two, using the same 80 indexed singleton references but newly constructed batch probes.
@@ -15,13 +15,13 @@ Thus the Sports check spent $80+80=160$ requests before its 256-request deployme
 \paragraph{Sampling and issuing details.}
 For each candidate size $k$, the $k-1$ companions are sampled uniformly without replacement, excluding the focal occurrence, and the focal slot is uniform. Probe batches are constructed independently. Only batch requests are issued in chunks of 16. After a chunk returns, every issued trial is scored and charged. A candidate can be rejected early when even perfect remaining trials cannot satisfy the fixed-budget rule; acceptance waits for all 80 trials. For example, a decisive failure on trial 14 still incurs the issued chunk of 16. At size eight the deployed grouping is exactly Random8's frozen grouping, with new physical calls and responses. Lower sizes use their frozen partitions. New calls do not by themselves prove statistical independence.
 
-\subsection{What Makes 80 Comparisons Sufficient?}
-The rule accounts for sampling uncertainty: an observed agreement fraction is not its lower confidence limit. For candidate $k$, let $n$ be its fixed probe budget and $X_k$ its number of successful comparisons. Let $\varphi(k)$ denote the success probability under the stated random focal/context procedure. We require a lower bound on this probability to reach 95\% agreement. The two budgets give the following numerical rules. Failures include the policy's format and agreement failures, rather than source-label errors.
+\subsection{How Does the Statistical Pass Rule Work?}
+The checker accepts only when a lower confidence bound on probe agreement reaches 95\%. This bound allows for sampling uncertainty; it can be below 95\% even when every observed comparison agrees. For size $k$, $n$ is the fixed probe budget and $X_k$ the number of successful comparisons. The probability $\varphi_k$ concerns one random focal-row/context comparison satisfying the policy's format rule and matching its singleton response. It does not measure accuracy against source labels. The following table gives the maximum allowed failures at each budget.
 \begin{center}
-\small
+\tableformat
 \begin{tabular}{rrr}
 \toprule
-Budget $n$ & Allowed failures & Lower limit \\
+\tablehead{Budget $n$} & \tablehead{Allowed failures} & \tablehead{Lower bound} \\
 \midrule
 80 & 0 & 95.01\% \\
 320 & 7 & 95.33\% \\
@@ -42,10 +42,10 @@ and a candidate passes when $\underline\varphi_k\ge1-\eta=.95$. Here $\operatorn
 With no failed probes, the bound is $(\delta/3)^{1/n}$ and first reaches .95 at $n=80$. One failure at 80 gives a lower limit of 92.68\% and fails. At 320, seven failures pass but eight give 94.91\% and fail. These numbers make the selection rule usable without evaluating the inverse Beta function by hand.
 
 \subsection{Baselines and the Budget Follow-Up}
-\textbf{Random8} executes a seeded random partition into groups of eight without checking. \textbf{Similar8} instead uses deterministic TF--IDF sparse-cosine greedy grouping with frozen ties; its CPU grouping is charged. This is a known grouping baseline, distinct from the complete BATCHER method~\cite{batcher}. Neither baseline supplies a fidelity certificate.
+\textbf{Random8} executes a seeded random partition into groups of eight without checking. \textbf{Similar8} instead uses deterministic TF--IDF sparse-cosine greedy grouping with frozen ties; its CPU grouping time is included in elapsed time. This is a known grouping baseline, distinct from the complete BATCHER method~\cite{batcher}. Neither baseline supplies a fidelity certificate.
 
-The main policy's suffix S means that the singleton reference must pass the extra strict-format check. The follow-up compares \textbf{Current80-N} with \textbf{Current320-N}. Their suffix N compares against the engine's native singleton Boolean, including disclosed defaults. Both still require a valid complete batch response. This paired comparison changes only the budget, from 80 to 320. A post-hoc replay of the N rule on the main study uses only already recorded responses; it measures no unexecuted deployment.
+The policy name records its budget and parsing rule: 80 is the probe budget, and S requires the singleton response to pass the strict-format check. The follow-up compares \textbf{Current80-N} with \textbf{Current320-N}. Their suffix N compares against the engine's native singleton Boolean, including disclosed defaults. Both still require a valid complete batch response. This paired comparison changes only the budget, from 80 to 320. A post-hoc replay of the N rule on the main study uses only already recorded responses; it measures no unexecuted deployment.
 
-A larger budget can accept more reliably while costing more. Under a hypothetical independent 1\% probe-failure rate, the rule's acceptance probability increases from 44.7523\% to 98.3697\%. This is a binomial calculation, not an estimate from the stopped model probes. Maximum checking work is $n$ singleton references plus $3n$ batch requests. A first size-eight pass uses only $2n$ checking requests, followed by $\lceil N/8\rceil$ deployment requests; fallback adds $N$ singleton requests. The full bill must therefore be measured after selection.
+A larger budget can increase the probability of accepting a low-mismatch candidate, at greater checking cost. Under a hypothetical independent 1\% probe-failure rate, the rule's acceptance probability increases from 44.7523\% to 98.3697\%. This is a binomial calculation, not an estimate from the stopped model probes. Maximum checking work is $n$ singleton references plus $3n$ batch requests. A first size-eight pass uses only $2n$ checking requests, followed by $\lceil N/8\rceil$ deployment requests; fallback adds $N$ singleton requests. The full bill must therefore be measured after selection.
 
 We supply the procedure with the declared tested ceiling $k_{\max}=8$. This audits the stated subprocedure, rather than the full NousDB engine or its histogram optimizer. Preflight and every-request length checks preserve complete input fields; the runtime settings are given next.

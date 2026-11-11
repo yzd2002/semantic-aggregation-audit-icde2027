@@ -1,10 +1,10 @@
 \section{Does the Checked Policy Improve the Complete Query?}
 \label{sec:results}
-All 36 main configurations and 16 follow-up policies completed. Figure~\ref{fig:primary} summarizes the primary matrix.\input{sections/primary_figure.tex} The main checker selected a batch size above one only for GLM Sports at $N=2,048$, cache ON. We follow that execution from checking to the returned count and full bill before examining the remaining outcomes.
+All scheduled runs in the 36 main configurations and all 16 follow-up policies finished; strict output completeness is evaluated separately. Figure~\ref{fig:primary} summarizes the primary matrix.\input{sections/primary_figure.tex} The main checker selected a batch size above one only for GLM Sports at $N=2,048$, cache ON. We follow that execution from checking to the returned count and full bill before examining the remaining outcomes.
 
 \subsection{Walkthrough: A Passed Check and Its Full Bill}
 \label{sec:sports_walkthrough}
-For GLM Sports, Current80-S selected $k=8$ after all 80 calibration comparisons agreed. The separately seeded validation then found two mismatches in 80 fresh comparisons (2.5\%). Deployment labeled all 2,048 rows in 256 disjoint batches and disagreed with each complete S1/S2 reference on 17 rows (.83\%). The 80/80 checking result, the 2/80 validation result and the 17/2,048 deployment result answer separate questions. Validation is evaluation-only; it changes neither selection nor the policy bill.
+For GLM Sports, Current80-S selected $k=8$ after all 80 calibration comparisons agreed. The separately seeded validation then found two mismatches in 80 fresh comparisons (2.5\%). Deployment labeled all 2,048 rows in 256 disjoint batches and disagreed with each complete S1/S2 reference on 17 rows (.83\%). The selection check and independent validation each score one focal label per probe; deployment compares every row in the final partition. Thus 80/80 checking agreement, 2/80 validation mismatches and 17/2,048 deployed mismatches describe different samples and stages. Validation is evaluation-only; it changes neither selection nor the policy bill.
 
 The returned count was 519 against source $G=517$, giving $e_N=.10\%$ and $e_G=.39\%$, with 1.66\% source row error, as worked through in Section~\ref{sec:objects}. S1 itself had 2,025/2,048 correct source labels. This provides a usable-reference case for separating fidelity from cost. The separately executed Similar8 plan had 13/2,048 reference mismatches (.63\%); its changed grouping is an observed alternative, not an additional certificate from random probes.
 
@@ -21,11 +21,11 @@ Current80-S meets the criterion in 0/12 primary configurations, including 0/10 o
 
 \subsection{Reference Fidelity and Source COUNT Are Different}
 \label{sec:quality_results}
-The supplied labels also let us evaluate the singleton reference itself; complete per-workload baseline readouts are retained in the artifact. Qwen World and Sports triggered default-True parsing on 1,936 and 1,664 of 2,048 rows. Their native counts were 1,999 versus source $G=514$, and 1,741 versus $G=517$; source row errors were 74.37\% and 60.74\%. A post-hoc World S1 inspection found normal \texttt{stop} termination on all 2,048 calls with only 4--6 output tokens. These observations characterize the frozen two-step query wording, model and native parser together; no matched rewrite isolates the cause. Strict-format checking exposes the format issue while native COUNT remains delivered. Preserving such a reference would also preserve its task errors.
+The supplied labels also let us evaluate the singleton reference itself; complete per-workload baseline readouts are retained in the artifact. In the S1 reference runs, Qwen World and Sports triggered default-True parsing on 1,936 and 1,664 of 2,048 rows. These S1 native counts were 1,999 versus source $G=514$, and 1,741 versus $G=517$; source row errors were 74.37\% and 60.74\%. A post-hoc World S1 inspection found normal \texttt{stop} termination on all 2,048 calls with only 4--6 output tokens. These observations characterize the frozen two-step query wording, model and native parser together; no matched rewrite isolates the cause. Strict-format checking exposes the format issue while native COUNT remains delivered. Preserving such a reference would also preserve its task errors.
 
 \input{results/primary_results.tex}
 
-All 12 primary Current80-S policies delivered native counts, but only six had complete strict vectors (Table~\ref{tab:primary_results}). The native joint benefit result is 0/12. The strict-vector sensitivity has zero satisfied, six evaluated-negative and six unavailable cases. Unavailable strict COUNT is distinct from native query failure.
+All 12 primary Current80-S policies delivered native counts, but only six had complete strict vectors (Table~\ref{tab:primary_results}). A singleton fallback makes new calls, so its count need not equal the separately executed S1 count. The native joint benefit result is 0/12. The strict-vector sensitivity has zero satisfied, six evaluated-negative and six unavailable cases. Unavailable strict COUNT is distinct from native query failure.
 
 The unchanged SemBench Q3 integration case illustrates the denominator distinction. Its 2,000-row demonstration relation sends $N=120$ rows to the semantic filter, with $G=14$. Qwen returns 7 and GLM 9 under both cache settings, without defaults and with complete strict outputs. The absolute COUNT errors are seven and five rows: $e_N=5.83\%$ and 4.17\%, but $e_G=50.00\%$ and 35.71\%. These integration measurements are separate from the larger prepared-relation variants.
 
@@ -41,6 +41,14 @@ The follow-up holds the native-Boolean agreement rule fixed while comparing Curr
 \label{fig:budget}
 \end{figure*}
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{cache_input_cost_objects.pdf}
+\caption{Raw versus API uncached input for Movie top and AG Sci/Tech at $N=7,600$. Lines connect matched cache-OFF/ON executions under each model. Ratios use the corresponding singleton S1 counter; one marks equal cost. Blue Random8 circles and orange Similar8 squares show coincident counters without jitter. Filled markers denote cache ON; hollow markers denote cache OFF. The upper shaded region has fewer raw input tokens but more uncached input than S1. Complete-matrix ranges are in Table~\ref{tab:cache_costs}. Uncached input is a prefill-work proxy.}
+\label{fig:cache}
+\end{figure*}
+
+
 In all eight pairs, 320 probes increase full requests by 4.35--7.64\%, raw tokens by 6.82--19.20\%, and API uncached input by 8.69--25.46\%. Neither tested budget improves the deployment choice on these anchors. The hypothetical IID power calculation in Section~\ref{sec:budget} does not estimate this panel's mismatch probability. Rejecting a candidate means that the policy did not certify it, not that every possible batch is unsafe.
 
 One recorded Qwen AG Sci/Tech pair shows where the extra requests arise ($N=7,600$, cache ON, repeat~1). At budget 80, the three candidates issue 16, 16 and 48 batch probes; the 80 singleton references are reused across them. Checking therefore costs $80+16+16+48=160$ requests. At budget 320 it costs $320+48+112+128=608$. Both policies then obtain 7,600 fresh singleton labels. Table~\ref{tab:budget_worked_pair} places this request arithmetic next to the exact token receipts. In the 80-probe first candidate, the first failure is at trial 14, but the issued 16-request chunk is fully scored and billed; detailed stopping prefixes remain in the artifact.
@@ -54,13 +62,9 @@ The retained stopping-audit CSV records every observed candidate prefix. The mai
 \label{sec:cache_results}
 All 48 cache-ON fixed-plan executions (24 configurations, two plans) use less raw input but more API uncached input than their own S1. Qwen's ratios are .626--.739 for raw input versus 1.083--1.157 for uncached input; GLM's are .649--.758 versus 1.142--1.285. All 24 cache-OFF fixed-plan executions favor batching on both counters. Table~\ref{tab:cache_costs} keeps raw input, output and uncached input separate, while Fig.~\ref{fig:cache} shows matched examples.
 
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{cache_input_cost_objects.pdf}
-\caption{Raw versus API uncached input for Movie top and AG Sci/Tech at $N=7,600$. Lines connect matched cache-OFF/ON executions under each model. Ratios use the corresponding singleton S1 counter; one marks equal cost. Blue Random8 circles and orange Similar8 squares show coincident counters without jitter. Filled markers denote cache ON; hollow markers denote cache OFF. The upper shaded region has fewer raw input tokens but more uncached input than S1. Complete-matrix ranges are in Table~\ref{tab:cache_costs}. Uncached input is a prefill-work proxy.}
-\label{fig:cache}
-\end{figure*}
+
+
 \input{results/cache_cost_ranges.tex}
 
-All 24 matched anchor/size/model/fixed-plan comparisons have identical raw input counts with cache ON and OFF. In the running cache-ON Sports case, S1 writes 328,125 input tokens and reuses 131,008, leaving $U=197,117$. Random8 writes fewer inputs (246,721) but reuses only 20,400, leaving $U=226,321$. Its smaller prompt total therefore requires more uncached input. This comparison concerns input processing; the complete raw-token bill also includes output tokens. Output ratios remain separate: .974--1.106 for Qwen and approximately .850 for GLM with cache ON. These are counter rankings for the declared representation, not universal time or monetary advantages.
+All 24 matched fixed-plan comparisons have identical raw input counts with cache ON and OFF. In Sports with cache ON, S1 writes 328,125 input tokens and reuses 131,008, leaving $U=197,117$. Random8 writes fewer inputs (246,721) but reuses only 20,400, leaving $U=226,321$. Its smaller prompt total therefore requires more uncached input. This comparison concerns input processing; the complete raw-token bill also includes output tokens. Output ratios remain separate: .974--1.106 for Qwen and approximately .850 for GLM with cache ON. These representation-specific counters do not imply runtime or monetary savings.
 

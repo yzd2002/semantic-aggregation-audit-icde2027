@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "complete_main_rows_checked": 330,
+  "main_configurations": 36,
+  "paired_budget_policies": 16,
+  "cp_rules": {
+    "80": {
+      "allowed_failures": 0,
+      "lower_at_limit": 0.9501082941637512,
+      "lower_after_one_more_failure": 0.926754439678883,
+      "hypothetical_acceptance_at_1percent_failure": 0.44752321376381093
+    },
+    "320": {
+      "allowed_failures": 7,
+      "lower_at_limit": 0.9533069745276148,
+      "lower_after_one_more_failure": 0.9491125515834782,
+      "hypothetical_acceptance_at_1percent_failure": 0.9836971515307666
+    }
+  },
+  "direct_AQP_intervals": [
+    {
+      "input": "agnews_count_world__n2048",
+      "interval": [
+        466,
+        544
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "agnews_count_sports__n2048",
+      "interval": [
+        457,
+        533
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "agnews_count_business__n2048",
+      "interval": [
+        466,
+        544
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "agnews_count_science_technology__n2048",
+      "interval": [
+        484,
+        562
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "agnews_count_science_technology__n512",
+      "interval": [
+        123,
+        123
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "agnews_count_science_technology__n7600",
+      "interval": [
+        1779,
+        2164
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "movie_count_positive_top_critics__n2048",
+      "interval": [
+        1210,
+        1297
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "movie_count_positive_top_critics__n512",
+      "interval": [
+        309,
+        309
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "movie_count_positive_top_critics__n7600",
+      "interval": [
+        4685,
+        5106
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "movie_count_positive_other_critics__n2048",
+      "interval": [
+        1423,
+        1504
+      ],
+      "covers_source": false
+    },
+    {
+      "input": "movie_count_positive_other_critics__n512",
+      "interval": [
+        359,
+        359
+      ],
+      "covers_source": true
+    },
+    {
+      "input": "movie_count_positive_other_critics__n7600",
+      "interval": [
+        5109,
+        5512
+      ],
+      "covers_source": true
+    }
+  ],
+  "finite_control_totals": {
+    "canonical_strict": {
+      "eligible_complete_vectors": 98,
+      "raw_count_accepted": 24,
+      "stratified_row_accepted": 3,
+      "direct_row_accepted": 3,
+      "actual_count_outside_tolerance_among_accepted": 0
+    },
+    "post_hoc_native": {
+      "eligible_complete_vectors": 108,
+      "raw_count_accepted": 27,
+      "stratified_row_accepted": 3,
+      "direct_row_accepted": 3,
+      "actual_count_outside_tolerance_among_accepted": 0
+    }
+  },
+  "table_numeric_tokens_unchanged": [
+    "budget_results.tex",
+    "budget_worked_pair.tex",
+    "cache_cost_ranges.tex",
+    "finite_results.tex",
+    "primary_policy_summary.tex",
+    "primary_results.tex"
+  ],
+  "source_inputs_and_vectors_unchanged": [
+    {
+      "path": "figure_inputs/all_budget_cost_components.csv",
+      "sha256": "c0e38f8e7d34e8eb1bb7f34e7944cbe2119dd0634e73fb7990a42362f62db5b9"
+    },
+    {
+      "path": "figure_inputs/all_budget_policy_readouts.csv",
+      "sha256": "e61793f014b184110ad297b93c06a8ddf66002d48122b2cc4371a52c71a62b28"
+    },
+    {
+      "path": "figure_inputs/all_cache_cost_objects.csv",
+      "sha256": "038372e42e311f5363f5c14d49da62a80a8db58df744bcbe778f62b353fd4d11"
+    },
+    {
+      "path": "figure_inputs/all_main_policy_readouts.csv",
+      "sha256": "c477c3627d3952a735e291be1c012b8d1136df866287b6efdea32c33e7f8afc1"
+    },
+    {
+      "path": "figure_inputs/direct_AQP_unique_inputs.csv",
+      "sha256": "ec28fb4fcab73ac6dd433c3dea19d82e705e86306abcf805af1e642461111991"
+    },
+    {
+      "path": "figure_inputs/finite_audit_method_summary.csv",
+      "sha256": "be90dc7b05e477330d1f8d361ea7a9607f76ccdbda11450c051dc8fb58542ca9"
+    },
+    {
+      "path": "figure_inputs/matched_cache_ON_OFF.csv",
+      "sha256": "5ff8c03e38ee311768e449a23b2dbc552d914e024f31f9663003f5e32242d14c"
+    },
+    {
+      "path": "figure_inputs/observed_probe_rejection_summary.csv",
+      "sha256": "dcab0b13891bd44d8a684411e08bb672f3a8fb07c81d8ab5082c8ddf3d572ee7"
+    },
+    {
+      "path": "figure_inputs/primary_policy_benefit_summary.csv",
+      "sha256": "afd8cf717b2285d7c2684cd1e5826c58a4d02ba0843faaaabdbb4564dae88de3"
+    },
+    {
+      "path": "figure_inputs/readability_evidence/candidate_stop_trace.csv",
+      "sha256": "adb5c6866020e2ec9a644178ee3660ddd63c25ec3a68f1e852e1f0a86076e9d7"
+    },
+    {
+      "path": "figure_inputs/readability_evidence/phase_exact_cost.csv",
+      "sha256": "b2c88c9b84e4fdba3cbb41742e325090ee74dadf72a851cd8d48121398279980"
+    },
+    {
+      "path": "figures/budget_full_bill.pdf",
+      "sha256": "0bb22464ced742cc478fe2a3512d5b01d2d79fd23b9b4b2cf811dcf27a4c0b7c"
+    },
+    {
+      "path": "figures/cache_input_cost_objects.pdf",
+      "sha256": "27c28fa4199bfcf8453b4b27da02ebaf0c0feeeb8dc18278392c5e7104dd76e0"
+    },
+    {
+      "path": "figures/contract_execution_overview.pdf",
+      "sha256": "8f3093c106475c5a545ff7cc99262f978efab9b71bf7113e1ba0edeeac9a0fcc"
+    },
+    {
+      "path": "figures/primary_execution_readouts.pdf",
+      "sha256": "aec7c49556d6d30bc8c7221070a3e9894077244f73914fef766058fefa5c9779"
+    },
+    {
+      "path": "figures/budget_full_bill.svg",
+      "sha256": "c12b4798fc323ab79ae79fcc8294cd811ce39e3f7bd3bc584490f407a3d23324"
+    },
+    {
+      "path": "figures/cache_input_cost_objects.svg",
+      "sha256": "88ded7febf3083d0f6da45a2d35470f87b55a1a8e31ffefb05c9c71f9d9dc278"
+    },
+    {
+      "path": "figures/contract_execution_overview.svg",
+      "sha256": "d2d0e13db2671c2717f0b777493815cf5711a1c6eac84bb19149ca94d31b1f9c"
+    },
+    {
+      "path": "figures/primary_execution_readouts.svg",
+      "sha256": "bd0fb342b4ec63818b8e467edb5575c58422f7be6333bb0722070e7a8e6fb6b0"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_experimental_measurements": false,
+  "scope": "Independent CPU consistency calculations from existing published CSVs; not new model experiments or a new end-to-end artifact replay"
+}

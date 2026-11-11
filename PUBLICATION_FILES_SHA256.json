@@ -3,19 +3,19 @@
   "files": {
     "ASSETS.md": {
       "bytes": 3405,
-      "sha256": "c5d8656883d58fa2e96660c3849f14c2129d18adebff2da544beb5ffcbece2c7"
+      "sha256": "27480844d5a8571fa73836a99bfdc91b8a4a1bf87c84de408371cc687219156c"
     },
     "README.md": {
-      "bytes": 5992,
-      "sha256": "df51eee8c61ae94a13e23e47adc953f348d715e9d9e7a18952e21219df6d3b7e"
+      "bytes": 6357,
+      "sha256": "21a4293fa81420f28bdc5a618ab449d5890632af961798ab968b8fa1109efca8"
     },
     "START_HERE_zh.md": {
-      "bytes": 4035,
-      "sha256": "727275091c3ba733e533d622510db03ea153c77efff76378bc93af17994535b7"
+      "bytes": 4209,
+      "sha256": "9abda7ff4d55d5bdcf676e2177f93f51363e00ed7cd19fedc113e6ecc5e639fe"
     },
     "paper/current/ICDE2027_Semantic_COUNT.pdf": {
-      "bytes": 435259,
-      "sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248"
+      "bytes": 435397,
+      "sha256": "493460339b383779325c00c5d9e2f54e77a41859356cc4ecd8ff87a1bd2a3546"
     },
     "paper/current/abstract.txt": {
       "bytes": 1584,
@@ -54,20 +54,20 @@
       "sha256": "bd0fb342b4ec63818b8e467edb5575c58422f7be6333bb0722070e7a8e6fb6b0"
     },
     "paper/current/overleaf_source.zip": {
-      "bytes": 228865,
-      "sha256": "51d059e68fecb02922cd7043e3b7aba889741b60cd9617cb0d4e8d85f9e5287e"
+      "bytes": 229460,
+      "sha256": "3b9d6d7bb60259089b9d5ece2e49aa182c03f85560900beeed3584f0ae67ed78"
     },
     "paper/current/paper_source.zip": {
-      "bytes": 281039,
-      "sha256": "e91d4ddc90d57cb57427a5e676771e205ed14967712eff1d0515e6602e6b32a6"
+      "bytes": 281554,
+      "sha256": "ec729e496181a2d29245bdeb2f78f9c6f88d64bde64d4d177b24c6ad65b61476"
     },
     "paper/current/source/BUILD_ADAPTATIONS.json": {
       "bytes": 4998,
-      "sha256": "34889b208fb1ced73f8c85f0ebd5ee222aed710da16c66ae9971735e646286ac"
+      "sha256": "fa700e8e1f461f082eeca3072ad9af1db2de3516ffebc39c6650a0faa75bf863"
     },
     "paper/current/source/MANUSCRIPT_CONTENT.json": {
       "bytes": 3066,
-      "sha256": "873ee61da96aa85cdd2517d4d539dc644e51228fb71d145d2bbc726f809d9505"
+      "sha256": "64e33039bca8c16652398b619469335c3fcfb6cd93e61729f0da693624ad5e22"
     },
     "paper/current/source/README_SOURCE.md": {
       "bytes": 1802,
@@ -75,7 +75,7 @@
     },
     "paper/current/source/SOURCE_MANIFEST.json": {
       "bytes": 5448,
-      "sha256": "981152960f9625db6a55999c8b517013758f28c61fdc7b1506f72f5f5fd37198"
+      "sha256": "077ee9f29b1e2f8573e72dd3042f86c2406855c032e1d15f26e761c737fbf0fb"
     },
     "paper/current/source/build.sh": {
       "bytes": 409,
@@ -110,12 +110,12 @@
       "sha256": "746626d1744c5f20658bb4d4041d27ba246270c4df6c8fccd67735de16cb2d34"
     },
     "paper/current/source/draft/results/finite_results.tex": {
-      "bytes": 1334,
-      "sha256": "4a40d75b659aceb01a881f9944e85a21ff6ac64e5c96e4c595e1b4ce7b97c5bb"
+      "bytes": 1271,
+      "sha256": "ad9ecc8a46c85d48e598b16dd63a24bd8d80c2f723bcce532bec73e703298faa"
     },
     "paper/current/source/draft/results/primary_policy_summary.tex": {
-      "bytes": 1072,
-      "sha256": "eef7046a09055e243cbb43ff489d54b9bdc3614d962343a3d43147b754ad9746"
+      "bytes": 1038,
+      "sha256": "6a6e7308f7010d2a746d74a63b1ee335c232e1c9fea113fe3c40a95129459206"
     },
     "paper/current/source/draft/results/primary_results.tex": {
       "bytes": 1805,
@@ -126,36 +126,36 @@
       "sha256": "c1207c482e1663e4afd18f2b79ad090ac4780fd9473805af67ba1eb98310a448"
     },
     "paper/current/source/draft/sections/certification_budget.tex": {
-      "bytes": 6490,
-      "sha256": "a515c262767f68a6e736f4abf5389423f284d5e02d872824710333176c286fa3"
+      "bytes": 6692,
+      "sha256": "5b60a326277d9d0222f1117a12abad37035eae6554ab0220a8c77d69a5ed9856"
     },
     "paper/current/source/draft/sections/discussion.tex": {
-      "bytes": 2495,
-      "sha256": "b7f432d1b767f8825303c9e0b178a3a2f5bb3c8ff4446770ebf803e1917a8600"
+      "bytes": 2553,
+      "sha256": "651b2b041545db083d2c4bc2beb9f36c120f7564e7d21831487a6fe6cda5f98c"
     },
     "paper/current/source/draft/sections/execution_objects.tex": {
-      "bytes": 4626,
-      "sha256": "23e1723a6eb152c7e75664d200d9cf0d8eb225f28d728da0db8ab4506072f33c"
+      "bytes": 5071,
+      "sha256": "8af6d6a7e4aa8660013218853c43b587ea594ea79e778daeb1a65aaea5fb3404"
     },
     "paper/current/source/draft/sections/finite_controls.tex": {
-      "bytes": 7301,
-      "sha256": "523561f3deaabe0e3a1362da9322b574305408d44099474cf406399c87e072b3"
+      "bytes": 7595,
+      "sha256": "d4f3d064424e402e208a16c38361f39afb4e17f79e34e9253941ee3d1e05c1e2"
     },
     "paper/current/source/draft/sections/introduction.tex": {
-      "bytes": 4039,
-      "sha256": "1c29ec2cf31a3afa0617fa76ba3bafc520f251569248a5d8d9123efb695ec473"
+      "bytes": 4249,
+      "sha256": "05029af6a141835429a913c1eac7a3df58888a442a8eae939ac5e15d508b6377"
     },
     "paper/current/source/draft/sections/new_results.tex": {
-      "bytes": 9801,
-      "sha256": "e2e0401ae96edd1507d68ce8c6a4eea494881808ce2d39a85ea5de718666bced"
+      "bytes": 10112,
+      "sha256": "46c1829a20ed73eeda9b9c979f8dbc63fab97e8ea85cf799f775f71ac45efc16"
     },
     "paper/current/source/draft/sections/primary_figure.tex": {
       "bytes": 692,
       "sha256": "29de5b07bcb789e8b398688bd1eace0e4359d0488ac0b1caeea1c6e651e74626"
     },
     "paper/current/source/draft/sections/real_engine_design.tex": {
-      "bytes": 7507,
-      "sha256": "b12f5f729579646c6bac868788d2fa8f710bd8230b3ade7833dfad693d15654e"
+      "bytes": 7563,
+      "sha256": "9b8aa82cfb4d6b015debca5ac35544c1ddfb2970a7517b71ec31e47efbc434ec"
     },
     "paper/current/source/draft/sections/related_work.tex": {
       "bytes": 2836,
@@ -166,8 +166,8 @@
       "sha256": "6f7817669d59156efa53588dc3c97386c6aebb0761261fa2651f2eb3bb6fcfa1"
     },
     "paper/current/source/draft/sections/resources_reporting.tex": {
-      "bytes": 2507,
-      "sha256": "7b72afd5fa48c8f778ee7df97f31c23edf03b59f1ceeccc9e830049b2b5c38cd"
+      "bytes": 2637,
+      "sha256": "ad6648069a73fd84ddec9cebfdb8d22b8f89d7d3c396456d5292de4af2e7eb0a"
     },
     "paper/current/source/draw_overview.py": {
       "bytes": 4183,
@@ -266,8 +266,8 @@
       "sha256": "67ca867be6c15fff020cec1570e0b241254170f76ef7743fdd84d9184032d85d"
     },
     "paper/current/submission_metadata.json": {
-      "bytes": 7059,
-      "sha256": "d05c6e4e91475b6d79315e01b5d821c0ecd0acd250f33b2a8019c7afaee6f286"
+      "bytes": 7148,
+      "sha256": "a1e8fd0d54a16c3f9a6f2e8c698c7310d2747d2a6d0ef4f1c931b8a7d4de5cd5"
     },
     "repro/real_engine_20261106/archive_compact.py": {
       "bytes": 7299,
@@ -1254,28 +1254,36 @@
       "sha256": "4ef0e31bb1a63b6fd9c50ffbb7c6430fd866acc5658555f0b51266b4cf5c7d84"
     },
     "verification/readability_paper_source/FINAL_PAGE_AUDIT.json": {
-      "bytes": 3746,
-      "sha256": "37bced760a4049c1f5acdf35002b5a71458277b9ce70fe2ce1ef970742f31a29"
+      "bytes": 3767,
+      "sha256": "eda8e2a22e0cb9e367461923505498c4d860ec11521467acc9fb0c42f9018137"
+    },
+    "verification/readability_paper_source/INDEPENDENT_MATH_AND_CONSISTENCY.json": {
+      "bytes": 6347,
+      "sha256": "c6e66f3cf87a6b87c29670873f03654338fb040aeeeaac6854ac636c05d4aad7"
     },
     "verification/readability_paper_source/NUMERICAL_INTEGRITY.json": {
-      "bytes": 2918,
-      "sha256": "6b993175a4ceeb13aadd8465090b0ae4f0af1a2b036e1728b9d11b604e0c23ed"
+      "bytes": 2922,
+      "sha256": "f68446cb008027df70101c057f9cc62448a7b23e567913eeb41a41b98f6f32a9"
     },
     "verification/readability_paper_source/OVERLEAF_BUILD_VERIFIED.json": {
-      "bytes": 4646,
-      "sha256": "bedc6d9ee8aba77430ee56d948e607a8fad946d6e500c64edc2b6f6849a495d3"
+      "bytes": 4661,
+      "sha256": "a0cb3855fddbb3cdfcfd6d3e75090e5c8e59bd720064d9785f9bd06b0d4cafe8"
     },
     "verification/readability_paper_source/PAGE_TEXT_RENDER_COMPARISON.json": {
       "bytes": 4169,
-      "sha256": "7b6bc76e338b21f92cbb100889d81407acad19174dadf578e6ad5637092f8aeb"
+      "sha256": "6ac0648175b4c53023dd3b887cb3c67823b3dff9d18e2ed59b4e3d3e6e60ef76"
+    },
+    "verification/readability_paper_source/READING_GUIDE.md": {
+      "bytes": 1373,
+      "sha256": "6441c80f36c0c090ae14cf2617f4dd6790bc76b033630bf49b4de3c80e5f28b3"
     },
     "verification/readability_paper_source/SOURCE_REBUILD_REPORT.json": {
-      "bytes": 4835,
-      "sha256": "abfa0a32c368473b8c7e9e5d78d64d67cb93a3f56d78e3515e67b739bcc5179a"
+      "bytes": 4880,
+      "sha256": "9936252322963b37d2a1220069fe194c03db9f2c870e3cc57dfb292c6ec37c7b"
     },
     "verification/readability_paper_source/VISUAL_DESIGN_NOTES.md": {
-      "bytes": 4055,
-      "sha256": "d74e1dd69d6063e50879315d091fe4fdb58fbaeeaac3f323e0f561a5fdd49c8e"
+      "bytes": 4258,
+      "sha256": "8c93f2c8809c071387a920ff7d5892dd1c918ac215a52211b57442b392c52149"
     }
   }
 }

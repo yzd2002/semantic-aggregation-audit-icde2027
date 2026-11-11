@@ -21,7 +21,7 @@ The [current scientific index](repro/real_engine_20261106/public/artifact_index.
 
 ## Rebuild the paper
 
-The 2026-11-11 visual edition unifies all four vector figures and seven numbered tables. Every numerical input and the teacher-approved abstract is preserved. Figure titles and captions identify their measured targets and denominators; styling does not change the scientific findings.
+The final 2026-11-11 readability edition preserves the unified four vector figures and seven numbered tables. It clarifies evaluation targets, the probe pass rule, cost denominators, and the difference between reference and fresh fallback runs. Independent CPU calculations recheck the stated CP thresholds, all 12 direct-AQP HG intervals, and phase-by-phase cost identities from the frozen CSVs; these are consistency checks, not new model experiments. Every numerical input and the teacher-approved abstract is preserved. Figure titles and captions identify their measured targets and denominators; styling does not change the scientific findings.
 
 `bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The eight-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
