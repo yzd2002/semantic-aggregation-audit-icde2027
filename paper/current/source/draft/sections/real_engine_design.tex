@@ -6,10 +6,10 @@ The study separates a 12-configuration primary comparison, 24 size/cache extensi
 \begin{table*}[!t]
 \caption{Study design. Every listed workload/size/cache combination uses both Qwen3-4B-Instruct-2507 and GLM-4-9B-Chat. $N$ counts rows entering the semantic filter after structured filtering. The follow-up crosses two workloads, two models, two budgets and two physical repeats.}
 \label{tab:matrix}
-\centering\small
+\centering\tableformat
 \begin{tabular}{P{.15\textwidth}P{.38\textwidth}P{.12\textwidth}P{.10\textwidth}P{.13\textwidth}}
 \toprule
-Family & Workloads & Input $N$ & Prefix cache & Count \\
+\tablehead{Family} & \tablehead{Workloads} & \tablehead{Input $N$} & \tablehead{Prefix cache} & \tablehead{Count} \\
 \midrule
 Primary & Movie top/other critics; AG World, Sports, Business, Sci/Tech & 2,048 & ON & 12 cases \\
 Scale anchors & Both Movie views; AG Sci/Tech & 512; 7,600 & ON & 12 cases \\

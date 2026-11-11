@@ -76,34 +76,9 @@ def overview():
     assert (N,base_calls,deploy_calls,check_calls,full_calls)==(2048,2048,256,160,416)
     assert (base_tokens,deploy_tokens,check_tokens,full_tokens,mismatches)==(338365,255425,93120,348545,17)
     assert round(N*float(checked['loss_to_S2']))==17
-    fig,ax=plt.subplots(figsize=(7.16,2.70));fig.subplots_adjust(left=0,right=1,bottom=0,top=1)
-    ax.set(xlim=(0,7.16),ylim=(0,2.70));ax.axis('off')
-    box(ax,.02,2.16,7.12,.50,fill=LIGHT,edge=INK)
-    txt(ax,.13,2.48,'One real query: count sports items among 2,048 news records',size=9.0,fontweight='bold')
-    txt(ax,.13,2.29,'GLM  |  prefix cache ON  |  source count = 517',size=8.1)
-    x1,x2,x3=.02,2.46,4.90;w=2.24
-    for x,col in [(x1,CHECK),(x2,PLAN),(x3,INK)]:box(ax,x,.30,w,1.68,fill=WHITE,edge=col)
-    for x,number,title,col in [(x1,'1','Check labels',CHECK),(x2,'2','Execute every row',PLAN),(x3,'3','Add the whole bill',INK)]:
-        txt(ax,x+.11,1.80,number+'  '+title,size=8.6,fontweight='bold',color=col)
-    txt(ax,x1+.11,1.52,'80 single-row reference calls',size=7.8)
-    txt(ax,x1+.11,1.30,'+ 80 batch tests (eight rows each)',size=7.6)
-    txt(ax,x1+.11,.98,'80 / 80 comparisons match',size=8.0,fontweight='bold',color=CHECK)
-    txt(ax,x1+.11,.73,'Choose batch size 8',size=8.0)
-    txt(ax,x1+.11,.48,f'Checking: {check_calls:,} requests',size=7.9,fontweight='bold')
-    txt(ax,x2+.11,1.52,'256 new batches cover all 2,048 rows',size=7.5)
-    txt(ax,x2+.11,1.30,'Returned COUNT = '+checked['predicted_count'],size=8.1,fontweight='bold')
-    txt(ax,x2+.11,.98,f'{mismatches} / {N:,} labels differ from S1/S2',size=7.4)
-    txt(ax,x2+.11,.73,'0.83% reference loss < 5% tolerance',size=7.3)
-    txt(ax,x2+.11,.48,f'Deployment: {deploy_calls:,} requests',size=7.8,fontweight='bold')
-    txt(ax,x3+.11,1.52,f'Requests: {check_calls:,} + {deploy_calls:,} = {full_calls:,}',size=7.7)
-    txt(ax,x3+.11,1.30,f'S1 uses {base_calls:,} requests',size=7.7)
-    txt(ax,x3+.11,.99,f'Tokens: {check_tokens:,} + {deploy_tokens:,}',size=7.7)
-    txt(ax,x3+.11,.77,f'= {full_tokens:,} vs {base_tokens:,} for S1',size=7.3)
-    txt(ax,x3+.11,.57,'Calls: 79.69% lower',size=7.6,fontweight='bold')
-    txt(ax,x3+.11,.38,'Raw tokens: 3.01% higher',size=7.6,fontweight='bold')
-    arrow(ax,2.27,1.13,2.43,1.13,color=CHECK);arrow(ax,4.71,1.13,4.87,1.13,color=PLAN)
-    txt(ax,3.58,.13,'In this execution, the accepted batch meets observed fidelity tolerance; checking adds to its cost.',size=7.5,ha='center')
-    render(fig,'contract_execution_overview')
+    from figure_style import draw_overview
+    draw_overview(OUT, {'base_tokens':base_tokens,'check_tokens':check_tokens,'deploy_tokens':deploy_tokens})
+
 
 
 if __name__=='__main__':

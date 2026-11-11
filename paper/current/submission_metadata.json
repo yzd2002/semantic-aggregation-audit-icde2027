@@ -1,18 +1,6 @@
 {
   "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
   "abstract": "Large language models (LLMs) enable database systems to flexibly answer semantic COUNT queries, such as counting news articles about sports. Batching multiple records into one prompt can reduce model calls and improve query efficiency, but may compromise the reliability and consistency of model outputs. To balance efficiency and reliability, existing approaches test candidate batch sizes against single-record answers, selecting a batch size that passes the check or falling back to single-record execution. However, these checks introduce additional costs, and passing them does not necessarily mean that the complete query is accurate or efficient. We evaluate whether checked batching delivers reliable results at a lower overall cost. Rather than considering the checks or batch execution alone, we measure the results and costs of the entire process, including checking, execution, and fallback. Across 36 experimental configurations involving two language models and six workloads, the checked policy selects batching only once. In that case, 99.17% of labels agree with single-record execution, and model calls decrease by 79.69%, but total token use increases by 3.01% after including checking costs. Increasing the checking budget does not improve batch-size selection in our follow-up experiments. We also find that prefix caching can reverse the apparent cost advantage of batching: fewer input tokens do not always mean less input processing. Our findings highlight the importance of evaluating both result reliability and the full cost of semantic query optimization.",
-  "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
-  "page_roles": {
-    "total_pages": 14,
-    "main_body_pages": 12,
-    "references": [
-      13
-    ],
-    "ai_disclosure": [
-      14
-    ]
-  },
-  "ai_acknowledgement": "AI-generated content disclosure. The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section IV and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.",
   "authors": [
     {
       "order": 1,
@@ -124,10 +112,26 @@
       "name": "Cong Wang"
     }
   ],
-  "corresponding_authors": [
-    "Cong Wang",
-    "Jiexin Zheng"
-  ],
-  "paper_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19",
-  "metadata_scope": "Current paper metadata; current revision has not been saved to CMT by this agent."
+  "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
+  "ai_acknowledgement_plain": "AI-generated content disclosure. The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental code, figure design and rendering, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section IV and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.",
+  "page_roles": {
+    "total_pages": 14,
+    "main_body_pages": 12,
+    "references": [
+      13
+    ],
+    "ai_disclosure": [
+      14
+    ]
+  },
+  "pdf_sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248",
+  "revision_scope": {
+    "four_figures_redesigned_as_vector": true,
+    "numbered_tables_restyled": 7,
+    "limited_caption_and_readability_polish": true,
+    "teacher_abstract_verbatim": true,
+    "author_block_unchanged": true,
+    "scientific_input_bytes_unchanged": true,
+    "new_experiments": false
+  }
 }

@@ -13,7 +13,7 @@
   ],
   "author_count": 8,
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
-  "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
+  "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental code, figure design and rendering, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
   "pages": 14,
   "page_roles": {
     "total_pages": 14,
@@ -25,5 +25,5 @@
       14
     ]
   },
-  "frozen_pdf_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19"
+  "frozen_pdf_sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248"
 }

@@ -37,7 +37,7 @@ The follow-up holds the native-Boolean agreement rule fixed while comparing Curr
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{budget_full_bill.pdf}
-\caption{All 16 native-rule follow-up policies ($N=7,600$, cache ON). Each pair compares 80 and 320 probes within one descriptive physical repeat. Bars include fresh calibration and complete execution, divided by the original S1 input-plus-output token bill for that input. Every selected size is one. These measured costs are distinct from the hypothetical IID acceptance-power calculation.}
+\caption{All 16 native-rule follow-up policies ($N=7,600$, cache ON). Each pair compares 80 and 320 probes within one descriptive physical repeat. Bars include fresh calibration and complete execution, divided by the original S1 input-plus-output token bill for that input. Numbers above the bars give total cost ratios; 80 and 320 are probe budgets. Blue denotes execution and violet denotes checking. Every selected size is one. These measured costs are distinct from the hypothetical IID acceptance-power calculation.}
 \label{fig:budget}
 \end{figure*}
 
@@ -57,7 +57,7 @@ All 48 cache-ON fixed-plan executions (24 configurations, two plans) use less ra
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{cache_input_cost_objects.pdf}
-\caption{Raw versus API uncached input for Movie top and AG Sci/Tech at $N=7,600$. Lines connect matched cache-OFF/ON executions under each model. Ratios use the corresponding singleton S1 counter; one marks equal cost. Outer Random8 circles and inner Similar8 squares show coincident measured counters without jitter. Complete-matrix ranges are in Table~\ref{tab:cache_costs}. Uncached input is a prefill-work proxy.}
+\caption{Raw versus API uncached input for Movie top and AG Sci/Tech at $N=7,600$. Lines connect matched cache-OFF/ON executions under each model. Ratios use the corresponding singleton S1 counter; one marks equal cost. Blue Random8 circles and orange Similar8 squares show coincident counters without jitter. Filled markers denote cache ON; hollow markers denote cache OFF. The upper shaded region has fewer raw input tokens but more uncached input than S1. Complete-matrix ranges are in Table~\ref{tab:cache_costs}. Uncached input is a prefill-work proxy.}
 \label{fig:cache}
 \end{figure*}
 \input{results/cache_cost_ranges.tex}

@@ -1,15 +1,15 @@
 {
   "status": "CLEAN_SOURCE_UNPACKED_REDRAWN_TEX_REBUILT_MATCHES_FROZEN_PAPER",
-  "created_utc": "2026-11-10T12:46:20.902915+00:00",
-  "freeze_sha256": "3f2002bad14ca6dd496e7e5a370b8bd748c522b677c236941cbdea3b2513fff0",
-  "frozen_pdf": "/home/gpu/IntentSat2S_abstract_20261110/manuscript/draft/main.pdf",
-  "frozen_pdf_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19",
-  "source_zip": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/paper_source.zip",
-  "source_zip_sha256": "1118cc6691e04a4210f595781036c1de5b529d9b59900dcebc921325aaa4ef1f",
-  "clean_source": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/clean_source",
-  "actually_unpacked_source": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/unpacked/paper_source",
-  "rebuilt_pdf": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
-  "rebuilt_pdf_sha256": "342945102d708c44634f1cc888f244b2eee4e6925ff6f7c413e4ffa2e8ce7e53",
+  "created_utc": "2026-11-11T15:11:54.104892+00:00",
+  "freeze_sha256": "d0ef93dff3fe893fd833b31d44d5b1dfccb7a63152f2b1edf00907ea03014126",
+  "frozen_pdf": "/home/gpu/IntentSat2S_visual_final_20261111/manuscript/draft/main.pdf",
+  "frozen_pdf_sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248",
+  "source_zip": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/paper_source.zip",
+  "source_zip_sha256": "e91d4ddc90d57cb57427a5e676771e205ed14967712eff1d0515e6602e6b32a6",
+  "clean_source": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/clean_source",
+  "actually_unpacked_source": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/unpacked/paper_source",
+  "rebuilt_pdf": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/unpacked/paper_source/draft/main.pdf",
+  "rebuilt_pdf_sha256": "84c8da411ebe1932bb7b223fb60171f1d1237d04c4c237e1eeaf773bc8243ce8",
   "author_count": 8,
   "authors": [
     "Zida Yang",
@@ -24,7 +24,7 @@
   "title": "[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost",
   "abstract": "Large language models (LLMs) enable database systems to flexibly answer semantic COUNT queries, such as counting news articles about sports. Batching multiple records into one prompt can reduce model calls and improve query efficiency, but may compromise the reliability and consistency of model outputs. To balance efficiency and reliability, existing approaches test candidate batch sizes against single-record answers, selecting a batch size that passes the check or falling back to single-record execution. However, these checks introduce additional costs, and passing them does not necessarily mean that the complete query is accurate or efficient. We evaluate whether checked batching delivers reliable results at a lower overall cost. Rather than considering the checks or batch execution alone, we measure the results and costs of the entire process, including checking, execution, and fallback. Across 36 experimental configurations involving two language models and six workloads, the checked policy selects batching only once. In that case, 99.17% of labels agree with single-record execution, and model calls decrease by 79.69%, but total token use increases by 3.01% after including checking costs. Increasing the checking budget does not improve batch-size selection in our follow-up experiments. We also find that prefix caching can reverse the apparent cost advantage of batching: fewer input tokens do not always mean less input processing. Our findings highlight the importance of evaluating both result reliability and the full cost of semantic query optimization.",
   "keywords": "semantic query processing, large language models, COUNT, fidelity certification, prefix caching, query optimization",
-  "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental and figure code, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
+  "ai_disclosure": "\\section*{Acknowledgments}\n\\textbf{AI-generated content disclosure.} The authors retain intellectual and editorial responsibility for the research conception, overall design, and main manuscript. OpenAI Codex substantially assisted study planning, literature checks, experimental code, figure design and rendering, data analysis, and drafting and revision across all sections. Inference models and their experimental roles are documented in Section~\\ref{sec:design} and the artifact. The authors take full responsibility for the content of the manuscript, including any text generated or polished by the LLM, and for ensuring originality, proper attribution, ethical compliance, and the absence of plagiarism or scientific misconduct.\n",
   "pages": 14,
   "actual_rebuilt_body_end_page": 12,
   "page_roles": {
@@ -37,15 +37,15 @@
       14
     ]
   },
-  "four_figure_render_comparison": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
-  "page_text_render_comparison": "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
+  "four_figure_render_comparison": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/FIGURE_RENDER_COMPARISON.json",
+  "page_text_render_comparison": "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/PAGE_TEXT_RENDER_COMPARISON.json",
   "all_page_text_and_render_content_equal": true,
   "active_source_or_scientific_data_edited": false,
   "new_GPU_or_experiment": false,
   "source_default_ordinary_pdflatex": true,
   "actual_host_TeX_override": "Explicit packaging-local front end to existing pdftex/fmt; not included in source ZIP",
   "logs": [
-    "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
-    "/home/gpu/IntentSat2S_abstract_20261110/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
+    "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/logs/01_REDRAW_FIGURES.log",
+    "/home/gpu/IntentSat2S_visual_final_20261111/packaging/clean_rebuild/logs/02_TEX_BUILD.log"
   ]
 }

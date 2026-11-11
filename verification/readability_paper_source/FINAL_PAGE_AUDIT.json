@@ -1,163 +1,172 @@
 {
   "status": "PASS",
-  "pdf_sha256": "351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19",
-  "author_count": 8,
-  "corresponding_authors": [
-    "Cong Wang",
-    "Jiexin Zheng"
-  ],
-  "approved_abstract_exact_source_match": true,
-  "abstract_characters": 1583,
-  "remaining_CMT_characters": 417,
-  "body_sections_and_measurements_unchanged": true,
-  "changed_active_files": [
-    "draft/main.tex"
-  ],
-  "body_pages": 12,
-  "total_pdf_pages": 14,
+  "pdf_sha256": "203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248",
+  "default_ieee_conference_format_reviewed": true,
+  "appendix_present": false,
   "pages": [
     {
       "page": 1,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 2,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 3,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 4,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 5,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 6,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 7,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 8,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 9,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 10,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 11,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 12,
       "roles": [
         "body"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 13,
       "roles": [
         "references"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     },
     {
       "page": 14,
       "roles": [
         "ai_acknowledgement"
-      ]
+      ],
+      "raster_image_count": 0,
+      "all_text_within_page": true
     }
   ],
-  "default_ieee_conference_format_reviewed": true,
-  "appendix_present": false,
+  "main_body_pages": 12,
+  "total_pages": 14,
   "overfull_boxes": 0,
   "undefined_references": 0,
-  "new_model_experiments": false,
-  "post_frontmatter_page_render_comparison": [
+  "eight_ORCID_links_verified": true,
+  "teacher_abstract_exact": true,
+  "vector_figures": [
     {
-      "page": 2,
-      "unchanged": true
+      "figure": "budget_full_bill.pdf",
+      "raster_images": 0,
+      "vector_drawings": 64,
+      "extractable_text": true,
+      "pdf_sha256": "0bb22464ced742cc478fe2a3512d5b01d2d79fd23b9b4b2cf811dcf27a4c0b7c",
+      "svg_sha256": "c12b4798fc323ab79ae79fcc8294cd811ce39e3f7bd3bc584490f407a3d23324"
     },
     {
-      "page": 3,
-      "unchanged": true
+      "figure": "cache_input_cost_objects.pdf",
+      "raster_images": 0,
+      "vector_drawings": 65,
+      "extractable_text": true,
+      "pdf_sha256": "27c28fa4199bfcf8453b4b27da02ebaf0c0feeeb8dc18278392c5e7104dd76e0",
+      "svg_sha256": "88ded7febf3083d0f6da45a2d35470f87b55a1a8e31ffefb05c9c71f9d9dc278"
     },
     {
-      "page": 4,
-      "unchanged": true
+      "figure": "contract_execution_overview.pdf",
+      "raster_images": 0,
+      "vector_drawings": 51,
+      "extractable_text": true,
+      "pdf_sha256": "8f3093c106475c5a545ff7cc99262f978efab9b71bf7113e1ba0edeeac9a0fcc",
+      "svg_sha256": "d2d0e13db2671c2717f0b777493815cf5711a1c6eac84bb19149ca94d31b1f9c"
     },
     {
-      "page": 5,
-      "unchanged": true
-    },
-    {
-      "page": 6,
-      "unchanged": true
-    },
-    {
-      "page": 7,
-      "unchanged": true
-    },
-    {
-      "page": 8,
-      "unchanged": true
-    },
-    {
-      "page": 9,
-      "unchanged": true
-    },
-    {
-      "page": 10,
-      "unchanged": true
-    },
-    {
-      "page": 11,
-      "unchanged": true
-    },
-    {
-      "page": 12,
-      "unchanged": true
-    },
-    {
-      "page": 13,
-      "unchanged": true
-    },
-    {
-      "page": 14,
-      "unchanged": true
+      "figure": "primary_execution_readouts.pdf",
+      "raster_images": 0,
+      "vector_drawings": 197,
+      "extractable_text": true,
+      "pdf_sha256": "aec7c49556d6d30bc8c7221070a3e9894077244f73914fef766058fefa5c9779",
+      "svg_sha256": "bd0fb342b4ec63818b8e467edb5575c58422f7be6333bb0722070e7a8e6fb6b0"
     }
+  ],
+  "manual_visual_review_pages": [
+    1,
+    2,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
   ]
 }

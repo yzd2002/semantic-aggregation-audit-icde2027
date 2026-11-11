@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "comparison_source": "/home/gpu/IntentSat2S_abstract_20261110/manuscript",
+  "figure_input_CSVs_unchanged": [
+    {
+      "path": "figure_inputs/all_budget_cost_components.csv",
+      "sha256": "c0e38f8e7d34e8eb1bb7f34e7944cbe2119dd0634e73fb7990a42362f62db5b9"
+    },
+    {
+      "path": "figure_inputs/all_budget_policy_readouts.csv",
+      "sha256": "e61793f014b184110ad297b93c06a8ddf66002d48122b2cc4371a52c71a62b28"
+    },
+    {
+      "path": "figure_inputs/all_cache_cost_objects.csv",
+      "sha256": "038372e42e311f5363f5c14d49da62a80a8db58df744bcbe778f62b353fd4d11"
+    },
+    {
+      "path": "figure_inputs/all_main_policy_readouts.csv",
+      "sha256": "c477c3627d3952a735e291be1c012b8d1136df866287b6efdea32c33e7f8afc1"
+    },
+    {
+      "path": "figure_inputs/direct_AQP_unique_inputs.csv",
+      "sha256": "ec28fb4fcab73ac6dd433c3dea19d82e705e86306abcf805af1e642461111991"
+    },
+    {
+      "path": "figure_inputs/finite_audit_method_summary.csv",
+      "sha256": "be90dc7b05e477330d1f8d361ea7a9607f76ccdbda11450c051dc8fb58542ca9"
+    },
+    {
+      "path": "figure_inputs/matched_cache_ON_OFF.csv",
+      "sha256": "5ff8c03e38ee311768e449a23b2dbc552d914e024f31f9663003f5e32242d14c"
+    },
+    {
+      "path": "figure_inputs/observed_probe_rejection_summary.csv",
+      "sha256": "dcab0b13891bd44d8a684411e08bb672f3a8fb07c81d8ab5082c8ddf3d572ee7"
+    },
+    {
+      "path": "figure_inputs/primary_policy_benefit_summary.csv",
+      "sha256": "afd8cf717b2285d7c2684cd1e5826c58a4d02ba0843faaaabdbb4564dae88de3"
+    },
+    {
+      "path": "figure_inputs/readability_evidence/candidate_stop_trace.csv",
+      "sha256": "adb5c6866020e2ec9a644178ee3660ddd63c25ec3a68f1e852e1f0a86076e9d7"
+    },
+    {
+      "path": "figure_inputs/readability_evidence/phase_exact_cost.csv",
+      "sha256": "b2c88c9b84e4fdba3cbb41742e325090ee74dadf72a851cd8d48121398279980"
+    }
+  ],
+  "table_numeric_rows_unchanged": [
+    {
+      "file": "budget_results.tex",
+      "numeric_data_rows_compared": 8,
+      "equal": true
+    },
+    {
+      "file": "budget_worked_pair.tex",
+      "numeric_data_rows_compared": 4,
+      "equal": true
+    },
+    {
+      "file": "cache_cost_ranges.tex",
+      "numeric_data_rows_compared": 8,
+      "equal": true
+    },
+    {
+      "file": "finite_results.tex",
+      "numeric_data_rows_compared": 6,
+      "equal": true
+    },
+    {
+      "file": "primary_policy_summary.tex",
+      "numeric_data_rows_compared": 3,
+      "equal": true
+    },
+    {
+      "file": "primary_results.tex",
+      "numeric_data_rows_compared": 0,
+      "equal": true
+    }
+  ],
+  "teacher_approved_abstract_unchanged": true,
+  "authors_unchanged": true,
+  "measured_sports": {
+    "agreement_percent": 99.17,
+    "call_reduction_percent": 79.69,
+    "token_increase_percent": 3.01,
+    "checking_plus_execution_tokens": 348545,
+    "total_tokens": 348545
+  },
+  "new_model_inference": false
+}

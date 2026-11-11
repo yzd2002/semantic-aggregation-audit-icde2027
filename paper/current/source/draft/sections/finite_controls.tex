@@ -24,6 +24,8 @@ We first draw the overall sample, then condition on its observed group sample si
 
 Concretely, consider a group of $M$ rows with $t$ sampled rows and $x$ observed errors. For each candidate total error count $E\in\{0,\ldots,M\}$, let $X_E$ count errors in $t$ draws without replacement from that group if it contains $E$ errors. Retain $E$ when both $\Pr(X_E\le x)$ and $\Pr(X_E\ge x)$ are at least $\alpha/(2H)$. The smallest and largest retained integers are that group's endpoints. This is the discrete HG inversion used for both groups; the unstratified row gate uses the whole input as one group.
 
+\input{results/finite_results.tex}
+
 \subsection{Which Recorded Outputs Are Eligible?}
 The canonical source-label audit requires a complete strict plan vector. All $36\times2=72$ fixed-plan vectors and 26 checked-policy vectors qualify, giving 98 plan/configuration pairs. It does not need a strict singleton reference because the source labels already provide $y$. The native sensitivity uses 108 delivered vectors: three plans for each of the 36 configurations, with the same sampling order and fixed look. These 98/108 denominators count plan vectors; the main experiment still has 36 configurations and its primary comparison still has 12.
 
@@ -35,7 +37,6 @@ Each method/vector pair has its own nominal 95\% sampling scope. Labels are fixe
 \label{sec:audit_results}
 Under the main strict-vector eligibility rule, the source-label COUNT gate accepts 24/98 complete plan/configuration pairs; both the stratified and unstratified row gates accept 3/98 (Table~\ref{tab:finite_results}). The 21 additional COUNT passes concern aggregate accuracy, not reusable row labels. No accepted source COUNT falls outside additive $.05N$ tolerance in these observed vectors. The post-hoc native-vector sensitivity evaluates 108 pairs, accepting 27 COUNTs and three row-gate passes. Its three extra COUNT passes are Qwen fallback vectors; it changes neither calibration nor deployment.
 
-\input{results/finite_results.tex}
 
 
 \subsection{Estimating COUNT Without a Complete Plan}

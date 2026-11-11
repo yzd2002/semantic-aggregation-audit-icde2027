@@ -1,10 +1,10 @@
 \begin{table}[t]
-\centering\small
+\centering\tableformat
 \caption{One measured Qwen AG Sci/Tech pair ($N=7,600$, cache ON, repeat 1). Top: requests, with probes listed at sizes 8/4/2. Each full policy adds 7,600 singleton execution calls to checking. Bottom: complete token receipts; $P$ is raw input, $O$ output, $K$ cached input and $U=P-K$.}
 \label{tab:budget_worked_pair}
 \begin{tabular}{rrrrr}
 \toprule
-Budget & \shortstack{Singleton\\references} & \shortstack{Batch probes\\8 / 4 / 2} & \shortstack{Checking\\calls} & \shortstack{Full\\calls} \\
+\tablehead{Budget} & \tablehead{\shortstack{Singleton\\references}} & \tablehead{\shortstack{Batch probes\\8 / 4 / 2}} & \tablehead{\shortstack{Checking\\calls}} & \tablehead{\shortstack{Full\\calls}} \\
 \midrule
 80 & 80 & 16 / 16 / 48 & 160 & 7,760 \\
 320 & 320 & 48 / 112 / 128 & 608 & 8,208 \\
@@ -13,7 +13,7 @@ Budget & \shortstack{Singleton\\references} & \shortstack{Batch probes\\8 / 4 / 
 \par\smallskip
 \begin{tabular}{rrrrr}
 \toprule
-Budget & $P$ & $O$ & $K$ & $U$ \\
+\tablehead{Budget} & \tablehead{$P$} & \tablehead{$O$} & \tablehead{$K$} & \tablehead{$U$} \\
 \midrule
 80 & 1,336,641 & 32,108 & 498,816 & 837,825 \\
 320 & 1,483,830 & 36,842 & 533,440 & 950,390 \\

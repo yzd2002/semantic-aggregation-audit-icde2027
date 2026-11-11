@@ -4,8 +4,8 @@
 
 | 内容 | 路径 / 校验 |
 |---|---|
-| 八作者当前PDF | [paper/current/ICDE2027_Semantic_COUNT.pdf](paper/current/ICDE2027_Semantic_COUNT.pdf)，SHA-256 `351e235ee78f1a5cb8007a39e662757df8b0c7a3b5d3f6d858ebb13c9f7c6b19` |
-| 实测重建的clean source ZIP | [paper/current/paper_source.zip](paper/current/paper_source.zip)，SHA-256 `1118cc6691e04a4210f595781036c1de5b529d9b59900dcebc921325aaa4ef1f` |
+| 八作者当前PDF | [paper/current/ICDE2027_Semantic_COUNT.pdf](paper/current/ICDE2027_Semantic_COUNT.pdf)，SHA-256 `203814045c5e8a770cfd117d52e80d38c970ab03e6756eb9a8f8490beaea0248` |
+| 实测重建的clean source ZIP | [paper/current/paper_source.zip](paper/current/paper_source.zip)，SHA-256 `e91d4ddc90d57cb57427a5e676771e205ed14967712eff1d0515e6602e6b32a6` |
 | 活跃TeX与四图输入/源码 | [paper/current/source/](paper/current/source/) |
 | 矢量PDF/SVG | [paper/current/figures/](paper/current/figures/) |
 | 本版文件SHA清单 | [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) |
@@ -31,7 +31,7 @@
 - [stopping audit](repro/real_engine_20261106/stopping_audit/)：106+48个观察前缀，两份CSV与便携CLI。
 - [readability evidence](repro/real_engine_20261106/readability_evidence/)：冻结Qwen/SciTech配对的真实停止轨迹、分阶段完整账单、两份CSV与重算脚本。
 - [model sources](repro/real_engine_20261106/model_sources/)与[rights/notices](repro/real_engine_20261106/public/RIGHTS_AND_NOTICES.md)：模型/数据来源和权利界限，权重与源文本不在压缩包内。
-- [verification/](verification/)：已完成的producer-side科学检查及本轮source重建证据；最终公开提交另作实际匿名取回与CPU验证。
+- [verification/](verification/)：已完成的producer-side科学检查及本轮source重建证据；最终公开提交另作实际匿名取回与科学输入字节核对；沿用此前实际CPU验证的原始报告，不声称重跑。
 
 ## 六个legacy科学档案
 

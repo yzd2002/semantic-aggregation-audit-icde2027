@@ -2,7 +2,7 @@
 
 This artifact connects sampled batch-fidelity checks to complete semantic COUNT results and full policy costs, including calibration, fallback, and native cache counters. It provides actual execution evidence for 36 main configurations and 16 separately frozen budget-follow-up policies, together with CPU reconstruction of the reported decisions and bills.
 
-[Current paper PDF](paper/current/ICDE2027_Semantic_COUNT.pdf) · [Editable source ZIP](paper/current/paper_source.zip) · [Active TeX](paper/current/source/draft/main.tex) · [Vector figures](paper/current/figures/) · [中文入口](START_HERE_zh.md) · [Asset map](ASSETS.md)
+[Current paper PDF](paper/current/ICDE2027_Semantic_COUNT.pdf) · [Editable source ZIP](paper/current/paper_source.zip) · [Overleaf ZIP](paper/current/overleaf_source.zip) · [Active TeX](paper/current/source/draft/main.tex) · [Vector figures](paper/current/figures/) · [中文入口](START_HERE_zh.md) · [Asset map](ASSETS.md)
 
 ## Reproduce the results
 
@@ -21,6 +21,8 @@ The [current scientific index](repro/real_engine_20261106/public/artifact_index.
 
 ## Rebuild the paper
 
+The 2026-11-11 visual edition unifies all four vector figures and seven numbered tables. Every numerical input and the teacher-approved abstract is preserved. Figure titles and captions identify their measured targets and denominators; styling does not change the scientific findings.
+
 `bash paper/current/source/build.sh` compiles the editable source with ordinary pdflatex and the included vector PDFs. The eight-author block and current captions are part of the frozen active TeX. The source ZIP has actually been unpacked, its four figures redrawn, and its TeX compiled; all 14 page texts/renders matched the frozen PDF, with the main body ending on page 12.
 
 Optional `python3 -B paper/current/source/redraw_figures.py` reads the supplied aggregate CSVs. Generated table exports go to `regenerated/`, preserving the frozen editorial TeX. Plotting dependencies and source hashes are included in the clean source.
@@ -38,5 +40,3 @@ Use [PUBLICATION_FILES_SHA256.json](PUBLICATION_FILES_SHA256.json) for this repo
 The [immutable v2 release](https://github.com/yzd2002/semantic-aggregation-audit-icde2027/releases/tag/v2026.11.06-final) supplies six legacy scientific archives. [ASSETS.md](ASSETS.md) distinguishes those archives from the current eight-module payload. The current paper and source are under `paper/current/`.
 
 The paper follows one measured Sports query from checking to complete execution and cost. Its main results precede the optional COUNT-only sampling controls. Full uncondensed numerical tables remain in [full readouts](repro/real_engine_20261106/full_readout_tables/). All eight author names link to their supplied ORCID records.
-
-The current paper adopts the author-approved revised abstract. [Exact abstract text](paper/current/abstract.txt) · [Submission metadata](paper/current/submission_metadata.json).

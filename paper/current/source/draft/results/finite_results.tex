@@ -1,10 +1,12 @@
 \begin{table*}[!t]
-\centering\small
+\centering\tableformat
 \caption{Source-label controls across all 36 configurations (18 per model/plan). $E$: eligible plan vectors; C/S/U: numbers accepted by the COUNT, stratified row, and unstratified row gates, respectively. All three audit complete plan vectors; direct AQP instead estimates COUNT without one. Main eligibility requires complete strict plan labels, not strict singleton references. Native columns are post-hoc sensitivity with the same sample and fixed look. Each method/pair has nominal 95\% scope at additive $.05N$; columns are not simultaneous certificates.}
 \label{tab:finite_results}
 \begin{tabular}{llrrrr}
 \toprule
-Model & Plan & Canonical strict $E/18$ & Strict C/S/U & Native sensitivity $E/18$ & Native C/S/U \\
+\tablehead{Model} & \tablehead{Plan} & \multicolumn{2}{c}{\tablehead{Canonical strict}} & \multicolumn{2}{c}{\tablehead{Native sensitivity}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+ & & \tablehead{Eligible $E/18$} & \tablehead{Accepted C/S/U} & \tablehead{Eligible $E/18$} & \tablehead{Accepted C/S/U} \\
 \midrule
 Qwen & Random8 & 18/18 & 0/0/0 & 18/18 & 0/0/0 \\
 Qwen & Similar8 & 18/18 & 0/0/0 & 18/18 & 0/0/0 \\

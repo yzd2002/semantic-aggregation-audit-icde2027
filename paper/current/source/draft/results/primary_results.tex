@@ -1,26 +1,26 @@
 \begin{table*}[!t]
-\centering\small
+\centering\tableformat
 \caption{All 12 primary Current80-S executions ($N=2,048$, cache ON). Every case returns a native COUNT. The two count columns are integers, not a ratio. Strict-valid rows report output format; maximum reference loss compares the native result with both S1/S2. Requests and raw input-plus-output tokens include checking and full execution, divided by S1. Size one denotes fresh singleton fallback.}
 \label{tab:primary_results}
 \begin{tabular}{lrrrrrrr}
 \toprule
-Workload & $k$ & \shortstack{Strict-valid\\rows / $N$} & \shortstack{Returned\\COUNT $C_b$} & \shortstack{Source\\COUNT $G$} & \shortstack{Max. reference\\loss (\%)} & Requests/S1 & \shortstack{Raw tokens\\/ S1} \\
+\tablehead{Workload} & \tablehead{$k$} & \tablehead{\shortstack{Strict-valid\\rows / $N$}} & \tablehead{\shortstack{Returned\\COUNT $C_b$}} & \tablehead{\shortstack{Source\\COUNT $G$}} & \tablehead{\shortstack{Max. reference\\loss (\%)}} & \tablehead{Calls/S1} & \tablehead{\shortstack{Raw tokens\\/ S1}} \\
 \midrule
-\multicolumn{8}{l}{\textit{Qwen}} \\
-Movie top & 1 & 2048/2,048 & 896 & 1,251 & 0.20 & 1.062 & 1.11 \\
-Movie other & 1 & 2048/2,048 & 986 & 1,418 & 0.15 & 1.062 & 1.11 \\
+\rowcolor{TableTint}\multicolumn{8}{l}{\textbf{Qwen}} \\
+Movie top & 1 & 2,048/2,048 & 896 & 1,251 & 0.20 & 1.062 & 1.11 \\
+Movie other & 1 & 2,048/2,048 & 986 & 1,418 & 0.15 & 1.062 & 1.11 \\
 AG World & 1 & 114/2,048 & 1,999 & 514 & 0.00 & 1.062 & 1.12 \\
 AG Sports & 1 & 387/2,048 & 1,750 & 517 & 1.12 & 1.062 & 1.12 \\
-AG Business & 1 & 2040/2,048 & 613 & 498 & 0.15 & 1.078 & 1.18 \\
-AG Sci/Tech & 1 & 2025/2,048 & 483 & 519 & 0.34 & 1.062 & 1.12 \\
+AG Business & 1 & 2,040/2,048 & 613 & 498 & 0.15 & 1.078 & 1.18 \\
+AG Sci/Tech & 1 & 2,025/2,048 & 483 & 519 & 0.34 & 1.062 & 1.12 \\
 \midrule
-\multicolumn{8}{l}{\textit{GLM}} \\
-Movie top & 1 & 2048/2,048 & 1,025 & 1,251 & 0.24 & 1.062 & 1.12 \\
-Movie other & 1 & 2048/2,048 & 1,145 & 1,418 & 0.39 & 1.062 & 1.12 \\
-AG World & 1 & 2045/2,048 & 621 & 514 & 0.24 & 1.086 & 1.21 \\
-AG Sports & 8 & 2048/2,048 & 519 & 517 & 0.83 & 0.203 & 1.03 \\
-AG Business & 1 & 2045/2,048 & 845 & 498 & 0.10 & 1.102 & 1.25 \\
-AG Sci/Tech & 1 & 2048/2,048 & 499 & 519 & 0.15 & 1.062 & 1.12 \\
+\rowcolor{TableTint}\multicolumn{8}{l}{\textbf{GLM}} \\
+Movie top & 1 & 2,048/2,048 & 1,025 & 1,251 & 0.24 & 1.062 & 1.12 \\
+Movie other & 1 & 2,048/2,048 & 1,145 & 1,418 & 0.39 & 1.062 & 1.12 \\
+AG World & 1 & 2,045/2,048 & 621 & 514 & 0.24 & 1.086 & 1.21 \\
+\rowcolor{TableFocus}AG Sports & 8 & 2,048/2,048 & 519 & 517 & 0.83 & 0.203 & 1.03 \\
+AG Business & 1 & 2,045/2,048 & 845 & 498 & 0.10 & 1.102 & 1.25 \\
+AG Sci/Tech & 1 & 2,048/2,048 & 499 & 519 & 0.15 & 1.062 & 1.12 \\
 \bottomrule
 \end{tabular}
 \end{table*}

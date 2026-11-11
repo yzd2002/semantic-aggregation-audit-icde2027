@@ -1,10 +1,17 @@
 \documentclass[conference]{IEEEtran}
-\usepackage{amsmath,amssymb,graphicx,booktabs,array,url,xcolor}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,url}
+\usepackage[table]{xcolor}
 \usepackage[hidelinks]{hyperref}
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\Count}{\operatorname{COUNT}}
 \hyphenation{joint NousDB near context claim singleton strict}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+% One restrained table style throughout; IEEE margins and body type are unchanged.
+\definecolor{TableInk}{HTML}{24354B}
+\definecolor{TableTint}{HTML}{F2F6FA}
+\definecolor{TableFocus}{HTML}{F0F7F5}
+\newcommand{\tablehead}[1]{\textbf{#1}}
+\newcommand{\tableformat}{\small\renewcommand{\arraystretch}{1.12}\arrayrulecolor{TableInk}}
 \graphicspath{{../figures/}}
 \hypersetup{
 pdftitle={[Experiment, Analysis, and Benchmark] Auditing Batched Semantic COUNT: Fidelity Checks and Full Policy Cost},
@@ -29,8 +36,6 @@ semantic query processing, large language models, COUNT, fidelity certification,
 \input{sections/real_engine_design.tex}
 \input{sections/resources_reporting.tex}
 \input{sections/new_results.tex}
-\clearpage
-\twocolumn
 \input{sections/finite_controls.tex}
 \input{sections/reproducibility.tex}
 \input{sections/related_work.tex}
